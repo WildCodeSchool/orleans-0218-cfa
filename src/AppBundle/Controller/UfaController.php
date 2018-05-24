@@ -32,9 +32,26 @@ class UfaController extends Controller
     }
 
     /**
+     * Lists all ufa entities.
+     *
+     * @Route("/admin", name="ufa_indexAdmin")
+     * @Method("GET")
+     */
+    public function indexAdminAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $ufas = $em->getRepository('AppBundle:Ufa')->findAll();
+
+        return $this->render('ufa/indexAdmin.html.twig', array(
+            'ufas' => $ufas,
+        ));
+    }
+
+    /**
      * Creates a new ufa entity.
      *
-     * @Route("/new", name="ufa_new")
+     * @Route("/admin/new", name="ufa_new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
@@ -57,6 +74,7 @@ class UfaController extends Controller
         ));
     }
 
+
     /**
      * Finds and displays a ufa entity.
      *
@@ -74,9 +92,25 @@ class UfaController extends Controller
     }
 
     /**
+     * Finds and displays a ufa entity.
+     *
+     * @Route("/{id}", name="ufa_show")
+     * @Method("GET")
+     */
+    public function showAdminAction(Ufa $ufa)
+    {
+        $deleteForm = $this->createDeleteForm($ufa);
+
+        return $this->render('ufa/showAdmin.html.twig', array(
+            'ufa' => $ufa,
+            'delete_form' => $deleteForm->createView(),
+        ));
+    }
+
+    /**
      * Displays a form to edit an existing ufa entity.
      *
-     * @Route("/{id}/edit", name="ufa_edit")
+     * @Route("/{id}/admin/edit", name="ufa_edit")
      * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, Ufa $ufa)
@@ -101,7 +135,7 @@ class UfaController extends Controller
     /**
      * Deletes a ufa entity.
      *
-     * @Route("/{id}", name="ufa_delete")
+     * @Route("/{id}/admin/delete", name="ufa_admin_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Ufa $ufa)
