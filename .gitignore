@@ -17,3 +17,5 @@
 /web/bundles/
 /web/build/
 /node_modules/
+/.idea/
+
