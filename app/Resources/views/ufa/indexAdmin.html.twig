@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Ufas list</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Logo</th>
+            <th>Urlsite</th>
+            <th>Description</th>
+            <th>Address</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for ufa in ufas %}
+            <tr>
+                <td><a href="{{ path('ufa_show', { 'id': ufa.id }) }}">{{ ufa.id }}</a></td>
+                <td>{{ ufa.name }}</td>
+                <td>{{ ufa.logo }}</td>
+                <td>{{ ufa.urlsite }}</td>
+                <td>{{ ufa.description }}</td>
+                <td>{{ ufa.address }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('ufa_show', { 'id': ufa.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('ufa_edit', { 'id': ufa.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('ufa_new') }}">Create a new ufa</a>
+        </li>
+    </ul>
+{% endblock %}
