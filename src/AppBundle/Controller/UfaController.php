@@ -92,22 +92,6 @@ class UfaController extends Controller
     }
 
     /**
-     * Finds and displays a ufa entity.
-     *
-     * @Route("/{id}", name="ufa_show")
-     * @Method("GET")
-     */
-    public function showAdminAction(Ufa $ufa)
-    {
-        $deleteForm = $this->createDeleteForm($ufa);
-
-        return $this->render('ufa/showAdmin.html.twig', array(
-            'ufa' => $ufa,
-            'delete_form' => $deleteForm->createView(),
-        ));
-    }
-
-    /**
      * Displays a form to edit an existing ufa entity.
      *
      * @Route("/{id}/admin/edit", name="ufa_edit")

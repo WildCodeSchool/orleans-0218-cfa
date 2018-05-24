@@ -65,3 +65,13 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
+
+fos_user:
+    db_driver: orm # other valid values are 'mongodb' and 'couchdb'
+    firewall_name: main
+    user_class: AppBundle\Entity\User
+    service:                               # this lines
+        mailer: fos_user.mailer.twig_swift # this lines
+    from_email:
+        address: "anasgrina3@hgmail.com"
+        sender_name: "Nass"
