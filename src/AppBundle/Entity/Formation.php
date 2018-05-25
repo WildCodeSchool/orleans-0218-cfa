@@ -31,13 +31,6 @@ class Formation
     /**
      * @var string
      *
-     * @ORM\Column(name="image", type="string", length=255)
-     */
-    private $image;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="shortPresentation", type="text")
      */
     private $shortPresentation;
@@ -82,30 +75,6 @@ class Formation
     public function getName()
     {
         return $this->name;
-    }
-
-    /**
-     * Set image
-     *
-     * @param string $image
-     *
-     * @return Formation
-     */
-    public function setImage($image)
-    {
-        $this->image = $image;
-
-        return $this;
-    }
-
-    /**
-     * Get image
-     *
-     * @return string
-     */
-    public function getImage()
-    {
-        return $this->image;
     }
 
     /**
@@ -156,4 +125,3 @@ class Formation
         return $this->jobDescription;
     }
 }
-
