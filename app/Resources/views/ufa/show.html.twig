@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Ufa</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ ufa.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ ufa.name }}</td>
+            </tr>
+            <tr>
+                <th>Logo</th>
+                <td>{{ ufa.logo }}</td>
+            </tr>
+            <tr>
+                <th>Urlsite</th>
+                <td>{{ ufa.urlsite }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ ufa.description }}</td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>{{ ufa.address }}</td>
+            </tr>
+            <tr>
+                <th>Zipcode</th>
+                <td>{{ ufa.zipcode }}</td>
+            </tr>
+            <tr>
+                <th>Cedex</th>
+                <td>{{ ufa.cedex }}</td>
+            </tr>
+            <tr>
+                <th>Town</th>
+                <td>{{ ufa.town }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('ufa_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('ufa_edit', { 'id': ufa.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
