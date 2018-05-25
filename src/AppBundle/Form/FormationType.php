@@ -36,6 +36,4 @@ class FormationType extends AbstractType
     {
         return 'appbundle_formation';
     }
-
-
 }
