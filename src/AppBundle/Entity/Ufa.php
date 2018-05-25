@@ -56,6 +56,27 @@ class Ufa
      */
     private $address;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="zipcode", type="string", length=255)
+     */
+    private $zipcode;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cedex", type="string", length=255)
+     */
+    private $cedex;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="town", type="string", length=255)
+     */
+    private $town;
+
 
     /**
      * Get id
@@ -186,5 +207,76 @@ class Ufa
     {
         return $this->address;
     }
-}
 
+    /**
+     * Set zipcode
+     *
+     * @param string $zipcode
+     *
+     * @return Ufa
+     */
+    public function setZipcode($zipcode)
+    {
+        $this->zipcode = $zipcode;
+
+        return $this;
+    }
+
+    /**
+     * Get zipcode
+     *
+     * @return string
+     */
+    public function getZipcode()
+    {
+        return $this->zipcode;
+    }
+
+    /**
+     * Set cedex
+     *
+     * @param string $cedex
+     *
+     * @return Ufa
+     */
+    public function setCedex($cedex)
+    {
+        $this->cedex = $cedex;
+
+        return $this;
+    }
+
+    /**
+     * Get cedex
+     *
+     * @return string
+     */
+    public function getCedex()
+    {
+        return $this->cedex;
+    }
+
+    /**
+     * Set town
+     *
+     * @param string $town
+     *
+     * @return Ufa
+     */
+    public function setTown($town)
+    {
+        $this->town = $town;
+
+        return $this;
+    }
+
+    /**
+     * Get town
+     *
+     * @return string
+     */
+    public function getTown()
+    {
+        return $this->town;
+    }
+}

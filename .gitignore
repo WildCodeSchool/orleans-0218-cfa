@@ -17,5 +17,6 @@
 /web/bundles/
 /web/build/
 /node_modules/
+*.php~
 /.idea/
 

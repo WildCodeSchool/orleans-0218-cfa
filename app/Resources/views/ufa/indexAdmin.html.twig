@@ -1,9 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Ufas list</h1>
+<div class="container">
+    <h1 class="text-center title-style">Liste des UFA</h1>
 
-    <table>
+    <table class="table table-striped text-center">
         <thead>
         <tr>
             <th>Id</th>
@@ -27,10 +28,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('ufa_show', { 'id': ufa.id }) }}">show</a>
+                            <a class ="btn btn-danger form-control" href="{{ path('ufa_show', { 'id': ufa.id }) }}">Delete</a>
                         </li>
                         <li>
-                            <a href="{{ path('ufa_edit', { 'id': ufa.id }) }}">edit</a>
+                            <a class ="btn btn-warning form-control" href="{{ path('ufa_edit', { 'id': ufa.id }) }}">Modifier</a>
                         </li>
                     </ul>
                 </td>
@@ -41,7 +42,8 @@
 
     <ul>
         <li>
-            <a href="{{ path('ufa_new') }}">Create a new ufa</a>
+            <a class ="btn btn-success" href="{{ path('ufa_new') }}">+ Ajouter un UFA</a>
         </li>
     </ul>
+</div>
 {% endblock %}

@@ -13,7 +13,7 @@ class UfaType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name')->add('logo')->add('urlsite')->add('description')->add('address');
+        $builder->add('name')->add('logo')->add('urlsite')->add('description')->add('address')->add('zipcode')->add('cedex')->add('town');
     }/**
      * {@inheritdoc}
      */

@@ -34,7 +34,7 @@ class UfaController extends Controller
     /**
      * Lists all ufa entities.
      *
-     * @Route("/admin", name="ufa_indexAdmin")
+     * @Route("/admin", name="ufa_index")
      * @Method("GET")
      */
     public function indexAdminAction()
@@ -74,7 +74,6 @@ class UfaController extends Controller
         ));
     }
 
-
     /**
      * Finds and displays a ufa entity.
      *
@@ -94,7 +93,7 @@ class UfaController extends Controller
     /**
      * Displays a form to edit an existing ufa entity.
      *
-     * @Route("/{id}/admin/edit", name="ufa_edit")
+     * @Route("/{id}/edit", name="ufa_edit")
      * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, Ufa $ufa)
@@ -119,7 +118,7 @@ class UfaController extends Controller
     /**
      * Deletes a ufa entity.
      *
-     * @Route("/{id}/admin/delete", name="ufa_admin_delete")
+     * @Route("/{id}", name="ufa_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Ufa $ufa)
