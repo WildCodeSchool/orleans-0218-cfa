@@ -32,23 +32,6 @@ class UfaController extends Controller
     }
 
     /**
-     * Lists all ufa entities.
-     *
-     * @Route("/admin", name="ufa_index")
-     * @Method("GET")
-     */
-    public function indexAdminAction()
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $ufas = $em->getRepository('AppBundle:Ufa')->findAll();
-
-        return $this->render('ufa/indexAdmin.html.twig', array(
-            'ufas' => $ufas,
-        ));
-    }
-
-    /**
      * Creates a new ufa entity.
      *
      * @Route("/admin/new", name="ufa_new")

@@ -24,7 +24,7 @@ class Ufa
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=45)
+     * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
 
@@ -66,7 +66,7 @@ class Ufa
     /**
      * @var string
      *
-     * @ORM\Column(name="cedex", type="string", length=255)
+     * @ORM\Column(name="cedex", type="integer")
      */
     private $cedex;
 
