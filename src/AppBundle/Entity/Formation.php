@@ -27,7 +27,7 @@ class Formation
      *
      * @ORM\Column(name="name", type="string", length=255)
      * @Assert\NotBlank(message="Le nom ne peut pas être vide")
-     * @Assert\Lenghtx
+     * @Assert\Length(max = 50, message = "Le nom ne doit pas dépasser les 50 caractères")
      */
     private $name;
 
