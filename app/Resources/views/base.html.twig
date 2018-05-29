@@ -9,18 +9,40 @@
     </head>
     <body>
         {% block body %}
-        {% block footer%}
-        <footer class="container-fluid p-0 mt-5">
-        <div class="blocfoot1">
-            <ul class="">
-                <li></li>
-            </ul>
-        </div>
-            <div class="blocfoot2">
 
-            </div>
-        </footer>
         {% endblock %}
+        {% block footer%}
+            <footer class=" container-fluid">
+                <div class="row side-bar">
+                    <div class="sidebar"></div>
+                </div>
+                <div class="row pt-3">
+                <div class="col-6 border-right">
+                    <ul class="list1">
+                        <li>
+                            Adresse
+                            <div class="minilist">59-63, Quai Henri Chavigny-41000 Blois</div>
+                        </li>
+                        <li>Email
+                            <div class="minilist"><a href="mailto:contact@cfasms-centre-valdeloire.fr">contact@cfasms-centre-valdeloire.fr</a></div>
+                        </li>
+                        <li>Téléphone
+                            <div class="minilist">+ 33 (0)9 83 38 27 35</div>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="col-6 border-left">
+                    <ul class="text-left ">
+                        <li><a href="#">F.A.Q</a></li>
+                        <li><a href="#">Plan du Site</a></li>
+                        <li><a href="#">Mentions Légales</a></li>
+                    </ul>
+                </div>
+                </div>
+                <hr class="border-bottom"/>
+                <div class="text-center copyright"><p>COPYRIGHT © 2015 CFA SMS CENTRE - Val De Loire</p></div>
+            </footer>
         {% endblock %}
         <script src="{{ asset('build/app.js') }}"></script>
         {% block javascripts %}{% endblock %}
