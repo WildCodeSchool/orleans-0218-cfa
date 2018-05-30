@@ -1,5 +1,8 @@
 @import "../../node_modules/bootstrap/dist/css/bootstrap.css";
 
+$color-sidebar: #009fe3;
+$background-nav-footer: #3e423a;
+
 li {
   list-style: none;
   margin-top: 10px;
@@ -8,4 +11,36 @@ li {
 .title-style {
   margin-bottom: 50px;
   margin-top: 50px;
+}
+
+/** Footer **/
+
+footer{
+  background-color: $background-nav-footer;
+  color:white;
+}
+.minilist{
+  font-size: x-small;
+}
+.list1{
+  margin-left:500px;
+}
+.copyright{
+  font-size: x-small;
+}
+
+.sidebar {
+  float: left;
+  width: 150em;
+  height: 100%;
+  background: $color-sidebar;
+  padding: 10px;
+}
+
+a{
+  color:white;
+
+}
+a:hover{
+  color: $color-sidebar;
 }
