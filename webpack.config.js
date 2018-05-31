@@ -4,6 +4,7 @@ Encore
     .setOutputPath('web/build/')
     .setPublicPath('/web')
     .addEntry('app', './assets/js/app.js')
+    .addEntry('count', './assets/js/count.js')
     .addEntry('style', './assets/scss/main.scss')
     .cleanupOutputBeforeBuild()
     .enableBuildNotifications()
