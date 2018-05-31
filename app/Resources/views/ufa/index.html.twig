@@ -7,28 +7,24 @@
     <table class="table table-striped text-center">
         <thead>
         <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Logo</th>
-            <th>Urlsite</th>
-            <th>Description</th>
-            <th>Address</th>
+            <th>Nom</th>
+            <th>Adresse</th>
+            <th>Code Postal</th>
+            <th>Ville</th>
             <th>Actions</th>
         </tr>
         </thead>
         <tbody>
         {% for ufa in ufas %}
-            <tr>
-                <td><a href="{{ path('ufa_show', { 'id': ufa.id }) }}">{{ ufa.id }}</a></td>
-                <td>{{ ufa.name }}</td>
-                <td>{{ ufa.logo }}</td>
-                <td>{{ ufa.urlsite }}</td>
-                <td>{{ ufa.description }}</td>
+            <tr></td>
+                <td><a href="{{ path('ufa_show', { 'id': ufa.id }) }}">{{ ufa.name }}</td>
                 <td>{{ ufa.address }}</td>
+                <td>{{ ufa.zipcode }}</td>
+                <td>{{ ufa.town }}</td>
                 <td>
                     <ul>
                         <li>
-                            <a class ="btn btn-danger form-control" href="{{ path('ufa_show', { 'id': ufa.id }) }}">Delete</a>
+                            <a class ="btn btn-danger form-control" href="{{ path('ufa_show', { 'id': ufa.id }) }}">Supprimer</a>
                         </li>
                         <li>
                             <a class ="btn btn-warning form-control" href="{{ path('ufa_edit', { 'id': ufa.id }) }}">Modifier</a>
@@ -42,7 +38,7 @@
 
     <ul>
         <li>
-            <a class ="btn btn-success" href="{{ path('ufa_new') }}">+ Ajouter un UFA</a>
+            <a class ="btn btn-primary" href="{{ path('ufa_new') }}">+ Ajouter un UFA</a>
         </li>
     </ul>
 </div>
