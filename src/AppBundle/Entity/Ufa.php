@@ -298,5 +298,4 @@ class Ufa
     {
         return $this->latitude;
     }
-
 }

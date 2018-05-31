@@ -17,7 +17,7 @@ class UfaType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name',TextType::class, ['label'=>'Nom de l\'UFA'])
+            ->add('name', TextType::class, ['label'=>'Nom de l\'UFA'])
             ->add('urlsite', TextType::class, ['label'=>'Lien vers le site de l\'UFA'])
             ->add('description', TextareaType::class, ['label'=>'Description'])
             ->add('address', TextType::class, ['label'=>'Adresse'])

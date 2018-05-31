@@ -10,7 +10,6 @@ namespace AppBundle\Services;
 
 use GuzzleHttp\Client;
 
-
 class CoordinatesService
 {
 
@@ -61,5 +60,4 @@ class CoordinatesService
 
         return $longitude;
     }
-
 }
