@@ -1,33 +1,5 @@
 {% extends 'base.html.twig' %}
-{% block stylesheets %}{% endblock %}
 
 {% block body %}
-    <div class="chiffresCles">
-        <h1 data-sr="enter top, hustle 30px over 1s reset">Le CFA</h1>
-        <div id="content-inner">
-
-
-            <div class="cles">
-                <h2 class="count">150</h2>
-                <H3 data-sr="enter left and move 50px over 1s reset" >Apprentis</H3>
-            </div>
-            <div class="cles">
-                <h2 class="count">9</h2>
-                <H3 data-sr="enter left and move 50px over 2s reset">Formations</H3>
-            </div>
-            <div class="cles">
-                <h2 class="count">5</h2>
-                <H3 data-sr="enter right and move 50px over 2s reset">UFA Partenaires</H3>
-                <h6 data-sr="enter right and move 50px over 2.2s reset">(6 sites de formations)</h6>
-            </div>
-            <div class="cles">
-                <h2 class="count">80</h2>
-                <H3 data-sr="enter right and move 50px over 1s reset">% Validations Totales</H3>
-                <h6 data-sr="enter right and move 50px over 1s reset">(+20% de validations partielles)</h6>
-            </div>
-        </div>
-    </div>
-{% endblock %}
-{% block javascripts %}
-    <script src="{{ asset('build/count.js') }}"></script>
+    {% include 'homepage/cfa.html.twig' %}
 {% endblock %}
