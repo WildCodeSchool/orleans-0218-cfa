@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use GuzzleHttp\Exception\GuzzleException;
 
 /**
  * Ufa
@@ -31,9 +32,16 @@ class Ufa
     /**
      * @var string
      *
-     * @ORM\Column(name="logo", type="string", length=255)
+     * @ORM\Column(name="latitude", type="decimal", precision=8, scale=6)
      */
-    private $logo;
+    private $latitude;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="longitude", type="decimal", precision=8, scale=6)
+     */
+    private $longitude;
 
     /**
      * @var string
@@ -77,7 +85,6 @@ class Ufa
      */
     private $town;
 
-
     /**
      * Get id
      *
@@ -110,30 +117,6 @@ class Ufa
     public function getName()
     {
         return $this->name;
-    }
-
-    /**
-     * Set logo
-     *
-     * @param string $logo
-     *
-     * @return Ufa
-     */
-    public function setLogo($logo)
-    {
-        $this->logo = $logo;
-
-        return $this;
-    }
-
-    /**
-     * Get logo
-     *
-     * @return string
-     */
-    public function getLogo()
-    {
-        return $this->logo;
     }
 
     /**
@@ -278,5 +261,41 @@ class Ufa
     public function getTown()
     {
         return $this->town;
+    }
+
+    /**
+     * @return $this
+     *
+     */
+
+    public function setLatitude($latitude)
+    {
+        $this->latitude = $latitude;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLongitude()
+    {
+        return $this->longitude;
+    }
+
+    /**
+     * @param string $longitude
+     */
+    public function setLongitude($longitude)
+    {
+        $this->longitude = $longitude;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLatitude()
+    {
+        return $this->latitude;
     }
 }

@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Ufa;
+use AppBundle\Services\CoordinatesService;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -38,13 +39,17 @@ class UfaController extends Controller
      * @Route("/admin/new", name="ufa_new")
      * @Method({"GET", "POST"})
      */
-    public function newAction(Request $request)
+    public function newAction(Request $request, CoordinatesService $coordinatesService)
     {
         $ufa = new Ufa();
         $form = $this->createForm('AppBundle\Form\UfaType', $ufa);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $coordinates = $coordinatesService->getCoordinates($ufa->getAddress(), $ufa->getZipcode());
+            [$latitude, $longitude] = $coordinates;
+            $ufa->setLatitude($latitude);
+            $ufa->setLongitude($longitude);
             $em = $this->getDoctrine()->getManager();
             $em->persist($ufa);
             $em->flush();
