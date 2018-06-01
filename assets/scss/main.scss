@@ -14,6 +14,9 @@ a {
 
 li{
   list-style: none;
+  margin-top: 10px;
+  font-size: large;
+
 }
 
 .title-style {
@@ -34,22 +37,25 @@ footer{
 }
 
 .minilist{
-  font-size: x-small;
+  font-size: medium;
 }
 
 .list1{
-  margin-left:500px;
+  margin-left: -55%;
 }
-
-.copyright{
-  font-size: x-small;
-}
-
+  
 .sidebar {
   float: left;
   width: 150em;
   height: 100%;
   background: $color-sidebar;
   padding: 10px;
+}
+
+a {
+  color: $color-link !important ;
+  &:hover {
+    color: $color-sidebar !important;
+  }
 }
 
