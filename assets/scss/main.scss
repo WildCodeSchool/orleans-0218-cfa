@@ -2,10 +2,12 @@
 
 $color-sidebar: #009fe3;
 $background-nav-footer: #3e423a;
+$color-link: #ffffff;
 
 li {
   list-style: none;
   margin-top: 10px;
+  font-size: large;
 }
 
 .title-style {
@@ -20,13 +22,10 @@ footer{
   color:white;
 }
 .minilist{
-  font-size: x-small;
+  font-size: medium;
 }
 .list1{
   margin-left: -55%;
-}
-.copyright{
-  font-size: x-small;
 }
 
 .sidebar {
@@ -37,10 +36,9 @@ footer{
   padding: 10px;
 }
 
-a{
-  color:white;
-
-}
-a:hover{
-  color: $color-sidebar;
+a {
+  color: $color-link !important ;
+  &:hover {
+    color: $color-sidebar !important;
+  }
 }
