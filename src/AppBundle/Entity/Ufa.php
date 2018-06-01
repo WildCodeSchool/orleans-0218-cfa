@@ -32,14 +32,14 @@ class Ufa
     /**
      * @var string
      *
-     * @ORM\Column(name="latitude", type="float")
+     * @ORM\Column(name="latitude", type="decimal", precision=8, scale=6)
      */
     private $latitude;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="longitude", type="float")
+     * @ORM\Column(name="longitude", type="decimal", precision=8, scale=6)
      */
     private $longitude;
 

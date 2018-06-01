@@ -6,6 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -18,7 +19,7 @@ class UfaType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, ['label'=>'Nom de l\'UFA'])
-            ->add('urlsite', TextType::class, ['label'=>'Lien vers le site de l\'UFA'])
+            ->add('urlsite', UrlType::class, ['label'=>'Lien vers le site de l\'UFA'])
             ->add('description', TextareaType::class, ['label'=>'Description'])
             ->add('address', TextType::class, ['label'=>'Adresse'])
             ->add('zipcode', IntegerType::class, ['label'=>'Code Postal'])

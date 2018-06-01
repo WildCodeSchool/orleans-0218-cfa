@@ -46,8 +46,8 @@ class UfaController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $latitude = $coordinatesService->getLatitude($ufa->getAddress(), $ufa->getZipcode());
-            $longitude = $coordinatesService->getLongitude($ufa->getAddress(), $ufa->getZipcode());
+            $coordinates = $coordinatesService->getCoordinates($ufa->getAddress(), $ufa->getZipcode());
+            [$latitude, $longitude] = $coordinates;
             $ufa->setLatitude($latitude);
             $ufa->setLongitude($longitude);
             $em = $this->getDoctrine()->getManager();

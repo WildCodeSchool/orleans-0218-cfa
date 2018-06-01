@@ -19,7 +19,7 @@ class CoordinatesService
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function getLatitude($address, $zipcode)
+    public function getCoordinates($address, $zipcode)
     {
 
         $client = new Client([
@@ -33,31 +33,8 @@ class CoordinatesService
         ]);
         $json = json_decode($response->getBody()->getContents(), true);
         $latitude = $json['features'][0]['geometry']['coordinates'][0];
-
-        return $latitude;
-    }
-
-    /**
-     * @param $address
-     * @param $zipcode
-     * @return mixed
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     */
-    public function getLongitude($address, $zipcode)
-    {
-
-        $client = new Client([
-            'base_uri' => 'https://api-adresse.data.gouv.fr'
-        ]);
-        $response = $client->request('GET', 'search/', [
-            'query' => [
-                'q' => $address,
-                'postcode' => $zipcode,
-            ]
-        ]);
-        $json = json_decode($response->getBody()->getContents(), true);
         $longitude = $json['features'][0]['geometry']['coordinates'][1];
 
-        return $longitude;
+        return [$latitude, $longitude];
     }
 }
