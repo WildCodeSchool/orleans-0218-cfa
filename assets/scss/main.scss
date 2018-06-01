@@ -2,17 +2,31 @@
 
 $color-sidebar: #009fe3;
 $background-nav-footer: #3e423a;
-$color-link: #ffffff;
+$white-link: #ffffff;
 
-li {
+
+a {
+  color: $white-link;
+&:hover {
+  color: $color-sidebar;
+}
+
+
+li{
   list-style: none;
   margin-top: 10px;
   font-size: large;
+
 }
 
 .title-style {
   margin-bottom: 50px;
   margin-top: 50px;
+}
+
+.d-block {
+  width: 100%;
+  height: 500px;
 }
 
 /** Footer **/
@@ -21,13 +35,15 @@ footer{
   background-color: $background-nav-footer;
   color:white;
 }
+
 .minilist{
   font-size: medium;
 }
+
 .list1{
   margin-left: -55%;
 }
-
+  
 .sidebar {
   float: left;
   width: 150em;
@@ -42,3 +58,4 @@ a {
     color: $color-sidebar !important;
   }
 }
+
