@@ -13,7 +13,14 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
         return $this->render('homepage/homepage.html.twig');
+    }
+
+    /**
+     * @Route("/faq", name="faqpage")
+     */
+    public function faqView()
+    {
+        return $this->render('faq/faq.html.twig');
     }
 }
