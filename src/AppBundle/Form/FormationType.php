@@ -7,6 +7,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 
 class FormationType extends AbstractType
 {
@@ -17,8 +18,16 @@ class FormationType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, array('label'=>'Nom de la formation'))
-            ->add('shortPresentation', TextareaType::class, array('label'=>'Présentation'))
-            ->add('jobDescription', TextareaType::class, array('label'=>'Description'));
+            ->add('shortPresentation', CKEditorType::class, array(
+                'config' => array(
+                    'language' => 'fr',
+                ),
+                'label'=>'Présentation'))
+            ->add('jobDescription', CKEditorType::class, array(
+                'config' => array(
+                    'language' => 'fr',
+                ),
+                'label'=>'Description'));
     }/**
      * {@inheritdoc}
      */
