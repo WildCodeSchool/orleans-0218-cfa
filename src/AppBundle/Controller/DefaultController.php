@@ -18,4 +18,12 @@ class DefaultController extends Controller
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
         ]);
     }
+
+    /**
+     * @Route("/faq", name="faqpage")
+     */
+    public function faqView()
+    {
+        return $this->render('faq/faq.html.twig');
+    }
 }
