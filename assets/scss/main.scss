@@ -3,14 +3,8 @@
 $color-sidebar: #009fe3;
 $background-nav-footer: #3e423a;
 $white-link: #ffffff;
+$color-link: #ffffff;
 
-
-a {
-  color: $white-link;
-&:hover {
-  color: $color-sidebar;
-  }
-}
 
 li{
   list-style: none;
@@ -34,6 +28,13 @@ li{
 footer{
   background-color: $background-nav-footer;
   color:white;
+  a {
+    color: $white-link;
+    &:hover {
+      color: $color-sidebar;
+    }
+  }
+
 }
 
 .minilist{
@@ -52,10 +53,4 @@ footer{
   padding: 10px;
 }
 
-a {
-  color: $color-link !important ;
-  &:hover {
-    color: $color-sidebar !important;
-  }
-}
 
