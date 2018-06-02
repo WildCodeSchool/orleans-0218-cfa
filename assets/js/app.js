@@ -21,3 +21,4 @@ $('.counter').each(function() {
             }
         });
 });
+

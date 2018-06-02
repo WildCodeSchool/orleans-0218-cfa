@@ -1,15 +1,24 @@
 @import "../../node_modules/bootstrap/dist/css/bootstrap.css";
 
+
 $blue: #009fe3;
 $background-nav-footer: #3e423a;
 $vert: #23a638;
 $gris:  #f2f2f2;
 $black: black;
 $white: white;
+$color-sidebar: #009fe3;
+$background-nav-footer: #3e423a;
+$white-link: #ffffff;
 
-li {
+
+
+li{
+
   list-style: none;
   margin-top: 10px;
+  font-size: large;
+
 }
 
 .title-style {
@@ -49,5 +58,36 @@ aside {
 
 .cfa-part {
   background-color: $gris;
+}
+
+  
+/** Footer **/
+
+footer{
+  background-color: $background-nav-footer;
+  color:white;
+  a {
+    color: $white-link;
+    &:hover {
+      color: $color-sidebar;
+    }
+  }
+
+}
+
+.minilist{
+  font-size: medium;
+}
+
+.list1{
+  margin-left: -55%;
+}
+  
+.sidebar {
+  float: left;
+  width: 150em;
+  height: 100%;
+  background: $color-sidebar;
+  padding: 10px;
 }
 
