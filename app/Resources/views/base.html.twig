@@ -7,121 +7,116 @@
         <link rel="stylesheet" href="{{ asset('build/style.css') }}">
         {% block stylesheets %}{% endblock %}
     </head>
-    <body>
-    {% block header %}
-        <div class="container-fluid">
-            <div class="row">
-                <nav class="navbar navbar-light bg-light">
-                    <a class="navbar-brand" href="#">
-                        <img src="/web/images/Logo_Nav" width="30" height="30" alt="Logo du CFA">
-                    </a>
-                    <ul class="nav nav-tabs|pills" id="navId">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                               aria-expanded="false" >Le CFA</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#tab2Id">Action</a>
-                                <a class="dropdown-item" href="#tab3Id">Another action</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#tabs4Id"></a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                               aria-expanded="false" >Les Apprentis</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#tab2Id">Action</a>
-                                <a class="dropdown-item" href="#tab3Id">Another action</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#tabs4Id"></a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                               aria-expanded="false" >Les Employeurs</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#tab2Id">Action</a>
-                                <a class="dropdown-item" href="#tab3Id">Another action</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#tabs4Id"></a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                               aria-expanded="false" >Les Formations</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#tab2Id">Action</a>
-                                <a class="dropdown-item" href="#tab3Id">Another action</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#tabs4Id"></a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                               aria-expanded="false" >La Taxe d'apprentissage</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#tab2Id">Action</a>
-                                <a class="dropdown-item" href="#tab3Id">Another action</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#tabs4Id"></a>
-                            </div>
-                        </li>
-                    </ul>
-                </nav>
-
-
-
-        <!-- Tab panes -->
-        <div class="tab-content">
-            <div class="tab-pane fade in active" id="tab1Id" role="tabpanel"></div>
-            <div class="tab-pane fade" id="tab2Id" role="tabpanel"></div>
-            <div class="tab-pane fade" id="tab3Id" role="tabpanel"></div>
-            <div class="tab-pane fade" id="tabs4Id" role="tabpanel"></div>
-            <div class="tab-pane fade" id="tab5Id" role="tabpanel"></div>
-        </div>
-                <div class="row side-bar">
-                    <div class="sidebar"></div>
+        <body>
+        {% block header %}
+            <div class="container-fluid">
+                <div class="row">
+                    <nav class="navbar navbar-light bg-light">
+                        <a class="navbar-brand" href="#">
+                            <img src="/web/images/Logo_Nav" width="30" height="30" alt="Logo du CFA">
+                        </a>
+                        <ul class="nav nav-tabs|pills" id="navId">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                                   aria-expanded="false" >Le CFA</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#tab2Id">Action</a>
+                                    <a class="dropdown-item" href="#tab3Id">Another action</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#tabs4Id"></a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                                   aria-expanded="false" >Les Apprentis</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#tab2Id">Action</a>
+                                    <a class="dropdown-item" href="#tab3Id">Another action</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#tabs4Id"></a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                                   aria-expanded="false" >Les Employeurs</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#tab2Id">Action</a>
+                                    <a class="dropdown-item" href="#tab3Id">Another action</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#tabs4Id"></a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                                   aria-expanded="false" >Les Formations</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#tab2Id">Action</a>
+                                    <a class="dropdown-item" href="#tab3Id">Another action</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#tabs4Id"></a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                                   aria-expanded="false" >La Taxe d'apprentissage</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#tab2Id">Action</a>
+                                    <a class="dropdown-item" href="#tab3Id">Another action</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#tabs4Id"></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="tab1Id" role="tabpanel"></div>
+                <div class="tab-pane fade" id="tab2Id" role="tabpanel"></div>
+                <div class="tab-pane fade" id="tab3Id" role="tabpanel"></div>
+                <div class="tab-pane fade" id="tabs4Id" role="tabpanel"></div>
+                <div class="tab-pane fade" id="tab5Id" role="tabpanel"></div>
             </div>
-        </div>
-    {% endblock %}
-        {% block body %}
-
+                    <div class="row side-bar">
+                        <div class="sidebar"></div>
+                </div>
+            </div>
         {% endblock %}
-        {% block footer%}
-            <footer class=" container-fluid">
-                <div class="row side-bar">
-                    <div class="sidebar"></div>
-                </div>
-                <div class="row pt-3">
-                <div class="col-6 border-right">
-                    <ul class="list1">
-                        <li>
-                            Adresse
-                            <div class="minilist">59-63, Quai Henri Chavigny-41000 Blois</div>
-                        </li>
-                        <li>Email
-                            <div class="minilist"><a href="mailto:contact@cfasms-centre-valdeloire.fr">contact@cfasms-centre-valdeloire.fr</a></div>
-                        </li>
-                        <li>Téléphone
-                            <div class="minilist">+ 33 (0)9 83 38 27 35</div>
-                        </li>
 
-                    </ul>
-                </div>
-                <div class="col-6 border-left">
-                    <ul class="text-left ">
-                        <li><a href="#">F.A.Q</a></li>
-                        <li><a href="#">Plan du Site</a></li>
-                        <li><a href="#">Mentions Légales</a></li>
-                    </ul>
-                </div>
-                </div>
-                <hr class="border-bottom"/>
-                <div class="text-center copyright"><p>COPYRIGHT © 2015 CFA SMS CENTRE - Val De Loire</p></div>
-            </footer>
-        {% endblock %}
-        <script src="{{ asset('build/app.js') }}"></script>
-        {% block javascripts %}{% endblock %}
-    </body>
+            {% block body %}
+            {% endblock %}
 
+            {% block footer%}
+                <footer class=" container-fluid">
+                    <div class="row side-bar">
+                        <div class="sidebar"></div>
+                    </div>
+                    <div class="row pt-3">
+                        <div class="col-sm-2 offset-4 border-right">
+                            <ul class="list1">
+                                <li>
+                                    Adresse
+                                    <div class="minilist">59-63, Quai Henri Chavigny-41000 Blois</div>
+                                </li>
+                                <li>Email
+                                    <div class="minilist"><a href="mailto:contact@cfasms-centre-valdeloire.fr">contact@cfasms-centre-valdeloire.fr</a></div>
+                                </li>
+                                <li>Téléphone
+                                    <div class="minilist">+ 33 (0)9 83 38 27 35</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-12 border-left">
+                            <ul class="list2 text-left ">
+                                <li><a class="linkfooter" href="#">F.A.Q</a></li>
+                                <li><a class="linkfooter" href="#">Plan du Site</a></li>
+                                <li><a class="linkfooter" href="#">Mentions Légales</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <hr class="border-bottom"/>
+                    <div class="pb-3"></div>
+                </footer>
+            {% endblock %}
+            <script src="{{ asset('build/app.js') }}"></script>
+            {% block javascripts %}{% endblock %}
+        </body>
 </html>
