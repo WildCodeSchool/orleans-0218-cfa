@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Partnair</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ partnair.id }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ partnair.image }}</td>
+            </tr>
+            <tr>
+                <th>Link</th>
+                <td>{{ partnair.link }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ partnair.name }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('partnair_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('partnair_edit', { 'id': partnair.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
