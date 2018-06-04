@@ -5,6 +5,7 @@ namespace AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class PartnairType extends AbstractType
 {
@@ -13,7 +14,12 @@ class PartnairType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('image')->add('link')->add('name');
+        $builder
+            ->add('name', TextType::class, ['label' => 'Nom'])
+            ->add('image', TextType::class, ['label' => 'image'])
+            ->add('link', TextType::class, ['label' => 'lien'])
+            ;
+
     }/**
      * {@inheritdoc}
      */

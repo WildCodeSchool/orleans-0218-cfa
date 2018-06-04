@@ -1,16 +1,36 @@
 {% extends 'base.html.twig' %}
-
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
 {% block body %}
-    <h1>Partnair creation</h1>
-
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
-
-    <ul>
-        <li>
-            <a href="{{ path('partnair_index') }}">Back to the list</a>
-        </li>
-    </ul>
+    <div class="container">
+        <h1>Ajouter un partenaire</h1>
+        <hr>
+        <div class="row">
+            <div class="col-8"></div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <input class="btn btn-outline-primary" type="submit" value="Créer" />
+                {{ form_end(form) }}
+            </div>
+            <div class="col-4 border-left">
+                <a class="btn-light " href="{{ path('partnair_index') }}">Liste des partenaires</a>
+                {% for partnair in partnairs %}
+                    <ul>
+                        <li>
+                            <a href="{{ path('partnair_show', { 'id': partnair.id }) }}">{{ partnair.name }}</a>
+                        </li>
+                        <hr>
+                    </ul>
+                {% endfor %}
+            </div>
+            <div class="col-1">
+                <i class="fa fa-pencil"></i>
+            </div>
+            <div class="col-1">
+                <i class="fa fa-times"></i>
+            </div>
+        </div>
+    </div>
 {% endblock %}

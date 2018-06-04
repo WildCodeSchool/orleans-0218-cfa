@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Partnair
@@ -30,6 +31,9 @@ class Partnair
 
     /**
      * @var string
+     * @Assert\Url(
+     *    message = "L'adresse du lien '{{ value }}' n'est pas une url valide",
+     * )
      *
      * @ORM\Column(name="link", type="string", length=150)
      */
@@ -37,6 +41,13 @@ class Partnair
 
     /**
      * @var string
+     * @Assert\NotBlank()
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 150,
+     *      minMessage = "Le nom doit comporter au moins   {{ limit }} caractères ",
+     *      maxMessage = "Le nom ne doit pas comporter plus de   {{ limit }} caractères "
+     * )
      *
      * @ORM\Column(name="name", type="string", length=80)
      */

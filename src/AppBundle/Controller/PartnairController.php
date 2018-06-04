@@ -5,7 +5,9 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Partnair;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**
  * Partnair controller.
@@ -37,22 +39,24 @@ class PartnairController extends Controller
      * @Route("/new", name="partnair_new")
      * @Method({"GET", "POST"})
      */
-    public function newAction(Request $request)
+    public function newAction(Request $request, ValidatorInterface $validator)
     {
+        $em = $this->getDoctrine()->getManager();
+        $partnairs = $em->getRepository('AppBundle:Partnair')->findAll();
         $partnair = new Partnair();
         $form = $this->createForm('AppBundle\Form\PartnairType', $partnair);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($partnair);
             $em->flush();
 
-            return $this->redirectToRoute('partnair_show', array('id' => $partnair->getId()));
+            return $this->redirectToRoute('partnair_show', array('partnairs' => $partnairs, 'id' => $partnair->getId()));
         }
 
+
         return $this->render('partnair/new.html.twig', array(
-            'partnair' => $partnair,
+            'partnairs' => $partnairs,
             'form' => $form->createView(),
         ));
     }
@@ -130,7 +134,6 @@ class PartnairController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('partnair_delete', array('id' => $partnair->getId())))
             ->setMethod('DELETE')
-            ->getForm()
-        ;
+            ->getForm();
     }
 }
