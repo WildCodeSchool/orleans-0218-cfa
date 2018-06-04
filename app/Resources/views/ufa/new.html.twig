@@ -1,16 +1,18 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Ufa creation</h1>
-
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
-
-    <ul>
-        <li>
-            <a href="{{ path('ufa_index') }}">Back to the list</a>
-        </li>
-    </ul>
+    <div class="container">
+        <h1>Ufa creation</h1>
+        <div class="row">
+            <div class="col-sm-8 col-12">
+            {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <input class="btn-primary btn-lg" type="submit" value="Créer" />
+            {{ form_end(form) }}
+            </div>
+            <div class="col-4 border-left">
+                    <a class="btn-lg btn-light" href="{{ path('ufa_index') }}">Retour à la liste</a>
+            </div>
+        </div>
+    </div>
 {% endblock %}
