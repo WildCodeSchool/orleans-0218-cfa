@@ -1,3 +1,23 @@
-import "../../node_modules/bootstrap/scss/bootstrap.scss";
-import "../../node_modules/bootstrap/dist/js/bootstrap.js";
-import "jquery/dist/jquery.min.js";
+import 'bootstrap/scss/bootstrap.scss';
+import 'bootstrap';
+import $ from 'jquery';
+
+$('.counter').each(function() {
+    var $this = $(this),
+        countTo = $this.attr('data-count');
+
+    $({ countNum: $this.text()}).animate({
+            countNum: countTo
+        },
+        {
+            duration: 3000,
+            easing:'linear',
+            step: function() {
+                $this.text(Math.floor(this.countNum));
+            },
+            complete: function() {
+                $this.text(this.countNum);
+            }
+        });
+});
+
