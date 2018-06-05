@@ -1,5 +1,4 @@
 {% extends 'base.html.twig' %}
-{% form_theme form 'bootstrap_4_layout.html.twig' %}
 {% block body %}
     <div class="container">
         <h1>Ajouter un partenaire</h1>
@@ -14,22 +13,17 @@
                 <input class="btn btn-outline-primary" type="submit" value="Créer" />
                 {{ form_end(form) }}
             </div>
-            <div class="col-4 border-left">
+            <div class="col-6 border-left">
                 <a class="btn-light " href="{{ path('partnair_index') }}">Liste des partenaires</a>
                 {% for partnair in partnairs %}
                     <ul>
                         <li>
                             <a href="{{ path('partnair_show', { 'id': partnair.id }) }}">{{ partnair.name }}</a>
+                            <a href="{{ path('partnair_edit', { 'id': partnair.id }) }}">
+                            <input class="btn btn-outline-primary btn-sm" type="submit" value="edit" /></a>
                         </li>
-                        <hr>
                     </ul>
                 {% endfor %}
-            </div>
-            <div class="col-1">
-                <i class="fa fa-pencil"></i>
-            </div>
-            <div class="col-1">
-                <i class="fa fa-times"></i>
             </div>
         </div>
     </div>

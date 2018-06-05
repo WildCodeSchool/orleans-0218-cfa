@@ -36,28 +36,32 @@ class PartnairController extends Controller
     /**
      * Creates a new partnair entity.
      *
-     * @Route("/new", name="partnair_new")
+     * @Route("/new/", name="partnair_new")
      * @Method({"GET", "POST"})
      */
-    public function newAction(Request $request, ValidatorInterface $validator)
+    public function newAction(Request $request)
     {
+
+
         $em = $this->getDoctrine()->getManager();
         $partnairs = $em->getRepository('AppBundle:Partnair')->findAll();
-        $partnair = new Partnair();
-        $form = $this->createForm('AppBundle\Form\PartnairType', $partnair);
+
+        $newPartnair = new Partnair();
+        $form = $this->createForm('AppBundle\Form\PartnairType', $newPartnair);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($partnair);
+            $em->persist($newPartnair);
             $em->flush();
 
-            return $this->redirectToRoute('partnair_show', array('partnairs' => $partnairs, 'id' => $partnair->getId()));
+            return $this->redirectToRoute('partnair_show', array(
+                'partnairs' => $partnairs, 'id' => $partnair->getId()));
         }
-
 
         return $this->render('partnair/new.html.twig', array(
             'partnairs' => $partnairs,
             'form' => $form->createView(),
+
         ));
     }
 
