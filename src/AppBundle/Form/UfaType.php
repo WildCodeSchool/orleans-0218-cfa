@@ -26,13 +26,15 @@ class UfaType extends AbstractType
             ->add('cedex')
             ->add('town', TextType::class, ['label'=>'Ville']);
     }/**
-     * {@inheritdoc}
-     */
+      * {@inheritdoc}
+      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults(
+            array(
             'data_class' => 'AppBundle\Entity\Ufa'
-        ));
+            )
+        );
     }
 
     /**

@@ -18,7 +18,7 @@ class FormationController extends Controller
     /**
      * Lists all formation entities.
      *
-     * @Route("/", name="formation_index")
+     * @Route("/",    name="formation_index")
      * @Method("GET")
      */
     public function indexAction()
@@ -27,15 +27,17 @@ class FormationController extends Controller
 
         $formations = $em->getRepository('AppBundle:Formation')->findAll();
 
-        return $this->render('formation/index.html.twig', array(
+        return $this->render(
+            'formation/index.html.twig', array(
             'formations' => $formations,
-        ));
+            )
+        );
     }
 
     /**
      * Creates a new formation entity.
      *
-     * @Route("/new", name="formation_new")
+     * @Route("/new",  name="formation_new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
@@ -52,10 +54,12 @@ class FormationController extends Controller
             return $this->redirectToRoute('formation_show', array('id' => $formation->getId()));
         }
 
-        return $this->render('formation/new.html.twig', array(
+        return $this->render(
+            'formation/new.html.twig', array(
             'formation' => $formation,
             'form' => $form->createView(),
-        ));
+            )
+        );
     }
 
     /**
@@ -68,17 +72,19 @@ class FormationController extends Controller
     {
         $deleteForm = $this->createDeleteForm($formation);
 
-        return $this->render('formation/show.html.twig', array(
+        return $this->render(
+            'formation/show.html.twig', array(
             'formation' => $formation,
             'delete_form' => $deleteForm->createView(),
-        ));
+            )
+        );
     }
 
     /**
      * Displays a form to edit an existing formation entity.
      *
      * @Route("/{id}/edit", name="formation_edit")
-     * @Method({"GET", "POST"})
+     * @Method({"GET",      "POST"})
      */
     public function editAction(Request $request, Formation $formation)
     {
@@ -92,17 +98,19 @@ class FormationController extends Controller
             return $this->redirectToRoute('formation_edit', array('id' => $formation->getId()));
         }
 
-        return $this->render('formation/edit.html.twig', array(
+        return $this->render(
+            'formation/edit.html.twig', array(
             'formation' => $formation,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
-        ));
+            )
+        );
     }
 
     /**
      * Deletes a formation entity.
      *
-     * @Route("/{id}", name="formation_delete")
+     * @Route("/{id}",   name="formation_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Formation $formation)
@@ -131,7 +139,6 @@ class FormationController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('formation_delete', array('id' => $formation->getId())))
             ->setMethod('DELETE')
-            ->getForm()
-        ;
+            ->getForm();
     }
 }

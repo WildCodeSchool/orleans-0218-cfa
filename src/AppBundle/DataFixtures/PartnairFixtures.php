@@ -17,17 +17,17 @@ class PartnairFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
             $faker = Factory::create();
-            for($i=0; $i <20; $i++) {
-                $partnair = new Partnair();
-                $partnair->setName($faker->name);
-                $partnair->setImage($faker->imageUrl( 80, 80));
-                $partnair->setLink($faker->url);
+        for($i=0; $i <20; $i++) {
+            $partnair = new Partnair();
+            $partnair->setName($faker->name);
+            $partnair->setImage($faker->imageUrl(80, 80));
+            $partnair->setLink($faker->url);
 
-                $manager->persist($partnair);
-                $manager->flush();
+            $manager->persist($partnair);
+            $manager->flush();
 
-                $this->addreference('partnair' . $i, $partnair);
-            }
+            $this->addreference('partnair' . $i, $partnair);
+        }
         $manager->flush();
 
 

@@ -18,24 +18,30 @@ class FormationType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, array('label'=>'Nom de la formation'))
-            ->add('shortPresentation', CKEditorType::class, array(
+            ->add(
+                'shortPresentation', CKEditorType::class, array(
                 'config' => array(
                     'language' => 'fr',
                 ),
-                'label'=>'Présentation'))
-            ->add('jobDescription', CKEditorType::class, array(
+                'label'=>'Présentation')
+            )
+            ->add(
+                'jobDescription', CKEditorType::class, array(
                 'config' => array(
                     'language' => 'fr',
                 ),
-                'label'=>'Description'));
+                'label'=>'Description')
+            );
     }/**
-     * {@inheritdoc}
-     */
+      * {@inheritdoc}
+      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults(
+            array(
             'data_class' => 'AppBundle\Entity\Formation'
-        ));
+            )
+        );
     }
 
     /**

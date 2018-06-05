@@ -19,7 +19,7 @@ class UfaController extends Controller
     /**
      * Lists all ufa entities.
      *
-     * @Route("/", name="ufa_index")
+     * @Route("/",    name="ufa_index")
      * @Method("GET")
      */
     public function indexAction()
@@ -28,16 +28,18 @@ class UfaController extends Controller
 
         $ufas = $em->getRepository('AppBundle:Ufa')->findAll();
 
-        return $this->render('ufa/index.html.twig', array(
+        return $this->render(
+            'ufa/index.html.twig', array(
             'ufas' => $ufas,
-        ));
+            )
+        );
     }
 
     /**
      * Creates a new ufa entity.
      *
      * @Route("/admin/new", name="ufa_new")
-     * @Method({"GET", "POST"})
+     * @Method({"GET",      "POST"})
      */
     public function newAction(Request $request, CoordinatesService $coordinatesService)
     {
@@ -57,10 +59,12 @@ class UfaController extends Controller
             return $this->redirectToRoute('ufa_show', array('id' => $ufa->getId()));
         }
 
-        return $this->render('ufa/new.html.twig', array(
+        return $this->render(
+            'ufa/new.html.twig', array(
             'ufa' => $ufa,
             'form' => $form->createView(),
-        ));
+            )
+        );
     }
 
     /**
@@ -73,17 +77,19 @@ class UfaController extends Controller
     {
         $deleteForm = $this->createDeleteForm($ufa);
 
-        return $this->render('ufa/show.html.twig', array(
+        return $this->render(
+            'ufa/show.html.twig', array(
             'ufa' => $ufa,
             'delete_form' => $deleteForm->createView(),
-        ));
+            )
+        );
     }
 
     /**
      * Displays a form to edit an existing ufa entity.
      *
      * @Route("/{id}/edit", name="ufa_edit")
-     * @Method({"GET", "POST"})
+     * @Method({"GET",      "POST"})
      */
     public function editAction(Request $request, Ufa $ufa)
     {
@@ -97,17 +103,19 @@ class UfaController extends Controller
             return $this->redirectToRoute('ufa_edit', array('id' => $ufa->getId()));
         }
 
-        return $this->render('ufa/edit.html.twig', array(
+        return $this->render(
+            'ufa/edit.html.twig', array(
             'ufa' => $ufa,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
-        ));
+            )
+        );
     }
 
     /**
      * Deletes a ufa entity.
      *
-     * @Route("/{id}", name="ufa_delete")
+     * @Route("/{id}",   name="ufa_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Ufa $ufa)
@@ -136,7 +144,6 @@ class UfaController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('ufa_delete', array('id' => $ufa->getId())))
             ->setMethod('DELETE')
-            ->getForm()
-        ;
+            ->getForm();
     }
 }

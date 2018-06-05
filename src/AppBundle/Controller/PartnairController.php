@@ -19,7 +19,7 @@ class PartnairController extends Controller
     /**
      * Lists all partnair entities.
      *
-     * @Route("/", name="partnair_index")
+     * @Route("/",    name="partnair_index")
      * @Method("GET")
      */
     public function indexAction()
@@ -28,9 +28,11 @@ class PartnairController extends Controller
 
         $partnairs = $em->getRepository('AppBundle:Partnair')->findAll();
 
-        return $this->render('partnair/index.html.twig', array(
+        return $this->render(
+            'partnair/index.html.twig', array(
             'partnairs' => $partnairs,
-        ));
+            )
+        );
     }
 
     /**
@@ -54,15 +56,19 @@ class PartnairController extends Controller
             $em->persist($newPartnair);
             $em->flush();
 
-            return $this->redirectToRoute('partnair_show', array(
-                'partnairs' => $partnairs, 'id' => $partnair->getId()));
+            return $this->redirectToRoute(
+                'partnair_show', array(
+                'partnairs' => $partnairs, 'id' => $partnair->getId())
+            );
         }
 
-        return $this->render('partnair/new.html.twig', array(
+        return $this->render(
+            'partnair/new.html.twig', array(
             'partnairs' => $partnairs,
             'form' => $form->createView(),
 
-        ));
+            )
+        );
     }
 
     /**
@@ -75,17 +81,19 @@ class PartnairController extends Controller
     {
         $deleteForm = $this->createDeleteForm($partnair);
 
-        return $this->render('partnair/show.html.twig', array(
+        return $this->render(
+            'partnair/show.html.twig', array(
             'partnair' => $partnair,
             'delete_form' => $deleteForm->createView(),
-        ));
+            )
+        );
     }
 
     /**
      * Displays a form to edit an existing partnair entity.
      *
      * @Route("/{id}/edit", name="partnair_edit")
-     * @Method({"GET", "POST"})
+     * @Method({"GET",      "POST"})
      */
     public function editAction(Request $request, Partnair $partnair)
     {
@@ -99,17 +107,19 @@ class PartnairController extends Controller
             return $this->redirectToRoute('partnair_edit', array('id' => $partnair->getId()));
         }
 
-        return $this->render('partnair/edit.html.twig', array(
+        return $this->render(
+            'partnair/edit.html.twig', array(
             'partnair' => $partnair,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
-        ));
+            )
+        );
     }
 
     /**
      * Deletes a partnair entity.
      *
-     * @Route("/{id}", name="partnair_delete")
+     * @Route("/{id}",   name="partnair_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Partnair $partnair)

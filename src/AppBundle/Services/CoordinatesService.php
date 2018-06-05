@@ -22,15 +22,19 @@ class CoordinatesService
     public function getCoordinates($address, $zipcode)
     {
 
-        $client = new Client([
+        $client = new Client(
+            [
             'base_uri' => 'https://api-adresse.data.gouv.fr'
-        ]);
-        $response = $client->request('GET', 'search/', [
+            ]
+        );
+        $response = $client->request(
+            'GET', 'search/', [
             'query' => [
                 'q' => $address,
                 'postcode' => $zipcode,
             ]
-        ]);
+            ]
+        );
         $json = json_decode($response->getBody()->getContents(), true);
         $latitude = $json['features'][0]['geometry']['coordinates'][0]??0;
         $longitude = $json['features'][0]['geometry']['coordinates'][1]??0;

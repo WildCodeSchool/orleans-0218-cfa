@@ -17,17 +17,18 @@ class PartnairType extends AbstractType
         $builder
             ->add('name', TextType::class, ['label' => 'Nom'])
             ->add('image', TextType::class, ['label' => 'image'])
-            ->add('link', TextType::class, ['label' => 'lien'])
-            ;
+            ->add('link', TextType::class, ['label' => 'lien']);
 
     }/**
-     * {@inheritdoc}
-     */
+      * {@inheritdoc}
+      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults(
+            array(
             'data_class' => 'AppBundle\Entity\Partnair'
-        ));
+            )
+        );
     }
 
     /**
