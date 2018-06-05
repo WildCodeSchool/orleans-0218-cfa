@@ -8,64 +8,65 @@
         {% block stylesheets %}{% endblock %}
     </head>
         <body>
-        {% block header %}
-            <div class="container-fluid">
-                <div class="row">
-                    <nav class="navbar-expand-sm navbar navbar-light bg-light">
-                        <a class="navbar-brand" href="#">
-                            <img src="/images/Logo_Nav" width="30" height="30" alt="Logo du CFA">
-                        </a>
-                        <ul class="nav nav-tabs" id="navId">
-                            <li class="nav-pills dropdown">
-                                <a class="nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                                   aria-expanded="false" >Le CFA</a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#tab2Id">Action</a>
-                                    <a class="dropdown-item" href="#tab3Id">Another action</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#tabs4Id"></a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                                   aria-expanded="false" >Les Apprentis</a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#tab2Id">Action</a>
-                                    <a class="dropdown-item" href="#tab3Id">Another action</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#tabs4Id"></a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                                   aria-expanded="false" >Les Employeurs</a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#tab2Id">Action</a>
-                                    <a class="dropdown-item" href="#tab3Id">Another action</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#tabs4Id"></a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                                   aria-expanded="false" >Les Formations</a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#tab2Id">Action</a>
-                                    <a class="dropdown-item" href="#tab3Id">Another action</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#tabs4Id"></a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link" href="#" >La Taxe d'apprentissage</a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div class="row side-bar">
-                        <div class="sidebar"></div>
+            {% block header %}
+                <div class="container-fluid">
+                    <div class="row">
+                        <nav class="navbar-expand-sm navbar navbar-light bg-light container-fluid">
+                            <a class="navbar-brand" href="#">
+                                <img src="/images/Logo_Nav" width="30" height="30" alt="Logo du CFA">
+                            </a>
+                            <ul class="nav nav-tabs" id="navId">
+                                <li class="nav-pills dropdown">
+                                    <a class="nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                                       aria-expanded="false" >Le CFA</a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#tab2Id">Liens</a>
+                                        <a class="dropdown-item" href="#tab3Id">Another action</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#tabs4Id"></a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                                       aria-expanded="false" >Les Apprentis</a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#tab2Id">Action</a>
+                                        <a class="dropdown-item" href="#tab3Id">Another action</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#tabs4Id"></a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                                       aria-expanded="false" >Les Employeurs</a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#tab2Id">Action</a>
+                                        <a class="dropdown-item" href="#tab3Id">Another action</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#tabs4Id"></a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                                       aria-expanded="false" >Les Formations</a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#tab2Id">Action</a>
+                                        <a class="dropdown-item" href="#tab3Id">Another action</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#tabs4Id"></a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" href="#" >La Taxe d'apprentissage</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                        <div class="row side-bar">
+                            <div class="sidebar"></div>
+                        </div>
                 </div>
-            </div>
-        {% endblock %}
+            {% endblock %}
 
             {% block body %}
             {% endblock %}
@@ -85,6 +86,7 @@
                                 <li>Email
                                     <div class="minilist"><a href="mailto:contact@cfasms-centre-valdeloire.fr">contact@cfasms-centre-valdeloire.fr</a></div>
                                 </li>
+                                <li>Téléphone
                                     <div class="minilist">+ 33 (0)9 83 38 27 35</div>
                                 </li>
                             </ul>
