@@ -4,6 +4,7 @@ namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -17,8 +18,8 @@ class EventType extends AbstractType
     {
         $builder
             ->add('title',TextType::class, array('label'=>'Nom de l\'évènement'))
-            ->add('date', DateType::class, array('label'=>'Date'))
-            ->add('description', TextType::class, array('label'=>'Description'));
+            ->add('date', DateType::class, array('label'=>'Date', 'widget'=>'single_text', 'format' => 'yyyy-MM-dd  '))
+            ->add('description', TextareaType::class, array('label'=>'Description'));
     }
     /**
      * {@inheritdoc}
