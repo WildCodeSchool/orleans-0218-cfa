@@ -42,7 +42,10 @@ class Partnair
     /**
      * @var string
      * @Assert\NotBlank()
-     * @Assert\Length(min = 2, max = 150, minMessage = "Le nom doit comporter au moins   {{ limit }} caractères ", maxMessage = "Le nom ne doit pas comporter plus de   {{ limit }} caractères ")
+     * @Assert\Length(
+     *     min = 2, max = 150,
+     *      minMessage = "Le nom doit comporter au moins   {{ limit }} caractères ",
+     *      maxMessage = "Le nom ne doit pas comporter plus de   {{ limit }} caractères ")
      * @ORM\Column(name="name", type="string", length=80)
      */
     private $name;
