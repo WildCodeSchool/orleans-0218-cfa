@@ -19,4 +19,7 @@ PHP Symfony 3.4 project
     database_user: your_db_user_wich_is_not_root
     database_password: your_db_password;
   
+  run npm install
+  run bin/console ckeditor:install
+  run bin/console assets:install web
   run a server with php bin/console server:run
