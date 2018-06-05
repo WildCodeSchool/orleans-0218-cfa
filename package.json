@@ -10,8 +10,11 @@
     "@symfony/webpack-encore": "^0.20.1",
     "bootstrap": "^4.1.1",
     "font-awesome": "^4.7.0",
+    "countup.js": "^1.9.3",
     "jquery": "^3.3.1",
+    "jquery.countup.js": "^1.0.1",
     "popper.js": "^1.14.3",
+    "waypoints": "^4.0.1",
     "webpack-notifier": "^1.6.0"
   },
   "devDependencies": {
