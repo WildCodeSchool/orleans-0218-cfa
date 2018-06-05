@@ -20,7 +20,7 @@ class PartnairFixtures extends Fixture
             for($i=0; $i <20; $i++) {
                 $partnair = new Partnair();
                 $partnair->setName($faker->name);
-                $partnair->setImage($faker->imageUrl(80, 80));
+                $partnair->setImage($faker->imageUrl( 80, 80));
                 $partnair->setLink($faker->url);
 
                 $manager->persist($partnair);
