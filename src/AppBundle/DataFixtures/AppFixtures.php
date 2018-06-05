@@ -18,13 +18,15 @@ class AppFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $faker = Factory::create();
+        for($i = 0; $i < 6; $i++) {
+            $event = new Event();
+            $event->setTitle($faker->sentence(6));
+            $event->setDate(new \DateTime());
+            $event->setDescription($faker->text());
 
-        $event = new Event();
-        $event->setTitle($faker->sentence(6));
-        $event->setDate(new \DateTime());
-        $event->setDescription($faker->text());
-
-        $manager->persist($event);
+            $manager->persist($event);
+            $manager->flush();
+        }
         $manager->flush();
     }
 }
