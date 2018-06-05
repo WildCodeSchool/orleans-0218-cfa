@@ -28,7 +28,9 @@ class CoordinatesService
             ]
         );
         $response = $client->request(
-            'GET', 'search/', [
+            'GET',
+            'search/',
+            [
             'query' => [
                 'q' => $address,
                 'postcode' => $zipcode,

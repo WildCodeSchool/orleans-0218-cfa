@@ -28,7 +28,8 @@ class FormationController extends Controller
         $formations = $em->getRepository('AppBundle:Formation')->findAll();
 
         return $this->render(
-            'formation/index.html.twig', array(
+            'formation/index.html.twig',
+            array(
             'formations' => $formations,
             )
         );
@@ -55,7 +56,8 @@ class FormationController extends Controller
         }
 
         return $this->render(
-            'formation/new.html.twig', array(
+            'formation/new.html.twig',
+            array(
             'formation' => $formation,
             'form' => $form->createView(),
             )
@@ -73,7 +75,8 @@ class FormationController extends Controller
         $deleteForm = $this->createDeleteForm($formation);
 
         return $this->render(
-            'formation/show.html.twig', array(
+            'formation/show.html.twig',
+            array(
             'formation' => $formation,
             'delete_form' => $deleteForm->createView(),
             )
@@ -99,7 +102,8 @@ class FormationController extends Controller
         }
 
         return $this->render(
-            'formation/edit.html.twig', array(
+            'formation/edit.html.twig',
+            array(
             'formation' => $formation,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

@@ -17,7 +17,7 @@ class PartnairFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
             $faker = Factory::create();
-        for($i=0; $i <20; $i++) {
+        for ($i=0; $i <20; $i++) {
             $partnair = new Partnair();
             $partnair->setName($faker->name);
             $partnair->setImage($faker->imageUrl(80, 80));
@@ -29,8 +29,5 @@ class PartnairFixtures extends Fixture
             $this->addreference('partnair' . $i, $partnair);
         }
         $manager->flush();
-
-
-
     }
 }

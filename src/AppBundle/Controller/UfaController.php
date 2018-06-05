@@ -29,7 +29,8 @@ class UfaController extends Controller
         $ufas = $em->getRepository('AppBundle:Ufa')->findAll();
 
         return $this->render(
-            'ufa/index.html.twig', array(
+            'ufa/index.html.twig',
+            array(
             'ufas' => $ufas,
             )
         );
@@ -60,7 +61,8 @@ class UfaController extends Controller
         }
 
         return $this->render(
-            'ufa/new.html.twig', array(
+            'ufa/new.html.twig',
+            array(
             'ufa' => $ufa,
             'form' => $form->createView(),
             )
@@ -78,7 +80,8 @@ class UfaController extends Controller
         $deleteForm = $this->createDeleteForm($ufa);
 
         return $this->render(
-            'ufa/show.html.twig', array(
+            'ufa/show.html.twig',
+            array(
             'ufa' => $ufa,
             'delete_form' => $deleteForm->createView(),
             )
@@ -104,7 +107,8 @@ class UfaController extends Controller
         }
 
         return $this->render(
-            'ufa/edit.html.twig', array(
+            'ufa/edit.html.twig',
+            array(
             'ufa' => $ufa,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

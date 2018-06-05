@@ -18,7 +18,6 @@ class PartnairType extends AbstractType
             ->add('name', TextType::class, ['label' => 'Nom'])
             ->add('image', TextType::class, ['label' => 'image'])
             ->add('link', TextType::class, ['label' => 'lien']);
-
     }/**
       * {@inheritdoc}
       */
@@ -38,6 +37,4 @@ class PartnairType extends AbstractType
     {
         return 'appbundle_partnair';
     }
-
-
 }
