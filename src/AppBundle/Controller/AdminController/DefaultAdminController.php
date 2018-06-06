@@ -8,7 +8,6 @@
 
 namespace AppBundle\Controller\AdminController;
 
-
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
@@ -22,5 +21,4 @@ class DefaultAdminController extends Controller
     {
         return $this->render('layoutAdmin.html.twig');
     }
-
 }

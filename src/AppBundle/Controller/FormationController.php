@@ -29,5 +29,4 @@ class FormationController extends Controller
             'formations' => $formations,
         ));
     }
-
 }
