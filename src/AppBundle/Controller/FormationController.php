@@ -49,10 +49,7 @@ class FormationController extends Controller
 
             return $this->redirectToRoute('formation_show', array('id' => $formation->getId()));
         }
-
-        return $this->render('formation/new.html.twig', array('formation' => $formation, 'form' => $form->createView(),
-            )
-        );
+        return $this->render('formation/new.html.twig', array('formation' => $formation, 'form' => $form->createView(),));
     }
 
     /**
@@ -65,9 +62,7 @@ class FormationController extends Controller
     {
         $deleteForm = $this->createDeleteForm($formation);
 
-        return $this->render(
-            'formation/show.html.twig',
-            array('formation' => $formation, 'delete_form' => $deleteForm->createView(),));
+        return $this->render('formation/show.html.twig', array('formation' => $formation, 'delete_form' => $deleteForm->createView(),));
     }
 
     /**
@@ -94,7 +89,6 @@ class FormationController extends Controller
 
     /**
      * Deletes a formation entity.
-     *
      * @Route("/{id}", name="formation_delete")
      * @Method("DELETE")
      */
