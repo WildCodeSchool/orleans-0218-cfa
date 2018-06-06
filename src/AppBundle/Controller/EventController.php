@@ -134,4 +134,19 @@ class EventController extends Controller
             ->getForm()
         ;
     }
+
+    /**
+     * @param Event $events
+     *
+     */
+    public function showHomepageSectionAction(int $limit = 3)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $events = $em->getRepository('AppBundle:Event')->findBy([],['date'=>'DESC'], $limit);
+
+        return $this->render('homepage/events.html.twig', array(
+            'events' => $events,
+        ));
+    }
 }

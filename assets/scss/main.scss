@@ -91,3 +91,10 @@ footer{
   padding: 10px;
 }
 
+#Asidetitle {
+  background-color: $background-nav-footer;
+  color: $color-sidebar;
+  a {
+    color: $gris;
+  }
+}
