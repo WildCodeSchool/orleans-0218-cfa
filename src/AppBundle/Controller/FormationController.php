@@ -27,11 +27,7 @@ class FormationController extends Controller
 
         $formations = $em->getRepository('AppBundle:Formation')->findAll();
 
-        return $this->render('formation/index.html.twig', array(
-                'formations' => $formations,
-            )
-        );
-
+        return $this->render('formation/index.html.twig', array('formations' => $formations,));
     }
 
     /**
@@ -54,12 +50,9 @@ class FormationController extends Controller
             return $this->redirectToRoute('formation_show', array('id' => $formation->getId()));
         }
 
-        return $this->render('formation/new.html.twig', array(
-                'formation' => $formation,
-                'form' => $form->createView(),
+        return $this->render('formation/new.html.twig', array('formation' => $formation, 'form' => $form->createView(),
             )
         );
-
     }
 
     /**
@@ -74,11 +67,7 @@ class FormationController extends Controller
 
         return $this->render(
             'formation/show.html.twig',
-            array(
-                'formation' => $formation,
-                'delete_form' => $deleteForm->createView(),
-            )
-        );
+            array('formation' => $formation, 'delete_form' => $deleteForm->createView(),));
     }
 
     /**
@@ -99,14 +88,8 @@ class FormationController extends Controller
             return $this->redirectToRoute('formation_edit', array('id' => $formation->getId()));
         }
 
-        return $this->render(
-            'formation/edit.html.twig',
-            array(
-                'formation' => $formation,
-                'edit_form' => $editForm->createView(),
-                'delete_form' => $deleteForm->createView(),
-            )
-        );
+        return $this->render('formation/edit.html.twig', array(
+            'formation' => $formation, 'edit_form' => $editForm->createView(), 'delete_form' => $deleteForm->createView(),));
     }
 
     /**
@@ -125,7 +108,6 @@ class FormationController extends Controller
             $em->remove($formation);
             $em->flush();
         }
-
         return $this->redirectToRoute('formation_index');
     }
 
