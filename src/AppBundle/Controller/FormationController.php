@@ -31,6 +31,7 @@ class FormationController extends Controller
                 'formations' => $formations,
             )
         );
+
     }
 
     /**
@@ -58,6 +59,7 @@ class FormationController extends Controller
                 'form' => $form->createView(),
             )
         );
+
     }
 
     /**

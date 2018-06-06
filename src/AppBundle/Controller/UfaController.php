@@ -32,6 +32,7 @@ class UfaController extends Controller
             'ufas' => $ufas,
             )
         );
+
     }
 
     /**
@@ -57,12 +58,12 @@ class UfaController extends Controller
 
             return $this->redirectToRoute('ufa_show', array('id' => $ufa->getId()));
         }
-
         return $this->render('ufa/new.html.twig', array(
                 'ufa' => $ufa,
                 'form' => $form->createView(),
             )
         );
+
     }
 
     /**
@@ -99,7 +100,6 @@ class UfaController extends Controller
 
             return $this->redirectToRoute('ufa_edit', array('id' => $ufa->getId()));
         }
-
         return $this->render('ufa/edit.html.twig', array(
                 'ufa' => $ufa,
                 'edit_form' => $editForm->createView(),
