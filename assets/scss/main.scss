@@ -13,8 +13,6 @@ $white: white;
 
 $color-sidebar: #009fe3;
 $background-nav-footer: #3e423a;
-$white-link: #ffffff;
-
 
 
 li{
@@ -64,6 +62,7 @@ aside {
   background-color: $gris;
 }
 
+
   
 /** Footer **/
 
@@ -71,7 +70,7 @@ footer{
   background-color: $background-nav-footer;
   color:white;
   a {
-    color: $white-link;
+    color: $white;
     &:hover {
       color: $color-sidebar;
     }
@@ -95,3 +94,13 @@ footer{
   padding: 10px;
 }
 
+/** Apprenti **/
+
+.apprentiH1 {
+  background-color: $blue;
+  color: $white;
+}
+
+.apprentiTitle {
+  color:$blue;
+}
