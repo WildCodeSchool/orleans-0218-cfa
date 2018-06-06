@@ -14,10 +14,10 @@ class EventType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function buildForm (FormBuilderInterface $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title',TextType::class, array('label'=>'Nom de l\'évènement'))
+            ->add('title', TextType::class, array('label'=>'Nom de l\'évènement'))
             ->add('date', DateType::class, array(
                 'label'=>'Date',
                 'widget'=>'single_text',
