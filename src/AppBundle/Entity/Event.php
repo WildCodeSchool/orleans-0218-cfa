@@ -45,7 +45,7 @@ class Event
      *
      * @ORM\Column(name="description", type="text")
      *
-     * @Assert\NotBlank(message="Ce champs ne peut pas être vide")
+     * @Assert\NotBlank(message="Ce champ ne peut pas être vide")
      */
     private $description;
 
