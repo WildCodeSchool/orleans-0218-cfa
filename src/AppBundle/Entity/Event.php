@@ -37,6 +37,7 @@ class Event
      * @var \DateTime
      *
      * @ORM\Column(name="date", type="date")
+     * @Assert\Date(message="la valeur ne correspond pas à une date valide")
      */
     private $date;
 

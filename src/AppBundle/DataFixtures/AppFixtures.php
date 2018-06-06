@@ -25,7 +25,6 @@ class AppFixtures extends Fixture
             $event->setDescription($faker->text());
 
             $manager->persist($event);
-            $manager->flush();
         }
         $manager->flush();
     }
