@@ -29,6 +29,6 @@ class DefaultController extends Controller
      */
     public function apprentiView()
     {
-        return $this->render('apprenti/apprenti.html.twig');
+        return $this->render('apprenti/formation.twig');
     }
 }
