@@ -10,14 +10,13 @@ namespace AppBundle\Controller\AdminController;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Component\HttpFoundation\Request;
 
-class DefaultAdminController extends Controller
+class AdminController extends Controller
 {
     /**
      * @Route("/admin", name="admin_homepage")
      */
-    public function indexAction(Request $request)
+    public function indexAction()
     {
         return $this->render('layoutAdmin.html.twig');
     }
