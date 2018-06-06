@@ -10,7 +10,7 @@
             <div class="col-6">
                 {{ form_start(form) }}
                 {{ form_widget(form) }}
-                <input class="btn btn-outline-primary" type="submit" value="Créer" />
+                <input class="btn btn-outline-primary" type="submit" value="Créer" >
                 {{ form_end(form) }}
             </div>
             <div class="col-6 border-left">
@@ -20,7 +20,7 @@
                         <li>
                             <a href="{{ path('partnair_show', { 'id': partnair.id }) }}">{{ partnair.name }}</a>
                             <a href="{{ path('partnair_edit', { 'id': partnair.id }) }}">
-                            <input class="btn btn-outline-primary btn-sm" type="submit" value="edit" /></a>
+                            <input class="btn btn-outline-primary btn-sm" type="submit" value="edit" ></a>
                         </li>
                     </ul>
                 {% endfor %}

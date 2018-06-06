@@ -5,6 +5,7 @@
  * Date: 05/06/18
  * Time: 15:52
  */
+
 namespace AppBundle\DataFixtures;
 
 use AppBundle\Entity\Partnair;
@@ -16,15 +17,14 @@ class PartnairFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
-            $faker = Factory::create();
-        for ($i=0; $i <20; $i++) {
+        $faker = Factory::create();
+        for ($i = 0; $i < 20; $i++) {
             $partnair = new Partnair();
             $partnair->setName($faker->name);
             $partnair->setImage($faker->imageUrl(80, 80));
             $partnair->setLink($faker->url);
 
             $manager->persist($partnair);
-            $manager->flush();
 
             $this->addreference('partnair' . $i, $partnair);
         }

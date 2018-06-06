@@ -34,8 +34,13 @@ class Partnair
      * @Assert\Url(
      *    message = "L'adresse du lien '{{ value }}' n'est pas une url valide",
      * )
+     * @Assert\Length(
+     *          min = 4, max = 255,
+     *     minMessage = "Le lien doit comporter au moins   {{ limit }} caractères ",
+     *     maxMessage = "Le lien ne doit pas comporter plus de   {{ limit }} caractères "
+     * )
      *
-     * @ORM\Column(name="link", type="string", length=150)
+     * @ORM\Column(name="link", type="string", length=255)
      */
     private $link;
 
@@ -43,7 +48,7 @@ class Partnair
      * @var string
      * @Assert\NotBlank()
      * @Assert\Length(
-*          min = 2, max = 150,
+*          min = 2, max = 80,
      *     minMessage = "Le nom doit comporter au moins   {{ limit }} caractères ",
      *     maxMessage = "Le nom ne doit pas comporter plus de   {{ limit }} caractères "
      * )

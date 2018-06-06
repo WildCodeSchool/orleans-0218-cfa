@@ -16,8 +16,8 @@ class PartnairType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, ['label' => 'Nom'])
-            ->add('image', TextType::class, ['label' => 'image'])
-            ->add('link', TextType::class, ['label' => 'lien']);
+            ->add('image', TextType::class, ['label' => 'Image'])
+            ->add('link', TextType::class, ['label' => 'Lien']);
     }/**
       * {@inheritdoc}
       */
