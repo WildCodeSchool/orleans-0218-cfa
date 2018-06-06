@@ -30,4 +30,5 @@ class PartnairFixtures extends Fixture
         }
         $manager->flush();
     }
+
 }
