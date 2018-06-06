@@ -110,17 +110,15 @@ class PartnairController extends Controller
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('partnair_edit', array(
-                    'id' => $partnair->getId()
-                )
-            );
+                'id' => $partnair->getId()
+            ));
         }
 
         return $this->render('partnair/edit.html.twig', array(
-                'partnair' => $partnair,
-                'edit_form' => $editForm->createView(),
-                'delete_form' => $deleteForm->createView(),
-            )
-        );
+            'partnair' => $partnair,
+            'edit_form' => $editForm->createView(),
+            'delete_form' => $deleteForm->createView(),
+        ));
     }
 
     /**

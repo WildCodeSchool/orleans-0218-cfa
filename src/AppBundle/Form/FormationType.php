@@ -17,23 +17,20 @@ class FormationType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, array(
-                    'label' => 'Nom de la formation'
-                )
-            )
+                'label' => 'Nom de la formation'
+            ))
             ->add('shortPresentation', CKEditorType::class, array(
-                    'config' => array(
-                        'language' => 'fr',
-                    ),
-                    'label' => 'Présentation',
-                )
-            )
+                'config' => array(
+                    'language' => 'fr'
+                ),
+                'label' => 'Présentation',
+            ))
             ->add('jobDescription', CKEditorType::class, array(
-                    'config' => array(
-                        'language' => 'fr',
-                    ),
-                    'label' => 'Description'
-                )
-            );
+                'config' => array(
+                    'language' => 'fr'
+                ),
+                'label' => 'Description'
+            ));
     }
 
     /**
