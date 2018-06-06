@@ -27,7 +27,10 @@ class FormationController extends Controller
 
         $formations = $em->getRepository('AppBundle:Formation')->findAll();
 
-        return $this->render('formation/index.html.twig', array('formations' => $formations,));
+        return $this->render('formation/index.html.twig', array(
+                'formations' => $formations,
+            )
+        );
     }
 
     /**
@@ -47,10 +50,15 @@ class FormationController extends Controller
             $em->persist($formation);
             $em->flush();
 
-            return $this->redirectToRoute('formation_show', array('id' => $formation->getId()));
+            return $this->redirectToRoute('formation_show', array(
+                    'id' => $formation->getId()
+                )
+            );
         }
         return $this->render('formation/new.html.twig', array(
-            'formation' => $formation, 'form' => $form->createView(),));
+                'formation' => $formation, 'form' => $form->createView(),
+            )
+        );
     }
 
     /**
@@ -64,7 +72,10 @@ class FormationController extends Controller
         $deleteForm = $this->createDeleteForm($formation);
 
         return $this->render('formation/show.html.twig', array(
-            'formation' => $formation, 'delete_form' => $deleteForm->createView(),));
+                'formation' => $formation,
+                'delete_form' => $deleteForm->createView(),
+            )
+        );
     }
 
     /**
@@ -83,12 +94,17 @@ class FormationController extends Controller
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('formation_edit', array(
-                'id' => $formation->getId()));
+                    'id' => $formation->getId()
+                )
+            );
         }
 
         return $this->render('formation/edit.html.twig', array(
-            'formation' => $formation, 'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),));
+                'formation' => $formation,
+                'edit_form' => $editForm->createView(),
+                'delete_form' => $deleteForm->createView(),
+            )
+        );
     }
 
     /**

@@ -28,7 +28,10 @@ class UfaController extends Controller
 
         $ufas = $em->getRepository('AppBundle:Ufa')->findAll();
 
-        return $this->render('ufa/index.html.twig', array('ufas' => $ufas,));
+        return $this->render('ufa/index.html.twig', array(
+                'ufas' => $ufas,
+            )
+        );
     }
 
     /**
@@ -56,7 +59,9 @@ class UfaController extends Controller
         }
         return $this->render('ufa/new.html.twig', array(
                 'ufa' => $ufa,
-                'form' => $form->createView(),));
+                'form' => $form->createView(),
+            )
+        );
     }
 
     /**
@@ -71,7 +76,9 @@ class UfaController extends Controller
 
         return $this->render('ufa/show.html.twig', array(
                 'ufa' => $ufa,
-                'delete_form' => $deleteForm->createView(),));
+                'delete_form' => $deleteForm->createView(),
+            )
+        );
     }
 
     /**
@@ -89,12 +96,17 @@ class UfaController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('ufa_edit', array('id' => $ufa->getId()));
+            return $this->redirectToRoute('ufa_edit', array(
+                    'id' => $ufa->getId()
+                )
+            );
         }
         return $this->render('ufa/edit.html.twig', array(
                 'ufa' => $ufa,
                 'edit_form' => $editForm->createView(),
-                'delete_form' => $deleteForm->createView(),));
+                'delete_form' => $deleteForm->createView(),
+            )
+        );
     }
 
     /**

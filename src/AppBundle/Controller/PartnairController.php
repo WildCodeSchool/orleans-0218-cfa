@@ -31,7 +31,7 @@ class PartnairController extends Controller
         return $this->render(
             'partnair/index.html.twig',
             array(
-            'partnairs' => $partnairs,
+                'partnairs' => $partnairs,
             )
         );
     }
@@ -60,16 +60,17 @@ class PartnairController extends Controller
             return $this->redirectToRoute(
                 'partnair_show',
                 array(
-                'partnairs' => $partnairs, 'id' => $partnair->getId())
+                    'partnairs' => $partnairs,
+                    'id' => $partnair->getId(),
+                )
             );
         }
 
         return $this->render(
             'partnair/new.html.twig',
             array(
-            'partnairs' => $partnairs,
-            'form' => $form->createView(),
-
+                'partnairs' => $partnairs,
+                'form' => $form->createView(),
             )
         );
     }
@@ -87,8 +88,8 @@ class PartnairController extends Controller
         return $this->render(
             'partnair/show.html.twig',
             array(
-            'partnair' => $partnair,
-            'delete_form' => $deleteForm->createView(),
+                'partnair' => $partnair,
+                'delete_form' => $deleteForm->createView(),
             )
         );
     }
@@ -108,15 +109,16 @@ class PartnairController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('partnair_edit', array('id' => $partnair->getId()));
+            return $this->redirectToRoute('partnair_edit', array(
+                    'id' => $partnair->getId()
+                )
+            );
         }
 
-        return $this->render(
-            'partnair/edit.html.twig',
-            array(
-            'partnair' => $partnair,
-            'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+        return $this->render('partnair/edit.html.twig', array(
+                'partnair' => $partnair,
+                'edit_form' => $editForm->createView(),
+                'delete_form' => $deleteForm->createView(),
             )
         );
     }
