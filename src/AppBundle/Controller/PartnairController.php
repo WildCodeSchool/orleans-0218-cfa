@@ -28,12 +28,9 @@ class PartnairController extends Controller
 
         $partnairs = $em->getRepository('AppBundle:Partnair')->findAll();
 
-        return $this->render(
-            'partnair/index.html.twig',
-            array(
+        return $this->render('partnair/index.html.twig', array(
                 'partnairs' => $partnairs,
-            )
-        );
+            ));
     }
 
     /**
@@ -47,7 +44,6 @@ class PartnairController extends Controller
 
 
         $em = $this->getDoctrine()->getManager();
-        $partnairs = $em->getRepository('AppBundle:Partnair')->findAll();
 
         $newPartnair = new Partnair();
         $form = $this->createForm('AppBundle\Form\PartnairType', $newPartnair);
@@ -57,22 +53,15 @@ class PartnairController extends Controller
             $em->persist($newPartnair);
             $em->flush();
 
-            return $this->redirectToRoute(
-                'partnair_show',
-                array(
+            return $this->redirectToRoute('partnair_show', array(
                     'partnairs' => $partnairs,
                     'id' => $partnair->getId(),
-                )
-            );
+                ));
         }
 
-        return $this->render(
-            'partnair/new.html.twig',
-            array(
-                'partnairs' => $partnairs,
+        return $this->render('partnair/new.html.twig', array(
                 'form' => $form->createView(),
-            )
-        );
+            ));
     }
 
     /**
@@ -85,13 +74,10 @@ class PartnairController extends Controller
     {
         $deleteForm = $this->createDeleteForm($partnair);
 
-        return $this->render(
-            'partnair/show.html.twig',
-            array(
+        return $this->render('partnair/show.html.twig', array(
                 'partnair' => $partnair,
                 'delete_form' => $deleteForm->createView(),
-            )
-        );
+            ));
     }
 
     /**
