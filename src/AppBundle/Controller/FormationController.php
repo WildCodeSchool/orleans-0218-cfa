@@ -49,7 +49,8 @@ class FormationController extends Controller
 
             return $this->redirectToRoute('formation_show', array('id' => $formation->getId()));
         }
-        return $this->render('formation/new.html.twig', array('formation' => $formation, 'form' => $form->createView(),));
+        return $this->render('formation/new.html.twig', array(
+            'formation' => $formation, 'form' => $form->createView(),));
     }
 
     /**
@@ -62,7 +63,8 @@ class FormationController extends Controller
     {
         $deleteForm = $this->createDeleteForm($formation);
 
-        return $this->render('formation/show.html.twig', array('formation' => $formation, 'delete_form' => $deleteForm->createView(),));
+        return $this->render('formation/show.html.twig', array(
+            'formation' => $formation, 'delete_form' => $deleteForm->createView(),));
     }
 
     /**
@@ -80,7 +82,8 @@ class FormationController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('formation_edit', array('id' => $formation->getId()));
+            return $this->redirectToRoute('formation_edit', array(
+                'id' => $formation->getId()));
         }
 
         return $this->render('formation/edit.html.twig', array(
