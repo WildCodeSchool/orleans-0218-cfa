@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <section class="formation title-style">
+        <div class="container-fluid">
+            <h2 class="text-center title-style">Les formations</h2>
+            <div class="row">
+                <div class="col-md-4 col-sm-12 border-right">
+                    {% for formation in formations %}
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                            <a class="link" href="{{ path('formation', { 'id': formation.id }) }}">
+                                {{ formation.name }}
+                            </a>
+                            </li>
+                        </ul>
+                    {% endfor %}
+                </div>
+                <div class="col-md-8 col-sm-12">
+                    <h3 class="text-center mb-4">{{ formation.name }}</h3>
+                    <p>{{ formation.shortPresentation }}</p>
+                    <p class="mt-5">{{ formation.jobDescription }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
