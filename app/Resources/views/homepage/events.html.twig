@@ -12,13 +12,14 @@
               {% for event in events %}
                   <li>
                       <tr>
-                          <td>{% if event.date %}{{ event.date|date('Y-m-d') }}{% endif %}</td>
-                          <td><a href="{{ path('event_show', { 'id': event.id }) }}">{{ event.title }}</a></td>
-                          <td>{{ event.description }}</td>
+                          <p>{% if event.date %}{{ event.date|date('Y-m-d') }}{% endif %}
+                              <a href="{{ path('event_show', { 'id': event.id }) }}">{{ event.title }}</a></p>
+                          <p>{{ event.description }}</p>
                       </tr>
                   </li>
               {% endfor %}
               </ul>
+              <p><span class="float-right"><a href="#">Plus d'actualités ...</a></span></p>
           </div>
       </div>
   </div>
