@@ -1,42 +1,48 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: wilder14
+ * Date: 05/06/18
+ * Time: 16:59
+ */
 
-namespace AppBundle\Controller;
+namespace AppBundle\Controller\AdminController;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Formation;
 
 /**
  * Formation controller.
  *
- * @Route("formation")
+ * @Route("admin")
  */
-class FormationController extends Controller
+class AdminFormationController extends Controller
 {
     /**
      * Lists all formation entities.
      *
-     * @Route("/", name="formation")
+     * @Route("/formation", name="formation_admin_index")
      * @Method("GET")
      */
+
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
         $formations = $em->getRepository('AppBundle:Formation')->findAll();
 
-        return $this->render('homepage/formation.html.twig', array(
+        return $this->render('formation/index.html.twig', array(
             'formations' => $formations,
         ));
     }
 
-
     /**
      * Creates a new formation entity.
      *
-     * @Route("/new", name="formation_new")
+     * @Route("/formation/new", name="formation_new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
@@ -50,19 +56,19 @@ class FormationController extends Controller
             $em->persist($formation);
             $em->flush();
 
-            return $this->redirectToRoute('formation_show', array(
-                'id' => $formation->getId()
-            ));
+            return $this->redirectToRoute('formation_show', array('id' => $formation->getId()));
         }
+
         return $this->render('formation/new.html.twig', array(
-            'formation' => $formation, 'form' => $form->createView(),
+            'formation' => $formation,
+            'form' => $form->createView(),
         ));
     }
 
     /**
      * Finds and displays a formation entity.
      *
-     * @Route("/{id}", name="formation_show")
+     * @Route("/formation/{id}", name="formation_show")
      * @Method("GET")
      */
     public function showAction(Formation $formation)
@@ -78,7 +84,7 @@ class FormationController extends Controller
     /**
      * Displays a form to edit an existing formation entity.
      *
-     * @Route("/{id}/edit", name="formation_edit")
+     * @Route("/formation/{id}/edit", name="formation_edit")
      * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, Formation $formation)
@@ -90,9 +96,7 @@ class FormationController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('formation_edit', array(
-                'id' => $formation->getId()
-            ));
+            return $this->redirectToRoute('formation_edit', array('id' => $formation->getId()));
         }
 
         return $this->render('formation/edit.html.twig', array(
@@ -104,7 +108,8 @@ class FormationController extends Controller
 
     /**
      * Deletes a formation entity.
-     * @Route("/{id}", name="formation_delete")
+     *
+     * @Route("/formation/{id}", name="formation_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Formation $formation)
@@ -117,6 +122,7 @@ class FormationController extends Controller
             $em->remove($formation);
             $em->flush();
         }
+
         return $this->redirectToRoute('formation_index');
     }
 
@@ -132,6 +138,7 @@ class FormationController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('formation_delete', array('id' => $formation->getId())))
             ->setMethod('DELETE')
-            ->getForm();
+            ->getForm()
+            ;
     }
 }

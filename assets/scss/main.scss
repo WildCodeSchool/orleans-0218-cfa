@@ -1,4 +1,7 @@
+
 @import "../../node_modules/bootstrap/dist/css/bootstrap.css";
+
+
 
 
 $blue: #009fe3;
@@ -7,10 +10,9 @@ $vert: #23a638;
 $gris:  #f2f2f2;
 $black: black;
 $white: white;
+
 $color-sidebar: #009fe3;
 $background-nav-footer: #3e423a;
-$white-link: #ffffff;
-
 
 
 li{
@@ -60,6 +62,7 @@ aside {
   background-color: $gris;
 }
 
+
   
 /** Footer **/
 
@@ -67,7 +70,7 @@ footer{
   background-color: $background-nav-footer;
   color:white;
   a {
-    color: $white-link;
+    color: $white;
     &:hover {
       color: $color-sidebar;
     }
@@ -92,7 +95,15 @@ footer{
 }
 
 
-/** Apprenti**/
+#Asidetitle {
+  background-color: $background-nav-footer;
+  color: $color-sidebar;
+  a {
+    color: $gris;
+  }
+}
+
+/** Apprenti **/
 
 .remember {
   border: 1px solid #006D80;
@@ -104,3 +115,13 @@ remember2 {
   color: #3C2000;
   font-size: 60px;
 }
+
+.apprentiH1 {
+  background-color: $blue;
+  color: $white;
+}
+
+.apprentiTitle {
+  color:$blue;
+}
+

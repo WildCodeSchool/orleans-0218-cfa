@@ -16,28 +16,13 @@ class DefaultController extends Controller
         return $this->render('homepage/homepage.html.twig');
     }
 
-    /**
- * @Route("/faq", name="faqpage")
- */
+     /**
+     * @Route("/faq", name="faqpage")
+     */
     public function faqView()
     {
         return $this->render('faq/faq.html.twig');
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     /**
@@ -46,6 +31,14 @@ class DefaultController extends Controller
     public function statutView()
     {
         return $this->render('apprenti/statut.html.twig');
+    }
+
+    /**
+     * @Route("/apprenti/formation", name="formationapprentipage")
+     */
+    public function apprentiView()
+    {
+        return $this->render('apprenti/formation.twig');
     }
 
 }

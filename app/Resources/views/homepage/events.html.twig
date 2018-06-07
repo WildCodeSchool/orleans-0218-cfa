@@ -1,0 +1,24 @@
+{% block body %}
+  <div class="container-fluid">
+      <div class="row side bar">
+          <h2>NOS ACTUALITES</h2>
+      </div>
+      <div class="row">
+          <div class="col-4" id="Asidetitle">
+              <h3><a href="#"> | Retrouvez toutes nos actualités et évènements à venir</a></h3>
+          </div>
+          <div class="col-8">
+              <ul>
+              {% for event in events %}
+                  <li>
+                      <p>{% if event.date %}{{ event.date|date('Y-m-d') }}{% endif %}
+                          <a href="{{ path('event_show', { 'id': event.id }) }}">{{ event.title }}</a></p>
+                      <p>{{ event.description }}</p>
+                  </li>
+              {% endfor %}
+              </ul>
+              <p><span class="float-right"><a href="#">Plus d'actualités ...</a></span></p>
+          </div>
+      </div>
+  </div>
+{% endblock %}
