@@ -6,6 +6,8 @@
   
   {% include 'homepage/cfa.html.twig' %}
 
+  {{ render(controller('AppBundle:Event:showHomepageSection')) }}
+
 {% endblock %}
 
 {% block javascripts %}{% endblock %}
