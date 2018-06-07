@@ -17,10 +17,35 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/faq", name="faqpage")
-     */
+ * @Route("/faq", name="faqpage")
+ */
     public function faqView()
     {
         return $this->render('faq/faq.html.twig');
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * @Route("/apprenti/statut", name="statutapprentipage")
+     */
+    public function statutView()
+    {
+        return $this->render('apprenti/statut.html.twig');
+    }
+
 }
