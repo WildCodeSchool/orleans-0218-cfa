@@ -31,6 +31,4 @@ class CFAType extends AbstractType
     {
         return 'appbundle_cfa';
     }
-
-
 }
