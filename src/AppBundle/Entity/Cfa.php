@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * CFA
+ * Cfa
  *
  * @ORM\Table(name="c_f_a")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\CFARepository")
  */
-class CFA
+class Cfa
 {
     /**
      * @var int
@@ -24,7 +24,7 @@ class CFA
     /**
      * @var string
      *
-     * @ORM\Column(name="Text_President", type="string", length=45)
+     * @ORM\Column(name="text_president", type="text")
      */
     private $textPresident;
 
@@ -51,7 +51,7 @@ class CFA
      *
      * @param string $textPresident
      *
-     * @return CFA
+     * @return Cfa
      */
     public function setTextPresident($textPresident)
     {
@@ -75,7 +75,7 @@ class CFA
      *
      * @param string $historical
      *
-     * @return CFA
+     * @return Cfa
      */
     public function setHistorical($historical)
     {

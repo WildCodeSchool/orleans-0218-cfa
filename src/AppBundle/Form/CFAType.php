@@ -20,7 +20,7 @@ class CFAType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\CFA'
+            'data_class' => 'AppBundle\Entity\Cfa'
         ));
     }
 

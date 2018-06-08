@@ -6,7 +6,7 @@ $background-nav-footer: #3e423a;
 $vert: #23a638;
 $gris:  #f2f2f2;
 $black: black;
-$white: white;
+$color-basic: white;
 $color-sidebar: #009fe3;
 $background-nav-footer: #3e423a;
 $white-link: #ffffff;
@@ -31,7 +31,7 @@ li{
 }
 
 h2{
-  color: $white;
+  color: $color-basic;
   font-family: "Roboto Slab";
 }
 
@@ -47,14 +47,14 @@ h2{
 }
 
 .count-up {
-  color: $white;
+  color: $color-basic;
   padding: 20px;
 
 }
 
 
 .counter {
-  background-color: $white;
+  background-color: $color-basic;
   color: $vert;
   display: table-cell;
   margin:1.5%;
@@ -74,7 +74,7 @@ aside {
 }
 
 .cfa-part {
-  background-color: $white;
+  background-color: $color-basic;
   font-family: 'Roboto Slab';
   font-size: large;
 }
