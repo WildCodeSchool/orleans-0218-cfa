@@ -25,7 +25,7 @@ class CfaController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $cfas = $em->getRepository('Cfa.php')->findAll();
+        $cfas = $em->getRepository('Cfa')->findAll();
 
         return $this->render('cfa/index.html.twig', array(
             'cfas' => $cfas,
@@ -53,7 +53,7 @@ class CfaController extends Controller
         }
 
         return $this->render('cfa/new.html.twig', array(
-            'cFA' => $cfa,
+            'cfa' => $cfa,
             'form' => $form->createView(),
         ));
     }
@@ -69,7 +69,7 @@ class CfaController extends Controller
         $deleteForm = $this->createDeleteForm($cfa);
 
         return $this->render('cfa/show.html.twig', array(
-            'cFA' => $cfa,
+            'cfa' => $cfa,
             'delete_form' => $deleteForm->createView(),
         ));
     }
@@ -93,7 +93,7 @@ class CfaController extends Controller
         }
 
         return $this->render('cfa/edit.html.twig', array(
-            'cFA' => $cfa,
+            'cfa' => $cfa,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
