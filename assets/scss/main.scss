@@ -1,4 +1,7 @@
+
 @import "../../node_modules/bootstrap/dist/css/bootstrap.css";
+
+
 
 
 $blue: #009fe3;
@@ -17,6 +20,7 @@ $shadow-grey: #AAAAAA;
   font-family: "Roboto Slab";
   @import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
 }
+
 
 .body{
   font-family: "Roboto Slab";
@@ -89,7 +93,7 @@ footer{
   background-color: $background-nav-footer;
   color:white;
   a {
-    color: $white-link;
+    color: $white;
     &:hover {
       color: $color-sidebar;
     }
@@ -111,5 +115,36 @@ footer{
   height: 100%;
   background: radial-gradient(circle at top left,$vert 15%, $color-sidebar 40%);
   padding: 20px;
+}
+
+
+.asidetitle {
+  background-color: $background-nav-footer;
+  color: $color-sidebar;
+  a {
+    color: $gris;
+  }
+}
+
+/** Apprenti **/
+
+.remember {
+  border: 1px solid #006D80;
+  border-radius: 24px;
+  color: #3C2000;
+}
+
+.remember2 {
+  color: #3C2000;
+  font-size: 60px;
+}
+
+.apprentiH1 {
+  background-color: $blue;
+  color: $white;
+}
+
+.apprentiTitle {
+  color:$blue;
 }
 

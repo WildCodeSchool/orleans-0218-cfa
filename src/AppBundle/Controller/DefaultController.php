@@ -23,4 +23,20 @@ class DefaultController extends Controller
     {
         return $this->render('faq/faq.html.twig');
     }
+
+    /**
+     * @Route("/apprenti/statut", name="statutapprentipage")
+     */
+    public function statutView()
+    {
+        return $this->render('apprenti/statut.html.twig');
+    }
+
+    /**
+     * @Route("/apprenti/formation", name="formationapprentipage")
+     */
+    public function apprentiView()
+    {
+        return $this->render('apprenti/formation.html.twig');
+    }
 }
