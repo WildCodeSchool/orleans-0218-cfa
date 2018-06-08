@@ -25,7 +25,7 @@ class CfaController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $cfas = $em->getRepository('Cfa')->findAll();
+        $cfas = $em->getRepository(Cfa::class)->findAll();
 
         return $this->render('cfa/index.html.twig', array(
             'cfas' => $cfas,
