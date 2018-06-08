@@ -93,7 +93,7 @@ footer{
   background-color: $background-nav-footer;
   color:white;
   a {
-    color: $white;
+    color: $color-basic;
     &:hover {
       color: $color-sidebar;
     }
@@ -141,7 +141,7 @@ footer{
 
 .apprentiH1 {
   background-color: $blue;
-  color: $white;
+  color: $color-basic;
 }
 
 .apprentiTitle {
