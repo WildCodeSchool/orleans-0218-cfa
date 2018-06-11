@@ -30,7 +30,7 @@ class FormationController extends Controller
         $formation = $em->getRepository('AppBundle:Formation')->findOneBy(['id' => $id]);
 
 
-        return $this->render('homepage/formation.html.twig', array(
+        return $this->render('formation/formation.html.twig', array(
             'formations' => $formations,
             'formation' => $formation,
         ));
