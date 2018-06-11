@@ -265,7 +265,6 @@ class Ufa
 
     /**
      * @return $this
-     *
      */
 
     public function setLatitude($latitude)

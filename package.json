@@ -9,6 +9,7 @@
   "dependencies": {
     "@symfony/webpack-encore": "^0.20.1",
     "bootstrap": "^4.1.1",
+    "font-awesome": "^4.7.0",
     "countup.js": "^1.9.3",
     "jquery": "^3.3.1",
     "jquery.countup.js": "^1.0.1",
@@ -17,6 +18,7 @@
     "webpack-notifier": "^1.6.0"
   },
   "devDependencies": {
+    "font-awesome-loader": "^1.0.2",
     "node-sass": "^4.9.0",
     "popper": "^1.0.1",
     "sass-loader": "^7.0.1"

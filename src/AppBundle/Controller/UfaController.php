@@ -56,7 +56,6 @@ class UfaController extends Controller
 
             return $this->redirectToRoute('ufa_show', array('id' => $ufa->getId()));
         }
-
         return $this->render('ufa/new.html.twig', array(
             'ufa' => $ufa,
             'form' => $form->createView(),
@@ -94,9 +93,10 @@ class UfaController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('ufa_edit', array('id' => $ufa->getId()));
+            return $this->redirectToRoute('ufa_edit', array(
+                'id' => $ufa->getId()
+            ));
         }
-
         return $this->render('ufa/edit.html.twig', array(
             'ufa' => $ufa,
             'edit_form' => $editForm->createView(),
@@ -120,7 +120,6 @@ class UfaController extends Controller
             $em->remove($ufa);
             $em->flush();
         }
-
         return $this->redirectToRoute('ufa_index');
     }
 
@@ -136,7 +135,6 @@ class UfaController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('ufa_delete', array('id' => $ufa->getId())))
             ->setMethod('DELETE')
-            ->getForm()
-        ;
+            ->getForm();
     }
 }
