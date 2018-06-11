@@ -21,7 +21,7 @@ class FormationController extends Controller
      * @Route("/{id}", name="formation")
      * @Method("GET")
      */
-    public function indexAction($id)
+    public function indexAction(int $id)
     {
         $em = $this->getDoctrine()->getManager();
 
