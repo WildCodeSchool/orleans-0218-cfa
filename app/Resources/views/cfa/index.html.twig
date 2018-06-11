@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Cfas list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Textpresident</th>
+                <th>Historical</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cFA in cFAs %}
+            <tr>
+                <td><a href="{{ path('cfa_show', { 'id': cFA.id }) }}">{{ cFA.id }}</a></td>
+                <td>{{ cFA.textPresident }}</td>
+                <td>{{ cFA.historical }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('cfa_show', { 'id': cFA.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('cfa_edit', { 'id': cFA.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('cfa_new') }}">Create a new cFA</a>
+        </li>
+    </ul>
+{% endblock %}
