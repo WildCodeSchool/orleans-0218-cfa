@@ -56,7 +56,7 @@ class AdminFormationController extends Controller
             $em->persist($formation);
             $em->flush();
 
-            return $this->redirectToRoute('formation_show', array('id' => $formation->getId()));
+            return $this->redirectToRoute('formation_admin_show', array('id' => $formation->getId()));
         }
 
         return $this->render('formation/new.html.twig', array(

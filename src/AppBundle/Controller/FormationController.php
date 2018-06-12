@@ -26,7 +26,7 @@ class FormationController extends Controller
 
         $formations = $em->getRepository('AppBundle:Formation')->findAll();
 
-        return $this->render('formation/formation.html.twig', array(
+        return $this->render('formation/public/formation.html.twig', array(
             'formations' => $formations,
             'formation' => $formation,
         ));
