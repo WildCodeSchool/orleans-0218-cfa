@@ -16,12 +16,12 @@ $white-link: #ffffff;
 $green:#5fbda3;
 $shadow-grey: #AAAAAA;
 $fontText: "Roboto Slab";
+$remember: #cf482a;
 
 @font-face {
   font-family: "Roboto Slab";
   @import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
 }
-
 
 body {
   font-family: $fontText;
@@ -135,7 +135,7 @@ footer{
 
 .rememberTitle {
   font-size: 30px;
-  color: $blue;
+  color: $remember;
   text-align: center;
   top: 5px;
   width: 300px;
@@ -148,7 +148,7 @@ footer{
   margin: 10px;
   text-align: left;
   padding: 20px 10px 20px 10px;
-  border: 1px solid $blue;
+  border: 1px solid $remember;
   border-radius: 10px;
 }
 
