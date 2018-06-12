@@ -22,7 +22,6 @@ $fontText: "Roboto Slab";
   @import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
 }
 
-
 body {
   font-family: $fontText;
 }
@@ -32,7 +31,6 @@ li{
   list-style: none;
   margin-top: 10px;
   font-size: large;
-
 }
 
 h2{
@@ -52,9 +50,7 @@ h2{
 .count-up {
   color: $color-basic;
   padding: 20px;
-
 }
-
 
 .counter {
   background-color: $color-basic;
@@ -95,7 +91,6 @@ footer{
       color: $color-sidebar;
     }
   }
-
 }
 
 .minilist{
@@ -136,7 +131,6 @@ footer{
   font-size: 60px;
 }
 
-
 .style-subtitle {
   color:$vert;
 }
@@ -154,16 +148,30 @@ footer{
   background-size: 100% 75%;
   width: 100%;
   height: 350px;
-  margin-bottom: 20px;
+}
+
+/** faq **/
+
+.question {
+  color: $vert;
+}
+
+.background-faq {
+  background-image: url("/images/faq.jpg");
+   background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 75%;
+  width: 100%;
+  height: 350px;
 }
 
 .style-page {
-  padding: 2px 10px 2px 5px; /* Dans l'ordre: padding-top padding-right padding-bottom padding-left */
+  padding: 2px 10px 2px 5px;
   border-left: 5px solid $vert;
 }
 
 .link-formation {
-  color: black !important;
+  color:black !important;
   &:hover {
     color: $vert;
   }
