@@ -5,25 +5,58 @@
 
 
 $blue: #009fe3;
-$background-nav-footer: #3e423a;
-$vert: #23a638;
-$gris:  #f2f2f2;
+$background-nav-footer: #222222;
+$vert: #18ba60;
+$gris:  #888888;
 $black: black;
 $color-basic: white;
 $color-sidebar: #009fe3;
-$background-nav-footer: #3e423a;
 $white-link: #ffffff;
-$green:#5fbda3;
+$green: #5fbda3;
 $shadow-grey: #AAAAAA;
 
 @font-face {
-  font-family: "Roboto Slab";
-  @import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+  font-family: 'Poppins';
+  @import url('https://fonts.googleapis.com/css?family=Poppins');
 }
 
-
-.body{
+@font-face {
   font-family: "Roboto Slab";
+  @import url('http://fonts.googleapis.com/css?family=Roboto+Slab');
+}
+
+body{
+  /**font-family: "Roboto Slab";**/
+  font-family: "Poppins";
+}
+
+/**Navbar**/
+
+.title-cfa{
+  color: $color-basic;
+  font-size: 25px;
+}
+
+.logo{
+  width: 175px;
+  height: 150px;
+}
+
+.nav-tabs{
+  border-bottom: none;
+  margin-left: 47em;
+}
+
+.nav-link{
+  color: $black;
+}
+
+.nav-link:hover{
+  color: $vert;
+}
+
+.dropdown-item:hover{
+  background-color: $vert;
 }
 
 li{
@@ -31,18 +64,21 @@ li{
   list-style: none;
   margin-top: 10px;
   font-size: large;
+}
 
+.logo{
+  width: 185px;
+  height: 150px;
 }
 
 h2{
   color: $color-basic;
-  font-family: "Roboto Slab";
+  font-family: "Poppins";
 }
 
 .title-style {
   margin-bottom: 50px;
   margin-top: 50px;
-
 }
 
 .d-block {
@@ -66,7 +102,7 @@ h2{
   width: 115px;
   height:115px;
   vertical-align: middle;
-  font-family: "Roboto Slab";
+  font-family: "Poppins";
   font-size:50px;
 }
 
@@ -79,23 +115,23 @@ aside {
 
 .cfa-part {
   background-color: $color-basic;
-  font-family: 'Roboto Slab';
+  font-family: 'Poppins';
   font-size: large;
 }
 
 .btn-success{
 box-shadow: 8px 8px 8px $shadow-grey ;
 }
-  
+
 /** Footer **/
 
 footer{
   background-color: $background-nav-footer;
   color:white;
   a {
-    color: $color-basic;
+    color: $gris;
     &:hover {
-      color: $color-sidebar;
+      color: $vert;
     }
   }
 
@@ -108,13 +144,18 @@ footer{
 .list1{
   margin-left: -55%;
 }
-  
+
 .sidebar {
   float: left;
   width: 150em;
+/**
   height: 100%;
   background: radial-gradient(circle at top left,$vert 15%, $color-sidebar 40%);
-  padding: 20px;
+  padding: 7px;
+*/
+  height: 90%;
+  background: #3a526a;
+  padding: 4px;
 }
 
 
