@@ -152,14 +152,26 @@ footer{
   border-radius: 10px;
 }
 
-.public .private {
+.table-bordered {
   border-collapse: separate;
   empty-cells: hide;
-  width: 75%;
-  margin: auto;
-  text-align: center;
 }
 
+.thead-cycle {
+  background-color: $vert;
+  color: white;
+  font-size: 20px;
+}
+
+.year {
+  background-color: $blue;
+  color: white;
+  font-size: 20px;
+}
+
+.text-body {
+  background-color: #C3D9E0;
+}
 
 .style-subtitle {
   color:$vert;
