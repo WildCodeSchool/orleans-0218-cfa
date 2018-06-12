@@ -18,11 +18,11 @@
         <tbody>
         {% for event in events %}
             <tr>
-                <td><a href="{{ path('event_show', { 'id': event.id }) }}">{{ event.title }}</a></td>
+                <td><a href="{{ path('admin_event_show', { 'id': event.id }) }}">{{ event.title }}</a></td>
                 <td>{% if event.date %}{{ event.date|date('Y-m-d') }}{% endif %}</td>
                 <td>{{ event.description }}</td>
-                <td><a class="btn btn-outline-primary" href="{{ path('event_show', { 'id': event.id }) }}">Voir</a></td>
-                <td><a class="btn btn-outline-secondary" href="{{ path('event_edit', { 'id': event.id }) }}">Modifier</a></td>
+                <td><a class="btn btn-outline-primary" href="{{ path('admin_event_show', { 'id': event.id }) }}">Voir</a></td>
+                <td><a class="btn btn-outline-secondary" href="{{ path('admin_event_edit', { 'id': event.id }) }}">Modifier</a></td>
             </tr>
         {% endfor %}
         </tbody>
@@ -30,7 +30,7 @@
 
     <ul>
         <li>
-            <a class="btn btn-outline-primary" href="{{ path('event_new') }}">Ajouter un nouvel évènement</a>
+            <a class="btn btn-outline-primary" href="{{ path('admin_event_new') }}">Ajouter un nouvel évènement</a>
         </li>
     </ul>
     </div>
