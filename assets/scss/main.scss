@@ -54,10 +54,6 @@ $fontText: "Poppins";
   background-color: $vert;
 }
 
-.container-fluid {
-  padding: 0px;
-}
-
 body {
   font-family: $fontText;
 }
@@ -72,7 +68,7 @@ h2{
 }
 
 .style-page {
-  padding: 2px 10px 2px 5px; /* Dans l'ordre: padding-top padding-right padding-bottom padding-left */
+  padding: 2px 10px 2px 5px;
   border-left: 6px solid $vert;
 }
 
@@ -137,7 +133,7 @@ footer{
 }
 
 .list1{
-  margin-left: -55%;
+  margin-left: -55% ;
 }
 
 .sidebar {
