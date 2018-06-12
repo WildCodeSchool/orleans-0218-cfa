@@ -24,7 +24,7 @@ class AdminFormationController extends Controller
     /**
      * Lists all formation entities.
      *
-     * @Route("/formation", name="formation_admin_index")
+     * @Route("/formation/", name="formation_admin_index")
      * @Method("GET")
      */
 
@@ -68,7 +68,7 @@ class AdminFormationController extends Controller
     /**
      * Finds and displays a formation entity.
      *
-     * @Route("/formation/{id}", name="formation_show")
+     * @Route("/formation/{id}", name="formation_admin_show")
      * @Method("GET")
      */
     public function showAction(Formation $formation)
@@ -123,7 +123,7 @@ class AdminFormationController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('formation_index');
+        return $this->redirectToRoute('formation_admin_index');
     }
 
     /**
