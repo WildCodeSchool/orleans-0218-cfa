@@ -77,5 +77,13 @@ fos_user:
         address: '%mailer_user%'
         sender_name: 'cfablois'
 fos_ck_editor:
-    base_path: "bundles/ckeditor"
-    js_path:   "bundles/ckeditor/ckeditor.js"
+    default_config: myConfig
+    base_path: "bundles/fosckeditor"
+    js_path:   "bundles/fosckeditor/ckeditor.js"
+    configs:
+        myConfig:
+            toolbar: standard
+
+
+
+

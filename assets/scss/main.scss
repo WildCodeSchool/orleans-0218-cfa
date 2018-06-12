@@ -22,7 +22,6 @@ $fontText: "Roboto Slab";
   @import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
 }
 
-
 body {
   font-family: $fontText;
 }
@@ -32,7 +31,6 @@ li{
   list-style: none;
   margin-top: 10px;
   font-size: large;
-
 }
 
 h2{
@@ -42,10 +40,9 @@ h2{
 .title-style {
   margin-bottom: 50px;
   margin-top: 50px;
-
 }
 
-.d-block {
+.slider-block {
   width: 100%;
   height: 500px;
 }
@@ -53,9 +50,7 @@ h2{
 .count-up {
   color: $color-basic;
   padding: 20px;
-
 }
-
 
 .counter {
   background-color: $color-basic;
@@ -96,7 +91,6 @@ footer{
       color: $color-sidebar;
     }
   }
-
 }
 
 .minilist{
@@ -137,10 +131,50 @@ footer{
   font-size: 60px;
 }
 
-
 .style-subtitle {
   color:$vert;
 }
+
+/** Formation **/
+
+.title-formation {
+  color: $vert;
+}
+
+.background-formation {
+  background-image: url("/images/background_formation.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 75%;
+  width: 100%;
+  height: 350px;
+}
+
+/** faq **/
+
+.question {
+  color: $vert;
+}
+
+.background-faq {
+  background-image: url("/images/faq.jpg");
+   background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 75%;
+  width: 100%;
+  height: 350px;
+}
+
+.style-page {
+  padding: 2px 10px 2px 5px;
+  border-left: 5px solid $vert;
+}
+
+.link-formation {
+  color:black !important;
+  &:hover {
+    color: $vert;
+  }
 
 .background-apprenti {
   background-image: url("/images/apprenti.jpg");
@@ -149,5 +183,4 @@ footer{
   background-size: 100% 80%;
   width: 100%;
   height: 400px;
-
 }
