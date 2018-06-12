@@ -90,7 +90,7 @@ class AdminEventController extends AdminController
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('event_edit', array('id' => $event->getId()));
+            return $this->redirectToRoute('admin_event_edit', array('id' => $event->getId()));
         }
 
         return $this->render('event/edit.html.twig', array(
@@ -134,20 +134,5 @@ class AdminEventController extends AdminController
             ->setMethod('DELETE')
             ->getForm()
         ;
-    }
-
-    /**
-     * @param Event $events
-     *
-     */
-    public function showHomepageSectionAction(int $limit = 3)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $events = $em->getRepository('AppBundle:Event')->findBy([], ['date'=>'DESC'], $limit);
-
-        return $this->render('homepage/events.html.twig', array(
-            'events' => $events,
-        ));
     }
 }

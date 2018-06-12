@@ -25,9 +25,24 @@ class EventController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $events = $em->getRepository('AppBundle:Event')->findAll();
+        $events = $em->getRepository('AppBundle:Event')->findBy([], ['date'=>'DESC']);
 
         return $this->render('event/public/index.html.twig', array(
+            'events' => $events,
+        ));
+    }
+
+    /**
+     * @param Event $events
+     *
+     */
+    public function showHomepageSectionAction(int $limit = 3)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $events = $em->getRepository('AppBundle:Event')->findBy([], ['date'=>'DESC'], $limit);
+
+        return $this->render('homepage/events.html.twig', array(
             'events' => $events,
         ));
     }
