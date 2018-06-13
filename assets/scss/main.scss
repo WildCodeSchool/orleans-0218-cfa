@@ -14,12 +14,14 @@ $color-sidebar: #009fe3;
 $white-link: #ffffff;
 $green: #5fbda3;
 $shadow-grey: #AAAAAA;
+$remember: #cf482a;
 $fontText: "Poppins";
 
 @font-face {
   font-family: 'Poppins';
   @import url('https://fonts.googleapis.com/css?family=Poppins');
 }
+
 
 @font-face {
   font-family: "Roboto Slab";
@@ -36,6 +38,7 @@ $fontText: "Poppins";
   width: 175px;
   height: 150px;
 }
+
 
 .nav-tabs{
   border-bottom: none;
@@ -158,14 +161,50 @@ footer{
 /** Apprenti **/
 
 .remember {
-  border: 1px solid #006D80;
-  border-radius: 24px;
-  color: #3C2000;
+  width: 100%;
+  height: 100%;
+  padding-top: 20px;
+
 }
 
-.remember2 {
-  color: #3C2000;
-  font-size: 60px;
+.rememberTitle {
+  font-size: 30px;
+  color: $remember;
+  text-align: center;
+  top: 5px;
+  width: 300px;
+  left: 10%;
+  position: absolute;
+  background-color: $white-link;
+}
+
+.containt {
+  margin: 10px;
+  text-align: left;
+  padding: 20px 10px 20px 10px;
+  border: 1px solid $remember;
+  border-radius: 10px;
+}
+
+.table-bordered {
+  border-collapse: separate;
+  empty-cells: hide;
+}
+
+.thead-cycle {
+  background-color: $vert;
+  color: white;
+  font-size: 20px;
+}
+
+.year {
+  background-color: $blue;
+  color: white;
+  font-size: 20px;
+}
+
+.text-body {
+  background-color: #C3D9E0;
 }
 
 .style-subtitle {
@@ -205,6 +244,7 @@ footer{
 
 /** faq **/
 
+
 .question {
   color: $vert;
 }
@@ -243,7 +283,7 @@ footer{
     width: 100%;
     height: 400px;
   }
-}
+
 .events-bg {
   background-image: url("/images/unsplash3.jpg");
   background-attachment: fixed;
