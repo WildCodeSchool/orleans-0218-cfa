@@ -1,18 +1,18 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-<section class="formation title-style">
+<section class="formation">
     <div class="container-fluid">
         <div class="section-title background-formation"></div>
             <div class="row">
                 <div class="col-md-3 col-sm-12">
-                    <h1 class="title-style style-page"> Les formations</h1>
+                    <h1 class="style-page mb-5 mt-3"> Les formations</h1>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-3 col-sm-12 border-right formation-list">
                     {% for formation in formations %}
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item mb-1">
+                            <li class="list-group-item">
                             <a class="link-formation" href="{{ path('formation', { 'id': formation.id }) }}">
                                 <i class="fas fa-graduation-cap"></i>
                                 {{ formation.name }}
@@ -21,12 +21,15 @@
                         </ul>
                     {% endfor %}
                 </div>
-                <div class="col-md-9 col-sm-12">
-                    <h2 class="text-center mb-4 title-formation"><i class="fas fa-graduation-cap"></i> {{ formation.name }}</h2>
-                    <p>{{ formation.shortPresentation }}</p>
-                    <p class="mt-5 bg-light text-success">{{ formation.jobDescription }}</p>
-                    <div class="col-md-3">
-                        <a class="btn btn-success mt-5" href="{{ path('homepage') }}">Retour à l'accueil</a>
+                <div class="col-md-7 offset-md-1 col-sm-12">
+                    <h2 class="text-center mb-5 title-formation"><i class="fas fa-graduation-cap"></i> {{ formation.name }}</h2>
+                        <p class="formation-presentation">{{ formation.shortPresentation }}</p>
+                        <p class="mt-5 bg-light text-success">{{ formation.jobDescription }}</p>
+                    <div class="section-title meeting-formation"></div>
+                    <div class="row">
+                        <div class="col-md-3 ml-md-auto">
+                            <a class="btn btn-success mt-5" href="{{ path('homepage') }}">Retour à l'accueil</a>
+                        </div>
                     </div>
                 </div>
          </div>

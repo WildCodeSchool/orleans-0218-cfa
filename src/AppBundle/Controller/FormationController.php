@@ -20,16 +20,13 @@ class FormationController extends Controller
      * @Route("/{id}", name="formation")
      * @Method("GET")
      */
-    public function indexAction($id)
+    public function indexAction(Formation $formation)
     {
         $em = $this->getDoctrine()->getManager();
 
         $formations = $em->getRepository('AppBundle:Formation')->findAll();
 
-        $formation = $em->getRepository('AppBundle:Formation')->findOneBy(['id' => $id]);
-
-
-        return $this->render('formation/formation.html.twig', array(
+        return $this->render('formation/public/formation.html.twig', array(
             'formations' => $formations,
             'formation' => $formation,
         ));

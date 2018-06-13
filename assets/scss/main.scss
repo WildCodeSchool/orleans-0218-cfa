@@ -5,21 +5,56 @@
 
 
 $blue: #009fe3;
-$background-nav-footer: #3e423a;
-$vert: #23a638;
-$gris:  #f2f2f2;
+$background-nav-footer: #222222;
+$vert: #18ba60;
+$gris:  #888888;
 $black: black;
 $color-basic: white;
 $color-sidebar: #009fe3;
-$background-nav-footer: #3e423a;
 $white-link: #ffffff;
-$green:#5fbda3;
+$green: #5fbda3;
 $shadow-grey: #AAAAAA;
-$fontText: "Roboto Slab";
+$remember: #cf482a;
+$fontText: "Poppins";
+
+@font-face {
+  font-family: 'Poppins';
+  @import url('https://fonts.googleapis.com/css?family=Poppins');
+}
+
 
 @font-face {
   font-family: "Roboto Slab";
-  @import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+  @import url('http://fonts.googleapis.com/css?family=Roboto+Slab');
+}
+/**Navbar**/
+
+.title-cfa{
+  color: $color-basic;
+  font-size: 25px;
+}
+
+.logo{
+  width: 175px;
+  height: 150px;
+}
+
+
+.nav-tabs{
+  border-bottom: none;
+  margin-left: 47em;
+}
+
+.nav-link{
+  color: $black;
+}
+
+.nav-link:hover{
+  color: $vert;
+}
+
+.dropdown-item:hover{
+  background-color: $vert;
 }
 
 body {
@@ -27,9 +62,7 @@ body {
 }
 
 li{
-
   list-style: none;
-  margin-top: 10px;
   font-size: large;
 }
 
@@ -37,9 +70,16 @@ h2{
   color: $color-basic;
 }
 
+.style-page {
+  padding: 2px 10px 2px 5px;
+  border-left: 6px solid $vert;
+
+}
+
 .title-style {
   margin-bottom: 50px;
   margin-top: 50px;
+  margin-left: 100px;
 }
 
 .slider-block {
@@ -79,16 +119,16 @@ aside {
 .btn-success{
 box-shadow: 8px 8px 8px $shadow-grey ;
 }
-  
+
 /** Footer **/
 
 footer{
   background-color: $background-nav-footer;
   color:white;
   a {
-    color: $color-basic;
+    color: $gris;
     &:hover {
-      color: $color-sidebar;
+      color: $vert;
     }
   }
 }
@@ -98,15 +138,15 @@ footer{
 }
 
 .list1{
-  margin-left: -55%;
+  margin-left: -55% ;
 }
-  
+
 .sidebar {
   float: left;
   width: 150em;
-  height: 100%;
-  background: radial-gradient(circle at top left,$vert 15%, $color-sidebar 40%);
-  padding: 20px;
+  height: 90%;
+  background: #3a526a;
+  padding: 4px;
 }
 
 
@@ -121,18 +161,58 @@ footer{
 /** Apprenti **/
 
 .remember {
-  border: 1px solid #006D80;
-  border-radius: 24px;
-  color: #3C2000;
+  width: 100%;
+  height: 100%;
+  padding-top: 20px;
+
 }
 
-.remember2 {
-  color: #3C2000;
-  font-size: 60px;
+.rememberTitle {
+  font-size: 30px;
+  color: $remember;
+  text-align: center;
+  top: 5px;
+  width: 300px;
+  left: 10%;
+  position: absolute;
+  background-color: $white-link;
+}
+
+.containt {
+  margin: 10px;
+  text-align: left;
+  padding: 20px 10px 20px 10px;
+  border: 1px solid $remember;
+  border-radius: 10px;
+}
+
+.table-bordered {
+  border-collapse: separate;
+  empty-cells: hide;
+}
+
+.thead-cycle {
+  background-color: $vert;
+  color: white;
+  font-size: 20px;
+}
+
+.year {
+  background-color: $blue;
+  color: white;
+  font-size: 20px;
+}
+
+.text-body {
+  background-color: #C3D9E0;
 }
 
 .style-subtitle {
   color:$vert;
+}
+
+.apprentiTitle {
+  color:$blue;
 }
 
 /** Formation **/
@@ -142,15 +222,28 @@ footer{
 }
 
 .background-formation {
-  background-image: url("/images/background_formation.jpg");
+  background-image: url("/images/formation_back.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-size: 100% 75%;
+  background-size: 100% 100%;
   width: 100%;
-  height: 350px;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+.meeting-formation {
+  background-image: url("/images/meeting_formation.jpeg");
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  margin-left: 100px;
+  margin-top: 50px;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 20px;
 }
 
 /** faq **/
+
 
 .question {
   color: $vert;
@@ -171,16 +264,32 @@ footer{
 }
 
 .link-formation {
-  color:black !important;
+  color: black;
+  font-size: 16px;
   &:hover {
     color: $vert;
+    font-size: 17px;
   }
 
-.background-apprenti {
-  background-image: url("/images/apprenti.jpg");
+  .formation-presentation{
+    font-size: 30px;
+  }
+
+  .background-apprenti {
+    background-image: url("/images/apprenti.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 80%;
+    width: 100%;
+    height: 400px;
+  }
+
+.events-bg {
+  background-image: url("/images/unsplash3.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-size: 100% 80%;
-  width: 100%;
-  height: 400px;
+  .card{
+    margin-bottom: 15px;
+    box-shadow: 8px 8px 8px black;
+  }
 }
