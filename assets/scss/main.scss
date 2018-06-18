@@ -1,13 +1,9 @@
-
 @import "../../node_modules/bootstrap/dist/css/bootstrap.css";
-
-
-
 
 $blue: #009fe3;
 $background-nav-footer: #222222;
 $vert: #18ba60;
-$gris:  #888888;
+$gris: #888888;
 $black: black;
 $color-basic: white;
 $color-sidebar: #009fe3;
@@ -22,38 +18,37 @@ $fontText: "Poppins";
   @import url('https://fonts.googleapis.com/css?family=Poppins');
 }
 
-
 @font-face {
   font-family: "Roboto Slab";
   @import url('http://fonts.googleapis.com/css?family=Roboto+Slab');
 }
+
 /**Navbar**/
 
-.title-cfa{
+.title-cfa {
   color: $color-basic;
   font-size: 25px;
 }
 
-.logo{
+.logo {
   width: 175px;
   height: 150px;
 }
 
-
-.nav-tabs{
+.nav-tabs {
   border-bottom: none;
   margin-left: 47em;
 }
 
-.nav-link{
+.nav-link {
   color: $black;
 }
 
-.nav-link:hover{
+.nav-link:hover {
   color: $vert;
 }
 
-.dropdown-item:hover{
+.dropdown-item:hover {
   background-color: $vert;
 }
 
@@ -61,12 +56,12 @@ body {
   font-family: $fontText;
 }
 
-li{
+li {
   list-style: none;
   font-size: large;
 }
 
-h2{
+h2 {
   color: $color-basic;
 }
 
@@ -96,12 +91,12 @@ h2{
   background-color: $color-basic;
   color: $vert;
   display: table-cell;
-  margin:1.5%;
+  margin: 1.5%;
   border-radius: 20%;
   width: 115px;
-  height:115px;
+  height: 115px;
   vertical-align: middle;
-  font-size:50px;
+  font-size: 50px;
 }
 
 aside {
@@ -116,15 +111,15 @@ aside {
   font-size: large;
 }
 
-.btn-success{
-box-shadow: 8px 8px 8px $shadow-grey ;
+.btn-success {
+  box-shadow: 8px 8px 8px $shadow-grey;
 }
 
 /** Footer **/
 
-footer{
+footer {
   background-color: $background-nav-footer;
-  color:white;
+  color: white;
   a {
     color: $gris;
     &:hover {
@@ -133,12 +128,12 @@ footer{
   }
 }
 
-.minilist{
+.minilist {
   font-size: medium;
 }
 
-.list1{
-  margin-left: -55% ;
+.list1 {
+  margin-left: -55%;
 }
 
 .sidebar {
@@ -148,7 +143,6 @@ footer{
   background: #3a526a;
   padding: 4px;
 }
-
 
 .asidetitle {
   background-color: $background-nav-footer;
@@ -208,7 +202,7 @@ footer{
 }
 
 .style-subtitle {
-  color:$vert;
+  color: $vert;
 }
 
 .apprentiTitle {
@@ -227,6 +221,7 @@ footer{
   background-image: url("/images/formation_apprenti.jpg");
 }
 
+
 .apprenti-select {
   position: relative;
   overflow: hidden;
@@ -235,32 +230,30 @@ footer{
   display: flex;
   align-items: end;
   z-index: 0;
-}
 
-.apprenti-select .apprenti-background {
-  position: absolute;
-  content: '';
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -1;
-  filter: grayscale(75%);
-}
-
-.apprenti-select .caption {
-  background-color: white;
-  padding: 15px;
-  opacity: 0.8;
-  width: 100%;
-  z-index: 1;
-}
-
-.apprenti-select:not(:hover) p {
-  display: none;
+  :not(:hover) p {
+    display: none;
+  }
+  .caption {
+    background-color: white;
+    padding: 15px;
+    opacity: 0.8;
+    width: 100%;
+    z-index: 1;
+  }
+  .apprenti-background {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    filter: grayscale(75%);
+  }
 }
 
 /** Formation **/
@@ -292,14 +285,13 @@ footer{
 
 /** faq **/
 
-
 .question {
   color: $vert;
 }
 
 .background-faq {
   background-image: url("/images/faq.jpg");
-   background-attachment: fixed;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: 100% 75%;
   width: 100%;
@@ -320,18 +312,18 @@ footer{
   }
 }
 
-  .formation-presentation{
-    font-size: 30px;
-  }
+.formation-presentation {
+  font-size: 30px;
+}
 
-  .background-apprenti {
-    background-image: url("/images/apprenti.jpg");
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: 100% 80%;
-    width: 100%;
-    height: 400px;
-  }
+.background-apprenti {
+  background-image: url("/images/apprenti.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 80%;
+  width: 100%;
+  height: 400px;
+}
 
 .events-bg {
   background-image: url("/images/unsplash3.jpg");
