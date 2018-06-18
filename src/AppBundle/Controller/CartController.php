@@ -43,9 +43,11 @@ class CartController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $ufas = $em->getRepository('AppBundle:Ufa')->findAll();
+        $formations = $em->getRepository('AppBundle:Ufa')->findAll();
 
         return $this->render('ufa/public/cart.html.twig', array(
             'ufas' => $ufas,
+            'formations' => $formations,
             'ufa' => $ufa,
         ));
     }

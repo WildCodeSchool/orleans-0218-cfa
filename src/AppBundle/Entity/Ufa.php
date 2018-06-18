@@ -86,6 +86,13 @@ class Ufa
     private $town;
 
     /**
+     * @var
+     *
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Formation", inversedBy="ufas")
+     */
+    private $formations;
+
+    /**
      * Get id
      *
      * @return int
@@ -93,6 +100,22 @@ class Ufa
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFormations()
+    {
+        return $this->formations;
+    }
+
+    /**
+     * @param mixed $formations
+     */
+    public function setFormations($formations): void
+    {
+        $this->formations = $formations;
     }
 
     /**
@@ -296,5 +319,21 @@ class Ufa
     public function getLatitude()
     {
         return $this->latitude;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Ufa constructor.
+     */
+    public function __construct()
+    {
+        $this->formations = new \Doctrine\Common\Collections\ArrayCollection();
     }
 }

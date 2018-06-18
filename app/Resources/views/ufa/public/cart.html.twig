@@ -28,7 +28,7 @@
                 <ul><h3>{{ ufa.name }}</h3>
                     <li>{{ ufa.address }}</li>
                     <li>{{ ufa.zipcode }} {{ ufa.town }}</li>
-                    <li>{{ ufa.formation.name }}</li>
+
                 </ul>
             </div>
         </div>
@@ -36,7 +36,7 @@
 
     <script type="text/javascript">
         function initialize() {
-            var map = L.map('map').setView([47.588, 1.348], 8); // LIGNE 14
+            var map = L.map('map').setView([47.562, 1.714], 8); // LIGNE 14
 
             var osmLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { // LIGNE 16
                 attribution: '© OpenStreetMap contributors',
