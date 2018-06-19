@@ -1,15 +1,18 @@
 @import "../../node_modules/bootstrap/dist/css/bootstrap.css";
-$primary-1: #009fe3;
-$primary-2: #18ba60;
-$primary-3: #cf482a;
+$primary-1: #3462ac;
+$primary-2: #1ca038;
+$primary-3: #f9b20b;
 $primary-4: #bd1d1d;
+$primary-5: #ffffff;
+$primary-6:#C3D9E0;
+$primary-7:  #222222;
 $table-entry: $primary-1;
 $background-section-homepage: $primary-1;
-$background-nav-footer: #222222;
+$background-nav-footer: $primary-7;
 $button-color: $primary-2;
 $link: $primary-2;
 $pipe-title: $primary-2;
-$color-title-homepage: #ffffff;
+$color-title-homepage: $primary-5;
 $shadow-button: #AAAAAA;
 $contour-remember: $primary-3;
 $fontText: "Poppins";
@@ -87,7 +90,7 @@ li {
 }
 
 .counter {
-  color: $link;
+  color: $primary-2;
   display: table-cell;
   margin: 1.5%;
   border-radius: 20%;
@@ -116,7 +119,7 @@ aside {
 
 footer {
   background-color: $background-nav-footer;
-  color: white;
+  color: $primary-5;
   a {
     color: $shadow-button;
     &:hover {
@@ -157,7 +160,7 @@ footer {
   width: 300px;
   left: 10%;
   position: absolute;
-  background-color: $color-title-homepage;
+  background-color: $primary-5;
 }
 
 .containt {
@@ -174,19 +177,19 @@ footer {
 }
 
 .thead-cycle {
-  background-color: $link;
-  color: $color-title-homepage;
+  background-color: $primary-2;
+  color: $primary-5;
   font-size: 20px;
 }
 
 .year {
   background-color: $table-entry;
-  color: $color-title-homepage;
+  color: $primary-5;
   font-size: 20px;
 }
 
 .text-body {
-  background-color: #C3D9E0;
+  background-color: $primary-6;
 }
 
 .style-subtitle {
@@ -287,7 +290,7 @@ footer {
 
 .style-page {
   padding: 2px 10px 2px 5px;
-  border-left: 5px solid $link;
+  border-left: 5px solid $primary-2;
 }
 
 .link-formation {
@@ -321,6 +324,6 @@ footer {
   background-repeat: no-repeat;
   .card {
     margin-bottom: 15px;
-    box-shadow: 8px 8px 8px $background-nav-footer;
+    box-shadow: 8px 8px 8px $primary-7;
   }
 }
