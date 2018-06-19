@@ -5,7 +5,6 @@
 {% block body %}
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
-    <script type="text/javascript" src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
 
 
     <div class="container-fluid">
@@ -14,29 +13,34 @@
         </div>
         <div class="row">
             <div class="col-3">
-                    <ul>
-                        {% for ufa in ufas %}
-                            <li class="list-group-item  "><a href="{{ path('cart_show', { 'id': ufa.id }) }}">{{ ufa.name }}</a></li>
-                        {% endfor %}
-                    </ul>
+                <ul>
+                    {% for ufa in ufas %}
+                        <li class="list-group-item  "><a href="{{ path('cart_show', { 'id': ufa.id }) }}">{{ ufa.name }}</a></li>
+                    {% endfor %}
+                </ul>
             </div>
             <div class="col-6">
-                <body onload="initialize()">
                     <div id="map" class="border-secondary" style="width: 40vw; height: 80vh;">
-                    </div>
-                </body>
+                </div>
             </div>
             <div class="col-3">
-                <ul><h3>{{ ufa.name }}</h3>
+                <h2>{{ ufa.name }}</h2>
+                <ul>
                     <li>{{ ufa.address }}</li>
                     <li>{{ ufa.zipcode }} {{ ufa.town }}</li>
                 </ul>
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block javascripts %}
+
+    <script type="text/javascript" src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
 
     <script type="text/javascript">
-        function initialize() {
+        document.addEventListener('DOMContentLoaded',function(){
+
             var map = L.map('map').setView([47.588, 1.348], 8); // LIGNE 14
 
             var osmLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { // LIGNE 16
@@ -50,6 +54,6 @@
             L.marker([{{ ufa.longitude }}, {{ ufa.latitude }}]).addTo(map)
                 .bindPopup('{{ ufa.name }}<br> {{ ufa.address }} <br> {{ ufa.zipcode }} {{ ufa.town }}');
             {% endfor %}
-        }
+        });
     </script>
 {% endblock %}
