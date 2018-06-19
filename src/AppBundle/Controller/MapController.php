@@ -9,16 +9,16 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * Cart controller.
+ * Map controller.
  *
- * @Route("cart")
+ * @Route("map")
  */
-class CartController extends Controller
+class MapController extends Controller
 {
     /**
      * Lists all cfa entities.
      *
-     * @Route("/", name="cart_index")
+     * @Route("/", name="map_index")
      * @Method("GET")
      */
     public function indexAction()
@@ -27,7 +27,7 @@ class CartController extends Controller
 
         $ufas = $em->getRepository('AppBundle:Ufa')->findAll();
 
-        return $this->render('ufa/public/cart.html.twig', array(
+        return $this->render('ufa/public/map.html.twig', array(
             'ufas' => $ufas,
         ));
     }
@@ -35,7 +35,7 @@ class CartController extends Controller
     /**
      * Finds and displays a ufa entity.
      *
-     * @Route("/{id}", name="cart_show")
+     * @Route("/{id}", name="map_show")
      * @Method("GET")
      */
     public function showAction(Ufa $ufa)
@@ -45,7 +45,7 @@ class CartController extends Controller
         $ufas = $em->getRepository('AppBundle:Ufa')->findAll();
         $formations = $em->getRepository('AppBundle:Ufa')->findAll();
 
-        return $this->render('ufa/public/cart.html.twig', array(
+        return $this->render('ufa/public/map.html.twig', array(
             'ufas' => $ufas,
             'formations' => $formations,
             'ufa' => $ufa,

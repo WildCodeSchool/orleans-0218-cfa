@@ -15,7 +15,7 @@
             <div class="col-3">
                 <ul>
                     {% for ufa in ufas %}
-                        <li class="list-group-item  "><a href="{{ path('cart_show', { 'id': ufa.id }) }}">{{ ufa.name }}</a></li>
+                        <li class="list-group-item  "><a href="{{ path('map_show', { 'id': ufa.id }) }}">{{ ufa.name }}</a></li>
                     {% endfor %}
                 </ul>
             </div>
