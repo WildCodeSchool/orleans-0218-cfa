@@ -270,6 +270,7 @@ footer{
     color: $vert;
     font-size: 17px;
   }
+}
 
   .formation-presentation{
     font-size: 30px;
@@ -292,4 +293,10 @@ footer{
     margin-bottom: 15px;
     box-shadow: 8px 8px 8px black;
   }
+}
+
+.homepage-formation {
+  background-image: url("/images/home_formation.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
