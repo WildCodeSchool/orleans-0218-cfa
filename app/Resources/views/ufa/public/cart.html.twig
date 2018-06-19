@@ -10,8 +10,10 @@
 
     <div class="container-fluid">
         <div class="row">
+                <h1 class="title-style style-page">Les UFA</h1>
+        </div>
+        <div class="row">
             <div class="col-3">
-                <h3>Les UFA</h3>
                     <ul>
                         {% for ufa in ufas %}
                             <li class="list-group-item  "><a href="{{ path('cart_show', { 'id': ufa.id }) }}">{{ ufa.name }}</a></li>
@@ -20,7 +22,7 @@
             </div>
             <div class="col-6">
                 <body onload="initialize()">
-                    <div id="map" style="width: 40vw; height: 80vh;">
+                    <div id="map" class="border-secondary" style="width: 40vw; height: 80vh;">
                     </div>
                 </body>
             </div>
@@ -28,7 +30,6 @@
                 <ul><h3>{{ ufa.name }}</h3>
                     <li>{{ ufa.address }}</li>
                     <li>{{ ufa.zipcode }} {{ ufa.town }}</li>
-
                 </ul>
             </div>
         </div>
@@ -36,7 +37,7 @@
 
     <script type="text/javascript">
         function initialize() {
-            var map = L.map('map').setView([47.562, 1.714], 8); // LIGNE 14
+            var map = L.map('map').setView([47.588, 1.348], 8); // LIGNE 14
 
             var osmLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { // LIGNE 16
                 attribution: '© OpenStreetMap contributors',
