@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+
+
+    <div class="container-fluid">
+        <div class="row">
+                <h1 class="title-style style-page">Les UFA</h1>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <ul>
+                    {% for ufa in ufas %}
+                        <li class="list-group-item  "><a href="{{ path('map_show', { 'id': ufa.id }) }}">{{ ufa.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-6">
+                    <div id="map" class="leaflet">
+                </div>
+            </div>
+            <div class="col-3">
+                <h2>{{ ufa.name }}</h2>
+                <ul>
+                    <li>{{ ufa.address }}</li>
+                    <li>{{ ufa.zipcode }} {{ ufa.town }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+
+    <script type="text/javascript" src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded',function(){
+
+            var map = L.map('map').setView([47.588, 1.348], 8); // LIGNE 14
+
+            var osmLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { // LIGNE 16
+                attribution: '© OpenStreetMap contributors',
+                maxZoom: 19
+            });
+
+            map.addLayer(osmLayer);
+
+            {% for ufa in ufas %}
+            L.marker([{{ ufa.longitude }}, {{ ufa.latitude }}]).addTo(map)
+                .bindPopup('{{ ufa.name }}<br> {{ ufa.address }} <br> {{ ufa.zipcode }} {{ ufa.town }}');
+            {% endfor %}
+        });
+    </script>
+{% endblock %}
