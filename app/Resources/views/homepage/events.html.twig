@@ -1,26 +1,28 @@
-{% block body %}
-  <div class="container-fluid">
-      <div class="row">
-          <div class="sidebar col-12">
+<section>
+    <div class="row">
+        <div class="sidebar col-12">
             <h2 class="text-center">NOS ACTUALITES</h2>
-          </div>
-      </div>
-      <div class="row">
-          <div class="col-4 asidetitle">
-              <h3><a href="{{ path('event_index') }}"> | Retrouvez toutes nos actualités et évènements à venir</a></h3>
-          </div>
-          <div class="col-8">
-              <ul>
-              {% for event in events %}
-                  <li>
-                      <p>{% if event.date %}{{ event.date|date('d/m/Y') }}{% endif %}
-                          | <a href="#">{{ event.title }}</a></p>
-                      <p>{{ event.description }}</p>
-                  </li>
-              {% endfor %}
-              </ul>
-              <p><span class="float-right"><a href="{{ path('event_index') }}">Plus d'actualités ...</a></span></p>
-          </div>
-      </div>
-  </div>
-{% endblock %}
+        </div>
+    </div>
+    <div class="row mt-3">
+        {% for event in events %}
+            <div class="col ">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">
+                            {% if event.date %}{{ event.date|date('d/m/Y') }}{% endif %}
+                            | <a href="#">{{ event.title }}</a>
+                        </div>
+                        <p>{{ event.description }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="row text-center mt-2">
+        <div class="col-sm-12">
+            <a class="btn btn-outline-success" href="{{ path('event_index') }}">Plus d'actualités ...</a>
+        </div>
+    </div>
+
+</section>

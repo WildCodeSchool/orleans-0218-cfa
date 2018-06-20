@@ -47,6 +47,11 @@ class Formation
      */
     private $jobDescription;
 
+    /**
+     * @var
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Ufa", mappedBy="formations")
+     */
+    private $ufas;
 
     /**
      * Get id
@@ -56,6 +61,22 @@ class Formation
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUfas()
+    {
+        return $this->ufas;
+    }
+
+    /**
+     * @param mixed $ufas
+     */
+    public function setUfas($ufas): void
+    {
+        $this->ufas = $ufas;
     }
 
     /**
@@ -128,5 +149,21 @@ class Formation
     public function getJobDescription()
     {
         return $this->jobDescription;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Formation constructor.
+     */
+    public function __construct()
+    {
+        $this->ufas = new \Doctrine\Common\Collections\ArrayCollection();
     }
 }
