@@ -9,6 +9,8 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use AppBundle\Entity\Formation;
 
 class UfaType extends AbstractType
 {
@@ -24,7 +26,15 @@ class UfaType extends AbstractType
             ->add('address', TextType::class, ['label'=>'Adresse'])
             ->add('zipcode', IntegerType::class, ['label'=>'Code Postal'])
             ->add('cedex')
-            ->add('town', TextType::class, ['label'=>'Ville']);
+            ->add('town', TextType::class, ['label'=>'Ville'])
+            ->add('formations', EntityType::class, [
+                'class' => 'AppBundle\Entity\Formation',
+                'choice_label'=> function ($formations) {
+                    return $formations->getName();
+                },
+                'multiple' => true,
+                'expanded' => true
+            ]);
     }/**
       * {@inheritdoc}
       */
