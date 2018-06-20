@@ -1,17 +1,10 @@
-
-@import "../../node_modules/bootstrap/dist/css/bootstrap.css";
-
-
-
-
-$blue: #009fe3;
+$color-primary: #3462ac;
 $background-nav-footer: #222222;
 $vert: #18ba60;
-$gris:  #888888;
+$gris: #888888;
 $black: black;
 $color-basic: white;
-$color-sidebar: #009fe3;
-$white-link: #ffffff;
+$color-sidebar: $color-primary;
 $green: #5fbda3;
 $shadow-grey: #AAAAAA;
 $remember: #cf482a;
@@ -22,52 +15,42 @@ $fontText: "Poppins";
   @import url('https://fonts.googleapis.com/css?family=Poppins');
 }
 
-
 @font-face {
   font-family: "Roboto Slab";
   @import url('http://fonts.googleapis.com/css?family=Roboto+Slab');
 }
-/**Navbar**/
-
-.title-cfa{
-  color: $color-basic;
-  font-size: 25px;
-}
-
-.logo{
-  width: 175px;
-  height: 150px;
-}
-
-
-.nav-tabs{
-  border-bottom: none;
-  margin-left: 47em;
-}
-
-.nav-link{
-  color: $black;
-}
-
-.nav-link:hover{
-  color: $vert;
-}
-
-.dropdown-item:hover{
-  background-color: $vert;
-}
 
 body {
   font-family: $fontText;
+  background-image: url('../images/background.png');
+  background-repeat: repeat;
 }
 
-li{
+/**Navbar**/
+
+.logo {
+  width: 150px;
+}
+
+.navbar {
+  opacity: 0.9;
+  .nav-link {
+    font-size: 1.2em;
+    color: $black;
+  }
+
+  .nav-link:hover {
+    background-color: $vert;
+    color: $color-basic;
+  }
+}
+
+.dropdown-item:hover {
+  background-color: $vert;
+}
+
+li {
   list-style: none;
-  font-size: large;
-}
-
-h2{
-  color: $color-basic;
 }
 
 .style-page {
@@ -82,33 +65,26 @@ h2{
   margin-left: 100px;
 }
 
-.slider-block {
-  width: 100%;
-  height: 500px;
+.slider {
+  .carousel-item {
+    height: 500px;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
 }
 
 .count-up {
-  color: $color-basic;
-  padding: 20px;
-}
+  .counter {
+    color: $vert;
+    font-size: 3em;
+    text-shadow: 2px 2px 4px $vert;
+  }
 
-.counter {
-  background-color: $color-basic;
-  color: $vert;
-  display: table-cell;
-  margin:1.5%;
-  border-radius: 20%;
-  width: 115px;
-  height:115px;
-  vertical-align: middle;
-  font-size:50px;
-}
-
-aside {
-  font-size: 22px;
-  margin-top: 20px;
-  margin-left: 30px;
-  color: $black;
+  p {
+    font-size: 1.2em;
+  }
 }
 
 .cfa-part {
@@ -116,15 +92,17 @@ aside {
   font-size: large;
 }
 
-.btn-success{
-box-shadow: 8px 8px 8px $shadow-grey ;
+.btn {
+  box-shadow: 6px 6px 6px $shadow-grey;
 }
 
 /** Footer **/
 
-footer{
+footer {
   background-color: $background-nav-footer;
-  color:white;
+  background-image: url('../images/footer.png');
+  box-shadow: 0px -6px 6px $shadow-grey;
+  color: white;
   a {
     color: $gris;
     &:hover {
@@ -133,28 +111,29 @@ footer{
   }
 }
 
-.minilist{
+.minilist {
   font-size: medium;
 }
 
-.list1{
-  margin-left: -55% ;
+.list1 {
+  margin-left: -55%;
 }
 
 .sidebar {
-  float: left;
-  width: 150em;
-  height: 90%;
-  background: #3a526a;
-  padding: 4px;
-}
-
-
-.asidetitle {
-  background-color: $background-nav-footer;
-  color: $color-sidebar;
-  a {
-    color: $gris;
+  box-shadow: 0 3px 5px $shadow-grey;
+  padding-top: 0.3em;
+  font-variant: small-caps;
+  font-size: 1.6em;
+  background-color: $color-primary;
+  padding-bottom: 0.4em;
+  margin-bottom:1.3em;
+  &:first-child {
+    margin-bottom:0;
+  }
+  h2 {
+    color: $color-basic;
+    margin-bottom: 0;
+    text-shadow: 0 0 2px $color-basic;
   }
 }
 
@@ -175,7 +154,7 @@ footer{
   width: 300px;
   left: 10%;
   position: absolute;
-  background-color: $white-link;
+  background-color: $color-basic;
 }
 
 .containt {
@@ -198,7 +177,7 @@ footer{
 }
 
 .year {
-  background-color: $blue;
+  background-color: $color-primary;
   color: white;
   font-size: 20px;
 }
@@ -208,11 +187,11 @@ footer{
 }
 
 .style-subtitle {
-  color:$vert;
+  color: $vert;
 }
 
 .apprentiTitle {
-  color:$blue;
+  color: $color-primary;
 }
 
 /** Formation **/
@@ -244,14 +223,13 @@ footer{
 
 /** faq **/
 
-
 .question {
   color: $vert;
 }
 
 .background-faq {
   background-image: url("/images/faq.jpg");
-   background-attachment: fixed;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: 100% 75%;
   width: 100%;
@@ -271,7 +249,7 @@ footer{
     font-size: 17px;
   }
 
-  .formation-presentation{
+  .formation-presentation {
     font-size: 30px;
   }
 
@@ -283,12 +261,13 @@ footer{
     width: 100%;
     height: 400px;
   }
+}
 
 .events-bg {
   background-image: url("/images/unsplash3.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
-  .card{
+  .card {
     margin-bottom: 15px;
     box-shadow: 8px 8px 8px black;
   }
