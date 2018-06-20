@@ -1,13 +1,18 @@
 <div class="container-fluid">
-    <div id="yolo" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner w-100" role="listbox">
+    <div class="row side-bar">
+        <div class="sidebar col-12">
+            <h2 class="text-center ">NOS PARTENAIRES</h2>
+        </div>
+    </div>
+    <div id="partner" class="carousel slide logoPartner" data-ride="carousel">
+        <div class="carousel-inner w-100 mb-3" role="listbox">
             {% for partnair in partnairs|batch(5) %}
                 <div class="carousel-item {{ loop.first ? 'active' : '' }}">
-                    <div class="row ">
-                        {% for lign in partnair %}
-                            <div class="col 2">
-                                <a href="{{ lign.link }}">
-                                    <img class="img-fluid" src="http://placehold.it/350x280/222/fff?text=1">
+                    <div class="row my-3">
+                        {% for logo in partnair %}
+                            <div class="col mr-3">
+                                <a href="{{ logo.link }}">
+                                    <img class=" shadow img-fluid" src="{{ logo.image }}" alt="{{ logo.name }}">
                                 </a>
                             </div>
                         {% endfor %}
@@ -15,11 +20,12 @@
                 </div>
             {% endfor %}
         </div>
-        <a class="carousel-control-prev" href="#yolo" role="button" data-slide="prev">
+
+        <a class="carousel-control-prev" href="#partner" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
         </a>
-        <a class="carousel-control-next" href="#yolo" role="button" data-slide="next">
+        <a class="carousel-control-next" href="#partner" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
