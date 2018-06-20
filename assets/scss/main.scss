@@ -1,20 +1,13 @@
-@import "../../node_modules/bootstrap/dist/css/bootstrap.css";
-$primary-1: #3462ac;
-$primary-2: #1ca038;
-$primary-3: #f9b20b;
-$primary-4: #bd1d1d;
-$primary-5: #ffffff;
-$primary-6:#C3D9E0;
-$primary-7:  #222222;
-$table-entry: $primary-1;
-$background-section-homepage: $primary-1;
-$background-nav-footer: $primary-7;
-$button-color: $primary-2;
-$link: $primary-2;
-$pipe-title: $primary-2;
-$color-title-homepage: $primary-5;
-$shadow-button: #AAAAAA;
-$contour-remember: $primary-3;
+$color-primary: #3462ac;
+$color-primary2: #18ba60;
+$color-primary3: #cf482a;
+
+$color-basic: white;
+$color-basic-inverse: invert($color-basic);
+
+$color-sidebar: $color-primary;
+$shadow: #aaaaaa;
+
 $fontText: "Poppins";
 
 @font-face {
@@ -22,55 +15,42 @@ $fontText: "Poppins";
   @import url('https://fonts.googleapis.com/css?family=Poppins');
 }
 
+body {
+  font-family: $fontText;
+  background-image: url('../images/background.png');
+  background-repeat: repeat;
+}
 
 /**Navbar**/
 
-.title-cfa {
-  color: $color-title-homepage;
-  font-size: 25px;
-}
-
 .logo {
-  width: 175px;
-  height: 150px;
+  width: 150px;
 }
 
-.nav-tabs {
-  border-bottom: none;
-  margin-left: 47em;
-}
+.navbar {
+  opacity: 0.9;
+  .nav-link {
+    font-size: 1.2em;
+    color: $color-basic-inverse;
+  }
 
-
-.nav-link:hover {
-  color: $link ;
+  .nav-link:hover {
+    background-color: $color-primary2;
+    color: $color-basic;
+  }
 }
 
 .dropdown-item:hover {
-  background-color: $link;
-}
-
-body {
-  font-family: $fontText;
+  background-color: $color-primary2;
 }
 
 li {
   list-style: none;
-  font-size: large;
-}
-.sidebar {
-  float: left;
-  width: 150em;
-  height: 90%;
-  padding: 4px;
-  background-color: $background-section-homepage;
-  h2 {
-    color: $color-title-homepage;
-  }
 }
 
 .style-page {
   padding: 2px 10px 2px 5px;
-  border-left: 6px solid $pipe-title;
+  border-left: 6px solid $color-primary2;
 
 }
 
@@ -80,50 +60,47 @@ li {
   margin-left: 100px;
 }
 
-.slider-block {
-  width: 100%;
-  height: 500px;
+.slider {
+  .carousel-item {
+    height: 500px;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
 }
 
 .count-up {
-  padding: 20px;
-}
+  .counter {
+    color: $color-primary2;
+    font-size: 3em;
+    text-shadow: 2px 2px 4px $color-primary2;
+  }
 
-.counter {
-  color: $primary-2;
-  display: table-cell;
-  margin: 1.5%;
-  border-radius: 20%;
-  width: 115px;
-  height: 115px;
-  vertical-align: middle;
-  font-size: 50px;
-}
-
-aside {
-  font-size: 22px;
-  margin-top: 20px;
-  margin-left: 30px;
+  p {
+    font-size: 1.2em;
+  }
 }
 
 .cfa-part {
-  background-color: $color-title-homepage;
+  background-color: $color-basic;
   font-size: large;
 }
 
-.btn-success {
-  box-shadow: 8px 8px 8px $shadow-button;
+.btn {
+  box-shadow: 6px 6px 6px $shadow;
 }
 
 /** Footer **/
 
 footer {
-  background-color: $background-nav-footer;
-  color: $primary-5;
+  background-image: url('../images/footer.png');
+  box-shadow: 0px -6px 6px $shadow;
+  color: $color-basic;
+  font-size:1.2em;
   a {
-    color: $shadow-button;
     &:hover {
-      color: $link;
+      color: $color-primary2;
     }
   }
 }
@@ -136,10 +113,21 @@ footer {
   margin-left: -55%;
 }
 
-.asidetitle {
-  background-color: $background-nav-footer;
-  a {
-    color: $shadow-button;
+.sidebar {
+  box-shadow: 0 3px 5px $shadow;
+  padding-top: 0.3em;
+  font-variant: small-caps;
+  font-size: 1.6em;
+  background-color: $color-primary;
+  padding-bottom: 0.4em;
+  margin-bottom:1.3em;
+  &:first-child {
+    margin-bottom:0;
+  }
+  h2 {
+    color: $color-basic;
+    margin-bottom: 0;
+    text-shadow: 0 0 2px $color-basic;
   }
 }
 
@@ -154,20 +142,20 @@ footer {
 
 .rememberTitle {
   font-size: 30px;
-  color: $contour-remember;
+  color: $color-primary3;
   text-align: center;
   top: 5px;
   width: 300px;
   left: 10%;
   position: absolute;
-  background-color: $primary-5;
+  background-color: $color-basic;
 }
 
 .containt {
   margin: 10px;
   text-align: left;
   padding: 20px 10px 20px 10px;
-  border: 1px solid $contour-remember;
+  border: 1px solid $color-primary3;
   border-radius: 10px;
 }
 
@@ -177,83 +165,37 @@ footer {
 }
 
 .thead-cycle {
-  background-color: $primary-2;
-  color: $primary-5;
+  background-color: $color-primary2;
+  color: $color-basic;
   font-size: 20px;
 }
 
 .year {
-  background-color: $table-entry;
-  color: $primary-5;
+  background-color: $color-primary;
+  color: $color-basic;
   font-size: 20px;
 }
 
 .text-body {
-  background-color: $primary-6;
+  background-color: #C3D9E0;
 }
 
 .style-subtitle {
-  color: $link;
+  color: $color-primary2;
 }
 
 .apprentiTitle {
-  color: $table-entry;
-}
-
-.contrat-img {
-  background-image: url("/images/signature.jpg");
-}
-
-.statut-img {
-  background-image: url("/images/statut.jpg");
-}
-
-.formation-img {
-  background-image: url("/images/formation_apprenti.jpg");
-}
-
-
-.apprenti-select {
-  position: relative;
-  overflow: hidden;
-  min-height: 250px;
-  padding: 0px;
-  display: flex;
-  align-items: end;
-  z-index: 0;
-
-  :not(:hover) p {
-    display: none;
-  }
-  .caption {
-    background-color: white;
-    padding: 15px;
-    opacity: 0.8;
-    width: 100%;
-    z-index: 1;
-  }
-  .apprenti-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: -1;
-    filter: grayscale(75%);
-  }
+  color: $color-primary;
 }
 
 /** Formation **/
 
 .title-formation {
-  color: $link;
+  color: $color-primary2;
 }
 
 .background-formation {
-  background-image: url("/images/formation_back.jpg");
+  background-image: url("../images/formation_back.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -263,7 +205,7 @@ footer {
 }
 
 .meeting-formation {
-  background-image: url("/images/meeting_formation.jpeg");
+  background-image: url("../images/meeting_formation.jpeg");
   background-attachment: scroll;
   background-repeat: no-repeat;
   margin-left: 100px;
@@ -276,11 +218,11 @@ footer {
 /** faq **/
 
 .question {
-  color: $link;
+  color: $color-primary2;
 }
 
 .background-faq {
-  background-image: url("/images/faq.jpg");
+  background-image: url("../images/faq.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: 100% 75%;
@@ -290,41 +232,39 @@ footer {
 
 .style-page {
   padding: 2px 10px 2px 5px;
-  border-left: 5px solid $primary-2;
+  border-left: 5px solid $color-primary2;
 }
 
 .link-formation {
   color: black;
   font-size: 16px;
   &:hover {
-    color: $link;
+    color: $color-primary2;
     font-size: 17px;
   }
-}
 
-  .formation-presentation{
+.formation-presentation{
     font-size: 1.2em;
+
   }
 
-.background-apprenti {
-  background-image: url("/images/apprenti.jpg");
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: 100% 80%;
-  width: 100%;
-  height: 400px;
+  .background-apprenti {
+    background-image: url("../images/apprenti.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 80%;
+    width: 100%;
+    height: 400px;
+  }
 }
 
-
-/** event **/
-
 .events-bg {
-  background-image: url("/images/event_background_img.jpg");
+  background-image: url("../images/event_background_img.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   .card {
     margin-bottom: 15px;
-    box-shadow: 8px 8px 8px $primary-7;
+    box-shadow: 8px 8px 8px black;
   }
 }
 
@@ -342,4 +282,3 @@ footer {
     font-size: 2.5em;
   }
 }
-
