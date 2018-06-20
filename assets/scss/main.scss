@@ -1,23 +1,18 @@
 $color-primary: #3462ac;
-$background-nav-footer: #222222;
-$vert: #18ba60;
-$gris: #888888;
-$black: black;
+$color-primary2: #18ba60;
+$color-primary3: #cf482a;
+
 $color-basic: white;
+$color-basic-inverse: invert($color-basic);
+
 $color-sidebar: $color-primary;
-$green: #5fbda3;
-$shadow-grey: #AAAAAA;
-$remember: #cf482a;
+$shadow: #aaaaaa;
+
 $fontText: "Poppins";
 
 @font-face {
   font-family: 'Poppins';
   @import url('https://fonts.googleapis.com/css?family=Poppins');
-}
-
-@font-face {
-  font-family: "Roboto Slab";
-  @import url('http://fonts.googleapis.com/css?family=Roboto+Slab');
 }
 
 body {
@@ -36,17 +31,17 @@ body {
   opacity: 0.9;
   .nav-link {
     font-size: 1.2em;
-    color: $black;
+    color: $color-basic-inverse;
   }
 
   .nav-link:hover {
-    background-color: $vert;
+    background-color: $color-primary2;
     color: $color-basic;
   }
 }
 
 .dropdown-item:hover {
-  background-color: $vert;
+  background-color: $color-primary2;
 }
 
 li {
@@ -55,7 +50,7 @@ li {
 
 .style-page {
   padding: 2px 10px 2px 5px;
-  border-left: 6px solid $vert;
+  border-left: 6px solid $color-primary2;
 
 }
 
@@ -77,9 +72,9 @@ li {
 
 .count-up {
   .counter {
-    color: $vert;
+    color: $color-primary2;
     font-size: 3em;
-    text-shadow: 2px 2px 4px $vert;
+    text-shadow: 2px 2px 4px $color-primary2;
   }
 
   p {
@@ -93,20 +88,18 @@ li {
 }
 
 .btn {
-  box-shadow: 6px 6px 6px $shadow-grey;
+  box-shadow: 6px 6px 6px $shadow;
 }
 
 /** Footer **/
 
 footer {
-  background-color: $background-nav-footer;
   background-image: url('../images/footer.png');
-  box-shadow: 0px -6px 6px $shadow-grey;
+  box-shadow: 0px -6px 6px $shadow;
   color: white;
   a {
-    color: $gris;
     &:hover {
-      color: $vert;
+      color: $color-primary2;
     }
   }
 }
@@ -120,7 +113,7 @@ footer {
 }
 
 .sidebar {
-  box-shadow: 0 3px 5px $shadow-grey;
+  box-shadow: 0 3px 5px $shadow;
   padding-top: 0.3em;
   font-variant: small-caps;
   font-size: 1.6em;
@@ -148,7 +141,7 @@ footer {
 
 .rememberTitle {
   font-size: 30px;
-  color: $remember;
+  color: $color-primary3;
   text-align: center;
   top: 5px;
   width: 300px;
@@ -161,7 +154,7 @@ footer {
   margin: 10px;
   text-align: left;
   padding: 20px 10px 20px 10px;
-  border: 1px solid $remember;
+  border: 1px solid $color-primary3;
   border-radius: 10px;
 }
 
@@ -171,7 +164,7 @@ footer {
 }
 
 .thead-cycle {
-  background-color: $vert;
+  background-color: $color-primary2;
   color: white;
   font-size: 20px;
 }
@@ -187,7 +180,7 @@ footer {
 }
 
 .style-subtitle {
-  color: $vert;
+  color: $color-primary2;
 }
 
 .apprentiTitle {
@@ -197,11 +190,11 @@ footer {
 /** Formation **/
 
 .title-formation {
-  color: $vert;
+  color: $color-primary2;
 }
 
 .background-formation {
-  background-image: url("/images/formation_back.jpg");
+  background-image: url("../images/formation_back.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -211,7 +204,7 @@ footer {
 }
 
 .meeting-formation {
-  background-image: url("/images/meeting_formation.jpeg");
+  background-image: url("../images/meeting_formation.jpeg");
   background-attachment: scroll;
   background-repeat: no-repeat;
   margin-left: 100px;
@@ -224,11 +217,11 @@ footer {
 /** faq **/
 
 .question {
-  color: $vert;
+  color: $color-primary2;
 }
 
 .background-faq {
-  background-image: url("/images/faq.jpg");
+  background-image: url("../images/faq.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: 100% 75%;
@@ -238,14 +231,14 @@ footer {
 
 .style-page {
   padding: 2px 10px 2px 5px;
-  border-left: 5px solid $vert;
+  border-left: 5px solid $color-primary2;
 }
 
 .link-formation {
   color: black;
   font-size: 16px;
   &:hover {
-    color: $vert;
+    color: $color-primary2;
     font-size: 17px;
   }
 
@@ -254,7 +247,7 @@ footer {
   }
 
   .background-apprenti {
-    background-image: url("/images/apprenti.jpg");
+    background-image: url("../images/apprenti.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: 100% 80%;
@@ -264,7 +257,7 @@ footer {
 }
 
 .events-bg {
-  background-image: url("/images/unsplash3.jpg");
+  background-image: url("../images/event_background_img.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   .card {
