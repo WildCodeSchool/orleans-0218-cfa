@@ -80,6 +80,5 @@ class PartnairFixtures extends Fixture
         $manager->persist($partner11);
 
         $manager->flush();
-
     }
 }

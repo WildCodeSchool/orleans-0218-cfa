@@ -150,6 +150,5 @@ class PartnairController extends Controller
         return $this->render('homepage/logoPartner.html.twig', array(
             'partnairs' => $partnairs
         ));
-
     }
 }
