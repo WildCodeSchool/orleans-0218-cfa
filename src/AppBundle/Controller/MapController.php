@@ -26,9 +26,11 @@ class MapController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $ufas = $em->getRepository('AppBundle:Ufa')->findAll();
+        $ufa = $em->getRepository('AppBundle:Ufa')->findOneBy([]);
 
         return $this->render('ufa/public/map.html.twig', array(
             'ufas' => $ufas,
+            'ufa'=> $ufa,
         ));
     }
 
