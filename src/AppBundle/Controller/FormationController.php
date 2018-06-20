@@ -41,14 +41,9 @@ class FormationController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $formations = $em->getRepository('AppBundle:Formation')->findAll();
-
         $formation = $em->getRepository('AppBundle:Formation')->findOneBy([]);
 
-        return $this->render('formation/public/formation.html.twig', array(
-            'formations' => $formations,
-            'formation' => $formation,
-        ));
+        return $this->redirectToRoute('formation', ['id' => $formation->getId()]);
     }
 
     /**
