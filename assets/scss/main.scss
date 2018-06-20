@@ -273,7 +273,7 @@ footer{
 }
 
   .formation-presentation{
-    font-size: 24px;
+    font-size: 1.2em;
   }
 
   .background-apprenti {
@@ -298,13 +298,14 @@ footer{
 .homepage-formation {
   background-image: url("/images/home_formation.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+  min-height: 50vh;
   ul {
     columns: 2;
     margin: 15px;
   }
   li{
-    margin-bottom: 25px;
-    font-size: 20px;
+    margin-bottom: 35px;
+    font-size: 2.5em;
   }
 }
