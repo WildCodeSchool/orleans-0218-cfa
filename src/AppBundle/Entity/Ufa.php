@@ -322,14 +322,6 @@ class Ufa
     }
 
     /**
-     * @return string
-     */
-    public function __toString()
-    {
-        return $this->name;
-    }
-
-    /**
      * Ufa constructor.
      */
     public function __construct()
