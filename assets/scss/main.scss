@@ -243,8 +243,9 @@ footer {
     font-size: 17px;
   }
 
-  .formation-presentation {
-    font-size: 30px;
+.formation-presentation{
+    font-size: 1.2em;
+
   }
 
   .background-apprenti {
@@ -267,7 +268,23 @@ footer {
   }
 }
 
+.homepage-formation {
+  background-image: url("/images/home_formation.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-height: 50vh;
+  ul {
+    columns: 2;
+    margin: 15px;
+  }
+  li{
+    margin-bottom: 35px;
+    font-size: 2.5em;
+  }
+}
+
 .leaflet {
   width:40vw;
   height:80vh;
 }
+
