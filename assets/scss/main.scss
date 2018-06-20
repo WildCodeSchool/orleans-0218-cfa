@@ -96,7 +96,8 @@ li {
 footer {
   background-image: url('../images/footer.png');
   box-shadow: 0px -6px 6px $shadow;
-  color: white;
+  color: $color-basic;
+  font-size:1.2em;
   a {
     &:hover {
       color: $color-primary2;
@@ -165,13 +166,13 @@ footer {
 
 .thead-cycle {
   background-color: $color-primary2;
-  color: white;
+  color: $color-basic;
   font-size: 20px;
 }
 
 .year {
   background-color: $color-primary;
-  color: white;
+  color: $color-basic;
   font-size: 20px;
 }
 
