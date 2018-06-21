@@ -9,7 +9,12 @@
 
         {{ render(controller('AppBundle:Event:showHomepageSection')) }}
 
-        {{ render(controller('AppBundle:Partnair:showHomepageSlider')) }}
+
+        {{ render(controller('AppBundle:Formation:list')) }}
+
+        {% include 'homepage/apprenti.html.twig' %}
+
+         {{ render(controller('AppBundle:Partnair:showHomepageSlider')) }}
 
     </div>
 
