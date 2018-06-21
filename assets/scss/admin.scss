@@ -1,0 +1,36 @@
+$color-primary: #3462ac;
+$color-primary2: #18ba60;
+$color-primary3: #cf482a;
+
+$color-basic: white;
+$color-basic-inverse: invert($color-basic);
+
+$color-sidebar: $color-primary;
+$shadow: #aaaaaa;
+
+$fontText: "Poppins";
+
+@font-face {
+  font-family: 'Poppins';
+  @import url('https://fonts.googleapis.com/css?family=Poppins');
+}
+
+body {
+  font-family: $fontText;
+  background-image: url('../images/background.png');
+  background-repeat: repeat;
+}
+
+li {
+  list-style-type: none;
+}
+
+.nav-link {
+  li{
+    color: black;
+  }
+}
+
+.welcome-message {
+  background-color: $color-basic;
+}
