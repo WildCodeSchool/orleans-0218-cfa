@@ -29,9 +29,7 @@ class UfaType extends AbstractType
             ->add('town', TextType::class, ['label'=>'Ville'])
             ->add('formations', EntityType::class, [
                 'class' => 'AppBundle\Entity\Formation',
-                'choice_label'=> function ($formations) {
-                    return $formations->getName();
-                },
+                'choice_label'=> 'name',
                 'multiple' => true,
                 'expanded' => true
             ]);
