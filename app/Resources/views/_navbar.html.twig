@@ -1,6 +1,6 @@
 <nav class="navbar-expand-sm navbar sticky-top navbar-light bg-white">
-    <a class="navbar-brand" href="#">
-        <img class="logo" src="/images/logo-navbar.png" alt="Logo du CFA">
+    <a class="navbar-brand" href="/">
+        <img class="logo" src="{{ asset('images/logo_cfa.png') }}" alt="Logo du CFA">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -12,15 +12,15 @@
                 Le CFA</a>
             <div class="dropdown-menu">
                 <a class="dropdown-item " href="#tab2Id">Le cfa</a>
-                <a class="dropdown-item" href="{{ path('map_index')}}">L'ufa</a>
+                <a class="dropdown-item" href="{{ path('map_index')}}">UFA</a>
             </div>
         </li>
         <li class="nav-item dropdown nav-pills">
             <a class="nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
                aria-expanded="false">Les Apprentis</a>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="#tab2Id">Quelle formation ?</a>
-                <a class="dropdown-item" href="#tab3Id">Le statut d'apprenti</a>
+                <a class="dropdown-item" href="{{ path('formationapprentipage') }}">Quelle formation ?</a>
+                <a class="dropdown-item" href="{{ path('statutapprentipage') }}">Le statut d'apprenti</a>
                 <a class="dropdown-item" href="#tab4Id">Signer un contrat</a>
             </div>
         </li>
