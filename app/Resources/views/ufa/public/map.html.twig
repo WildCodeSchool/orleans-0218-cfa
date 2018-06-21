@@ -28,12 +28,13 @@
                 <ul>
                     <li>{{ ufa.address }}</li>
                     <li>{{ ufa.zipcode }} {{ ufa.town }}</li>
+                </ul>
+                    <h3>Formation(s) dispensée(s):</h3>
                         <ul>
                             {% for formation in ufa.formations %}
-                                <li><a href="#">{{ formation.name }}</a></li>
+                                <li><a href="{{ path('formation', {'id': formation.id}) }}">{{ formation.name }}</a></li>
                             {% endfor %}
                         </ul>
-                </ul>
             </div>
         </div>
     </div>
