@@ -17,20 +17,12 @@ $fontText: "Poppins";
 
 body {
   font-family: $fontText;
-  background-image: url('../images/background.png');
-  background-repeat: repeat;
 }
 
 li {
   list-style-type: none;
 }
 
-.nav-link {
-  li{
-    color: black;
-  }
-}
-
-.welcome-message {
-  background-color: $color-basic;
+.navbar-nav {
+  font-size: 1.2em;
 }
