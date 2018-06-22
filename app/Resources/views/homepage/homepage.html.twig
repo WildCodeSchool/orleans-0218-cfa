@@ -8,9 +8,15 @@
         {% include 'homepage/cfa.html.twig' %}
 
         {{ render(controller('AppBundle:Event:showHomepageSection')) }}
-    </div>
 
-  {% include 'homepage/apprenti.html.twig' %}
+
+        {{ render(controller('AppBundle:Formation:list')) }}
+
+        {% include 'homepage/apprenti.html.twig' %}
+
+         {{ render(controller('AppBundle:Partnair:showHomepageSlider')) }}
+
+    </div>
 
 {% endblock %}
 
