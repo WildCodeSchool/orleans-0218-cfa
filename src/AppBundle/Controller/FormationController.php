@@ -17,6 +17,38 @@ class FormationController extends Controller
     /**
      * Lists all formation entities.
      *
+     * @Route("/", name="formation_list")
+     * @Method("GET")
+     */
+    public function listAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $formations = $em->getRepository('AppBundle:Formation')->findAll();
+
+        return $this->render('homepage/formations.html.twig', array(
+            'formations' => $formations,
+        ));
+    }
+
+    /**
+     * Lists all formation entities.
+     *
+     * @Route("/formations", name="formation_show")
+     * @Method("GET")
+     */
+    public function showAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $formation = $em->getRepository('AppBundle:Formation')->findOneBy([]);
+
+        return $this->redirectToRoute('formation', ['id' => $formation->getId()]);
+    }
+
+    /**
+     * Lists all formation entities.
+     *
      * @Route("/{id}", name="formation")
      * @Method("GET")
      */

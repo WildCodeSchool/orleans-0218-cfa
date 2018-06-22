@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 {% block body %}
 <section class="formation">
     <div class="container-fluid">
@@ -23,8 +23,8 @@
                 </div>
                 <div class="col-md-7 offset-md-1 col-sm-12">
                     <h2 class="text-center mb-5 title-formation"><i class="fas fa-graduation-cap"></i> {{ formation.name }}</h2>
-                        <p class="formation-presentation">{{ formation.shortPresentation }}</p>
-                        <p class="mt-5 bg-light text-success">{{ formation.jobDescription }}</p>
+                        <p class="formation-presentation">{{ formation.shortPresentation|raw }}</p>
+                        <p class="mt-5 bg-light text-success">{{ formation.jobDescription|raw }}</p>
                     <div class="section-title meeting-formation"></div>
                     <div class="row">
                         <div class="col-md-3 ml-md-auto">

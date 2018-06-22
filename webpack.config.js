@@ -5,6 +5,7 @@ Encore
     .setPublicPath('/build')
     .addEntry('app', './assets/js/app.js')
     .addEntry('style', './assets/scss/main.scss')
+    .addEntry('style_admin', './assets/scss/admin.scss')
     .createSharedEntry('vendor', [
         'jquery',
         'bootstrap',
