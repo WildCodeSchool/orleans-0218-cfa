@@ -1,24 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8"/>
-    <title>{% block title %}Administrateur CFA-SMS{% endblock %}</title>
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+{% extends 'base.html.twig' %}
 
-    <link rel="stylesheet" href="{{ asset('build/vendor.css') }}">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
-          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('build/style_admin.css') }}">
-    {% block stylesheets %}{% endblock %}
-</head>
-<body>
-    {% block header %}
-        {% include '_navbarAdmin.html.twig' %}
-    {% endblock %}
+{% block header %}
+    {% include '_navbarAdmin.html.twig' %}
+{% endblock %}
 
-    {% block body %}
-    {% endblock %}
+{% block body %}
+{% endblock %}
 
-    {% block javascripts %}{% endblock %}
-</body>
-</html>
+{% block javascripts %}{% endblock %}
