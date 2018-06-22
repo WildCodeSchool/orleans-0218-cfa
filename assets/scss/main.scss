@@ -89,6 +89,7 @@ li {
 
 .btn {
   box-shadow: 6px 6px 6px $shadow;
+  margin-bottom: 8px;
 }
 
 /** Footer **/
@@ -284,11 +285,11 @@ footer {
   font-size: 16px;
   &:hover {
     color: $color-primary2;
-    font-size: 17px;
   }
 
-  .formation-presentation {
-    font-size: 30px;
+.formation-presentation{
+    font-size: 1.2em;
+
   }
 
   .background-apprenti {
@@ -311,7 +312,32 @@ footer {
   }
 }
 
-.leaflet {
-  width: 40vw;
-  height: 80vh;
+.homepage-formation {
+  background-image: url("/images/home_formation.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 50vh;
+  ul {
+    columns: 2;
+    margin: 15px;
+  }
+  li{
+    margin-bottom: 35px;
+    font-size: 2.5em;
+  }
 }
+
+.leaflet {
+  width:48vw;
+  height:80vh;
+}
+
+/** carousel logos partner **/
+
+.logoPartner {
+  img {
+    min-height: 100%;
+    max-height: 180px;
+  }
+}
+

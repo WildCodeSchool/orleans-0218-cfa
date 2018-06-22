@@ -1,6 +1,4 @@
-{% extends 'base.html.twig' %}
-
-
+{% extends 'layout.html.twig' %}
 
 {% block body %}
 
@@ -15,7 +13,7 @@
             <div class="col-3">
                 <ul>
                     {% for ufa in ufas %}
-                        <li class="list-group-item  "><a href="{{ path('map_show', { 'id': ufa.id }) }}">{{ ufa.name }}</a></li>
+                        <li class="list-group-item shadow"><h5><a href="{{ path('map_show', { 'id': ufa.id }) }}">{{ ufa.name }}</a></h5></li>
                     {% endfor %}
                 </ul>
             </div>
@@ -24,11 +22,25 @@
                 </div>
             </div>
             <div class="col-3">
-                <h2>{{ ufa.name }}</h2>
-                <ul>
-                    <li>{{ ufa.address }}</li>
-                    <li>{{ ufa.zipcode }} {{ ufa.town }}</li>
-                </ul>
+                <div class="card shadow">
+                    <div class="card-header">
+                        <h2>{{ ufa.name }}</h2>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <li>{{ ufa.address }}</li>
+                            <li>{{ ufa.zipcode }} {{ ufa.town }}</li>
+                        </h5>
+                        <p class="card-text">
+                        <p>Formation(s) dispensée(s):</p>
+                        <ul>
+                            {% for formation in ufa.formations %}
+                                <li><a href="{{ path('formation', {'id': formation.id}) }}">{{ formation.name }}</a></li>
+                            {% endfor %}
+                        </ul></p>
+                        <a class="btn btn-outline-primary float-right" href="#" class="btn btn-primary">Le site de l'UFA</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

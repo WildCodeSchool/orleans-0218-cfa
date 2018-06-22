@@ -1,0 +1,16 @@
+<section>
+    <div class="row">
+        <div class="sidebar col-12">
+            <h2 class="text-center">NOS FORMATIONS</h2>
+        </div>
+    </div>
+    <div class="row homepage-formation">
+        <div class="col-md-6 offset-md-6 col-sm-12">
+            <ul class="list-formation">
+                {% for formation in formations %}
+                        <li><i class="fas fa-angle-right"></i><a href="{{ path('formation', { 'id': formation.id }) }}" class="link-formation p-3">{{ formation.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>

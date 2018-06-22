@@ -29,8 +29,8 @@ class PartnairController extends Controller
         $partnairs = $em->getRepository('AppBundle:Partnair')->findAll();
 
         return $this->render('partnair/index.html.twig', array(
-                'partnairs' => $partnairs,
-            ));
+            'partnairs' => $partnairs,
+        ));
     }
 
     /**
@@ -54,14 +54,14 @@ class PartnairController extends Controller
             $em->flush();
 
             return $this->redirectToRoute('partnair_show', array(
-                    'partnairs' => $partnairs,
-                    'id' => $partnair->getId(),
-                ));
+                'partnairs' => $partnairs,
+                'id' => $partnair->getId(),
+            ));
         }
 
         return $this->render('partnair/new.html.twig', array(
-                'form' => $form->createView(),
-            ));
+            'form' => $form->createView(),
+        ));
     }
 
     /**
@@ -75,9 +75,9 @@ class PartnairController extends Controller
         $deleteForm = $this->createDeleteForm($partnair);
 
         return $this->render('partnair/show.html.twig', array(
-                'partnair' => $partnair,
-                'delete_form' => $deleteForm->createView(),
-            ));
+            'partnair' => $partnair,
+            'delete_form' => $deleteForm->createView(),
+        ));
     }
 
     /**
@@ -140,5 +140,15 @@ class PartnairController extends Controller
             ->setAction($this->generateUrl('partnair_delete', array('id' => $partnair->getId())))
             ->setMethod('DELETE')
             ->getForm();
+    }
+
+    public function showHomepageSliderAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $partnairs = $em->getRepository('AppBundle:Partnair')->findAll();
+
+        return $this->render('homepage/logoPartner.html.twig', array(
+            'partnairs' => $partnairs
+        ));
     }
 }
