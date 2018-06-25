@@ -26,6 +26,7 @@ class HistoricCfa
      * @var \DateTime
      *
      * @ORM\Column(name="date", type="datetime")
+     * @Assert\Date()
      * @Assert\NotBlank(message="La date doit être renseigné")
      *
      */
@@ -43,11 +44,11 @@ class HistoricCfa
     /**
      * @var string
      *
-     * @ORM\Column(name="containt", type="string", length=255)
+     * @ORM\Column(name="containt", type="text", length=500)
      * @Assert\NotBlank(message="Le contenu de l'historique ne peut pas être vide")
-     * @Assert\Length(max = 255, maxMessage = "Le contenu de l'historique ne doit pas dépasser les 255 caractères")
+     * @Assert\Length(max = 500, maxMessage = "Le contenu de l'historique ne doit pas dépasser les 500 caractères")
      */
-    private $containt;
+    private $content;
 
 
     /**
@@ -108,27 +109,30 @@ class HistoricCfa
         return $this->title;
     }
 
+
+
     /**
-     * Set containt.
+     * Set content.
      *
-     * @param string $containt
+     * @param string $content
      *
      * @return HistoricCfa
      */
-    public function setContaint($containt)
+    public function setContent($content)
     {
-        $this->containt = $containt;
+        $this->content = $content;
 
         return $this;
     }
 
     /**
-     * Get containt.
+     * Get content.
      *
      * @return string
      */
-    public function getContaint()
+    public function getContent()
     {
-        return $this->containt;
+        return $this->content;
     }
 }
+
