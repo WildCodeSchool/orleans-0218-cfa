@@ -1,4 +1,8 @@
 {% extends 'base.html.twig' %}
+{% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('build/style.css') }}">
+{% endblock %}
+
 {% block header %}
     <div class="col sidebar">
         <h2 class="text-right title-cfa">Les métiers du champ social et sanitaire en région Centre-Val de Loire</h2>
