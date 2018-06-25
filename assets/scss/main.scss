@@ -271,7 +271,7 @@ footer{
     font-size: 17px;
   }
 
-  .formation-presentation{
+  .formation-presentation {
     font-size: 30px;
   }
 
@@ -284,12 +284,13 @@ footer{
     height: 400px;
   }
 
-.events-bg {
-  background-image: url("/images/unsplash3.jpg");
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  .card{
-    margin-bottom: 15px;
-    box-shadow: 8px 8px 8px black;
+  .events-bg {
+    background-image: url("/images/unsplash3.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    .card {
+      margin-bottom: 15px;
+      box-shadow: 8px 8px 8px black;
+    }
   }
 }
