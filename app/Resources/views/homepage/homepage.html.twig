@@ -1,12 +1,22 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block body %}
+    <div class="container-fluid">
 
-  {% include 'homepage/slider.html.twig' %}
-  
-  {% include 'homepage/cfa.html.twig' %}
+        {% include 'homepage/slider.html.twig' %}
 
-  {{ render(controller('AppBundle:Event:showHomepageSection')) }}
+        {% include 'homepage/cfa.html.twig' %}
+
+        {{ render(controller('AppBundle:Event:showHomepageSection')) }}
+
+
+        {{ render(controller('AppBundle:Formation:list')) }}
+
+        {% include 'homepage/apprenti.html.twig' %}
+
+         {{ render(controller('AppBundle:Partnair:showHomepageSlider')) }}
+
+    </div>
 
 {% endblock %}
 

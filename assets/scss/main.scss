@@ -1,20 +1,13 @@
+$color-primary: #3462ac;
+$color-primary2: #18ba60;
+$color-primary3: #cf482a;
 
-@import "../../node_modules/bootstrap/dist/css/bootstrap.css";
-
-
-
-
-$blue: #009fe3;
-$background-nav-footer: #222222;
-$vert: #18ba60;
-$gris:  #888888;
-$black: black;
 $color-basic: white;
-$color-sidebar: #009fe3;
-$white-link: #ffffff;
-$green: #5fbda3;
-$shadow-grey: #AAAAAA;
-$remember: #cf482a;
+$color-basic-inverse: invert($color-basic);
+
+$color-sidebar: $color-primary;
+$shadow: #aaaaaa;
+
 $fontText: "Poppins";
 
 @font-face {
@@ -22,57 +15,42 @@ $fontText: "Poppins";
   @import url('https://fonts.googleapis.com/css?family=Poppins');
 }
 
-
-@font-face {
-  font-family: "Roboto Slab";
-  @import url('http://fonts.googleapis.com/css?family=Roboto+Slab');
-}
-/**Navbar**/
-
-.title-cfa{
-  color: $color-basic;
-  font-size: 25px;
-}
-
-.logo{
-  width: 175px;
-  height: 150px;
-}
-
-
-.nav-tabs{
-  border-bottom: none;
-  margin-left: 47em;
-}
-
-.nav-link{
-  color: $black;
-}
-
-.nav-link:hover{
-  color: $vert;
-}
-
-.dropdown-item:hover{
-  background-color: $vert;
-}
-
 body {
   font-family: $fontText;
+  background-image: url('../images/background.png');
+  background-repeat: repeat;
 }
 
-li{
+/**Navbar**/
+
+.logo {
+  width: 150px;
+}
+
+.navbar {
+  opacity: 0.9;
+  .nav-link {
+    font-size: 1.2em;
+    color: $color-basic-inverse;
+  }
+
+  .nav-link:hover {
+    background-color: $color-primary2;
+    color: $color-basic;
+  }
+}
+
+.dropdown-item:hover {
+  background-color: $color-primary2;
+}
+
+li {
   list-style: none;
-  font-size: large;
-}
-
-h2{
-  color: $color-basic;
 }
 
 .style-page {
   padding: 2px 10px 2px 5px;
-  border-left: 6px solid $vert;
+  border-left: 6px solid $color-primary2;
 
 }
 
@@ -82,33 +60,26 @@ h2{
   margin-left: 100px;
 }
 
-.slider-block {
-  width: 100%;
-  height: 500px;
+.slider {
+  .carousel-item {
+    height: 500px;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
 }
 
 .count-up {
-  color: $color-basic;
-  padding: 20px;
-}
+  .counter {
+    color: $color-primary2;
+    font-size: 3em;
+    text-shadow: 2px 2px 4px $color-primary2;
+  }
 
-.counter {
-  background-color: $color-basic;
-  color: $vert;
-  display: table-cell;
-  margin:1.5%;
-  border-radius: 20%;
-  width: 115px;
-  height:115px;
-  vertical-align: middle;
-  font-size:50px;
-}
-
-aside {
-  font-size: 22px;
-  margin-top: 20px;
-  margin-left: 30px;
-  color: $black;
+  p {
+    font-size: 1.2em;
+  }
 }
 
 .cfa-part {
@@ -116,45 +87,48 @@ aside {
   font-size: large;
 }
 
-.btn-success{
-box-shadow: 8px 8px 8px $shadow-grey ;
+.btn {
+  box-shadow: 6px 6px 6px $shadow;
+  margin-bottom: 8px;
 }
 
 /** Footer **/
 
-footer{
-  background-color: $background-nav-footer;
-  color:white;
+footer {
+  background-image: url('../images/footer.png');
+  box-shadow: 0px -6px 6px $shadow;
+  color: $color-basic;
+  font-size: 1.2em;
   a {
-    color: $gris;
     &:hover {
-      color: $vert;
+      color: $color-primary2;
     }
   }
 }
 
-.minilist{
+.minilist {
   font-size: medium;
 }
 
-.list1{
-  margin-left: -55% ;
+.list1 {
+  margin-left: -55%;
 }
 
 .sidebar {
-  float: left;
-  width: 150em;
-  height: 90%;
-  background: #3a526a;
-  padding: 4px;
-}
-
-
-.asidetitle {
-  background-color: $background-nav-footer;
-  color: $color-sidebar;
-  a {
-    color: $gris;
+  box-shadow: 0 3px 5px $shadow;
+  padding-top: 0.3em;
+  font-variant: small-caps;
+  font-size: 1.6em;
+  background-color: $color-primary;
+  padding-bottom: 0.4em;
+  margin-bottom: 1.3em;
+  &:first-child {
+    margin-bottom: 0;
+  }
+  h2 {
+    color: $color-basic;
+    margin-bottom: 0;
+    text-shadow: 0 0 2px $color-basic;
   }
 }
 
@@ -169,20 +143,20 @@ footer{
 
 .rememberTitle {
   font-size: 30px;
-  color: $remember;
+  color: $color-primary3;
   text-align: center;
   top: 5px;
   width: 300px;
   left: 10%;
   position: absolute;
-  background-color: $white-link;
+  background-color: $color-basic;
 }
 
 .containt {
   margin: 10px;
   text-align: left;
   padding: 20px 10px 20px 10px;
-  border: 1px solid $remember;
+  border: 1px solid $color-primary3;
   border-radius: 10px;
 }
 
@@ -192,14 +166,14 @@ footer{
 }
 
 .thead-cycle {
-  background-color: $vert;
-  color: white;
+  background-color: $color-primary2;
+  color: $color-basic;
   font-size: 20px;
 }
 
 .year {
-  background-color: $blue;
-  color: white;
+  background-color: $color-primary;
+  color: $color-basic;
   font-size: 20px;
 }
 
@@ -208,80 +182,104 @@ footer{
 }
 
 .style-subtitle {
-  color:$vert;
+  color: $color-primary2;
 }
 
 .apprentiTitle {
-  color:$blue;
+  color: $color-primary;
 }
 
-/** Formation **/
-
-.title-formation {
-  color: $vert;
+.contrat-img {
+  background-image: url("../images/signature.jpg");
 }
 
-.background-formation {
-  background-image: url("/images/formation_back.jpg");
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  width: 100%;
-  height: 300px;
-  margin-bottom: 20px;
+.statut-img {
+  background-image: url("../images/statut.jpg");
 }
 
-.meeting-formation {
-  background-image: url("/images/meeting_formation.jpeg");
-  background-attachment: scroll;
-  background-repeat: no-repeat;
-  margin-left: 100px;
-  margin-top: 50px;
-  width: 100%;
-  height: 300px;
-  margin-bottom: 20px;
+.formation-img {
+  background-image: url("../images/formation_apprenti.jpg");
 }
 
-/** faq **/
+.apprenti-select {
+  position: relative;
+  overflow: hidden;
+  min-height: 250px;
+  padding: 0px;
+  display: flex;
+  align-items: end;
+  z-index: 0;
 
-
-.question {
-  color: $vert;
-}
-
-.background-faq {
-  background-image: url("/images/faq.jpg");
-   background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: 100% 75%;
-  width: 100%;
-  height: 350px;
-}
-
-.style-page {
-  padding: 2px 10px 2px 5px;
-  border-left: 5px solid $vert;
-}
-
-.link-formation {
-  color: black;
-  font-size: 16px;
-  &:hover {
-    color: $vert;
-    font-size: 17px;
+  :not(:hover) p {
+    display: none;
   }
+  .caption {
+    background-color: white;
+    padding: 15px;
+    opacity: 0.8;
+    width: 100%;
+    z-index: 1;
+  }
+  .apprenti-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    filter: grayscale(75%);
+  }
+}
+
+  /** Formation **/
+
+  .title-formation {
+    color: $color-primary2;
+  }
+
+  .background-formation {
+    background-image: url("../images/formation_back.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+  }
+
+  .meeting-formation {
+    background-image: url("../images/meeting_formation.jpeg");
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    margin-left: 100px;
+    margin-top: 50px;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+  }
+
 
   .formation-presentation {
     font-size: 30px;
   }
 
-  .background-apprenti {
-    background-image: url("/images/apprenti.jpg");
+  /** faq **/
+
+  .question {
+    color: $color-primary2;
+
+  }
+
+  .background-faq {
+    background-image: url("../images/faq.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: 100% 80%;
+    background-size: 100% 75%;
     width: 100%;
-    height: 400px;
+    height: 350px;
   }
 
   .events-bg {
@@ -293,4 +291,72 @@ footer{
       box-shadow: 8px 8px 8px black;
     }
   }
-}
+
+    .style-page {
+      padding: 2px 10px 2px 5px;
+      border-left: 5px solid $color-primary2;
+
+    }
+
+    .link-formation {
+      color: black;
+      font-size: 16px;
+      &:hover {
+        color: $color-primary2;
+      }
+
+      .formation-presentation {
+        font-size: 1.2em;
+
+      }
+    }
+
+      .background-apprenti {
+        background-image: url("../images/apprenti.jpg");
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: 100% 80%;
+        width: 100%;
+        height: 400px;
+      }
+
+
+    .events-bg {
+      background-image: url("../images/event_background_img.jpg");
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      .card {
+        margin-bottom: 15px;
+        box-shadow: 8px 8px 8px black;
+      }
+    }
+
+    .homepage-formation {
+      background-image: url("/images/home_formation.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      min-height: 50vh;
+      ul {
+        columns: 2;
+        margin: 15px;
+      }
+      li {
+        margin-bottom: 35px;
+        font-size: 2.5em;
+      }
+    }
+
+    .leaflet {
+      width: 48vw;
+      height: 80vh;
+    }
+
+    /** carousel logos partner **/
+
+    .logoPartner {
+      img {
+        min-height: 100%;
+        max-height: 180px;
+      }
+    }
+
