@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Historiccfas list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Title</th>
+                <th>Containt</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for historicCfa in historicCfas %}
+            <tr>
+                <td><a href="{{ path('historiccfa_show', { 'id': historicCfa.id }) }}">{{ historicCfa.id }}</a></td>
+                <td>{% if historicCfa.date %}{{ historicCfa.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ historicCfa.title }}</td>
+                <td>{{ historicCfa.containt }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('historiccfa_show', { 'id': historicCfa.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('historiccfa_edit', { 'id': historicCfa.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('historiccfa_new') }}">Create a new historicCfa</a>
+        </li>
+    </ul>
+{% endblock %}
