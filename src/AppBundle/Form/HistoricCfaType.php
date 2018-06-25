@@ -14,7 +14,9 @@ class HistoricCfaType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('date')->add('title')->add('containt');
-    }/**
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
@@ -31,6 +33,4 @@ class HistoricCfaType extends AbstractType
     {
         return 'appbundle_historiccfa';
     }
-
-
 }
