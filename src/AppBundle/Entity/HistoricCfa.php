@@ -135,4 +135,3 @@ class HistoricCfa
         return $this->content;
     }
 }
-
