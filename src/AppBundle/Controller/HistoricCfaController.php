@@ -16,9 +16,9 @@ use Symfony\Component\HttpFoundation\Request;
 class HistoricCfaController extends Controller
 {
     /**
-     * Lists all historicCfa entities.
+     * Lists all historicCfa entity.
      *
-     * @Route("/", name="historiccfa_index")
+     * @Route("/", name="historiccfa_view")
      * @Method("GET")
      */
     public function indexAction()
@@ -29,8 +29,7 @@ class HistoricCfaController extends Controller
             [],
             ['date' => 'DESC']
         );
-
-        return $this->render('historiccfa.html.twig', [
+        return $this->render('historiccfa/historiccfa.html.twig', [
             'historicCfas' => $historicCfas,
         ]);
     }
