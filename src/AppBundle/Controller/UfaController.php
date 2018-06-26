@@ -43,6 +43,7 @@ class UfaController extends Controller
     {
         $ufa = new Ufa();
         $form = $this->createForm('AppBundle\Form\UfaType', $ufa);
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -88,6 +89,8 @@ class UfaController extends Controller
     {
         $deleteForm = $this->createDeleteForm($ufa);
         $editForm = $this->createForm('AppBundle\Form\UfaType', $ufa);
+        $editForm->add('latitude')
+                 ->add('longitude');
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
