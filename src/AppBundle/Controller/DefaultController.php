@@ -41,6 +41,14 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/employeurs/embaucher-un-apprenti", name="hireAnApprentice")
+     */
+    public function employerAction()
+    {
+        return $this->render('employer/hireAnApprentice.html.twig');
+    }
+  
+    /**
      * @Route("/apprenti/contrat", name="contratapprentipage")
      */
     public function contratView()
