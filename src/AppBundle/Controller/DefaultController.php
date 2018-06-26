@@ -35,7 +35,7 @@ class DefaultController extends Controller
     /**
      * @Route("/apprenti/formation", name="formationapprentipage")
      */
-    public function apprentiView()
+    public function formationView()
     {
         return $this->render('apprenti/formation.html.twig');
     }
@@ -46,5 +46,13 @@ class DefaultController extends Controller
     public function employerAction()
     {
         return $this->render('employer/hireAnApprentice.html.twig');
+    }
+  
+    /**
+     * @Route("/apprenti/contrat", name="contratapprentipage")
+     */
+    public function contratView()
+    {
+        return $this->render('apprenti/contrat.html.twig');
     }
 }
