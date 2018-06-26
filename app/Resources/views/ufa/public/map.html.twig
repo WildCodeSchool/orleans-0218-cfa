@@ -13,7 +13,9 @@
             <div class="col-3">
                 <ul>
                     {% for ufa in ufas %}
-                        <li class="list-group-item shadow"><h5><a href="{{ path('map_show', { 'id': ufa.id }) }}">{{ ufa.name }}</a></h5></li>
+                        <li class="list-group-item shadow">
+                            <i class="fas fa-angle-right"></i>
+                            <a class="link-formation" href="{{ path('map_show', { 'id': ufa.id }) }}">{{ ufa.name }}</a></li>
                     {% endfor %}
                 </ul>
             </div>
@@ -27,17 +29,19 @@
                         <h2>{{ ufa.name }}</h2>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">
-                            <li>{{ ufa.address }}</li>
-                            <li>{{ ufa.zipcode }} {{ ufa.town }}</li>
-                        </h5>
+                        <h5 class="card-title"></h5>
+                            <ul class="list_none">
+                                <li>{{ ufa.address }}</li>
+                                <li>{{ ufa.zipcode }} {{ ufa.town }}</li>
+                            </ul>
                         <p class="card-text">
                         <p>Formation(s) dispensée(s):</p>
-                        <ul>
+                        <ul class="list_none">
                             {% for formation in ufa.formations %}
-                                <li><a href="{{ path('formation', {'id': formation.id}) }}">{{ formation.name }}</a></li>
+                                <li><i class="fas fa-graduation-cap"></i>
+                                    <a class="link-formation" href="{{ path('formation', {'id': formation.id}) }}">{{ formation.name }}</a></li>
                             {% endfor %}
-                        </ul></p>
+                        </ul>
                         <a class="btn btn-outline-primary float-right" href="#" class="btn btn-primary">Le site de l'UFA</a>
                     </div>
                 </div>
@@ -45,7 +49,6 @@
         </div>
     </div>
 {% endblock %}
-
 {% block javascripts %}
 
     <script type="text/javascript" src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
@@ -59,13 +62,27 @@
                 attribution: '© OpenStreetMap contributors',
                 maxZoom: 19
             });
+            var blueIcon = L.icon({
+                iconUrl: "{{ asset('images/pushed-pin-blue.png') }}",
+                iconSize:     [45, 45], // size of the icon
+                popupAnchor:  [0, -20] // point from which the popup should open relative to the iconAnchor
+            });
+
+            var redIcon = L.icon({
+                iconUrl: "{{ asset('images/push-pin-red.png') }}",
+                iconSize:     [45, 45], // size of the icon
+                popupAnchor:  [0, -20] // point from which the popup should open relative to the iconAnchor
+            });
 
             map.addLayer(osmLayer);
 
             {% for ufa in ufas %}
-            L.marker([{{ ufa.longitude }}, {{ ufa.latitude }}]).addTo(map)
+            L.marker([{{ ufa.longitude }}, {{ ufa.latitude }}], {icon: blueIcon}).addTo(map)
                 .bindPopup('{{ ufa.name }}<br> {{ ufa.address }} <br> {{ ufa.zipcode }} {{ ufa.town }}');
             {% endfor %}
+
+            L.marker([{{ ufa.longitude }}, {{ ufa.latitude }}], {icon: redIcon}).addTo(map)
+                .bindPopup('{{ ufa.name }}<br> {{ ufa.address }} <br> {{ ufa.zipcode }} {{ ufa.town }}');
         });
     </script>
 {% endblock %}

@@ -1,38 +1,51 @@
 {% extends 'layout.html.twig' %}
 {% block body %}
-<section class="formation">
-    <div>
-        <div class="section-title background-formation"></div>
-            <div class="row">
-                <div class="col-md-3 col-sm-12">
-                    <h1 class="style-page mb-5 mt-3"> Les formations</h1>
-                </div>
+    <section class=" container-fluid formation">
+        <div class="row">
+            <div class="section-title background-formation"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-12">
+                <h1 class="style-page mb-5 mt-3"> Les formations</h1>
             </div>
-            <div class="row">
-                <div class="col-md-3 col-sm-12 border-right formation-list">
-                    {% for formation in formations %}
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-12 border-right formation-list">
+                {% for formation in formations %}
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
                             <a class="link-formation" href="{{ path('formation', { 'id': formation.id }) }}">
                                 <i class="fas fa-graduation-cap"></i>
                                 {{ formation.name }}
                             </a>
-                            </li>
+                        </li>
+                    </ul>
+                {% endfor %}
+            </div>
+            <div class="col-md-7 offset-md-1 col-sm-12">
+                <h2 class="text-center mb-5 title-formation"><i class="fas fa-graduation-cap"></i> {{ formation.name }}
+                </h2>
+                <p class="formation-presentation">{{ formation.shortPresentation|raw }}</p>
+                <p class="mt-5 bg-light text-success">{{ formation.jobDescription|raw }}</p>
+                <div class="section-title meeting-formation justify-content"></div>
+                    <h2 class="title-formation" >Où trouver cette formation :</h2>
+                    <div class="containt">
+                        <ul class="list_none">
+                            {% for ufa in formation.ufas %}
+                                <li><i class="fas fa-angle-right"></i>
+                                    <a class="link-formation p-3"
+                                       href="{{ path('map_show', {'id': ufa.id}) }}">{{ ufa.name }}</a></li>
+                            {% endfor %}
                         </ul>
-                    {% endfor %}
-                </div>
-                <div class="col-md-7 offset-md-1 col-sm-12">
-                    <h2 class="text-center mb-5 title-formation"><i class="fas fa-graduation-cap"></i> {{ formation.name }}</h2>
-                        <p class="formation-presentation">{{ formation.shortPresentation|raw }}</p>
-                        <p class="mt-5 bg-light text-success">{{ formation.jobDescription|raw }}</p>
-                    <div class="section-title meeting-formation"></div>
-                    <div class="row">
-                        <div class="col-md-3 ml-md-auto">
-                            <a class="btn btn-success mt-5" href="{{ path('homepage') }}">Retour à l'accueil</a>
-                        </div>
                     </div>
+                <div class="col-md-3 ml-md-auto">
+                    <a class="btn btn-success mt-5" href="{{ path('homepage') }}">Retour à l'accueil</a>
                 </div>
-         </div>
-    </div>
-</section>
+            </div>
+        </div>
+    </section>
 {% endblock %}
+
+
+
+
