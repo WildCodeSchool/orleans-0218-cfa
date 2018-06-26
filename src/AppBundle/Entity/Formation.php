@@ -166,4 +166,30 @@ class Formation
     {
         $this->ufas = new \Doctrine\Common\Collections\ArrayCollection();
     }
+
+    /**
+     * Add ufa.
+     *
+     * @param \AppBundle\Entity\Ufa $ufa
+     *
+     * @return Formation
+     */
+    public function addUfa(\AppBundle\Entity\Ufa $ufa)
+    {
+        $this->ufas[] = $ufa;
+
+        return $this;
+    }
+
+    /**
+     * Remove ufa.
+     *
+     * @param \AppBundle\Entity\Ufa $ufa
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeUfa(\AppBundle\Entity\Ufa $ufa)
+    {
+        return $this->ufas->removeElement($ufa);
+    }
 }
