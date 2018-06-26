@@ -21,14 +21,14 @@
             <div class="dropdown-menu">
                 <a class="dropdown-item" href="{{ path('formationapprentipage') }}">Quelle formation ?</a>
                 <a class="dropdown-item" href="{{ path('statutapprentipage') }}">Le statut d'apprenti</a>
-                <a class="dropdown-item" href="#tab4Id">Signer un contrat</a>
+                <a class="dropdown-item" href="{{ path('contratapprentipage') }}">Signer un contrat</a>
             </div>
         </li>
         <li class="nav-item dropdown nav-pills">
             <a class="nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
                aria-expanded="false">Les Employeurs</a>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="#tab2Id">Embaucher un apprenti</a>
+                <a class="dropdown-item" href="{{ path('hireAnApprentice') }}">Embaucher un apprenti</a>
                 <a class="dropdown-item" href="#tab2Id">Les principes de l'apprentissage</a>
                 <a class="dropdown-item" href="#tab2Id">Le maître d'apprentissage</a>
                 <a class="dropdown-item" href="#tab3Id">Cotisation sociales</a>
