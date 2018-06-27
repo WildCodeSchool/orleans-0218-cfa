@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Cfa
  *
- * @ORM\Table(name="c_f_a")
+ * @ORM\Table(name="cfa")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\CFARepository")
  */
 class Cfa

@@ -20,7 +20,11 @@
                         <input class="btn btn-outline-danger btn-group" type="submit" value="Supprimer">
                     {{ form_end(delete_form) }}
                 </li>
+                <li>
+                    <a class="btn btn-outline-dark" href="{{ path('ufa_edit_coord', { 'id': ufa.id }) }}">Corriger manuellement les coordonnées</a>
+                </li>
             </ul>
+
         </div>
     </div>
 </div>
