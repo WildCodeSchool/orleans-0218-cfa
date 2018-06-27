@@ -55,4 +55,12 @@ class DefaultController extends Controller
     {
         return $this->render('apprenti/contrat.html.twig');
     }
+
+    /**
+     * @Route("/employeurs/le-maitre-d'apprentissage", name="masterInstructor")
+     */
+    public function masterInstructorAction()
+    {
+        return $this->render('employer/masterInstructor.html.twig');
+    }
 }
