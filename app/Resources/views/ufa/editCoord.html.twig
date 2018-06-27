@@ -1,0 +1,23 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block body %}
+<div class="container">
+    <h1 >Modifier les coordonnées GPS d'une UFA</h1>
+    <div class="row">
+        <div class="col-8">
+            {{ form_start(edit_coord_form) }}
+                {{ form_widget(edit_coord_form) }}
+                <input class="btn btn-outline-primary" type="submit" value="Modifier" />
+            {{ form_end(edit_coord_form) }}
+        </div>
+        <div class="col-4 border-left">
+            <ul>
+                <li>
+                    <a class="btn btn-outline-secondary btn-group" href="{{ path('ufa_index') }}">Retour à la liste</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
