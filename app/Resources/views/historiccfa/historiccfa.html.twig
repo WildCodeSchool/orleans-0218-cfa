@@ -1,0 +1,39 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/style_timeline.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('build/style.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="timeline">
+
+                    {% for historicCfa in historicCfas %}
+
+                            <div class="timeline-item timeline-item-{% if historicCfa.id is even %} 'left' {% else %} 'right' {% endif %}">
+                                <div class="timeline-point timeline-point-primary">
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <div class="timeline-event timeline-event-primary">
+                                    <div class="timeline-heading">
+                                        <h4>{{ historicCfa.title }}</h4>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>{{ historicCfa.content }}</p>
+                                    </div>
+                                    <div class="timeline-footer">
+                                        <p class="text-right">{{ historicCfa.date | date('Y-M-D') }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
