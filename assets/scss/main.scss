@@ -383,10 +383,6 @@ footer {
   }
 }
 
-.list_none {
-  list-style-type: none;
-}
-
 .learningCondition {
   .containt{
     padding: 20px 20px 20px 20px;
@@ -394,3 +390,18 @@ footer {
   }
 }
 
+.socialSecurityContributions {
+  .row {
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+  .rememberTitle {
+    font-size: 1.2em;
+  }
+
+}
+
+  /** end employeurs **/
+.list_none {
+  list-style-type: none;
+}
