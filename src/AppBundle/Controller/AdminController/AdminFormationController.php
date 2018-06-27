@@ -17,14 +17,14 @@ use AppBundle\Entity\Formation;
 /**
  * Formation controller.
  *
- * @Route("admin")
+ * @Route("admin/formation")
  */
 class AdminFormationController extends Controller
 {
     /**
      * Lists all formation entities.
      *
-     * @Route("/formation", name="formation_admin_index")
+     * @Route("/", name="formation_admin_index")
      * @Method("GET")
      */
 
@@ -42,7 +42,7 @@ class AdminFormationController extends Controller
     /**
      * Creates a new formation entity.
      *
-     * @Route("/formation/new", name="formation_new")
+     * @Route("/new", name="formation_new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
@@ -68,7 +68,7 @@ class AdminFormationController extends Controller
     /**
      * Finds and displays a formation entity.
      *
-     * @Route("/formation/{id}", name="formation_admin_show")
+     * @Route("/{id}", name="formation_admin_show")
      * @Method("GET")
      */
     public function showAction(Formation $formation)
@@ -84,7 +84,7 @@ class AdminFormationController extends Controller
     /**
      * Displays a form to edit an existing formation entity.
      *
-     * @Route("/formation/{id}/edit", name="formation_edit")
+     * @Route("/{id}/edit", name="formation_edit")
      * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, Formation $formation)
@@ -109,7 +109,7 @@ class AdminFormationController extends Controller
     /**
      * Deletes a formation entity.
      *
-     * @Route("/formation/{id}", name="formation_delete")
+     * @Route("/{id}", name="formation_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Formation $formation)
