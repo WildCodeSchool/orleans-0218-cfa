@@ -55,4 +55,12 @@ class DefaultController extends Controller
     {
         return $this->render('apprenti/contrat.html.twig');
     }
+
+    /**
+     * @Route("/employeurs/les-principes-de-l'apprentissage", name="learningCondition")
+     */
+    public function learningConditionAction()
+    {
+        return $this->render('employer/learningCondition.html.twig');
+    }
 }
