@@ -59,18 +59,18 @@ class Formation
     /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
      *
-     * @Vich\UploadableField(mapping="formation_ref", fileNameProperty="imageName")
+     * @Vich\UploadableField(mapping="formation_ref", fileNameProperty="referentielName")
      *
      * @var File
      */
-    private $imageFile;
+    private $referentielFile;
 
     /**
      * @ORM\Column(type="string", length=255)
      *
      * @var string
      */
-    private $imageName;
+    private $referentielName;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
@@ -226,32 +226,32 @@ class Formation
      * must be able to accept an instance of 'File' as the bundle will inject one here
      * during Doctrine hydration.
      *
-     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $image
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $referentiel
      */
-    public function setImageFile(?File $image = null): void
+    public function setReferentielFile(?File $referentiel = null): void
     {
-        $this->imageFile = $image;
+        $this->referentielFile = $referentiel;
 
-        if (null !== $image) {
+        if (null !== $referentiel) {
             // It is required that at least one field changes if you are using doctrine
             // otherwise the event listeners won't be called and the file is lost
             $this->updatedAt = new \DateTimeImmutable();
         }
     }
 
-    public function getImageFile(): ?File
+    public function getReferentielFile(): ?File
     {
-        return $this->imageFile;
+        return $this->referentielFile;
     }
 
-    public function setImageName(?string $imageName): void
+    public function setReferentielName(?string $referentielName): void
     {
-        $this->imageName = $imageName;
+        $this->referentielName = $referentielName;
     }
 
-    public function getImageName(): ?string
+    public function getReferentielName(): ?string
     {
-        return $this->imageName;
+        return $this->referentielName;
     }
 
     /**
