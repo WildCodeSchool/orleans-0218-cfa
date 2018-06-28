@@ -3,6 +3,8 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * Cfa
@@ -25,13 +27,14 @@ class Cfa
      * @var string
      *
      * @ORM\Column(name="text_president", type="text")
+     * @Assert\NotBlank(message="Le texte ne peut pas être vide")
      */
     private $textPresident;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="image_president", type="string", length=80)
+     * @ORM\Column(name="image_president", type="string", length=80, nullable=true)
      */
     private $imagePresident;
 
