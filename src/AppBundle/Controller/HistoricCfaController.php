@@ -30,11 +30,9 @@ class HistoricCfaController extends Controller
             [],
             ['date' => 'DESC']
         );
-        $cfas = $em->getRepository(Cfa::class)->findAll();
 
         return $this->render('historiccfa/historiccfa.html.twig', [
             'historicCfas' => $historicCfas,
-            'cfas' => $cfas,
         ]);
     }
 
