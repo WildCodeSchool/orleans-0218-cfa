@@ -21,6 +21,7 @@ security :
                 # csrf_provider: form.csrf_provider
 
             logout :       true
+            logout_on_user_change : true
             anonymous :    true
 
     access_control :
