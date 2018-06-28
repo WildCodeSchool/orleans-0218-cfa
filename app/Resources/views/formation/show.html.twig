@@ -2,7 +2,7 @@
 
 {% block body %}
 <div class="container">
-    <h1>Formation</h1>
+    <h1>Formation {{ formation.name }}</h1>
     <div class="row">
         <div class="col-9">
             <table class="table table-bordered" >
@@ -17,11 +17,11 @@
                 </tr>
                 <tr>
                     <th>Présentation du métier</th>
-                    <td>{{ formation.shortPresentation }}</td>
+                    <td>{{ formation.shortPresentation | raw }}</td>
                 </tr>
                 <tr>
                     <th>Description du métier</th>
-                    <td>{{ formation.jobDescription }}</td>
+                    <td>{{ formation.jobDescription | raw }}</td>
                 </tr>
                 <tr>
                     <th>Référentiel formation</th>
