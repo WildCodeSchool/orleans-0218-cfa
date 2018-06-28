@@ -374,6 +374,7 @@ footer {
 .hireApprentice {
   .row {
     margin-right: 15px;
+    margin-left: 15px;
   }
   span {
     font-weight: bold;
@@ -410,4 +411,12 @@ footer {
   /** end employeurs **/
 .list_none {
   list-style-type: none;
+}
+
+/** CFApage **/
+
+.president-letter {
+  font-family: 'Satisfy', cursive;
+  font-size: 1.3em;
+  margin-left: 2em;
 }
