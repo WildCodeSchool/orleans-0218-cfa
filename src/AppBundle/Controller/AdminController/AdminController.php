@@ -18,9 +18,6 @@ class AdminController extends Controller
      */
     public function indexAction()
     {
-        if (){
-
-        }
         return $this->render('layoutAdmin.html.twig');
 
     }
