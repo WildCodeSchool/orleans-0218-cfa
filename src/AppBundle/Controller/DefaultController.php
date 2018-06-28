@@ -57,6 +57,14 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/employeurs/le-maitre-d'apprentissage", name="masterInstructor")
+     */
+    public function masterInstructorAction()
+    {
+        return $this->render('employer/masterInstructor.html.twig');
+    }
+  
+    /**
      * @Route("/employeurs/les-principes-de-l'apprentissage", name="learningCondition")
      */
     public function learningConditionAction()
