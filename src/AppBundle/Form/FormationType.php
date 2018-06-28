@@ -7,6 +7,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
+use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class FormationType extends AbstractType
 {
@@ -30,6 +31,9 @@ class FormationType extends AbstractType
                     'language' => 'fr'
                 ),
                 'label' => 'Description'
+            ))
+            ->add('imageFile', VichFileType::class, array(
+                'label' => 'Référentiel de la formation'
             ));
     }
 
