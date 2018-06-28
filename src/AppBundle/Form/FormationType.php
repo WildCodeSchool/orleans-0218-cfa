@@ -33,7 +33,8 @@ class FormationType extends AbstractType
                 'label' => 'Description'
             ))
             ->add('referentielFile', VichFileType::class, array(
-                'label' => 'Référentiel de la formation'
+                'label' => 'Référentiel de la formation',
+                'required' =>false
             ));
     }
 
