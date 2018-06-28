@@ -128,29 +128,9 @@
                 <div class="col-md-10 president-letter">
                     <p>
                         <i class="fas fa-quote-left fa-3x style-subtitle "></i>
-                        Nous sommes heureux de vous accueillir sur notre nouveau site internet. Par cet outil de communication
-                        incontournable, nous souhaitons vous présenter les offres de formation en l'apprentissage dispensées par
-                        nos partenaires que sont les Unités de Formation d'Apprentis, inscrites depuis de nombreuses années dans
-                        le champ du social et du médico social.
-                    </p>
-                    <p>
-                        Notre CFA du social de la région Centre-Val de Loire, né de la volonté de mutualiser nos réflexions et
-                        savoir-faire en matière de formation, se veut volontariste et dynamique pour permettre à l'apprentissage
-                        d'être un véritable tremplin vers l'insertion professionnelle des jeunes
-                    </p>
-                    <p>
-                        Employeurs ! Pour nous aider à participer à la relève du "papy-boom" de demain, aidez-nous à former
-                        notre jeunesse aux métiers du social et médico-social afin de réussir leur devenir professionnel :
-                        embauchez des apprentis !
-                    </p>
-                    <p>
-                        Apprentis ! N'hésitez pas à nous contacter, nous vous offrirons notre meilleur accueil et un
-                        personnalisé pour rechercher le maître d'apprentissage qui facilitera votre insertion.
-                    </p>
-                    <p>
-                        Nous comptons sur votre enthousiasme et votre mobilisation et vous souhaitons une excellente visite sur
-                        notre site…
-                    </p>
+
+                        <i class="fas fa-quote-right fa-3x style-subtitle "></i>
+
                 </div>
             </div>
         </div>
@@ -182,15 +162,15 @@
                 <h3>L'histoire du CFA</h3>
             </div>
             <div class="row">
-                <div class="timeline">
+                <div class="timeline">historicCfa
                     {% for historicCfa in historicCfas %}
-                        <div class="timeline-item timeline-item-{% if historicCfa.id is even %} 'left' {% else %} 'right' {% endif %}">
+                        <div class="timeline-item">
                             <div class="timeline-point timeline-point-primary">
                                 <i class="fa fa-star"></i>
                             </div>
                             <div class="timeline-event timeline-event-primary">
                                 <div class="timeline-heading">
-                                    <h4>{{ historicCfa.title }}</h4>
+                                    <h4>{{ historicCfa.title }}{{ historicCfa.id }}</h4>
                                 </div>
                                 <div class="timeline-body">
                                     <p>{{ historicCfa.content }}</p>
