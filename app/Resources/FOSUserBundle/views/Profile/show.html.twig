@@ -1,0 +1,10 @@
+{% extends 'layoutAdmin.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+{% block body %}
+    <div class="container adminlogin">
+    <div class="fos_user_user_show">
+        <p>{{ 'Username '|trans }}: {{ user.username }}</p>
+        <p>{{ 'Email '|trans }}: {{ user.email }}</p>
+    </div>
+    </div>
+{% endblock body %}

@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Ufa controller.
  *
- * @Route("ufa")
+ * @Route("admin/ufa")
  */
 class UfaController extends Controller
 {
@@ -43,6 +43,7 @@ class UfaController extends Controller
     {
         $ufa = new Ufa();
         $form = $this->createForm('AppBundle\Form\UfaType', $ufa);
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -84,13 +85,19 @@ class UfaController extends Controller
      * @Route("/{id}/edit", name="ufa_edit")
      * @Method({"GET", "POST"})
      */
-    public function editAction(Request $request, Ufa $ufa)
+    public function editAction(Request $request, CoordinatesService $coordinatesService, Ufa $ufa)
     {
         $deleteForm = $this->createDeleteForm($ufa);
         $editForm = $this->createForm('AppBundle\Form\UfaType', $ufa);
+
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $coordinates = $coordinatesService->getCoordinates($ufa->getAddress(), $ufa->getZipcode());
+            [$latitude, $longitude] = $coordinates;
+            $ufa->setLatitude($latitude);
+            $ufa->setLongitude($longitude);
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('ufa_edit', array(
@@ -100,6 +107,36 @@ class UfaController extends Controller
         return $this->render('ufa/edit.html.twig', array(
             'ufa' => $ufa,
             'edit_form' => $editForm->createView(),
+            'delete_form' => $deleteForm->createView(),
+        ));
+    }
+
+    /**
+     * Displays a form to edit an existing ufa entity.
+     *
+     * @Route("/{id}/editcoord", name="ufa_edit_coord")
+     * @Method({"GET", "POST"})
+     */
+    public function editCoordAction(Request $request, Ufa $ufa)
+    {
+        $deleteForm = $this->createDeleteForm($ufa);
+        $editCoordForm = $this->createForm('AppBundle\Form\UfaCoordType', $ufa);
+        $editCoordForm
+            ->add('latitude')
+            ->add('longitude');
+
+        $editCoordForm->handleRequest($request);
+
+        if ($editCoordForm->isSubmitted() && $editCoordForm->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('ufa_show', array(
+                'id' => $ufa->getId()
+            ));
+        }
+        return $this->render('ufa/editCoord.html.twig', array(
+            'ufa' => $ufa,
+            'edit_coord_form' => $editCoordForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }

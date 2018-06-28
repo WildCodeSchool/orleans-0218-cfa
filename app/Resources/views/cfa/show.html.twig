@@ -7,25 +7,25 @@
         <tbody>
             <tr>
                 <th>Id</th>
-                <td>{{ cFA.id }}</td>
+                <td>{{ cfa.id }}</td>
             </tr>
             <tr>
-                <th>Textpresident</th>
-                <td>{{ cFA.textPresident }}</td>
+                <th>Le mot du président</th>
+                <td>{{ cfa.textPresident }}</td>
             </tr>
             <tr>
-                <th>Historical</th>
-                <td>{{ cFA.historical }}</td>
+                <th>Historique</th>
+                <td>{{ cfa.historical }}</td>
             </tr>
         </tbody>
     </table>
 
     <ul>
         <li>
-            <a href="{{ path('cfa_index') }}">Back to the list</a>
+            <a href="{{ path('cfa_admin_index') }}">Back to the list</a>
         </li>
         <li>
-            <a href="{{ path('cfa_edit', { 'id': cFA.id }) }}">Edit</a>
+            <a href="{{ path('cfa_edit', { 'id': cfa.id }) }}">Edit</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
