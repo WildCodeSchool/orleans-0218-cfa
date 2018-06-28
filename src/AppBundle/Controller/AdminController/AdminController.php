@@ -19,6 +19,5 @@ class AdminController extends Controller
     public function indexAction()
     {
         return $this->render('layoutAdmin.html.twig');
-
     }
 }
