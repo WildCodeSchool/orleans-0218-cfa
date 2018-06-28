@@ -71,4 +71,12 @@ class DefaultController extends Controller
     {
         return $this->render('employer/learningCondition.html.twig');
     }
+
+    /**
+     * @Route("/employeurs/les-cotisations-sociales", name="socialSecurityContributions")
+     */
+    public function socialSecurityContributionsAction()
+    {
+        return $this->render('employer/socialSecurityContributions.html.twig');
+    }
 }
