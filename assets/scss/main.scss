@@ -30,11 +30,10 @@ body {
 /**Navbar**/
 
 .logo {
-  width: 150px;
+  width: 100px;
 }
 
 .navbar {
-  opacity: 0.9;
   .nav-link {
     font-size: 1.2em;
     color: $color-basic-inverse;
@@ -44,6 +43,7 @@ body {
     background-color: $color-primary2;
     color: $color-basic;
   }
+  box-shadow: 0 0 6px $shadow;
 }
 
 .dropdown-item:hover {
