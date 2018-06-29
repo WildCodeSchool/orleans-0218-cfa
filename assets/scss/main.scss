@@ -350,18 +350,6 @@ footer {
         font-size: 2em;
       }
     }
-@media (max-width: 766px) {
-  .homepage-formation {
-    ul {
-      columns: 2;
-      margin: 10px;
-    }
-    li {
-      margin-bottom: 10px;
-      font-size: 2em;
-    }
-  }
-}
 
 @media (max-width: 1690px) {
   .homepage-formation {
@@ -376,6 +364,9 @@ footer {
   }
 }
 
+.picture-formation {
+  height: 100%;
+}
     .leaflet {
       width: 48vw;
       height: 80vh;
