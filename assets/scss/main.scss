@@ -30,11 +30,10 @@ body {
 /**Navbar**/
 
 .logo {
-  width: 150px;
+  width: 100px;
 }
 
 .navbar {
-  opacity: 0.9;
   .nav-link {
     font-size: 1.2em;
     color: $color-basic-inverse;
@@ -44,6 +43,7 @@ body {
     background-color: $color-primary2;
     color: $color-basic;
   }
+  box-shadow: 0 0 6px $shadow;
 }
 
 .dropdown-item:hover {
@@ -155,7 +155,8 @@ footer {
   top: 5px;
   left: 10%;
   position: absolute;
-  background-color: $color-basic;
+  background-image: url('../images/background.png');
+  background-repeat: repeat;
 
 
 }
@@ -374,6 +375,7 @@ footer {
 .hireApprentice {
   .row {
     margin-right: 15px;
+    margin-left: 15px;
   }
   span {
     font-weight: bold;
@@ -383,9 +385,12 @@ footer {
   }
 }
 
-.list_none {
-  list-style-type: none;
+.masterInstructor {
+  h1 {
+    font-size: 2em;
+  }
 }
+
 
 .learningCondition {
   .containt{
@@ -394,3 +399,34 @@ footer {
   }
 }
 
+.employer_homepage {
+  .img-fluid {
+    margin-left: -15px;
+  }
+  p {
+    font-size: 1.5em;
+  }
+}
+
+.socialSecurityContributions {
+  .row {
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+  .rememberTitle {
+    font-size: 1.2em;
+  }
+}
+
+  /** end employeurs **/
+.list_none {
+  list-style-type: none;
+}
+
+/** CFApage **/
+
+.president-letter {
+  font-family: 'Satisfy', cursive;
+  font-size: 1.3em;
+  margin-left: 2em;
+}
