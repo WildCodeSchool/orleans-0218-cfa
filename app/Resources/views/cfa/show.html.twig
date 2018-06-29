@@ -1,36 +1,38 @@
 {% extends 'layoutAdmin.html.twig' %}
 
 {% block body %}
-    <h1>Cfa</h1>
-
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ cfa.id }}</td>
-            </tr>
-            <tr>
-                <th>Le mot du président</th>
-                <td>{{ cfa.textPresident }}</td>
-            </tr>
-            <tr>
-                <th>Historique</th>
-                <td>{{ cfa.historical }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('cfa_admin_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('cfa_edit', { 'id': cfa.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+    <div class="container">
+        <h1>La présidence</h1>
+        <div class="row">
+            <div class="col-8">
+                <table class="table table-bordered" >
+                    <tbody>
+                        <tr>
+                            <th>Id</th>
+                            <td>{{ cfa.id }}</td>
+                        </tr>
+                        <tr>
+                            <th>Le mot de la présidence</th>
+                            <td>{{ cfa.textPresident | raw }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-4 border-left">
+                <ul>
+                    <li>
+                        <a class="btn-outline-secondary btn" href="{{ path('cfa_admin_index') }}">Retour</a>
+                    </li>
+                    <li>
+                        <a class="btn btn-outline-primary" href="{{ path('cfa_edit', { 'id': cfa.id }) }}">Modifier</a>
+                    </li>
+                    <li>
+                        {{ form_start(delete_form) }}
+                            <input class="btn btn-outline-danger" type="submit" value="Supprimer">
+                        {{ form_end(delete_form) }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 {% endblock %}

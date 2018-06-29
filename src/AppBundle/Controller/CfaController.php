@@ -26,7 +26,7 @@ class CfaController extends Controller
 
         $cfas = $em->getRepository(Cfa::class)->findAll();
 
-        return $this->render('homepage/cfa.html.twig', array(
+        return $this->render('historiccfa/historiccfa.html.twig', array(
             'cfas' => $cfas,
         ));
     }

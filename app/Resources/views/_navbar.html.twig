@@ -11,7 +11,7 @@
             <a class="nav-link dropdown" data-toggle="dropdown" href="#" role="button">
                 Le CFA</a>
             <div class="dropdown-menu">
-                <a class="dropdown-item " href="#tab2Id">Le cfa</a>
+                <a class="dropdown-item " href="{{ path('historiccfa_view') }}">Qui sommes nous ?</a>
                 <a class="dropdown-item" href="{{ path('map_index')}}">UFA</a>
             </div>
         </li>
@@ -29,9 +29,9 @@
                aria-expanded="false">Les Employeurs</a>
             <div class="dropdown-menu">
                 <a class="dropdown-item" href="{{ path('hireAnApprentice') }}">Embaucher un apprenti</a>
+                <a class="dropdown-item" href="{{ path('masterInstructor') }}">Le maître d'apprentissage</a>
                 <a class="dropdown-item" href="{{ path('learningCondition') }}">Les principes de l'apprentissage</a>
-                <a class="dropdown-item" href="#tab2Id">Le maître d'apprentissage</a>
-                <a class="dropdown-item" href="#tab3Id">Cotisation sociales</a>
+                <a class="dropdown-item" href="{{ path('socialSecurityContributions') }}">Cotisations sociales</a>
                 <a class="dropdown-item" href="#tab3Id">Témoignage des employeurs</a>
             </div>
         </li>

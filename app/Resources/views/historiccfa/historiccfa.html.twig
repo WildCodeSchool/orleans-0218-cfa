@@ -3,37 +3,186 @@
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('build/style_timeline.css') }}"/>
     <link rel="stylesheet" href="{{ asset('build/style.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
 {% endblock %}
 
 {% block body %}
-    <div class="container-fluid">
-        <div class="col-md-12">
-            <div class="row">
-                <div class="timeline">
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-md-12 col-sm-12">
+            <h1 class="title-style style-page">Qui sommes nous ?</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10 offset-1 my-5">
+            <h2 class="mb-5 style-subtitle">L'association gestionnaire</h2>
 
-                    {% for historicCfa in historicCfas %}
+            <p>
+                Dans le secteur sanitaire, social et médico-social, ce contrat de travail ouvre la possibilité pour
+                un jeune salarié de 18 à 25 ans révolus (des dérogations étant possibles) d'effectuer une formation
+                initiale sous statut de salarié. Tout employeur privé (secteur associatif ou lucratif) ou public
+                (fonction publique d'État, territoriale ou hospitalière) peut recruter un apprenti.
+            </p>
+            <p>
+                En septembre 2000, deux sections d'apprentissage étaient créées par la Région Centre : l'une pour la
+                formation des moniteurs éducateurs à l'ERTS d'Olivet, l'autre pour la formation des éducateurs
+                spécialisés à l'ITS de Tours. Après la pérennisation du dispositif et presque dix années plus tard,
+                en juin 2009, la Direction de l'Apprentissage faisait part du souhait de la région Centre de structurer
+                un CFA au plan régional, implicant un partenariat entre les écoles.
+            </p>
+            <p>
+                Le 8 juillet 2009, une démarche collective de l'Association Régionale pour le DÉveloppement des
+                Qualifications et des Actions de Formation (ARDÉQAF), de l'Association Touraine Éducation et Culture
+                (ATEC) et de la Croix Rouge française (associations gestionnaires des centres de formation ERTS, ITS et
+                IRFSS-Centre) signifiait leur souhait de "construire une démarche cohérente, prenant en compte les
+                dynamiques institutionnelles de chacun, les coopérations envisageables, la réponse aux besoins divers de
+                l'apprentissage tant du point de vue technique que géographique". Bientôt rejoints par la Fédération
+                des Maisons Familiales Rurales, les opérateurs de la formation en travail social lançaient deux années
+                de réflexions et de concertations en vue de la création du CFA.
+            </p>
+            <p>
+                L'association est gérée par un conseil d'administration de 34 membres maximum :
+            </p>
+            <ul>
+                <li>16 représentants des membres fondateurs (ARDEQAF, ATEC, Croix-Rouge, FR-MFR)</li>
+                <li>14 représentants du secteur professionnel, notamment :
+                    <ul>
+                        <li>
+                            2 membres de la Commission Paritaire Nationale pour l'Emploi et la Formation
+                            Professionnelle de la Branche Associative, Sanitaire, Sociale et médico-sociale à but non
+                            lucratif (BASS)
+                        </li>
+                        <li>
+                            2 membres de la Commission Paritaire Nationale pour l'Emploi de la Branche de l'Aide, de
+                            l'Accompagnement, des Soins et des Services à Domicile (BAASSD)
+                        </li>
+                        <li>
+                            6 représentants des conseils départementaux de la Région Centre-Val de Loire
+                        </li>
+                        <li>
+                            1 représentant d'Unir et Fédérer (UNIFED)
+                        </li>
+                        <li>
+                            1 représentant d'Élus siégeant au Centre National de la Fonction Publique Territoriale (CNFPT)
+                        </li>
+                        <li>
+                            1 représentant de la Fédération Hospitalière de France (FHF)
+                        </li>
+                        <li>
+                            1 représentant du Groupe National des Établissements et Services Publics Sociaux et
+                            médico-sociaux (GEPSO)
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    4 membres "qualifiés" présentés par les quatre membres fondateurs, parmi lesquel est élu la
+                    de l'association.
+                </li>
+            </ul>
+        </div>
+    </div>
 
-                            <div class="timeline-item timeline-item-{% if historicCfa.id is even %} 'left' {% else %} 'right' {% endif %}">
-                                <div class="timeline-point timeline-point-primary">
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="timeline-event timeline-event-primary">
-                                    <div class="timeline-heading">
-                                        <h4>{{ historicCfa.title }}</h4>
-                                    </div>
-                                    <div class="timeline-body">
-                                        <p>{{ historicCfa.content }}</p>
-                                    </div>
-                                    <div class="timeline-footer">
-                                        <p class="text-right">{{ historicCfa.date | date('Y-M-D') }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                    {% endfor %}
-                </div>
+    <div class="row justify-content-center">
+        <h3>Le bureau de l'association</h3>
+    </div>
+
+    <div class="row justify-content-center">
+
+        <div class="card col-md-2 my-5">
+            <img class="card-img-top my-3" src="{{ asset('images/img_avatar6.png') }}" alt="Photo de la présidente">
+            <div class="card-body">
+                <h4 class="card-title">Marie-Noëlle TAPIA</h4>
+                <p class="card-text text-center">Présidente</p>
+            </div>
+        </div>
+
+        <div class="card col-md-2 offset-1 my-5">
+            <img class="card-img-top my-3" src="{{ asset('images/img_avatar1.png') }}" alt="Photo du vice-président">
+            <div class="card-body">
+                <h4 class="card-title">Gérard DEGRAVE</h4>
+                <p class="card-text text-center">Vice-Président</p>
+            </div>
+        </div>
+
+        <div class="card col-md-2 offset-1 my-5">
+            <img class="card-img-top my-3" src="{{ asset('images/img_avatar1.png') }}" alt="Photo du secrétaire">
+            <div class="card-body">
+                <h4 class="card-title">Christian BONNIN</h4>
+                <p class="card-text text-center">Secrétaire</p>
+            </div>
+        </div>
+
+        <div class="card col-md-2 offset-1 my-5">
+            <img class="card-img-top my-3" src="{{ asset('images/img_avatar1.png') }}" alt="Photo du trésorier">
+            <div class="card-body">
+                <h4 class="card-title text-center">Pierre MABIRE</h4>
+                <p class="card-text text-center">Trésorier</p>
             </div>
         </div>
     </div>
 
+    <div class="row">
+            <h2 class="mb-5 style-subtitle col-md-10 offset-1 my-5">Mot de la présidente</h2>
+        <div class="col-md-10 offset-1 my-5">
+            <div class="row">
+                <div class="col-md-10 president-letter">
+                    <p>
+                        <i class="fas fa-quote-left fa-3x style-subtitle "></i>
 
+                        <i class="fas fa-quote-right fa-3x style-subtitle "></i>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+            <h2 class="mb-5 style-subtitle col-md-10 offset-1 my-5">Le projet du CFA</h2>
+        <div class="col-md-10 offset-1 my-5">
+            <p>
+                Le projet du CFA est porteur d'un engagement qui s'inscrit dans la logique des orientations stratégiques
+                définies par la Région dans le domaine de l'apprentissage.
+            </p>
+            <p>
+                Dans le cadre du Contrat de Plan Régional de Développement des Formations Professionnelles (CPRDFP 2011-2014)
+                signé entre l'État et la Région Centre-Val de Loire le 5 juillet 2011, de la Convention quinquennale signée
+                le 17 juillet 2012 entre la Région et l'association gestionnaire du CFA, celle-ci a développé son projet
+                autour de trois axes :
+            </p>
+            <ul>
+                <li>le positionnement de l'offre de formation du CFA dans le dispositif global de formation professionnelle</li>
+                <li>la prise en charge de l'apprenti de l'amont à l'aval de la formation</li>
+                <li>le renforcement des partenariats avec les sites qualifiants.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10 offset-1 my-5 remember">
+            <div class="rememberTitle">L'histoire du CFA</div>
+            <div class="containt">
+                <div class="timeline">
+                    {% for historicCfa in historicCfas %}
+                        <div class="timeline-item">
+                            <div class="timeline-point timeline-point-primary">
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="timeline-event timeline-event-default">
+                                <div class="timeline-heading">
+                                    <h4>{{ historicCfa.title }}</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>{{ historicCfa.content }}</p>
+                                </div>
+                                <div class="timeline-footer">
+                                    <p class="text-right">{{ historicCfa.date | date('Y-M-D') }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
 {% endblock %}
