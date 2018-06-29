@@ -24,10 +24,10 @@ class CfaController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $cfas = $em->getRepository(Cfa::class)->findAll();
+        $cfa = $em->getRepository(Cfa::class)->findAll();
 
         return $this->render('historiccfa/historiccfa.html.twig', array(
-            'cfas' => $cfas,
+            'cfa' => $cfa,
         ));
     }
 }

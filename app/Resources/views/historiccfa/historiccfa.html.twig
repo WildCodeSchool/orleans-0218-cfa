@@ -126,11 +126,13 @@
         <div class="col-md-10 offset-1 my-5">
             <div class="row">
                 <div class="col-md-10 president-letter">
+                    {% for cfa in cfas %}
                     <p>
                         <i class="fas fa-quote-left fa-3x style-subtitle "></i>
-
+                        {{ cfa.textPresident|raw }}
                         <i class="fas fa-quote-right fa-3x style-subtitle "></i>
-
+                    </p>
+                    {% endfor %}
                 </div>
             </div>
         </div>
