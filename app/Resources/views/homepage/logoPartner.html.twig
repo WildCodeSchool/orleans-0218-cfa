@@ -8,11 +8,11 @@
         <div class="carousel-inner w-100 mb-3" role="listbox">
             {% for partnair in partnairs|batch(5) %}
                 <div class="carousel-item {{ loop.first ? 'active' : '' }}">
-                    <div class="row my-3">
+                    <div class="row my-2 mx-auto">
                         {% for logo in partnair %}
-                            <div class="col mr-3">
+                            <div class="col logos">
                                 <a href="{{ logo.link }}">
-                                    <img class=" shadow img-fluid" src="{{ logo.image }}" alt="{{ logo.name }}">
+                                    <img class=" mx-auto d-block shadow img-fluid" src="{{ logo.image }}" alt="{{ logo.name }}">
                                 </a>
                             </div>
                         {% endfor %}

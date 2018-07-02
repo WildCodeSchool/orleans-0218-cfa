@@ -57,10 +57,26 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/employeurs/le-maitre-d'apprentissage", name="masterInstructor")
+     */
+    public function masterInstructorAction()
+    {
+        return $this->render('employer/masterInstructor.html.twig');
+    }
+  
+    /**
      * @Route("/employeurs/les-principes-de-l'apprentissage", name="learningCondition")
      */
     public function learningConditionAction()
     {
         return $this->render('employer/learningCondition.html.twig');
+    }
+
+    /**
+     * @Route("/employeurs/les-cotisations-sociales", name="socialSecurityContributions")
+     */
+    public function socialSecurityContributionsAction()
+    {
+        return $this->render('employer/socialSecurityContributions.html.twig');
     }
 }
