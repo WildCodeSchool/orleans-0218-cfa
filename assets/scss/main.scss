@@ -464,6 +464,12 @@ footer {
   }
 }
 
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.5em;
+  }
+}
+
   /** end employeurs **/
 .list_none {
   list-style-type: none;
