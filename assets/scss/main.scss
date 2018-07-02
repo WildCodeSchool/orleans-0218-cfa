@@ -460,6 +460,14 @@ footer {
 
 /** HomepageEvents **/
 
-.cardEventHP {
-  min-height: 10vw;
+.event-thumbnail {
+  margin-bottom: 1vw;
+}
+
+.event-img {
+  background-image: url("../images/notebooks.jpg");
+  margin-bottom: 5vw;
+  .caption {
+    min-height: 30vw;
+  }
 }
