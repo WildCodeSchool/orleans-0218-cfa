@@ -384,6 +384,15 @@ footer {
 
   /** employeurs **/
 
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.5em;
+  }
+  h3 {
+    font-size: 1.2em;
+  }
+}
+
 .hireApprentice {
   .row {
     margin-right: 15px;
