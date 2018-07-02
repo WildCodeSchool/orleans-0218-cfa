@@ -25,6 +25,7 @@ body {
     h1 {
       font-size: 2em;
     }
+  color: black;
 }
 
 .list-page {
@@ -459,4 +460,16 @@ footer {
   width: 100%;
   height: 300px;
   margin-bottom: 20px;
+}
+
+.list-page {
+  ul li{
+    list-style-type: none;
+    color: black;
+    span{
+      color: $color-primary2;
+      font-size: large;
+    }
+  }
+
 }
