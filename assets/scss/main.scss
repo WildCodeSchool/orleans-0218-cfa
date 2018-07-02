@@ -25,6 +25,9 @@ body {
     h1 {
       font-size: 2em;
     }
+    h4 {
+      font-size: 1.2em;
+    }
 }
 
 /**Navbar**/
@@ -420,16 +423,7 @@ footer {
     margin-right: -15px;
     max-height: 300px;
   }
-  p {
-    font-size: 1.5em;
-  }
-  a {
-    color: black;
-    font-size: 0.5em;
-    &:hover {
-      color: $color-primary2;
-    }
-  }
+
   li {
     font-size: 2em;
   }
@@ -443,6 +437,22 @@ footer {
   .rememberTitle {
     font-size: 1.2em;
   }
+}
+
+.etudiants-img {
+  background-image: url("../images/etudiants.jpg");
+}
+
+.books-img {
+  background-image: url("../images/livres.jpg");
+}
+
+.master-img {
+  background-image: url("../images/employeurs_poignée_main.jpg");
+}
+
+.contributions-img {
+  background-image: url("../images/calculette.jpg");
 }
 
   /** end employeurs **/
