@@ -90,6 +90,7 @@ class AdminFormationController extends Controller
     public function editAction(Request $request, Formation $formation)
     {
         $deleteForm = $this->createDeleteForm($formation);
+        dump($formation);
         $editForm = $this->createForm('AppBundle\Form\FormationType', $formation);
         $editForm->handleRequest($request);
 
