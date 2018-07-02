@@ -6,14 +6,14 @@
     </div>
     <div class="row mt-3">
         {% for event in events %}
-            <div class="col ">
-                <div class="card">
+            <div class="col-sm-4 col-12">
+                <div class="card shadow cardEventHP">
                     <div class="card-body">
                         <div class="card-title">
                             {% if event.date %}{{ event.date|date('d/m/Y') }}{% endif %}
                             | <a href="#">{{ event.title }}</a>
                         </div>
-                        <p>{{ event.description }}</p>
+                        <p>{{ event.description | slice(0,100) ~ '...' }}</p>
                     </div>
                 </div>
             </div>
