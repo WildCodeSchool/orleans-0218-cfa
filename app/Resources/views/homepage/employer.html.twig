@@ -1,28 +1,32 @@
 <section class="employer_homepage">
     <div class="row side-bar">
         <div class="sidebar col-12">
-            <h2 class="text-center ">EMPLOYEURS</h2>
+            <h2 class="text-center "> LES EMPLOYEURS</h2>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-4 d-none d-sm-block">
-            <img src="{{ asset('images/employeurs_poignée_main.jpg') }}" class="img-fluid"
-                 alt="employeurs_poignée_de_main">
+        <div class="col-md-6 col-sm-12 col-sm-ml-0 mt-4">
+            <ul class="list_none float-right">
+                <li>
+                    <i class="fas fa-angle-right"></i><a class="p-3" href="{{ path('hireAnApprentice') }}">Embaucher un
+                        apprenti</a>
+                </li>
+                <li>
+                    <i class="fas fa-angle-right"></i><a class="p-3" href="{{ path('learningCondition') }}">Les
+                        principes de
+                        l'apprentissage</a>
+                </li>
+                <li>
+                    <i class="fas fa-angle-right"></i><a class="p-3" href="{{ path('masterInstructor') }}">Le maître d'apprentissage</a>
+                </li>
+                <li>
+                    <i class="fas fa-angle-right"></i><a class="p-3" href="#">Les cotisations sociales</a>
+                </li>
+            </ul>
         </div>
-        <div class="col-md-6 mt-4 ">
-            <p>
-                <i class="fas fa-angle-right"></i><a href="{{ path('hireAnApprentice') }}">Embaucher un apprenti</a>
-            </p>
-            <p>
-                <i class="fas fa-angle-right"></i><a href="{{ path('learningCondition') }}">Les principes de
-                    l'apprentissage</a>
-            </p>
-            <p>
-                <i class="fas fa-angle-right"></i><a href="#">Le maitre d'apprentissage</a>
-            </p>
-            <p>
-                <i class="fas fa-angle-right"></i><a href="#">Les cotisations sociales</a>
-            </p>
+        <div class="col-md-6 d-none d-sm-block">
+            <img src="{{ asset('images/employeurs_poignée_main.jpg') }}" class="img-fluid float-right"
+                 alt="employeurs_poignée_de_main">
         </div>
     </div>
 </section>
