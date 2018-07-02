@@ -443,11 +443,12 @@ footer {
   .rememberTitle {
     font-size: 1.2em;
   }
-  table, tr, td, th, thead {
-    font-size:0.9em;
+  @media (max-width: 768px) {
+    table, tr, td, th, thead {
+      font-size: 0.9em;
+    }
   }
 }
-
   /** end employeurs **/
 .list_none {
   list-style-type: none;
