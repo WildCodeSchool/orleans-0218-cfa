@@ -27,6 +27,16 @@ body {
     }
 }
 
+.list-page {
+  li {
+  margin-bottom: 10px;
+  color: $color-primary2;
+  }
+  span {
+    color: black;
+  }
+}
+
 /**Navbar**/
 
 .logo {
@@ -58,9 +68,7 @@ body {
 }
 
 .title-style {
-  margin-bottom: 50px;
   margin-top: 50px;
-  margin-left: 100px;
 }
 
 .slider {
@@ -441,4 +449,14 @@ footer {
   font-family: 'Satisfy', cursive;
   font-size: 1.3em;
   margin-left: 2em;
+}
+
+.background-cfa {
+  background-image: url("../images/cfa.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 20px;
 }
