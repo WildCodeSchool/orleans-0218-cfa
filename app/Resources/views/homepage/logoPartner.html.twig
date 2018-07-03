@@ -12,7 +12,7 @@
                         {% for logo in partnair %}
                             <div class="col logos">
                                 <a href="{{ logo.link }}">
-                                   <img src="{{ vich_uploader_asset(logo, 'image')}}"  class="mx-auto d-block shadow img-fluid">
+                                   <img src="{{ vich_uploader_asset(logo, 'image')}}"  alt="{{ logo.namegit  }}" class="mx-auto d-block shadow img-fluid">
                                 </a>
                             </div>
                         {% endfor %}
