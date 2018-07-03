@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'layoutAdmin.html.twig' %}
 
 {% block body %}
     <div class="container">
@@ -24,7 +24,7 @@
                 <tr>
                     <td>{{ historicCfa.id }}</td>
                     <td>{{ historicCfa.title }}</td>
-                    <td>{{ historicCfa.date | date('Y-m-d H:i:s') }}</td>
+                    <td>{{ historicCfa.date | date('d/m/Y') }}</td>
                     <td>
                         <ul>
                             <li>
