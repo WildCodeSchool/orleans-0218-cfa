@@ -3,6 +3,7 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -25,7 +26,7 @@ class PartnairType extends AbstractType
                 'download_link' => false,
                 'allow_delete' => false,
             ])
-            ->add('link', TextType::class, [
+            ->add('link', UrlType::class, [
                 'label' => 'Lien'
             ]);
     }
