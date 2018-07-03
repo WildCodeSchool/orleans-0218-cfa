@@ -202,5 +202,4 @@ class Partnair
     {
         return $this->updatedAt;
     }
-
 }
