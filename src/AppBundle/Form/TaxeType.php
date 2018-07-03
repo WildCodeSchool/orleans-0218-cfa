@@ -31,6 +31,4 @@ class TaxeType extends AbstractType
     {
         return 'appbundle_taxe';
     }
-
-
 }
