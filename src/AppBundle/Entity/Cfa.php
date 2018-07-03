@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Cfa
@@ -25,16 +26,23 @@ class Cfa
      * @var string
      *
      * @ORM\Column(name="text_president", type="text")
+     * @Assert\NotBlank(message="Le texte ne peut pas être vide")
      */
     private $textPresident;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="Historical", type="string", length=45)
+     * @ORM\Column(name="image_president", type="string", length=80, nullable=true)
      */
-    private $historical;
+    private $imagePresident;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image_president_name", type="string", length=80)
+     */
+    private $imagePresidentName;
 
     /**
      * Get id.
@@ -44,6 +52,22 @@ class Cfa
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImagePresident()
+    {
+        return $this->imagePresident;
+    }
+
+    /**
+     * @param string $imagePresident
+     */
+    public function setImagePresident(string $imagePresident)
+    {
+        $this->imagePresident = $imagePresident;
     }
 
     /**
@@ -71,26 +95,18 @@ class Cfa
     }
 
     /**
-     * Set historical.
-     *
-     * @param string $historical
-     *
-     * @return Cfa
+     * @return string
      */
-    public function setHistorical($historical)
+    public function getImagePresidentName()
     {
-        $this->historical = $historical;
-
-        return $this;
+        return $this->imagePresidentName;
     }
 
     /**
-     * Get historical.
-     *
-     * @return string
+     * @param string $imagePresidentName
      */
-    public function getHistorical()
+    public function setImagePresidentName(string $imagePresidentName)
     {
-        return $this->historical;
+        $this->imagePresidentName = $imagePresidentName;
     }
 }

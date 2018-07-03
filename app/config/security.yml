@@ -21,10 +21,18 @@ security :
                 # csrf_provider: form.csrf_provider
 
             logout :       true
+            logout_on_user_change : true
             anonymous :    true
 
     access_control :
         - { path : ^/login$ , role : IS_AUTHENTICATED_ANONYMOUSLY }
+<<<<<<< HEAD
         - { path : ^/register , role : IS_AUTHENTICATED_FULLY }
         - { path : ^/resetting , role : IS_AUTHENTICATED_FULLY }
         - { path : ^/admin , role : ROLE_ADMIN }
+=======
+        - { path : ^/register , role : IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path : ^/resetting , role : IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path : ^/admin , role : ROLE_ADMIN }
+
+>>>>>>> 939fd9a3e1b4431558cf1a95121fafc534b498d1

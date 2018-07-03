@@ -1,6 +1,7 @@
 {% extends 'layout.html.twig' %}
+
 {% block body %}
-    <div class="container-fluid hireApprentice">
+    <div id="activeTab" data-active="employer" class="container-fluid hireApprentice">
         <div class="row">
             <div class="col offset-md-1">
                 <h1 class=" my-5 style-page">Embaucher un apprenti</h1>
@@ -168,6 +169,136 @@
                             </p>
                         </li>
                     </ol>
+                </div>
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col offset-1 style-subtitle mb-5">
+                <h2>Les aides</h2>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col offset-1">
+                <p>
+                    Depuis plus de dix ans, le Conseil Régional Centre - Val de Loire a apporté une attention
+                    particulière au secteur sanitaire, social et médico-social en mettant en œuvre une politique
+                    volontariste pour y favoriser le développement de l'apprentissage.
+                </p>
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col offset-1 style-subtitle mb-5">
+                <h3>Les aides de l'État et de la Région</h3>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col offset-1">
+                <p>
+                    <span>Employeurs de moins de 11 salariés :</span>
+                </p>
+                <p>
+                    Malgré la suppression (par la loi de finances n°2013-1278 du 29/12/2013) de l'Indemnité
+                    Compensatrice
+                    Forfaitaire qui était versée aux employeurs public et privé, la Région Centre - Val de Loire octroie
+                    une
+                    prime à l'apprentissage, visant essentiellement les entreprises de moins de 11 salariés.
+                </p>
+                <p>
+                    Les employeurs de moins de 11 salariés sont éligibles à une prime de 1000 € pour chaque année du
+                    contrat
+                    (sous condition d'assiduité de l'apprenti).
+                </p>
+                <p>
+                    Ceux qui n'ont jamais recruté d'apprentis, ou n'en ayant pas recruté depuis cinq ans, sont éligibles
+                    à
+                    la prime "primo-recruteur" de 500 €, la première année du contrat.
+                </p>
+                <p>
+                    <span>Employeurs de 11 à 249 salariés :</span>
+                </p>
+                <p>
+                    Les employeurs (privés, fonction publique territoriale ou hospitalière) de 11 à 249 salariés sont
+                    éligibles à une prime de 1000 € pour la première année du contrat, à l'issue des deux mois de
+                    période
+                    d'essai.
+                </p>
+                <p>
+                    <span>Crédit d'impôt (sans condition de taille) :</span>
+                </p>
+                <p>
+                    Les entreprises imposées d'après leur bénéfice réel (ou exonérées en application de critères
+                    particuliers) sont éligibles à un crédit d'impôt de 1 600 € par apprenti pour la première année de
+                    formation conduisant à un diplôme de niveau V à III.
+                </p>
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col offset-1 style-subtitle mb-5">
+                <h3>Vous avez embauché un apprenti reconnu travailleur handicapé (TH)</h3>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col offset-1">
+                <p>
+                    Les aides ci-dessus sont cumulables avec celles de l'AGEFIPH (secteur privé) et celles du FIPHPFP
+                    (secteur public).
+                </p>
+                <p>
+                    <span>L'AGEFIPH</span> (Association de GEstion du Fonds pour l'Insertion professionnelle des Personnes
+                    Handicapées) octroie une aide aux employeurs privés :
+                </p>
+                <ul>
+                    <li>
+                        jusqu'à 3 000 € chaque année du contrat pour l'embauche en CDD d'un apprenti reconnu TH. Cette
+                        aide est accordée sans condition de taille, la demande devant être déposée dans les trois mois
+                        suivants la signature du contrat ;
+                    </li>
+                    <li>
+                        13 000 € pour l'embauche en CDI d'un apprenti reconnu TH. Cette aide est accordée sans condition
+                        de taille, la demande devant être déposée dans les trois mois suivants la signature du contrat ;
+                    </li>
+                    <li>
+                        pour l'embauche d'un apprenti reconnu TH en CDI ou en CDD d'au moins 12 mois, une prime de 1 000
+                        à 4 000 € selon la nature du contrat, à l'issue de la période d'apprentissage.
+                    </li>
+                </ul>
+                <p>
+                    <span>Le FIPHFP</span> (Fonds pour l'Insertion des Personnes Handicapées dans la Fonction Publique) octroie
+                    plusieurs aides aux employeurs publics pour l'embauche d'un apprenti reconnu TH :
+                </p>
+                <ul>
+                    <li>
+                        une prise en charge de 80% du coût salarial chargé pour chaque année du contrat ;
+                    </li>
+                    <li>
+                        une aide financière pour la prise en charge des frais d'accompagnement d'un apprenti en
+                        situation de handicap, correspondant à 520 fois le SMIC horaire par année du contrat ;
+                    </li>
+                    <li>
+                        1600 € par année du contrat pour l'embauche en CDI d'un apprenti reconnu TH.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 remember">
+                <div class="rememberTitle">Liens</div>
+                <div class="containt shadow">
+                    <ul>
+                        <li>
+                            <a href="https://www.agefiph.fr/Entreprise">Agepiph</a>
+                        </li>
+                        <li>
+                            <a href="http://www.regioncentre-valdeloire.fr/accueil/les-services-en-ligne/la-region-vous-aide/education-formation/aide-aux-employeurs-apprentis.html">Aide
+                                aux employeurs en région</a>
+                        </li>
+                        <li>
+                            <a href="http://www.fiphfp.fr/">Fiphfp</a>
+                        </li>
+                        <li>
+                            <a href="http://www.oeth.org/">Oeth</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
