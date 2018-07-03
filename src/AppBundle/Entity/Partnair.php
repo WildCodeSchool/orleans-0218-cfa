@@ -2,8 +2,10 @@
 
 namespace AppBundle\Entity;
 
+use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
@@ -25,7 +27,6 @@ class Partnair
     private $id;
 
 
-
     /**
      * @var string
      * @Assert\Url(
@@ -45,7 +46,7 @@ class Partnair
      * @var string
      * @Assert\NotBlank()
      * @Assert\Length(
-*          min = 2, max = 80,
+     *          min = 2, max = 80,
      *     minMessage = "Le nom doit comporter au moins   {{ limit }} caractères ",
      *     maxMessage = "Le nom ne doit pas comporter plus de   {{ limit }} caractères "
      * )
@@ -55,21 +56,12 @@ class Partnair
 
     /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
-     * @var string|null
-     * @Vich\UploadableField(mapping="formation_ref", fileNameProperty="imageName")
-
-     * @ORM\Column(name="image", type="string", length=150, nullable=true)
-     */
-    private $image;
-
-    /**
-     * NOTE: This is not a mapped field of entity metadata, just a simple property.
      *
-     * @Vich\UploadableField(mapping="formation_ref", fileNameProperty="referentielName")
-     * @ORM\Column(nullable=true)
+     * @Vich\UploadableField(mapping="partner_image", fileNameProperty="imageName")
+     *
      * @var File
      */
-    private $referentielFile;
+    private $image;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -94,30 +86,6 @@ class Partnair
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set image.
-     *
-     * @param string|null $image
-     *
-     * @return Partnair
-     */
-    public function setImage($image = null)
-    {
-        $this->image = $image;
-
-        return $this;
-    }
-
-    /**
-     * Get image.
-     *
-     * @return string|null
-     */
-    public function getImage()
-    {
-        return $this->image;
     }
 
     /**
@@ -177,30 +145,30 @@ class Partnair
      *
      * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $referentiel
      */
-    public function setReferentielFile(?File $referentiel = null): void
+    public function setImage(?File $pics = null): void
     {
-        $this->referentielFile = $referentiel;
+        $this->image = $pics;
 
-        if (null !== $referentiel) {
+        if (null !== $pics) {
             // It is required that at least one field changes if you are using doctrine
             // otherwise the event listeners won't be called and the file is lost
-            $this->updatedAt = new \DateTimeImmutable();
+            $this->updatedAt = new DateTimeImmutable();
         }
     }
 
-    public function getReferentielFile(): ?File
+    public function getImage(): ?File
     {
-        return $this->referentielFile;
+        return $this->image;
     }
 
-    public function setReferentielName(?string $referentielName): void
+    public function setImageName(?string $imageName): void
     {
-        $this->referentielName = $referentielName;
+        $this->imageName = $imageName;
     }
 
-    public function getReferentielName(): ?string
+    public function getImageName(): ?string
     {
-        return $this->referentielName;
+        return $this->imageName;
     }
 
     /**
@@ -208,7 +176,7 @@ class Partnair
      *
      * @param \DateTime $updatedAt
      *
-     * @return Formation
+     * @return Partnair
      */
     public function setUpdatedAt($updatedAt)
     {

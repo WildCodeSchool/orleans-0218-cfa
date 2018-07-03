@@ -45,16 +45,16 @@ class PartnairController extends Controller
 
         $em = $this->getDoctrine()->getManager();
 
-        $newPartnair = new Partnair();
-        $form = $this->createForm('AppBundle\Form\PartnairType', $newPartnair);
+        $Partnair = new Partnair();
+        $form = $this->createForm('AppBundle\Form\PartnairType', $Partnair);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($newPartnair);
+            $em->persist(Partnair);
             $em->flush();
 
             return $this->redirectToRoute('partnair_show', array(
-                'partnairs' => $partnairs,
+                'partnairs' => $partnair,
                 'id' => $partnair->getId(),
             ));
         }

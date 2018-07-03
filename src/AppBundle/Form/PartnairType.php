@@ -6,6 +6,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Vich\UploaderBundle\Form\Type\VichFileType;
+
 
 class PartnairType extends AbstractType
 {
@@ -16,7 +18,7 @@ class PartnairType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, ['label' => 'Nom'])
-            ->add('image', TextType::class, ['label' => 'Image'])
+            ->add('image', VichFileType::class, ['label' => 'Image', 'required' => false])
             ->add('link', TextType::class, ['label' => 'Lien']);
     }/**
       * {@inheritdoc}
