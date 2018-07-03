@@ -24,7 +24,7 @@ class AdminHistoricCfaController extends Controller
     /**
      * Lists all historicCfa entities.
      *
-     * @Route("/histoire", name="historicCfa_index")
+     * @Route("/histoire", name="historiccfa_index")
      * @Method("GET")
      */
 
