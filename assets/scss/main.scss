@@ -19,12 +19,33 @@ body {
   font-family: $fontText;
   background-image: url('../images/background.png');
   background-repeat: repeat;
-    p {
-      font-size: 1em;
-    }
-    h1 {
-      font-size: 2em;
-    }
+  color: black;
+  p {
+    font-size: 1.2em;
+    margin-bottom: 2em;
+  }
+  li {
+    font-size: 1.2em;
+  }
+  li ul li {
+    font-size: 1em;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  h4 {
+  font-size: 1.2em;
+  }
+}
+
+.list-page {
+  li {
+  margin-bottom: 10px;
+  color: $color-primary2;
+  }
+  span {
+    color: black;
+  }
 }
 
 /**Navbar**/
@@ -58,9 +79,7 @@ body {
 }
 
 .title-style {
-  margin-bottom: 50px;
   margin-top: 50px;
-  margin-left: 100px;
 }
 
 .slider {
@@ -339,6 +358,16 @@ footer {
       }
     }
 
+.background-event {
+  background-image: url("../images/event_background_img.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
     .homepage-formation {
       ul {
         columns: 2;
@@ -388,16 +417,35 @@ footer {
 
   /** employeurs **/
 
-.hireApprentice {
-  .row {
-    margin-right: 15px;
-    margin-left: 15px;
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.5em;
   }
+  h3 {
+    font-size: 1.2em;
+  }
+}
+
+.background-employer {
+  background-image: url("../images/employeurs_monde.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 75%;
+  width: 100%;
+  height: 350px;
+  margin-left: -30px;
+}
+
+.hireApprentice {
   span {
     font-weight: bold;
   }
   .containt {
     min-height: 200px;
+  }
+  .row {
+    margin-right: 15px;
+    margin-left: 15px;
   }
 }
 
@@ -420,16 +468,7 @@ footer {
     margin-right: -15px;
     max-height: 300px;
   }
-  p {
-    font-size: 1.5em;
-  }
-  a {
-    color: black;
-    font-size: 0.5em;
-    &:hover {
-      color: $color-primary2;
-    }
-  }
+
   li {
     font-size: 2em;
   }
@@ -442,6 +481,33 @@ footer {
   }
   .rememberTitle {
     font-size: 1.2em;
+  }
+  @media (max-width: 768px) {
+    table, tr, td, th, thead {
+      font-size: 0.9em;
+    }
+  }
+}
+
+.etudiants-img {
+  background-image: url("../images/etudiants.jpg");
+}
+
+.books-img {
+  background-image: url("../images/livres.jpg");
+}
+
+.master-img {
+  background-image: url("../images/employeurs_poignée_main.jpg");
+}
+
+.contributions-img {
+  background-image: url("../images/calculette.jpg");
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.5em;
   }
 }
 
@@ -457,3 +523,52 @@ footer {
   font-size: 1.3em;
   margin-left: 2em;
 }
+
+.background-cfa {
+  background-image: url("../images/cfa.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+.style-title-3 {
+  border-bottom: 3px solid $color-primary2;
+}
+
+.list-page {
+  ul li{
+    color: $color-primary2;
+    padding-top: 0.5em;
+    span{
+      color: black;
+      margin-top: 1.2em;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .list-page {
+    padding:0px;
+    ul {
+      padding: 10px;
+    }
+  }
+}
+
+/** HomepageEvents **/
+
+.event-thumbnail {
+  margin-bottom: 1vw;
+}
+
+.event-img {
+  background-image: url("../images/notebooks.jpg");
+  margin-bottom: 5vw;
+  .caption {
+    min-height: 30vw;
+  }
+}
+

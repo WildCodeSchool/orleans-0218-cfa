@@ -27,14 +27,10 @@
                 </h2>
                 <p class="formation-presentation">{{ formation.shortPresentation|raw }}</p>
                 <p class="mt-5 bg-light text-success">{{ formation.jobDescription|raw }}</p>
+                    <img src="{{ asset('images/meeting_formation.jpeg') }}" alt="meeting-formation">
             </div>
-            <div class="w-100"></div>
-            <div class="col offset-md-4 mb-3 d-none d-sm-block">
-                <img src="{{ asset('images/meeting_formation.jpeg') }}" alt="meeting-formation">
-            </div>
-            <div class="w-100"></div>
             <div class="col offset-md-4">
-                <h2 class="title-formation">Où trouver cette formation :</h2>
+                <h2 class="title-formation mt-4">Où trouver cette formation :</h2>
             </div>
             <div class="w-100"></div>
             <div class="col offset-md-4">
@@ -49,11 +45,13 @@
                 </div>
             </div>
             <div class="col-md-3 ml-md-auto mt-5">
-                <a class="btn btn-success mt-5" href="{{ path('homepage') }}">Retour à l'accueil</a>
+                {% if formation.referentielName is not empty %}
+                    <a class="btn btn-outline-success" target="_blank" href="{{ vich_uploader_asset(formation, 'referentielFile') }}">Télécharger le référentiel de la formation</a>
+                {% endif %}
+                <a class="btn btn-outline-success" href="{{ path('homepage') }}">Retour à l'accueil</a>
             </div>
         </div>
-        </div>
-    </section>
+</section>
 {% endblock %}
 
 
