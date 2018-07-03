@@ -1,16 +1,18 @@
 {% extends 'layoutAdmin.html.twig' %}
 
 {% block body %}
-    <h1>Ajouter une histoire</h1>
-
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Créer" />
-    {{ form_end(form) }}
-
-    <ul>
-        <li>
-            <a href="{{ path('historiccfa_index') }}">Liste des histoires</a>
-        </li>
-    </ul>
+    <div class="container">
+        <h1>Ajouter une histoire</h1>
+        <div class="row">
+            <div class="col-8">
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <input class="btn-lg btn-outline-primary" type="submit" value="Créer" />
+                {{ form_end(form) }}
+            </div>
+            <div class="col-4 border-left">
+                <a class="btn-light btn-lg" href="{{ path('historiccfa_index') }}">Liste des histoires</a>
+            </div>
+        </div>
+    </div>
 {% endblock %}
