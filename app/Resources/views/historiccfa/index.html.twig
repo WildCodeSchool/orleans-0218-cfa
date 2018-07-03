@@ -3,40 +3,41 @@
 {% block body %}
     <div class="container">
         <h1 class="text-center title-style">L'histoire du CFA</h1>
+        <div class="row">
+            <div class="col-md-3 offset-9">
+                <a class="btn btn-outline-primary mb-3" href="{{ path('historiccfa_new') }}">+ Créer une histoire</a>
+            </div>
+        </div>
 
-        <table class="table table-striped text-center">
+    <table class="table table-striped text-center">
             <thead>
             <tr>
-                <th>Id</th>
-                <th>Date</th>
                 <th>Titre</th>
-                <th>Actions</th>
+                <th>Date</th>
+                <th>Contenu</th>
+                <th></th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
-            {% for historicCfa in historicCfas %}
-                <tr>
-                    <td>{{ historicCfa.id }}</td>
-                    <td>{{ historicCfa.date }}</td>
-                    <td>{{ historicCfa.title }}</td>
-                    <td>
-                        <ul>
-                            <li>
-                                <a class="btn btn-info form-control" href="#">Voir</a>
-                            </li>
-                            <li>
-                                <a class="btn btn-danger form-control" href="#">Modifier</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-            {% endfor %}
+                {% for historicCfa in historicCfas %}
+                    <tr>
+                        <td>{{ historicCfa.title }}</td>
+                        <td>{{ historicCfa.date }}</td>
+                        <td>{{ historicCfa.content }}</td>
+                        <td>
+                            <ul>
+                                <li>
+                                    <a class="btn btn-info form-control" href="#">Voir</a>
+                                </li>
+                                <li>
+                                    <a class="btn btn-danger form-control" href="#">Modifier</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                {% endfor %}
             </tbody>
         </table>
-        <ul>
-            <li>
-                <a class="btn btn-info mt-4 mb-5" href="#">Créer une histoire</a>
-            </li>
-        </ul>
     </div>
 {% endblock %}

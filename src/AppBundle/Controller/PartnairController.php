@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Partnair controller.
  *
- * @Route("partnair")
+ * @Route("admin/partnair")
  */
 class PartnairController extends Controller
 {
