@@ -38,4 +38,31 @@ class AdminHistoricCfaController extends Controller
             'historicCfas' => $historicCFas,
         ]);
     }
+
+
+    /**
+     * Creates a new formation entity.
+     *
+     * @Route("/new", name="historiccfa_new")
+     * @Method({"GET", "POST"})
+     */
+    public function newAction(Request $request)
+    {
+        $historiccfa = new HistoricCfa();
+        $form = $this->createForm('AppBundle\Form\HistoricCfaType', $historiccfa);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($historiccfa);
+            $em->flush();
+
+            return $this->redirectToRoute('historiccfa_show', ['id' => $historiccfa->getId()]);
+        }
+
+        return $this->render('historiccfa/new.html.twig', [
+            'historiccfa' => $historiccfa,
+            'form' => $form->createView(),
+        ]);
+    }
 }
