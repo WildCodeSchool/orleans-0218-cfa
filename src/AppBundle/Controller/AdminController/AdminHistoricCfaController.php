@@ -112,7 +112,7 @@ class AdminHistoricCfaController extends Controller
      * @param HistoricCfa $historicCfa
      * @return \Symfony\Component\Form\FormInterface
      */
-    private function createDeleteForm( HistoricCfa $historicCfa)
+    private function createDeleteForm(HistoricCfa $historicCfa)
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('historiccfa_delete', ['id' => $historicCfa->getId()]))
