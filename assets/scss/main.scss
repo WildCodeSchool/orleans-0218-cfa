@@ -19,22 +19,54 @@ body {
   font-family: $fontText;
   background-image: url('../images/background.png');
   background-repeat: repeat;
-    p {
-      font-size: 1em;
-    }
-    h1 {
-      font-size: 2em;
-    }
+  color: black;
+  p {
+    font-size: 1.2em;
+    margin-bottom: 2em;
+  }
+  li {
+    font-size: 1.2em;
+  }
+  li ul li {
+    font-size: 1em;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  h4 {
+  font-size: 1.2em;
+  }
+}
+
+.list-page {
+  li {
+  margin-bottom: 10px;
+  color: $color-primary2;
+  }
+  span {
+    color: black;
+  }
 }
 
 /**Navbar**/
 
 .logo {
-  width: 150px;
+  width: 100px;
 }
 
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  background-color: $color-primary;
+}
+
+.navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
+  color:$color-basic;
+}
+.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
+  color:$color-basic;
+}
 .navbar {
-  opacity: 0.9;
+  color: $color-basic-inverse;
+
   .nav-link {
     font-size: 1.2em;
     color: $color-basic-inverse;
@@ -42,8 +74,9 @@ body {
 
   .nav-link:hover {
     background-color: $color-primary2;
-    color: $color-basic;
+    color: $color-basic-inverse;
   }
+  box-shadow: 0 0 6px $shadow;
 }
 
 .dropdown-item:hover {
@@ -58,9 +91,7 @@ body {
 }
 
 .title-style {
-  margin-bottom: 50px;
   margin-top: 50px;
-  margin-left: 100px;
 }
 
 .slider {
@@ -74,6 +105,8 @@ body {
 }
 
 .count-up {
+  margin-left: 15px;
+  margin-top: 50px;
   .counter {
     color: $color-primary2;
     font-size: 3em;
@@ -155,7 +188,8 @@ footer {
   top: 5px;
   left: 10%;
   position: absolute;
-  background-color: $color-basic;
+  background-image: url('../images/background.png');
+  background-repeat: repeat;
 
 
 }
@@ -259,8 +293,6 @@ footer {
   }
 
   .meeting-formation {
-    background-image: url("../images/meeting_formation.jpeg");
-    background-attachment: scroll;
     background-repeat: no-repeat;
     margin-left: 100px;
     margin-top: 50px;
@@ -313,12 +345,11 @@ footer {
       &:hover {
         color: $color-primary2;
       }
-
-      .formation-presentation {
-        font-size: 1.2em;
-
-      }
     }
+
+.formation-presentation {
+  color: $color-primary3;
+}
 
       .background-apprenti {
         background-image: url("../images/apprenti.jpg");
@@ -340,24 +371,47 @@ footer {
       }
     }
 
+.background-event {
+  background-image: url("../images/event_background_img.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
     .homepage-formation {
-      background-image: url("/images/home_formation.jpg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      min-height: 50vh;
       ul {
         columns: 2;
-        margin: 15px;
+        margin: 10px;
       }
       li {
-        margin-bottom: 35px;
-        font-size: 2.5em;
+        margin-bottom: 10px;
+        font-size: 2em;
       }
     }
 
+@media (max-width: 1690px) {
+  .homepage-formation {
+    ul {
+      columns: 1;
+      margin: 10px;
+    }
+    li {
+      margin-bottom: 10px;
+      font-size: 2em;
+    }
+  }
+}
+
+.picture-formation {
+  height: 100%;
+  margin-left: -15px;
+}
     .leaflet {
       width: 48vw;
-      height: 80vh;
+      height: 48vw;
     }
 
     /** carousel logos partner **/
@@ -365,23 +419,44 @@ footer {
     .logoPartner {
       img {
         min-height: 100%;
-        max-height: 180px;
+        max-height: 190px;
+      }
+      .logos {
+        filter: grayscale(100%);
+        &:hover {
+          filter: none;
+        }
       }
     }
 
   /** employeurs **/
 
-.hireApprentice {
-  .row {
-    margin-right: 15px;
-    margin-left: 15px;
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.5em;
   }
+  h3 {
+    font-size: 1.2em;
+  }
+}
+
+.background-employer {
+  background-image: url("../images/employeurs_monde.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 75%;
+  width: 100%;
+  height: 350px;
+}
+
+.hireApprentice {
   span {
     font-weight: bold;
   }
   .containt {
     min-height: 200px;
   }
+
 }
 
 .masterInstructor {
@@ -390,9 +465,6 @@ footer {
   }
 }
 
-.list_none {
-  list-style-type: none;
-}
 
 .learningCondition {
   .containt{
@@ -401,10 +473,114 @@ footer {
   }
 }
 
+.employer_homepage {
+  .img-fluid {
+    margin-right: -15px;
+    max-height: 300px;
+  }
+
+  li {
+    font-size: 2em;
+  }
+}
+
+.socialSecurityContributions {
+
+  .rememberTitle {
+    font-size: 1.2em;
+  }
+  @media (max-width: 768px) {
+    table, tr, td, th, thead {
+      font-size: 0.9em;
+    }
+  }
+}
+
+.etudiants-img {
+  background-image: url("../images/etudiants.jpg");
+}
+
+.books-img {
+  background-image: url("../images/livres.jpg");
+}
+
+.master-img {
+  background-image: url("../images/employeurs_poignée_main.jpg");
+}
+
+.contributions-img {
+  background-image: url("../images/calculette.jpg");
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.5em;
+  }
+}
+
+  /** end employeurs **/
+.list_none {
+  list-style-type: none;
+}
+
 /** CFApage **/
+
+.cfa-image {
+  height: 100%;
+  margin-left: -15px;
+}
 
 .president-letter {
   font-family: 'Satisfy', cursive;
   font-size: 1.3em;
   margin-left: 2em;
 }
+
+.background-cfa {
+  background-image: url("../images/cfa.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+.style-title-3 {
+  border-bottom: 3px solid $color-primary2;
+}
+
+.list-page {
+  ul li{
+    color: $color-primary2;
+    padding-top: 0.5em;
+    span{
+      color: black;
+      margin-top: 1.2em;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .list-page {
+    padding:0px;
+    ul {
+      padding: 10px;
+    }
+  }
+}
+
+/** HomepageEvents **/
+
+.event-thumbnail {
+  margin-bottom: 1vw;
+}
+
+.event-img {
+  background-image: url("../images/notebooks.jpg");
+  margin-bottom: 5vw;
+  .caption {
+    min-height: 30vw;
+  }
+}
+

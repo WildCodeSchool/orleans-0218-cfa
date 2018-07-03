@@ -1,3 +1,4 @@
+
 .timeline {
   width: 100%;
   position: relative;
@@ -8,14 +9,17 @@
 .timeline .timeline-item {
   padding-left: 0;
   padding-right: 30px;
+
 }
 .timeline .timeline-item.timeline-item-right,
 .timeline .timeline-item:nth-of-type(even):not(.timeline-item-left) {
   padding-left: 30px;
   padding-right: 0;
+
 }
 .timeline .timeline-item .timeline-event {
   width: 100%;
+
 }
 .timeline:before {
   border-right-style: solid;

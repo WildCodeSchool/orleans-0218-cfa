@@ -5,12 +5,12 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
 
 
-    <div class="container-fluid">
+    <div class="container-fluid"  id="activeTab" data-active="cfa">
         <div class="row">
                 <h1 class="title-style style-page">Les UFA</h1>
         </div>
         <div class="row">
-            <div class="col-3">
+            <div class="col-md-3 col-12">
                 <ul>
                     {% for ufa in ufas %}
                         <li class="list-group-item shadow">
@@ -19,11 +19,11 @@
                     {% endfor %}
                 </ul>
             </div>
-            <div class="col-6">
+            <div class="col-md-6 col-12">
                     <div id="map" class="leaflet">
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-md-3 col-12">
                 <div class="card shadow">
                     <div class="card-header">
                         <h2>{{ ufa.name }}</h2>

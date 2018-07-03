@@ -1,0 +1,254 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+    <div id="activeTab" data-active="employer" class="container-fluid socialSecurityContributions">
+        <div class="row">
+            <div class="section-title background-employer d-none d-sm-block"></div>
+        </div>
+        <div class="row">
+            <div class="col offset-md-1">
+                <h1 class=" my-5 style-page">Salaires et frais divers</h1>
+            </div>
+        </div>
+        <div class="row mb-5 col-sm-mb-2">
+            <div class="col offset-md-1 style-subtitle mb-5">
+                <h2>Les salaires</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col offset-md-1 mb-5 col-sm-mb-2">
+                <p>
+                    L'employeur qui embauche un apprenti est tenu de lui verser un salaire sur la durée du contrat. Ce
+                    salaire est calculé en pourcentage du SMIC, en fonction de l'âge de l'apprenti et de sa progression
+                    dans
+                    le cycle de formation. (Pour les apprentis de 21 ans et plus, le salaire minimum conventionnel
+                    s'applique s'il est plus favorable que le SMIC.)
+                </p>
+                <p>
+                    Le Code du travail (article D 6222-26 et suivants) fixe le barème correspondant au salaire de
+                    l'apprenti. Cependant, plusieurs cas de figures sont envisageables selon les caractéristiques du
+                    lieu
+                    d'emploi (secteur public, privé).
+                </p>
+            </div>
+        </div>
+        <div class="row mb-5 col-sm-mb-2">
+            <div class="col offset-md-1 style-subtitle mb-5 col-sm-mb-2">
+                <h2>Les cotisations sociales</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-5 offset-md-1 col-sm-mb-2">
+                <p>
+                    - Les employeurs inscrits au répertoire de métiers et ceux qui ont moins de 11 salariés (au 31
+                    décembre de l'année précédant la signature du contrat d'apprentissage, non compris les apprentis),
+                    sont exonérés de toute cotisation et contribution patronale d'origine légale ou conventionnelle, à
+                    l'exception des cotisations supplémentaires d'accident du travail et de la cotisation "accidents du
+                    travail et maladies professionnelles".
+                </p>
+                <p>
+                    - Les employeurs qui ne sont pas inscrits au répertoire de métiers et qui ont au moins 11 salariés
+                    sont exonérés des cotisations d'assurance sociale (maladie, maternité, invalidité, décès,
+                    vieillesse) et des prestations familiales. Restent néanmoins exigibles (chiffres pour 2015) :
+                </p>
+                <ul>
+                    <li>
+                        Contributions au FNAL (Fonds National d'Aide au Logement : 0,10% de 11 à 19 salariés, 0,50% à
+                        partir de 20 salariés)
+                    </li>
+                    <li>
+                        CSA (Contribution Solidarité Autonomie) : 0,30%
+                    </li>
+                    <li>
+                        Cotisation "accidents du travail et maladies professionnelles"
+                    </li>
+                    <li>
+                        Majoration complémentaire accidents du travail
+                    </li>
+                    <li>
+                        Contribution au régime d'Assurance Chômage (AC, 4%) et cotisations au régime de garantie des
+                        salaires (AGS, 0,30%)
+                    </li>
+                    <li>
+                        Cotisations de retraite complémentaire (4,65%) et cotisation affectée à l'Association pour la
+                        Gestion de Fonds de Financement (AGFF) de l'AGIRC et l'ARRCO (1,20%).
+                    </li>
+                </ul>
+                <p>
+                    Les cotisations sont calculées sur une base forfaitaire mensuelle égale à la rémunération minimale
+                    de l'apprenti diminuée de 11 points et calculée sur la base de 151,67 h. La valeur du SMIC prise en
+                    compte pour le calcul des cotisations est celle en vigueur au 1er janvier de l'année civile
+                    considérée.
+                </p>
+            </div>
+        </div>
+        <div class="row mb-5 col-sm-mb-2">
+            <div class="col offset-md-1 my-5 remember">
+                <div class="rememberTitle">Ce qu'il faut retenir</div>
+                <div class="containt">
+                    <div class="table-title">
+                        <strong>Employeurs Publics</strong>
+                        <p>
+                            (fonctions publiques d'État, Territoriale, Hospitalière)
+                        </p>
+                    </div>
+                    <table class="table table-bordered  table-responsive-sm w-100 d-block d-md-table">
+                        <thead class="thead-cycle text-center">
+                        <tr>
+                            <th></th>
+                            <th colspan="3">Apprenti de moins de 21 ans</th>
+                            <th colspan="3">Apprenti de 21 ans et plus</th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th>Niveau V</th>
+                            <th>Niveau IV</th>
+                            <th>Niveau III</th>
+                            <th>Niveau V</th>
+                            <th>Niveau IV</th>
+                            <th>Niveau III</th>
+                        </tr>
+                        </thead>
+
+                        <tbody class="text-center text-body">
+                        <tr>
+                            <td class="year">1<sup>ère</sup> année</td>
+                            <td>41% du SMIC</td>
+                            <td>51% du SMIC</td>
+                            <td>61% du SMIC</td>
+                            <td>53% du SMIC</td>
+                            <td>63% du SMIC</td>
+                            <td>73% du SMIC</td>
+                        </tr>
+                        <tr>
+                            <td class="year">2<sup>ième</sup> année</td>
+                            <td>49% du SMIC</td>
+                            <td>59% du SMIC</td>
+                            <td>69% du SMIC</td>
+                            <td>61% du SMIC</td>
+                            <td>71% du SMIC</td>
+                            <td>81% du SMIC</td>
+                        </tr>
+                        <tr>
+                            <td class="year">3<sup>ième</sup> année</td>
+                            <td>65% du SMIC</td>
+                            <td>75% du SMIC</td>
+                            <td>85% du SMIC</td>
+                            <td>78% du SMIC</td>
+                            <td>88% du SMIC</td>
+                            <td>98% du SMIC</td>
+                        </tr>
+                        </tbody>
+
+                        <caption class="text-center">
+                            Le barème du salaire de l'apprenti tient compte du niveau du diplôme visé
+                        </caption>
+                    </table>
+                    <div class="table-title">
+                        <strong>Employeurs Privés</strong>
+                        <p>
+                            Les employeurs privés non adhérents de la Branche Associative, Sanitaire, Sociale et
+                            médico-sociale (BASS) appliquent le barème de droit commun corrrespondant au niveau V du
+                            tableau ci-dessus.
+                        </p>
+                    </div>
+                    <table class="table table-bordered table-responsive w-100 d-block d-md-table">
+                        <thead class="thead-cycle text-center">
+                        <tr>
+                            <th>Cycle de formation</th>
+                            <th>moins de 21 ans</th>
+                            <th>21 ans et plus</th>
+                        </tr>
+                        </thead>
+
+                        <tbody class="text-center text-body">
+                        <tr>
+                            <td class="year">1<sup>ère</sup> année</td>
+                            <td>50% du SMIC</td>
+                            <td>65% du SMIC (ou du minimum conventionnel)</td>
+                        </tr>
+                        <tr>
+                            <td class="year">2<sup>ième</sup> année</td>
+                            <td>60% du SMIC</td>
+                            <td>75% du SMIC (ou du minimum conventionnel)</td>
+                        </tr>
+                        <tr>
+                            <td class="year">3<sup>ième</sup> année</td>
+                            <td>70% du SMIC</td>
+                            <td>95% du SMIC (ou du minimum conventionnel)</td>
+                        </tr>
+                        </tbody>
+
+                        <caption class="text-center">
+                            Les employeurs adhérents de la BASS sont assujettis aux accords de branche
+                            2006-01 et 2008-01 qui déterminent le salaire de l'apprenti selon le barème.
+                        </caption>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-5 col-sm-mb-2">
+            <div class="col offset-md-1 style-subtitle mb-5 col-sm-mb-2">
+                <h2>Autres frais</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col offset-md-1">
+                <h3>Coûts pédagogiques</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col offset-md-1">
+                <p>
+                    Outre le salaire de l'apprenti, certaines catégories d'employeurs peuvent avoir à prendre en charge
+                    une partie des coûts pédagogiques de la formation, s'ils ne sont pas assujettis à <a href="#">la
+                        taxe
+                        d'apprentissage.</a>
+                </p>
+                <p>
+                    Parmi les employeurs du secteur associatif a but non lucratif et du secteur public, non soumis à la
+                    taxe d'apprentissage, seuls les adhérents de la BASS voient les coûts pédagogiques intégralement
+                    pris en charge financièrement par leur OPCA UNIFAF (sur un fond qui n'impacte pas leur budget de
+                    formation adhérent)
+                </p>
+                <p>
+                    Pour les employeurs privés adhérents ou non d'autres branches, une partie des frais pédagogiques
+                    (généralement 50%) est facturée par le CFA à l'employeur, le solde étant pris en charge par la
+                    Région Centre - Val de Loire. Dans certaines situations, le CFA peut envisager une diminution des
+                    coûts en mobilisant des fonds issus de la taxe d'apprentissage.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col offset-md-1">
+                <h3>Formation du maître d'apprentissage</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col offset-md-1">
+                <p>
+                    Pour les employeurs de la BASS, la formation du maître d'apprentissage est rendue obligatoire par
+                    accord de branche : les coûts en sont intégralement pris en charge financièrement par UNIFAF.
+                </p>
+                <p>
+                    Dans les autres cas, l'employeur peut éventuellement bénéficier d'une aide régionale, en fonction
+                    des caractéristiques du lieu d'emploi.
+                </p>
+                <p>
+                    Frais annexes (transport, restauration)
+                </p>
+                <p>
+                    A l'heure actuelle, le remboursement des frais annexes n'est pas rendu obligatoire, l'apprenti étant
+                    un salarié non pas en formation continue, mais initiale.
+                </p>
+                <p>
+                    Lien : <a href="https://www.alternance.emploi.gouv.fr/portail_alternance/jcms/hl_5641">Portail de
+                        l'alternance</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

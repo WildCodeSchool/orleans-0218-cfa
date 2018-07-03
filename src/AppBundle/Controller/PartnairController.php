@@ -12,7 +12,7 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 /**
  * Partnair controller.
  *
- * @Route("partnair")
+ * @Route("admin/partnair")
  */
 class PartnairController extends Controller
 {
