@@ -1,11 +1,13 @@
 {% extends 'layout.html.twig' %}
 
 {% block body %}
-    <div class="container">
-    <h2>Nos évènements</h2>
-        <body class="events-bg">
-        {% for event in events %}
-            <div class="col-sm-6">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="section-title background-event"></div>
+        </div>
+        <div class="container">
+        <h1 class="style-page">{{ event.title }}</h1>
+            <div class="col-sm-6 col-12">
                 <div class="card">
                     <div class="card-header">
                         {% if event.date %}{{ event.date|date('d/m/Y') }}{% endif %}
@@ -13,11 +15,9 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ event.title }}</h5>
                         <p class="card-text">{{ event.description }}</p>
-                        <a class="btn btn-outline-primary float-right" href="{{ path('event_show', { 'id': event.id }) }}" class="btn btn-primary">En savoir plus</a>
                     </div>
                 </div>
             </div>
-        {% endfor %}
-        </body>
+        </div>
     </div>
 {% endblock %}

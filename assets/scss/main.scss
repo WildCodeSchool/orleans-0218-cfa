@@ -339,6 +339,16 @@ footer {
       }
     }
 
+.background-event {
+  background-image: url("../images/event_background_img.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
     .homepage-formation {
       ul {
         columns: 2;
