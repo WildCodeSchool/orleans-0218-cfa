@@ -2,9 +2,7 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\Formation;
 use AppBundle\Entity\HistoricCfa;
-
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
