@@ -55,13 +55,38 @@ class AdminHistoricCfaController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($historiccfa);
             $em->flush();
-          
+
             return $this->redirectToRoute('historiccfa_show', ['id' => $historiccfa->getId()]);
         }
 
         return $this->render('historiccfa/new.html.twig', [
             'historiccfa' => $historiccfa,
             'form' => $form->createView(),
+        ]);
+    }
+  
+    /**
+     * Displays a form to edit an existing formation entity.
+     *
+     * @Route("/{id}/edit", name="historiccfa_edit")
+     * @Method({"GET", "POST"})
+     */
+    public function editAction(Request $request, HistoricCfa $historiccfa)
+    {
+        $deleteForm = $this->createDeleteForm($historiccfa);
+        $editForm = $this->createForm('AppBundle\Form\HistoricCfaType', $historiccfa);
+        $editForm->handleRequest($request);
+
+        if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('historiccfa_edit', ['id' => $historiccfa->getId()]);
+        }
+
+        return $this->render('historicfa/edit.html.twig', [
+            'historiccfa' => $historiccfa,
+            'edit_form' => $editForm->createView(),
+            'delete_form' => $deleteForm->createView(),
         ]);
     }
 }
