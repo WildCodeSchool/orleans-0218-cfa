@@ -1,16 +1,16 @@
-{% extends 'base.html.twig' %}
+{% extends 'layoutAdmin.html.twig' %}
 
 {% block body %}
-    <h1>Historiccfa creation</h1>
+    <h1>Ajouter une histoire</h1>
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+        <input type="submit" value="Créer" />
     {{ form_end(form) }}
 
     <ul>
         <li>
-            <a href="{{ path('historiccfa_index') }}">Back to the list</a>
+            <a href="{{ path('historiccfa_index') }}">Liste des histoires</a>
         </li>
     </ul>
 {% endblock %}
