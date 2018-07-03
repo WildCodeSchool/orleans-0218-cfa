@@ -1,28 +1,53 @@
 <section class="employer_homepage">
     <div class="row side-bar">
         <div class="sidebar col-12">
-            <h2 class="text-center ">EMPLOYEURS</h2>
+            <h2 class="text-center "> LES EMPLOYEURS</h2>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-4 d-none d-sm-block">
-            <img src="{{ asset('images/employeurs_poignée_main.jpg') }}" class="img-fluid"
-                 alt="employeurs_poignée_de_main">
+    <div class="row my-5">
+        <div class="col-md-3 text-center">
+            <div class="img-thumbnail apprenti-select">
+                <div class="etudiants-img apprenti-background"></div>
+                <div class="caption">
+                    <h4>Embaucher un apprenti</h4>
+                    <p>
+                        <a href="{{ path('hireAnApprentice') }}">En savoir plus</a>
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6 mt-4 ">
-            <p>
-                <i class="fas fa-angle-right"></i><a href="{{ path('hireAnApprentice') }}">Embaucher un apprenti</a>
-            </p>
-            <p>
-                <i class="fas fa-angle-right"></i><a href="{{ path('learningCondition') }}">Les principes de
-                    l'apprentissage</a>
-            </p>
-            <p>
-                <i class="fas fa-angle-right"></i><a href="#">Le maitre d'apprentissage</a>
-            </p>
-            <p>
-                <i class="fas fa-angle-right"></i><a href="#">Les cotisations sociales</a>
-            </p>
+        <div class="col-md-3 text-center">
+            <div class="img-thumbnail apprenti-select">
+                <div class="books-img apprenti-background"></div>
+                <div class="caption">
+                    <h4>Les principes de l'apprentissage</h4>
+                    <p>
+                        <a href="{{ path('learningCondition') }}">En savoir plus</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 text-center">
+            <div class="img-thumbnail apprenti-select">
+                <div class="master-img apprenti-background"></div>
+                <div class="caption">
+                    <h4>Le maître d'apprentissage</h4>
+                    <p>
+                        <a href="{{ path('masterInstructor') }}">En savoir plus</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 text-center">
+            <div class="img-thumbnail apprenti-select">
+                <div class="contributions-img apprenti-background"></div>
+                <div class="caption">
+                    <h4>Les cotisations sociales</h4>
+                    <p>
+                        <a href="{{ path('socialSecurityContributions') }}">En savoir plus</a>
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
