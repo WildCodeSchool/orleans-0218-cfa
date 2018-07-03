@@ -21,7 +21,7 @@ class HistoricCfaType extends AbstractType
             ])
             ->add('date', DateType::class,[
                     'label' => 'Date',
-                'widget' => 'single_text',
+                    'widget' => 'single_text',
             ])
             ->add('content', TextType::class, [
                 'label' => 'Contenu',
