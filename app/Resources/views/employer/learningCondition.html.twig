@@ -2,9 +2,9 @@
 
 {% block body %}
     <div id="activeTab" data-active="employer" class="container-fluid learningCondition">
-    <div class="row background-employer section-title d-none d-sm-block">
-        <div class="section-title background-employer col"></div>
-    </div>
+        <div class="row">
+            <div class="section-title background-employer d-none d-sm-block"></div>
+        </div>
     <div class="row">
         <div class="col offset-md-1">
             <h1 class=" my-5 style-page">Les principes de l'apprentissage</h1>
@@ -96,7 +96,8 @@
         <div class="col-md-5 col-sm-12 my-5 remember">
             <div class="rememberTitle d-none d-sm-block">Télécharger la convention</div>
             <div class="containt shadow">
-                <a href="{{ asset('pdf/contrat_d_apprentissage.pdf') }}" download="Convention_de_formation">Convention de formation.pdf</a>
+                <a href="{{ asset('pdf/contrat_d_apprentissage.pdf') }}" download="Convention_de_formation">Convention
+                    de formation.pdf</a>
             </div>
         </div>
     </div>
@@ -131,5 +132,6 @@
             </p>
 
         </div>
+    </div>
     </div>
 {% endblock %}
