@@ -24,14 +24,14 @@
                 <tr>
                     <td>{{ historicCfa.id }}</td>
                     <td>{{ historicCfa.title }}</td>
-                    <td>{{ historicCfa.date }}</td>
+                    <td>{{ historicCfa.date | date('d/m/Y')}}</td>
                     <td>
                         <ul>
                             <li>
-                                <a class="btn btn-info form-control" href="#">Voir</a>
+                                <a class="btn btn-info form-control" href="{{ path('historiccfa_show', { 'id': historicCfa.id }) }}">Voir</a>
                             </li>
                             <li>
-                                <a class="btn btn-danger form-control" href="{{ path('historiccfa_edit', { 'id': historiccfa.id }) }}">Modifier</a>
+                                <a class="btn btn-danger form-control" href="{{ path('historiccfa_edit', { 'id': historicCfa.id }) }}">Modifier</a>
                             </li>
                         </ul>
                     </td>
