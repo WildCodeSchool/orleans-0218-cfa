@@ -24,7 +24,7 @@ class Taxe
 
     /**
      * @var string
-     * @Assert\NotNull
+     * @Assert\NotNull()
      *
      * @ORM\Column(name="taxe_apprentissage", type="text")
      */
