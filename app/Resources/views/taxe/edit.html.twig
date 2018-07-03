@@ -2,18 +2,18 @@
 
 {% block body %}
 <div class="container">
-    <h1>Taxe edit</h1>
+    <h1>Modifier la taxe d'apprentissage</h1>
         <div class="row">
             <div class="col-8">
                 {{ form_start(edit_form) }}
                 {{ form_widget(edit_form) }}
-                <input type="submit" value="Edit" />
+                <input type="submit" value="Modifier" />
                 {{ form_end(edit_form) }}
             </div>
             <div class="col-4 border-left">
                 <ul>
                     <li>
-                        <a class="btn btn-outline-secondary" href="{{ path('taxe_index') }}">Back to the list</a>
+                        <a class="btn btn-outline-secondary" href="{{ path('taxe_index') }}">Retour à la liste</a>
                     </li>
                     <li>
                         {{ form_start(delete_form) }}
