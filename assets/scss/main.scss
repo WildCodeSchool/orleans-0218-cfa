@@ -93,6 +93,8 @@ body {
 }
 
 .count-up {
+  margin-left: 15px;
+  margin-top: 50px;
   .counter {
     color: $color-primary2;
     font-size: 3em;
@@ -394,6 +396,7 @@ footer {
 
 .picture-formation {
   height: 100%;
+  margin-left: -15px;
 }
     .leaflet {
       width: 48vw;
@@ -517,6 +520,11 @@ footer {
 }
 
 /** CFApage **/
+
+.cfa-image {
+  height: 100%;
+  margin-left: -15px;
+}
 
 .president-letter {
   font-family: 'Satisfy', cursive;
