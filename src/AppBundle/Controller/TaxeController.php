@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Taxe controller.
  *
- * @Route("taxe")
+ * @Route("admin/taxe")
  */
 class TaxeController extends Controller
 {
