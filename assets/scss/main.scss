@@ -19,15 +19,33 @@ body {
   font-family: $fontText;
   background-image: url('../images/background.png');
   background-repeat: repeat;
-    p {
-      font-size: 1em;
-    }
-    h1 {
-      font-size: 2em;
-    }
-    h4 {
-      font-size: 1.2em;
-    }
+  color: black;
+  p {
+    font-size: 1.2em;
+    margin-bottom: 2em;
+  }
+  li {
+    font-size: 1.2em;
+  }
+  li ul li {
+    font-size: 1em;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  h4 {
+  font-size: 1.2em;
+  }
+}
+
+.list-page {
+  li {
+  margin-bottom: 10px;
+  color: $color-primary2;
+  }
+  span {
+    color: black;
+  }
 }
 
 /**Navbar**/
@@ -61,9 +79,7 @@ body {
 }
 
 .title-style {
-  margin-bottom: 50px;
   margin-top: 50px;
-  margin-left: 100px;
 }
 
 .slider {
@@ -498,6 +514,40 @@ footer {
   margin-left: 2em;
 }
 
+.background-cfa {
+  background-image: url("../images/cfa.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+.style-title-3 {
+  border-bottom: 3px solid $color-primary2;
+}
+
+.list-page {
+  ul li{
+    color: $color-primary2;
+    padding-top: 0.5em;
+    span{
+      color: black;
+      margin-top: 1.2em;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .list-page {
+    padding:0px;
+    ul {
+      padding: 10px;
+    }
+  }
+}
+
 /** HomepageEvents **/
 
 .event-thumbnail {
@@ -511,3 +561,4 @@ footer {
     min-height: 30vw;
   }
 }
+

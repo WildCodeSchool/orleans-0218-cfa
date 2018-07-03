@@ -8,6 +8,9 @@
 
 {% block body %}
 <div id="activeTab" data-active="cfa" class="container-fluid">
+    <div class=" row d-none d-sm-block">
+        <div class="section-title background-cfa"></div>
+    </div>
     <div class="row justify-content-center">
         <div class="col-md-12 col-sm-12">
             <h1 class="title-style style-page">Qui sommes nous ?</h1>
@@ -43,101 +46,121 @@
             <p>
                 L'association est gérée par un conseil d'administration de 34 membres maximum :
             </p>
-            <ul>
-                <li>16 représentants des membres fondateurs (ARDEQAF, ATEC, Croix-Rouge, FR-MFR)</li>
-                <li>14 représentants du secteur professionnel, notamment :
+            <ul class="list-page ">
+                <li>
+                    <span>
+                        16 représentants des membres fondateurs (ARDEQAF, ATEC, Croix-Rouge,
+                    </span>
+                </li>
+                <li>
+                    <span>
+                        représentants du secteur professionnel, notamment :
+                    </span>
                     <ul>
                         <li>
-                            2 membres de la Commission Paritaire Nationale pour l'Emploi et la Formation
-                            Professionnelle de la Branche Associative, Sanitaire, Sociale et médico-sociale à but non
-                            lucratif (BASS)
+                            <span>
+                                2 membres de la Commission Paritaire Nationale pour l'Emploi et la Formation
+                                Professionnelle de la Branche Associative, Sanitaire, Sociale et médico-sociale à but non
+                                lucratif (BASS)
+                            </span>
                         </li>
                         <li>
-                            2 membres de la Commission Paritaire Nationale pour l'Emploi de la Branche de l'Aide, de
-                            l'Accompagnement, des Soins et des Services à Domicile (BAASSD)
+                            <span>
+                                2 membres de la Commission Paritaire Nationale pour l'Emploi de la Branche de l'Aide, de
+                                l'Accompagnement, des Soins et des Services à Domicile (BAASSD)
+                            </span>
                         </li>
                         <li>
-                            6 représentants des conseils départementaux de la Région Centre-Val de Loire
+                            <span>
+                                6 représentants des conseils départementaux de la Région Centre-Val de Loire
+                            </span>
                         </li>
                         <li>
-                            1 représentant d'Unir et Fédérer (UNIFED)
+                            <span>
+                                1 représentant d'Unir et Fédérer (UNIFED)
+                            </span>
                         </li>
                         <li>
-                            1 représentant d'Élus siégeant au Centre National de la Fonction Publique Territoriale (CNFPT)
+                            <span>
+                                1 représentant d'Élus siégeant au Centre National de la Fonction Publique Territoriale (CNFPT)
+                            </span>
                         </li>
                         <li>
-                            1 représentant de la Fédération Hospitalière de France (FHF)
+                            <span>
+                                1 représentant de la Fédération Hospitalière de France (FHF)
+                            </span>
                         </li>
                         <li>
-                            1 représentant du Groupe National des Établissements et Services Publics Sociaux et
-                            médico-sociaux (GEPSO)
+                            <span>
+                                1 représentant du Groupe National des Établissements et Services Publics Sociaux et
+                                médico-sociaux (GEPSO)
+                            </span>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    4 membres "qualifiés" présentés par les quatre membres fondateurs, parmi lesquel est élu la
-                    de l'association.
+                    <span>
+                        4 membres "qualifiés" présentés par les quatre membres fondateurs, parmi lesquel est élu la
+                        de l'association.
+                    </span>
                 </li>
             </ul>
         </div>
     </div>
 
     <div class="row justify-content-center">
-        <h3>Le bureau de l'association</h3>
+        <div class="col-md-3">
+            <h3 class="style-title-3 text-center">Le bureau de l'association</h3>
+        </div>
     </div>
 
     <div class="row justify-content-center">
 
-        <div class="card col-md-2 my-5">
+        <div class="card col-md-2 mx-3 my-2 shadow">
             <img class="card-img-top my-3" src="{{ asset('images/img_avatar6.png') }}" alt="Photo de la présidente">
-            <div class="card-body">
+            <div class="card-body text-center">
                 <h4 class="card-title">Marie-Noëlle TAPIA</h4>
-                <p class="card-text text-center">Présidente</p>
+                <p class="card-text">Présidente</p>
             </div>
         </div>
 
-        <div class="card col-md-2 offset-1 my-5">
+        <div class="card col-md-2 mx-3 my-2 shadow">
             <img class="card-img-top my-3" src="{{ asset('images/img_avatar1.png') }}" alt="Photo du vice-président">
-            <div class="card-body">
+            <div class="card-body text-center">
                 <h4 class="card-title">Gérard DEGRAVE</h4>
-                <p class="card-text text-center">Vice-Président</p>
+                <p class="card-text">Vice-Président</p>
             </div>
         </div>
 
-        <div class="card col-md-2 offset-1 my-5">
+        <div class="card col-md-2 mx-3 my-2 shadow">
             <img class="card-img-top my-3" src="{{ asset('images/img_avatar1.png') }}" alt="Photo du secrétaire">
-            <div class="card-body">
+            <div class="card-body text-center">
                 <h4 class="card-title">Christian BONNIN</h4>
-                <p class="card-text text-center">Secrétaire</p>
+                <p class="card-text">Secrétaire</p>
             </div>
         </div>
 
-        <div class="card col-md-2 offset-1 my-5">
+        <div class="card col-md-2 mx-3 my-2 shadow ">
             <img class="card-img-top my-3" src="{{ asset('images/img_avatar1.png') }}" alt="Photo du trésorier">
-            <div class="card-body">
-                <h4 class="card-title text-center">Pierre MABIRE</h4>
-                <p class="card-text text-center">Trésorier</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-            <h2 class="mb-5 style-subtitle col-md-10 offset-1 my-5">Mot de la présidente</h2>
-        <div class="col-md-10 offset-1 my-5">
-            <div class="row">
-                <div class="col-md-10 president-letter">
-                    <p>
-                        <i class="fas fa-quote-left fa-3x style-subtitle "></i>
-
-                        <i class="fas fa-quote-right fa-3x style-subtitle "></i>
-
-                </div>
+            <div class="card-body text-center">
+                <h4 class="card-title">Pierre MABIRE</h4>
+                <p class="card-text">Trésorier</p>
             </div>
         </div>
     </div>
     <div class="row">
-            <h2 class="mb-5 style-subtitle col-md-10 offset-1 my-5">Le projet du CFA</h2>
         <div class="col-md-10 offset-1 my-5">
+            <h2 class="mb-5 style-subtitle">Mot de la présidente</h2>
+                <p class="president-letter">
+                    <i class="fas fa-quote-left fa-3x style-subtitle "></i>
+                    <i class="fas fa-quote-right fa-3x style-subtitle "></i>
+                </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10 offset-1 my-5">
+            <h2 class="mb-5 style-subtitle">Le projet du CFA</h2>
             <p>
                 Le projet du CFA est porteur d'un engagement qui s'inscrit dans la logique des orientations stratégiques
                 définies par la Région dans le domaine de l'apprentissage.
@@ -148,33 +171,33 @@
                 le 17 juillet 2012 entre la Région et l'association gestionnaire du CFA, celle-ci a développé son projet
                 autour de trois axes :
             </p>
-            <ul>
-                <li>le positionnement de l'offre de formation du CFA dans le dispositif global de formation professionnelle</li>
-                <li>la prise en charge de l'apprenti de l'amont à l'aval de la formation</li>
-                <li>le renforcement des partenariats avec les sites qualifiants.</li>
+            <ul class="list-page">
+                <li><span>le positionnement de l'offre de formation du CFA dans le dispositif global de formation </span></li>
+                <li><span>la prise en charge de l'apprenti de l'amont à l'aval de la </span></li>
+                <li><span>le renforcement des partenariats avec les sites qualifiants.</span></li>
             </ul>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-md-10 offset-1 my-5 remember">
+        <div class="col-md-10 mx-auto my-5 remember">
             <div class="rememberTitle">L'histoire du CFA</div>
             <div class="containt">
                 <div class="timeline">
                     {% for historicCfa in historicCfas %}
                         <div class="timeline-item">
-                            <div class="timeline-point timeline-point-primary">
-                                <i class="fa fa-star"></i>
+                            <div class="timeline-point timeline-point-info">
+                                <i class="fa fa-star "></i>
                             </div>
-                            <div class="timeline-event timeline-event-default">
-                                <div class="timeline-heading">
+                            <div class="timeline-event timeline-event-default shadow">
+                                <div class="timeline-heading text-primary">
                                     <h4>{{ historicCfa.title }}</h4>
                                 </div>
                                 <div class="timeline-body">
                                     <p>{{ historicCfa.content }}</p>
                                 </div>
                                 <div class="timeline-footer">
-                                    <p class="text-right">{{ historicCfa.date | date('Y-M-D') }}</p>
+                                    <p class="text-right">{{ historicCfa.date | date('d/m/Y') }}</p>
                                 </div>
                             </div>
                         </div>
@@ -182,7 +205,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 {% endblock %}
