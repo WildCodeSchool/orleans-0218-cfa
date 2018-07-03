@@ -100,6 +100,3 @@ vich_uploader:
             cfa_ref:
                 uri_prefix: /uploads
                 upload_destination: '%kernel.project_dir%/web/uploads'
-                namer:
-                      service: Vich\UploaderBundle\Naming\PropertyNamer
-                      options: { property: 'getCleanName'}

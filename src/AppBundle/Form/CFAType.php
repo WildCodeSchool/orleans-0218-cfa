@@ -23,7 +23,7 @@ class CFAType extends AbstractType
                 ),
                 'label' => 'Le mot de la présidence',
             ))
-            ->add('imagePresident', VichFileType::class, array(
+            ->add('imagePresidentFile', VichFileType::class, array(
                 'label' => 'image de la Présidence',
                 'required' =>false,
             ));
