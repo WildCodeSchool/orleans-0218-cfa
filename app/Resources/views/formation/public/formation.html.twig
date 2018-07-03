@@ -1,6 +1,6 @@
 {% extends 'layout.html.twig' %}
 {% block body %}
-    <section class=" container-fluid formation">
+    <section id="activeTab" data-active="formation" class=" container-fluid formation">
         <div class="row">
             <div class="section-title background-formation"></div>
         </div>
@@ -27,23 +27,31 @@
                 </h2>
                 <p class="formation-presentation">{{ formation.shortPresentation|raw }}</p>
                 <p class="mt-5 bg-light text-success">{{ formation.jobDescription|raw }}</p>
-                <div class="section-title meeting-formation justify-content"></div>
-                    <h2 class="title-formation" >Où trouver cette formation :</h2>
-                    <div class="containt">
-                        <ul class="list_none">
-                            {% for ufa in formation.ufas %}
-                                <li><i class="fas fa-angle-right"></i>
-                                    <a class="link-formation p-3"
-                                       href="{{ path('map_show', {'id': ufa.id}) }}">{{ ufa.name }}</a></li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                <div class="col-md-3 ml-md-auto">
-                    <a class="btn btn-success mt-5" href="{{ path('homepage') }}">Retour à l'accueil</a>
+                    <img src="{{ asset('images/meeting_formation.jpeg') }}" alt="meeting-formation">
+            </div>
+            <div class="col offset-md-4">
+                <h2 class="title-formation mt-4">Où trouver cette formation :</h2>
+            </div>
+            <div class="w-100"></div>
+            <div class="col offset-md-4">
+                <div class="containt">
+                    <ul class="list_none">
+                        {% for ufa in formation.ufas %}
+                            <li><i class="fas fa-angle-right"></i>
+                                <a class="link-formation p-3"
+                                   href="{{ path('map_show', {'id': ufa.id}) }}">{{ ufa.name }}</a></li>
+                        {% endfor %}
+                    </ul>
                 </div>
             </div>
+            <div class="col-md-3 ml-md-auto mt-5">
+                {% if formation.referentielName is not empty %}
+                    <a class="btn btn-outline-success" target="_blank" href="{{ vich_uploader_asset(formation, 'referentielFile') }}">Télécharger le référentiel de la formation</a>
+                {% endif %}
+                <a class="btn btn-outline-success" href="{{ path('homepage') }}">Retour à l'accueil</a>
+            </div>
         </div>
-    </section>
+</section>
 {% endblock %}
 
 

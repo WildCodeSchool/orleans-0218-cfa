@@ -1,43 +1,34 @@
 {% extends 'layoutAdmin.html.twig' %}
 
 {% block body %}
-    <h1>Partnairs list</h1>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Image</th>
-                <th>Link</th>
-                <th>Name</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for partnair in partnairs %}
-            <tr>
-                <td><a href="{{ path('partnair_show', { 'id': partnair.id }) }}">{{ partnair.id }}</a></td>
-                <td>{{ partnair.image }}</td>
-                <td>{{ partnair.link }}</td>
-                <td>{{ partnair.name }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('partnair_show', { 'id': partnair.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('partnair_edit', { 'id': partnair.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('partnair_new') }}">Create a new partnair</a>
-        </li>
-    </ul>
+    <div class="container">
+    <h1>Les partenaires</h1>
+        <div class="row">
+            <div class="col-md-3 offset-9">
+                <a class="btn btn-outline-primary mb-3" href="{{ path('partnair_new') }}">+ Ajouter un nouveau partenaire</a>
+            </div>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Image</th>
+                    <th>Url</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for partnair in partnairs %}
+                <tr>
+                    <td><a href="{{ path('partnair_show', { 'id': partnair.id }) }}">{{ partnair.name }}</a></td>
+                    <td>{{ partnair.image }}</td>
+                    <td>{{ partnair.link }}</td>
+                    <td><a class="btn btn-outline-primary" href="{{ path('partnair_show', { 'id': partnair.id }) }}">Voir</a></td>
+                    <td><a class="btn btn-outline-secondary" href="{{ path('partnair_edit', { 'id': partnair.id }) }}">Modifier</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}
