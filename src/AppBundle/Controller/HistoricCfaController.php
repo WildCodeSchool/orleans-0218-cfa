@@ -2,8 +2,9 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\Cfa;
+use AppBundle\Entity\Formation;
 use AppBundle\Entity\HistoricCfa;
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -33,11 +34,10 @@ class HistoricCfaController extends Controller
             ['date' => 'DESC']
         );
 
-        $formations = $em->getRepository('AppBundle:Formation')->findAll();
+
 
         return $this->render('historiccfa/historiccfa.html.twig', [
             'historicCfas' => $historicCfas,
-            'formations' => $formations,
         ]);
     }
 

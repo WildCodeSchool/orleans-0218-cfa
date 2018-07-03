@@ -37,7 +37,12 @@ class DefaultController extends Controller
      */
     public function formationView()
     {
-        return $this->render('apprenti/formation.html.twig');
+        $em = $this->getDoctrine()->getManager();
+
+        $formations = $em->getRepository('AppBundle:Formation')->findAll();
+        return $this->render('apprenti/formation.html.twig', [
+            'formations' => $formations,
+        ]);
     }
 
     /**
