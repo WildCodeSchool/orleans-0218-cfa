@@ -17,7 +17,9 @@ use Symfony\Component\HttpFoundation\Request;
 class HistoricCfaController extends Controller
 {
     /**
-     * Lists all historicCfa entity.
+     * Lists all historicCfa entity
+     *
+     * List all formation entity
      *
      * @Route("/", name="historiccfa_view")
      * @Method("GET")
@@ -31,8 +33,11 @@ class HistoricCfaController extends Controller
             ['date' => 'DESC']
         );
 
+        $formations = $em->getRepository('AppBundle:Formation')->findAll();
+
         return $this->render('historiccfa/historiccfa.html.twig', [
             'historicCfas' => $historicCfas,
+            'formations' => $formations,
         ]);
     }
 

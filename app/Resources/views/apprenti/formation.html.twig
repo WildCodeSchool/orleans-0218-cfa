@@ -9,6 +9,18 @@
         </div>
     </div>
     <div class="row">
+        <div class="col-md-3 col-sm-12 border-right formation-list">
+            {% for formation in formations %}
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <a class="link-formation" href="{{ path('formation', { 'id': formation.id }) }}">
+                            <i class="fas fa-graduation-cap"></i>
+                            {{ formation.name }}
+                        </a>
+                    </li>
+                </ul>
+            {% endfor %}
+        </div>
         <div class="col-md-10 offset-1 my-5">
         
             <h2 class=" mb-5 style-subtitle">La formation par l'apprentissage</h2>
