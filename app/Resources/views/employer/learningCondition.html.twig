@@ -1,13 +1,14 @@
 {% extends 'layout.html.twig' %}
+
 {% block body %}
-    <div class="container-fluid learningCondition">
+    <div id="activeTab" data-active="employer" class="container-fluid learningCondition">
     <div class="row">
         <div class="col offset-md-1">
             <h1 class=" my-5 style-page">Les principes de l'apprentissage</h1>
         </div>
     </div>
-    <div class="row mb-5">
-        <div class="col offset-1">
+    <div class="row mb-5 col-sm-mb-2">
+        <div class="col offset-md-1">
             <p>
                 Dans la formation par l'apprentissage, le lieu d'accueil de l'apprenti joue un rôle majeur : c'est à
                 partir de l'immersion dans le monde professionnel que l'apprenti va appréhender la formation,
@@ -40,13 +41,13 @@
             </p>
         </div>
     </div>
-    <div class="row mb-5">
-        <div class="col offset-1 style-subtitle mb-5">
+    <div class="row mb-5 col-sm-mb-2">
+        <div class="col offset-md-1 style-subtitle mb-5 col-sm-mb-2">
             <h2>Les engagements des parties</h2>
         </div>
     </div>
     <div class="row">
-        <div class="col offset-1">
+        <div class="col offset-md-1">
             <p>
                 Chacune des parties engagées par la signature s'engage envers les autres dans un cadre règlementé :
                 par le Code du travail pour ce qui concerne les relations au travail, par la règlementation des
@@ -92,17 +93,17 @@
         <div class="col-md-5 col-sm-12 my-5 remember">
             <div class="rememberTitle d-none d-sm-block">Télécharger la convention</div>
             <div class="containt shadow">
-                <a href="{{ asset('pdf/test.pdf') }}" download="Convention_de_formation">Convention de formation.pdf</a>
+                <a href="{{ asset('pdf/contrat_d_apprentissage.pdf') }}" download="Convention_de_formation">Convention de formation.pdf</a>
             </div>
         </div>
     </div>
-    <div class="row mb-5">
+    <div class="row mb-5 col-sm-mb-2">
         <div class="col offset-1 style-subtitle mb-5">
             <h2>Vos liens avec le CFA</h2>
         </div>
     </div>
     <div class="row">
-        <div class="col offset-1">
+        <div class="col offset-md-1">
             <p>
                 En amont de la signature du contrat, une des missions du CFA est d'assister les postulants à
                 l'apprentissage dans leur recherche d'un employeur, mais aussi d'aider celui-ci à comprendre le

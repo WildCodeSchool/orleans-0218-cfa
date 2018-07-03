@@ -1,24 +1,24 @@
-{% block body %}
 <section>
     <div class="row">
         <div class="sidebar col-12">
             <h2 class="text-center">NOS ACTUALITÉS</h2>
         </div>
     </div>
-    <div class="row mt-3">
-        {% for event in events %}
-            <div class="col ">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="card-title">
-                            {% if event.date %}{{ event.date|date('d/m/Y') }}{% endif %}
-                            | <a href="#">{{ event.title }}</a>
+    <div class="container">
+        <div class="row mt-3">
+            {% for event in events %}
+                <div class="col-sm-4 col-12">
+                    <div class="img-thumbnail apprenti-select shadow event-thumbnail">
+                        <div class="event-img apprenti-background"></div>
+                        <div class="caption event-caption">
+                            <a href="#">{{ event.title }}</a>
+                            <p><span class="style-subtitle">{% if event.date %}| {{ event.date|date('d/m/Y') }}{% endif %}</span></p>
+                            <p class="text-truncate" >{{ event.description }}</p>
                         </div>
-                        <p>{{ event.description }}</p>
                     </div>
                 </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
     <div class="row text-center mt-2">
         <div class="col-sm-12">
@@ -26,4 +26,3 @@
         </div>
     </div>
 </section>
-{% endblock %}

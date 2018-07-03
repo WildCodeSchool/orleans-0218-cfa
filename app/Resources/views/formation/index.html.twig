@@ -12,7 +12,8 @@
         <thead>
         <tr>
             <th class="text-center">Nom</th>
-            <th class="text-center">Présentation du métier</th>
+            <th class="text-center">Présentation du métier</th>     
+            <th class="text-center">Référentiel</th>
             <th></th>
             <th></th>
         </tr>
@@ -22,6 +23,7 @@
             <tr>
                 <td><a href="{{ path('formation_admin_show', { 'id': formation.id }) }}">{{ formation.name }}</a></td>
                 <td>{{ formation.shortPresentation | raw }}</td>
+                <td>{{ formation.referentielName }}</td>
                 <td><a class="btn btn-outline-primary" href="{{ path('formation_admin_show', { 'id': formation.id }) }}">Voir</a></td>
                 <td><a class="btn btn-outline-secondary" href="{{ path('formation_edit', { 'id': formation.id }) }}">Modifier</a></td>
             </tr>
