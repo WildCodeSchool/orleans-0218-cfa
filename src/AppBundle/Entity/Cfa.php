@@ -4,12 +4,15 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
 
 /**
  * Cfa
  *
  * @ORM\Table(name="cfa")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\CFARepository")
+ * @Vich\Uploadable
  */
 class Cfa
 {
@@ -31,16 +34,15 @@ class Cfa
     private $textPresident;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="image_president", type="string", length=80, nullable=true)
+     * @var File
+     * @Vich\UploadableField(mapping="cfa_ref", fileNameProperty="imagePresidentName")
      */
     private $imagePresident;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="image_president_name", type="string", length=80)
+     * @ORM\Column(name="image_president_name", type="string", length=80, nullable=true)
      */
     private $imagePresidentName;
 

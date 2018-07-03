@@ -7,6 +7,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
+use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class CFAType extends AbstractType
 {
@@ -22,7 +23,10 @@ class CFAType extends AbstractType
                 ),
                 'label' => 'Le mot de la présidence',
             ))
-            ->add('imagePresidentName', TextType::class);
+            ->add('imagePresident', VichFileType::class, array(
+                'label' => 'image de la Présidence',
+                'required' =>false,
+            ));
     }/**
      * {@inheritdoc}
      */
