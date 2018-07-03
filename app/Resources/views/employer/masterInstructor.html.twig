@@ -1,13 +1,17 @@
 {% extends 'layout.html.twig' %}
+
 {% block body %}
-    <div class="container-fluid masterInstructor">
+    <div id="activeTab" data-active="employer" class="container-fluid masterInstructor">
+        <div class="row">
+            <div class="section-title background-employer d-none d-sm-block"></div>
+        </div>
         <div class="row">
             <div class="col offset-md-1">
                 <h1 class="my-5 style-page">Le maitre d'apprentissage</h1>
             </div>
         </div>
         <div class="row">
-            <div class="col offset-1 mb-5">
+            <div class="col offset-md-1 mb-5 col-sm-mb-2">
                 <p>
                     Dans la formation par l'apprentissage, la personne qui exerce la fonction de tuteur - directement
                     responsable de la formation de l'apprenti, est dénommée "maître d'apprentissage". C'est un
@@ -32,12 +36,12 @@
             </div>
         </div>
         <div class="row">
-            <div class="col offset-1 style-subtitle mb-5">
+            <div class="col offset-md-1 style-subtitle mb-5 col-sm-mb-2">
                 <h2>La fonction tutorale</h2>
             </div>
         </div>
         <div class="row">
-            <div class="col offset-1 mb-5">
+            <div class="col offset-md-1 mb-5 col-sm-mb-2">
                 <p>
                     Que vous soyez maître d'apprentissage d'un apprenti en formation de niveau V, IV ou III, votre
                     accompagnement constitue un des atouts majeurs pour l'apprenti(e), en vue de favoriser sa démarche
@@ -129,12 +133,12 @@
             </div>
         </div>
         <div class="row">
-            <div class="col offset-1 style-subtitle mb-5">
+            <div class="col offset-md-1 style-subtitle mb-5  col-sm-mb-2">
                 <h2>Les outils pédagogiques</h2>
             </div>
         </div>
         <div class="row">
-            <div class="col offset-1 mb-5">
+            <div class="col offset-md-1 mb-5 col-sm-mb-2">
                 <p>
                     L'apprentissage repose sur le principe d'une formation assurée par les pairs, dont les pratiques
                     pédagogiques, partagées par le maître d'apprentissage et le formateur d'accompagnement, s'organisent
@@ -143,12 +147,12 @@
             </div>
         </div>
         <div class="row">
-            <div class="col offset-2 style-subtitle mb-5">
+            <div class="col offset-md-2 style-subtitle mb-5 col-sm-mb-2">
                 <h3>Le livret d'apprentissage</h3>
             </div>
         </div>
         <div class="row">
-            <div class="col offset-2 mb-5">
+            <div class="col offset-md-2 mb-5 col-sm-mb-2">
                 <p>
                     C'est un outil pédagogique indispensable conçu pour activer une dynamique entre l'apprenti, les
                     lieux de pratiques professionnelles et l'Unité de Formation d'Apprentis (UFA). Le livret
@@ -181,12 +185,12 @@
             </div>
         </div>
         <div class="row">
-            <div class="col offset-2 style-subtitle mb-5">
+            <div class="col offset-md-2 style-subtitle mb-5 col-sm-mb-2">
                 <h3>Les programmes prévisionnels de formation</h3>
             </div>
         </div>
         <div class="row">
-            <div class="col offset-2 mb-5">
+            <div class="col offset-md-2 mb-5 col-sm-mb-2">
                 <p>
                     Quelles que soient les formations suivies, les programmes de formation visent à la fois
                     l'acquisition de
@@ -213,12 +217,12 @@
             </div>
         </div>
         <div class="row">
-            <div class="col offset-2 style-subtitle mb-5">
+            <div class="col offset-md-2 style-subtitle mb-5 col-sm-mb-2">
                 <h3>Les groupes d'accompagnement à la professionnalisation</h3>
             </div>
         </div>
         <div class="row">
-            <div class="col offset-2 mb-5">
+            <div class="col offset-md-2 mb-5 col-sm-mb-2">
                 <p>
                     Ces groupes, dont l'appellation peut varier selon les UFA, sont des espaces où se mettent en jeu le
                     mode de construction des pratiques professionnelles et la place des savoirs dans l'identité
@@ -230,12 +234,12 @@
             </div>
         </div>
         <div class="row">
-            <div class="col offset-2 style-subtitle mb-5">
+            <div class="col offset-md-2 style-subtitle mb-5 col-sm-mb-2">
                 <h3>L'environnement numérique de travail</h3>
             </div>
         </div>
         <div class="row">
-            <div class="col offset-2 mb-5">
+            <div class="col offset-md-2 mb-5 col-sm-mb-2">
                 <p>
                     Le CFA SMS Centre - Val de Loire soutient le développement des environnements numériques de travail
                     dans les différentes UFA, de façon à proposer des moyens de communication efficaces pour faciliter
@@ -247,12 +251,12 @@
             </div>
         </div>
         <div class="row">
-            <div class="col offset-1 style-subtitle mb-5">
+            <div class="col offset-md-1 style-subtitle mb-5 col-sm-mb-2">
                 <h2>Liens avec les UFA</h2>
             </div>
         </div>
         <div class="row">
-            <div class="col offset-1 mb-5">
+            <div class="col offset-md-1 mb-5 col-sm-mb-2">
                 <p>
                     La pédagogie de l'alternance ne serait qu'une formule vide de sens, si certaines conditions ne sont
                     pas réunies. Il s'agit que le lieu d'emploi et l'UFA se situent en co-formateurs engagés dans un
@@ -302,12 +306,12 @@
             </div>
         </div>
         <div class="row">
-            <div class="col offset-1 style-subtitle mb-5">
+            <div class="col offset-md-1 style-subtitle mb-5 col-sm-mb-2">
                 <h2>La formation de maître d'apprentissage</h2>
             </div>
         </div>
         <div class="row">
-            <div class="col offset-1 ">
+            <div class="col offset-md-1 ">
                 <p>
                     Le Code du travail précise : " L'employeur veille à ce que le maître d'apprentissage bénéficie de
                     formations lui permettant d'exercer correctement sa mission et de suivre l'évolution du contenu des
@@ -336,7 +340,7 @@
 
         </div>
         <div class="row">
-            <div class="col-md-5 offset-1  col-sm-12 my-5 remember">
+            <div class="col-md-5 offset-md-1  col-sm-12 my-5 remember">
                 <div class="rememberTitle">Liens</div>
                 <div class="containt shadow">
                     <ul class="list_none">

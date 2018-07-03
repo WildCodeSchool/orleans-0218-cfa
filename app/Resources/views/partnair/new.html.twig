@@ -2,19 +2,15 @@
 {% block body %}
     <div class="container">
         <h1>Ajouter un partenaire</h1>
-        <hr>
         <div class="row">
-            <div class="col-8"></div>
-        </div>
-        <div class="row">
-            <div class="col-6">
+            <div class="col-8">
                 {{ form_start(form) }}
                 {{ form_widget(form) }}
                 <input class="btn btn-outline-primary" type="submit" value="Créer" >
                 {{ form_end(form) }}
             </div>
-            <div class="col-6 border-left">
-                <a class="btn-light " href="{{ path('partnair_index') }}">Liste des partenaires</a>
+            <div class="col-4 border-left">
+                <a class="btn btn-outline-secondary" href="{{ path('partnair_index') }}">Liste des partenaires</a>
             </div>
         </div>
     </div>

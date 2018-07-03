@@ -1,21 +1,27 @@
 {% extends 'layoutAdmin.html.twig' %}
 
 {% block body %}
-    <h1>Partnair edit</h1>
-
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
+    <div class="container">
+    <h1>Modification du partenaire "{{ partnair.name }}"</h1>
+        <div class="row">
+            <div class="col-8">
+                {{ form_start(edit_form) }}
+                    {{ form_widget(edit_form) }}
+                    <input type="submit" value="Edit" />
+                {{ form_end(edit_form) }}
+            </div>
+            <div class="col-4 border-left">
 
     <ul>
         <li>
-            <a href="{{ path('partnair_index') }}">Back to the list</a>
+            <a class="btn btn-outline-secondary" href="{{ path('partnair_index') }}">Retour à la liste</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input class="btn btn-outline-danger" type="submit" value="Supprimer">
             {{ form_end(delete_form) }}
         </li>
     </ul>
+        </div>
+    </div>
 {% endblock %}

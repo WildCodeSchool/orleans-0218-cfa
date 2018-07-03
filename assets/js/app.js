@@ -16,3 +16,8 @@ $('.counter').each(function () {
             }
         });
 });
+
+
+activeTab = $('#activeTab').data('active');
+$('#'+activeTab).addClass('active');
+

@@ -2,7 +2,6 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\Cfa;
 use AppBundle\Entity\HistoricCfa;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -17,7 +16,9 @@ use Symfony\Component\HttpFoundation\Request;
 class HistoricCfaController extends Controller
 {
     /**
-     * Lists all historicCfa entity.
+     * Lists all historicCfa entity
+     *
+     * List all formation entity
      *
      * @Route("/", name="historiccfa_view")
      * @Method("GET")
