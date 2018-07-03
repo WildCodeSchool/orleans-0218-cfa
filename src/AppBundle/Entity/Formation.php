@@ -60,7 +60,6 @@ class Formation
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
      *
      * @Vich\UploadableField(mapping="formation_ref", fileNameProperty="referentielName")
-     * @ORM\Column(nullable=true)
      * @var File
      */
     private $referentielFile;
