@@ -2,9 +2,14 @@
 {% trans_default_domain 'FOSUserBundle' %}
 {% block body %}
     <div class="container adminlogin">
-    <div class="fos_user_user_show">
-        <p>{{ 'Username '|trans }}: {{ user.username }}</p>
-        <p>{{ 'Email '|trans }}: {{ user.email }}</p>
+        <h1 class="row offset-2 mb-5">Bienvenue sur la page administrateur !</h1>
+    <div class="fos_user_user_show row offset-2">
+        <a type="submit"  class="btn btn-primary" href="{{ path('fos_user_change_password') }}">Changer son mot de passe<span class="glyphicon glyphicon-ok"></span>
+        </a>
+        <div class="row offset-5">
+        <a type="submit"  class="btn btn-primary" href="{{ path('fos_user_security_logout') }}">Déconnexion<span class="glyphicon glyphicon-ok"></span>
+        </a>
+        </div>
     </div>
     </div>
 {% endblock body %}
