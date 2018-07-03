@@ -32,8 +32,6 @@ class HistoricCfaController extends Controller
             ['date' => 'DESC']
         );
 
-
-
         return $this->render('historiccfa/historiccfa.html.twig', [
             'historicCfas' => $historicCfas,
         ]);
