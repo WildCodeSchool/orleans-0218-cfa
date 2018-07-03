@@ -7,7 +7,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**
  * Partnair controller.
@@ -42,15 +41,12 @@ class PartnairController extends Controller
     public function newAction(Request $request)
     {
 
-
-        $em = $this->getDoctrine()->getManager();
-
-        $Partnair = new Partnair();
-        $form = $this->createForm('AppBundle\Form\PartnairType', $Partnair);
+        $partnair = new Partnair();
+        $form = $this->createForm('AppBundle\Form\PartnairType', $partnair);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist(Partnair);
+            $em->persist($partnair);
             $em->flush();
 
             return $this->redirectToRoute('partnair_show', array(

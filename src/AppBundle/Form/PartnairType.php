@@ -6,8 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Vich\UploaderBundle\Form\Type\VichFileType;
-
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class PartnairType extends AbstractType
 {
@@ -17,17 +16,28 @@ class PartnairType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', TextType::class, ['label' => 'Nom'])
-            ->add('image', VichFileType::class, ['label' => 'Image', 'required' => false])
-            ->add('link', TextType::class, ['label' => 'Lien']);
-    }/**
-      * {@inheritdoc}
-      */
+            ->add('name', TextType::class, [
+                'label' => 'Nom'
+            ])
+            ->add('image', VichImageType::class, [
+                'label' => 'Image',
+                'required' => false,
+                'download_link' => false,
+                'allow_delete' => false,
+            ])
+            ->add('link', TextType::class, [
+                'label' => 'Lien'
+            ]);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(
             array(
-            'data_class' => 'AppBundle\Entity\Partnair'
+                'data_class' => 'AppBundle\Entity\Partnair'
             )
         );
     }

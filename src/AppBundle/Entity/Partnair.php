@@ -50,6 +50,8 @@ class Partnair
      *     minMessage = "Le nom doit comporter au moins   {{ limit }} caractères ",
      *     maxMessage = "Le nom ne doit pas comporter plus de   {{ limit }} caractères "
      * )
+     *
+     *
      * @ORM\Column(name="name", type="string", length=80)
      */
     private $name;
@@ -58,6 +60,12 @@ class Partnair
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
      *
      * @Vich\UploadableField(mapping="partner_image", fileNameProperty="imageName")
+     *
+     * @Assert\Image(
+     *     detectCorrupted = true,
+     *     corruptedMessage = "Le fichier est corrompu, veuillez le télécharger à nouveau.",
+     *     mimeTypesMessage = "Veuillez uploader un fichier au format image."
+     * )
      *
      * @var File
      */
