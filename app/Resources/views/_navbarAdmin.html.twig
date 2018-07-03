@@ -1,9 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
-    <a class="navbar-brand" href="{{ path('admin_homepage') }}">
-        <img src="{{ asset('images/logo_cfa.png') }}" class="logo-navbar-admin mr-4" alt="Logo du CFA">
+    <a class="navbar-brand" href="{{ path('homepage') }}">
+        <img src="{{ asset('images/logo_cfa.png') }}"   class="logo-navbar-admin mr-4" alt="Logo du CFA">
     </a>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="{{ path('fos_user_profile_show') }}">Accueil </a>
             <a class="nav-item nav-link active ml-5 mr-3" href="{{ path('cfa_admin_index') }}">CFA</a>
             <a class="nav-item nav-link active ml-5 mr-3" href="{{ path('historiccfa_index') }}">Histoire</a>
             <a class="nav-item nav-link active mr-3" href="{{ path('formation_admin_index') }}">Formation</a>

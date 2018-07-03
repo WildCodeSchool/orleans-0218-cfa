@@ -33,6 +33,19 @@ class EventController extends Controller
     }
 
     /**
+     * Finds and displays an event entity.
+     *
+     * @Route("/{id}", name="event_show")
+     * @Method("GET")
+     */
+    public function showAction(Event $event)
+    {
+        return $this->render('event/public/event.html.twig', array(
+            'event' => $event,
+        ));
+    }
+
+    /**
      * @param Event $events
      *
      */

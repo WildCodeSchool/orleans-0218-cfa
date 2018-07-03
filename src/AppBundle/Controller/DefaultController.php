@@ -37,7 +37,12 @@ class DefaultController extends Controller
      */
     public function formationView()
     {
-        return $this->render('apprenti/formation.html.twig');
+        $em = $this->getDoctrine()->getManager();
+
+        $formations = $em->getRepository('AppBundle:Formation')->findAll();
+        return $this->render('apprenti/formation.html.twig', [
+            'formations' => $formations,
+        ]);
     }
 
     /**
@@ -70,5 +75,13 @@ class DefaultController extends Controller
     public function learningConditionAction()
     {
         return $this->render('employer/learningCondition.html.twig');
+    }
+
+    /**
+     * @Route("/employeurs/les-cotisations-sociales", name="socialSecurityContributions")
+     */
+    public function socialSecurityContributionsAction()
+    {
+        return $this->render('employer/socialSecurityContributions.html.twig');
     }
 }

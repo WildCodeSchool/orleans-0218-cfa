@@ -11,12 +11,12 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Map controller.
  *
- * @Route("map")
+ * @Route("carte-des-ufa")
  */
 class MapController extends Controller
 {
     /**
-     * Lists all cfa entities.
+     * Lists all ufa entities.
      *
      * @Route("/", name="map_index")
      * @Method("GET")
