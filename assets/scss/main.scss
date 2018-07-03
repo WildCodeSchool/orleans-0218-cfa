@@ -482,3 +482,17 @@ footer {
   font-size: 1.3em;
   margin-left: 2em;
 }
+
+/** HomepageEvents **/
+
+.event-thumbnail {
+  margin-bottom: 1vw;
+}
+
+.event-img {
+  background-image: url("../images/notebooks.jpg");
+  margin-bottom: 5vw;
+  .caption {
+    min-height: 30vw;
+  }
+}
