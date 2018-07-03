@@ -24,7 +24,7 @@ class AdminHistoricCfaController extends Controller
     /**
      * Lists all historicCfa entities.
      *
-     * @Route("/histoire", name="historicCfa_index")
+     * @Route("/histoire", name="historiccfa_index")
      * @Method("GET")
      */
 
@@ -32,10 +32,10 @@ class AdminHistoricCfaController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $historicCFas = $em->getRepository('AppBundle:HistoricCfa')->findAll();
+        $historicCfas = $em->getRepository('AppBundle:HistoricCfa')->findAll();
 
         return $this->render('historiccfa/index.html.twig', [
-            'historicCfas' => $historicCFas,
+            'historicCfas' => $historicCfas,
         ]);
     }
 }
