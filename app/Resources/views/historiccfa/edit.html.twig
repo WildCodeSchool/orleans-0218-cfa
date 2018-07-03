@@ -1,21 +1,27 @@
-{% extends 'base.html.twig' %}
+{% extends 'layoutAdmin.html.twig' %}
 
 {% block body %}
-    <h1>Historiccfa edit</h1>
-
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
-
-    <ul>
-        <li>
-            <a href="{{ path('historiccfa_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+    <div class="container">
+        <h1>Modifier {{ historiccfa.title }}</h1>
+        <div class="row">
+            <div class="col-8">
+                {{ form_start(edit_form) }}
+                {{ form_widget(edit_form) }}
+                <input class="btn btn-outline-primary" type="submit" value="Modifier" />
+                {{ form_end(edit_form) }}
+            </div>
+            <div class="col-4 border-left">
+                <ul>
+                    <li>
+                        <a class="btn btn-outline-secondary" href="{{ path('historiccfa_index') }}">Liste des histoires</a>
+                    </li>
+                    <li>
+                        {{ form_start(delete_form) }}
+                        <input class="btn btn-outline-danger" type="submit" value="Supprimer">
+                        {{ form_end(delete_form) }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 {% endblock %}

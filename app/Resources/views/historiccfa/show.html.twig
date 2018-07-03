@@ -1,40 +1,49 @@
-{% extends 'base.html.twig' %}
+{% extends 'layoutAdmin.html.twig' %}
 
 {% block body %}
-    <h1>Historiccfa</h1>
-
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ historicCfa.id }}</td>
-            </tr>
-            <tr>
-                <th>Date</th>
-                <td>{% if historicCfa.date %}{{ historicCfa.date|date('Y-m-d H:i:s') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ historicCfa.title }}</td>
-            </tr>
-            <tr>
-                <th>Containt</th>
-                <td>{{ historicCfa.containt }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('historiccfa_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('historiccfa_edit', { 'id': historicCfa.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+    <div class="container">
+        <h1>L'histoire de  {{ historiccfa.title }}</h1>
+        <div class="row">
+            <div class="col-9">
+                <table class="table table-bordered" >
+                    <tbody>
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ historiccfa.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Titre</th>
+                        <td>{{ historiccfa.title }}</td>
+                    </tr>
+                    <tr>
+                        <th>Date</th>
+                        <td>{{ historicCfa.date|date('Y-m-d H:i:s') }}</td>
+                    </tr>
+                    <tr>
+                        <th>Contenu</th>
+                        <td>{{ historiccfa.content }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-3 border-left">
+                <ul>
+                    <li>
+                        <a class="btn btn-outline-secondary" href="{{ path('histroiccfa_index') }}">Liste des histoires</a>
+                    </li>
+                    <li>
+                        <a class="btn btn-outline-primary" href="{{ path('historiccfa_edit', { 'id': historicCfa.id }) }}">Modifier</a>
+                    </li>
+                    <li>
+                        {{ form_start(delete_form) }}
+                        <input class="btn btn-outline-danger" type="submit" value="Supprimer">
+                        {{ form_end(delete_form) }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 {% endblock %}
+
+
+
