@@ -331,12 +331,11 @@ footer {
       &:hover {
         color: $color-primary2;
       }
-
-      .formation-presentation {
-        font-size: 1.2em;
-
-      }
     }
+
+.formation-presentation {
+  color: $color-primary3;
+}
 
       .background-apprenti {
         background-image: url("../images/apprenti.jpg");
