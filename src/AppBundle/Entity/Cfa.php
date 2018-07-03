@@ -71,7 +71,7 @@ class Cfa
     /**
      * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $imagePresident
      */
-    public function setImagePresidentFile(File $imagePresidentName= null)
+    public function setImagePresidentFile(File $imagePresidentName = null)
     {
         $this->imagePresidentFile = $imagePresidentName;
 
