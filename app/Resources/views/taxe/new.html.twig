@@ -1,16 +1,18 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<div class="container">
     <h1>Taxe creation</h1>
-
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
-
-    <ul>
-        <li>
-            <a href="{{ path('taxe_index') }}">Back to the list</a>
-        </li>
-    </ul>
+        <div class="row">
+            <div class="col-sm-8 col-12">
+            {{ form_start(form) }}
+                {{ form_widget(form) }}
+                    <input type="submit" class="btn btn-outline-primary" value="Créer" />
+             {{ form_end(form) }}
+         </div>
+        <div class="col-4 border-left">
+            <a class="btn btn-outline-secondary" href="{{ path('taxe_index') }}">Retour</a>
+        </div>
+    </div>
+</div>
 {% endblock %}
