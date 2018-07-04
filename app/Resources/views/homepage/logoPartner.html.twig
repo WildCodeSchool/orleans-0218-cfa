@@ -11,8 +11,8 @@
                     <div class="row my-2 mx-auto">
                         {% for logo in partnair %}
                             <div class="col logos">
-                                <a href="{{ logo.link }}" target="_blank">
-                                    <img class=" mx-auto d-block shadow img-fluid" src="{{ logo.image }}" alt="{{ logo.name }}">
+                                <a href="{{ logo.link }}">
+                                   <img src="{{ vich_uploader_asset(logo, 'image')}}"  alt="{{ logo.name }}" class="mx-auto d-block shadow img-fluid">
                                 </a>
                             </div>
                         {% endfor %}
