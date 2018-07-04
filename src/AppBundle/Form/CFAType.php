@@ -27,7 +27,7 @@ class CFAType extends AbstractType
                 'label' => 'image de la Présidence',
                 'required' =>false,
             ))
-            ->add('apprenticeNumber', IntegerType::class,array(
+            ->add('apprenticeNumber', IntegerType::class, array(
                 'label' => 'Nombre d\'apprentis'
             ))
             ->add('formationNumber', IntegerType::class, array(
@@ -39,8 +39,9 @@ class CFAType extends AbstractType
             ->add('succesRate', IntegerType::class, array(
                 'label' => 'Pourcentage de reussite'
             ));
+    }
 
-    }/**
+    /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
