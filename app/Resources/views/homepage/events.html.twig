@@ -11,9 +11,9 @@
                     <div class="img-thumbnail apprenti-select shadow event-thumbnail">
                         <div class="event-img apprenti-background"></div>
                         <div class="caption event-caption">
-                            <a href="#">{{ event.title }}</a>
+                            <h4>{{ event.title }}</h4>
                             <p><span class="style-subtitle">{% if event.date %}| {{ event.date|date('d/m/Y') }}{% endif %}</span></p>
-                            <p class="text-truncate" >{{ event.description }}</p>
+                            <p class="text-truncate"><a href="{{ path('event_show', {'id':event.id }) }}">{{ event.description }}</a></p>
                         </div>
                     </div>
                 </div>
