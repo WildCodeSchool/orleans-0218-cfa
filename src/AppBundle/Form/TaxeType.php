@@ -3,13 +3,11 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
-use Vich\UploaderBundle\Form\Type\VichFileType;
 
-class CFAType extends AbstractType
+class TaxeType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -17,23 +15,21 @@ class CFAType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('textPresident', CKEditorType::class, array(
+            ->add('taxeApprentissage', CKEditorType::class, array(
                 'config' => array(
                     'language' => 'fr'
                 ),
-                'label' => 'Le mot de la présidence',
-            ))
-            ->add('imagePresidentFile', VichFileType::class, array(
-                'label' => 'image de la Présidence',
-                'required' =>false,
+                'label' => 'Taxe'
             ));
-    }/**
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Cfa'
+            'data_class' => 'AppBundle\Entity\Taxe'
         ));
     }
 
@@ -42,6 +38,6 @@ class CFAType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'appbundle_cfa';
+        return 'appbundle_taxe';
     }
 }

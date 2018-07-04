@@ -32,10 +32,112 @@ class AdminHistoricCfaController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $historicCFas = $em->getRepository('AppBundle:HistoricCfa')->findAll();
+        $historicCfas = $em->getRepository('AppBundle:HistoricCfa')->findAll();
 
         return $this->render('historiccfa/index.html.twig', [
-            'historicCfas' => $historicCFas,
+            'historicCfas' => $historicCfas,
         ]);
+    }
+
+    /**
+     * Creates a new historicCfa entity.
+     *
+     * @Route("/new", name="historiccfa_new")
+     * @Method({"GET", "POST"})
+     */
+    public function newAction(Request $request)
+    {
+        $historicCfa = new HistoricCfa();
+        $form = $this->createForm('AppBundle\Form\HistoricCfaType', $historicCfa);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($historicCfa);
+            $em->flush();
+
+            return $this->redirectToRoute('historiccfa_show', ['id' => $historicCfa->getId()]);
+        }
+
+        return $this->render('historiccfa/new.html.twig', [
+            'historicCfa' => $historicCfa,
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * Finds and displays a historicCfa entity.
+     *
+     * @Route("/{id}", name="historiccfa_show")
+     * @Method("GET")
+     */
+    public function showAction(HistoricCfa $historicCfa)
+    {
+        $deleteForm = $this->createDeleteForm($historicCfa);
+
+        return $this->render('historiccfa/show.html.twig', [
+            'historicCfa' => $historicCfa,
+            'delete_form' => $deleteForm->createView(),
+        ]);
+    }
+
+    /**
+     * Deletes a formation entity.
+     *
+     * @Route("/{id}", name="formation_delete")
+     * @Method("DELETE")
+     */
+    public function deleteAction(Request $request, HistoricCfa $historicCfa)
+    {
+        $form = $this->createDeleteForm($historicCfa);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($historicCfa);
+            $em->flush();
+        }
+
+        return $this->redirectToRoute('historiccfa_index');
+    }
+  
+    /**
+     * Displays a form to edit an existing historicCfa entity.
+     *
+     * @Route("/{id}/edit", name="historiccfa_edit")
+     * @Method({"GET", "POST"})
+     */
+    public function editAction(Request $request, HistoricCfa $historicCfa)
+    {
+        $deleteForm = $this->createDeleteForm($historicCfa);
+        $editForm = $this->createForm('AppBundle\Form\HistoricCfaType', $historicCfa);
+        $editForm->handleRequest($request);
+
+        if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('historiccfa_edit', ['id' => $historicCfa->getId()]);
+        }
+
+        return $this->render('historiccfa/edit.html.twig', [
+            'historicCfa' => $historicCfa,
+            'edit_form' => $editForm->createView(),
+            'delete_form' => $deleteForm->createView(),
+        ]);
+    }
+
+    /**
+     * Creates a form to delete a historicCfa entity.
+     *
+     * @param HistoricCfa $historicCfa
+     * @return \Symfony\Component\Form\FormInterface
+     */
+    private function createDeleteForm(HistoricCfa $historicCfa)
+    {
+        return $this->createFormBuilder()
+            ->setAction($this->generateUrl('historiccfa_delete', ['id' => $historicCfa->getId()]))
+            ->setMethod('DELETE')
+            ->getForm()
+            ;
     }
 }

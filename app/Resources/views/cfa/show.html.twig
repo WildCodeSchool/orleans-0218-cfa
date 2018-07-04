@@ -15,6 +15,10 @@
                             <th>Le mot de la présidence</th>
                             <td>{{ cfa.textPresident | raw }}</td>
                         </tr>
+                        <tr>
+                            <th>Image</th>
+                            <td><img class="img-fluid" src="{{ vich_uploader_asset(cfa, 'imagePresidentFile') }}" alt="photo de la présidence" /></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

@@ -54,7 +54,19 @@ body {
   width: 100px;
 }
 
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  background-color: $color-primary;
+}
+
+.navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
+  color:$color-basic;
+}
+.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
+  color:$color-basic;
+}
 .navbar {
+  color: $color-basic-inverse;
+
   .nav-link {
     font-size: 1.2em;
     color: $color-basic-inverse;
@@ -62,7 +74,7 @@ body {
 
   .nav-link:hover {
     background-color: $color-primary2;
-    color: $color-basic;
+    color: $color-basic-inverse;
   }
   box-shadow: 0 0 6px $shadow;
 }
@@ -93,6 +105,8 @@ body {
 }
 
 .count-up {
+  margin-left: 15px;
+  margin-top: 50px;
   .counter {
     color: $color-primary2;
     font-size: 3em;
@@ -331,12 +345,11 @@ footer {
       &:hover {
         color: $color-primary2;
       }
-
-      .formation-presentation {
-        font-size: 1.2em;
-
-      }
     }
+
+.formation-presentation {
+  color: $color-primary3;
+}
 
       .background-apprenti {
         background-image: url("../images/apprenti.jpg");
@@ -394,6 +407,7 @@ footer {
 
 .picture-formation {
   height: 100%;
+  margin-left: -15px;
 }
     .leaflet {
       width: 48vw;
@@ -433,7 +447,6 @@ footer {
   background-size: 100% 75%;
   width: 100%;
   height: 350px;
-  margin-left: -30px;
 }
 
 .hireApprentice {
@@ -443,10 +456,7 @@ footer {
   .containt {
     min-height: 200px;
   }
-  .row {
-    margin-right: 15px;
-    margin-left: 15px;
-  }
+
 }
 
 .masterInstructor {
@@ -475,10 +485,7 @@ footer {
 }
 
 .socialSecurityContributions {
-  .row {
-    margin-right: 15px;
-    margin-left: 15px;
-  }
+
   .rememberTitle {
     font-size: 1.2em;
   }
@@ -517,6 +524,11 @@ footer {
 }
 
 /** CFApage **/
+
+.cfa-image {
+  height: 100%;
+  margin-left: -15px;
+}
 
 .president-letter {
   font-family: 'Satisfy', cursive;
