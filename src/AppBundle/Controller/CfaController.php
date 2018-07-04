@@ -30,4 +30,15 @@ class CfaController extends Controller
             'cfas' => $cfas,
         ));
     }
+
+    public function showCfaHomepageAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $cfa = $em->getRepository(Cfa::class)->findOneBy([]);
+
+        return $this->render('homepage/cfa.html.twig', array(
+            'cfa' => $cfa,
+        ));
+    }
 }
