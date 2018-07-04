@@ -27,13 +27,15 @@ class HistoricCfaController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
+        $cfa = $em->getRepository('AppBundle:Cfa')->findBy([]);
         $historicCfas = $em->getRepository('AppBundle:HistoricCfa')->findBy(
             [],
             ['date' => 'DESC']
         );
 
         return $this->render('historiccfa/historiccfa.html.twig', [
-            'historiCfas' => $historicCfas,
+            'historicCfas' => $historicCfas,
+            'cfa' => $cfa,
         ]);
     }
 }

@@ -82,9 +82,9 @@ class AdminHistoricCfaController extends Controller
     }
 
     /**
-     * Deletes a formation entity.
+     * Deletes a historiccfa entity.
      *
-     * @Route("/{id}", name="formation_delete")
+     * @Route("/{id}", name="historiccfa_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, HistoricCfa $historicCfa)
