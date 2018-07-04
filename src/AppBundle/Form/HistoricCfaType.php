@@ -3,8 +3,10 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class HistoricCfaType extends AbstractType
 {
@@ -13,7 +15,18 @@ class HistoricCfaType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('date')->add('title')->add('containt');
+        $builder
+            ->add('title', TextType::class, [
+                    'label' => 'Nom de l\'histoire',
+            ])
+            ->add('date', DateType::class, [
+                    'label' => 'Date',
+                    'widget' => 'single_text',
+            ])
+            ->add('content', TextType::class, [
+                'label' => 'Contenu',
+                'required' => false,
+            ]);
     }
 
     /**
