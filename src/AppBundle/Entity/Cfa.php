@@ -34,6 +34,46 @@ class Cfa
     private $textPresident;
 
     /**
+     * @var int
+     * @ORM\Column(name="apprentice_number", type="integer", nullable=true)
+     * @Assert\Type(
+     *     type="integer",
+     *     message="La valeur doit etre un chiffre"
+     * )
+     */
+    private $apprenticeNumber;
+
+    /**
+     * @var int
+     * @ORM\Column(name="formation_number", type="integer", nullable=true)
+     * @Assert\Type(
+     *     type="integer",
+     *     message="La valeur doit être un chiffre"
+     * )
+     */
+    private $formationNumber;
+
+    /**
+     * @var int
+     * @ORM\Column(name="ufa_number", type="integer", nullable=true)
+     * @Assert\Type(
+     *     type="integer",
+     *     message="La valeur doit être un chiffre"
+     * )
+     */
+    private $ufaNumber;
+
+    /**
+     * @var int
+     * @ORM\Column(name="succes_rate", type="integer", nullable=true)
+     * @Assert\Type(
+     *     type="integer",
+     *     message="La valeur doit être un chiffre"
+     * )
+     */
+    private $succesRate;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="image_president_name", type="string", length=80, nullable=true)
@@ -167,5 +207,69 @@ class Cfa
             'η');
         $name = str_replace($accent, $noAccent, $this->getImagePresidentName());
         return mb_strtolower(preg_replace('/\W/', '-', $name));
+    }
+
+    /**
+     * @return int
+     */
+    public function getApprenticeNumber()
+    {
+        return $this->apprenticeNumber;
+    }
+
+    /**
+     * @param int $apprenticeNumber
+     */
+    public function setApprenticeNumber(int $apprenticeNumber): void
+    {
+        $this->apprenticeNumber = $apprenticeNumber;
+    }
+
+    /**
+     * @return int
+     */
+    public function getFormationNumber()
+    {
+        return $this->formationNumber;
+    }
+
+    /**
+     * @param int $formationNumber
+     */
+    public function setFormationNumber(int $formationNumber): void
+    {
+        $this->formationNumber = $formationNumber;
+    }
+
+    /**
+     * @return int
+     */
+    public function getUfaNumber()
+    {
+        return $this->ufaNumber;
+    }
+
+    /**
+     * @param int $ufaNumber
+     */
+    public function setUfaNumber(int $ufaNumber): void
+    {
+        $this->ufaNumber = $ufaNumber;
+    }
+
+    /**
+     * @return int
+     */
+    public function getSuccesRate()
+    {
+        return $this->succesRate;
+    }
+
+    /**
+     * @param int $succesRate
+     */
+    public function setSuccesRate(int $succesRate): void
+    {
+        $this->succesRate = $succesRate;
     }
 }

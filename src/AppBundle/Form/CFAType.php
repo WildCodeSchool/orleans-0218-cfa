@@ -3,7 +3,7 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
@@ -26,7 +26,20 @@ class CFAType extends AbstractType
             ->add('imagePresidentFile', VichFileType::class, array(
                 'label' => 'image de la Présidence',
                 'required' =>false,
+            ))
+            ->add('apprenticeNumber', IntegerType::class,array(
+                'label' => 'Nombre d\'apprentis'
+            ))
+            ->add('formationNumber', IntegerType::class, array(
+                'label' => 'Nombre de formations'
+            ))
+            ->add('ufaNumber', IntegerType::class, array(
+                'label' => 'Nombre d\'ufa'
+            ))
+            ->add('succesRate', IntegerType::class, array(
+                'label' => 'Pourcentage de reussite'
             ));
+
     }/**
      * {@inheritdoc}
      */
