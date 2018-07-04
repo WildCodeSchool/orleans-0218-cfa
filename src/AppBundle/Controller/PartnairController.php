@@ -12,7 +12,7 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 /**
  * Partnair controller.
  *
- * @Route("partnair")
+ * @Route("/cfabloisadmin/partnair")
  */
 class PartnairController extends Controller
 {
@@ -95,7 +95,7 @@ class PartnairController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('partnair_edit', array(
+            return $this->redirectToRoute('partnair_index', array(
                 'id' => $partnair->getId()
             ));
         }

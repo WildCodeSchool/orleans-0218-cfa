@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Event controller.
  *
- * @Route("/admin/event")
+ * @Route("/cfabloisadmin/event")
  */
 class AdminEventController extends AdminController
 {
@@ -90,7 +90,7 @@ class AdminEventController extends AdminController
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('admin_event_edit', array('id' => $event->getId()));
+            return $this->redirectToRoute('admin_event_index', array('id' => $event->getId()));
         }
 
         return $this->render('event/edit.html.twig', array(

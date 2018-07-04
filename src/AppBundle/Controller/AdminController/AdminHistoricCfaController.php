@@ -17,14 +17,14 @@ use AppBundle\Entity\HistoricCfa;
 /**
  * HistoricCfa controller.
  *
- * @Route("admin")
+ * @Route("/cfabloisadmin/histoire")
  */
 class AdminHistoricCfaController extends Controller
 {
     /**
      * Lists all historicCfa entities.
      *
-     * @Route("/histoire", name="historicCfa_index")
+     * @Route("/", name="historicCfa_index")
      * @Method("GET")
      */
 
