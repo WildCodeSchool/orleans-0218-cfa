@@ -95,7 +95,7 @@ class AdminTaxeController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('taxe_edit', array('id' => $taxe->getId()));
+            return $this->redirectToRoute('taxe_admin_index', array('id' => $taxe->getId()));
         }
 
         return $this->render('taxe/edit.html.twig', array(

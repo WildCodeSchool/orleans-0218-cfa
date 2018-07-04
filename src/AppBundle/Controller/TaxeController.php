@@ -27,7 +27,7 @@ class TaxeController extends Controller
 
         $taxes = $em->getRepository('AppBundle:Taxe')->findAll();
 
-        return $this->render('taxe/index.html.twig', array(
+        return $this->render('taxe/taxeApprentissage.html.twig', array(
             'taxes' => $taxes,
         ));
     }
