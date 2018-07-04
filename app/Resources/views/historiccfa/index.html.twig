@@ -9,16 +9,16 @@
             </div>
         </div>
 
-    <table class="table table-striped table-bordered text-center">
+        <table class="table table-striped table-bordered text-center">
             <thead>
-            <tr>
-                <th>Id</th>
-                <th>Titre</th>
-                <th>Date</th>
-                <th>Contenu</th>
-                <th></th>
-                <th></th>
-            </tr>
+              <tr>
+                  <th>Id</th>
+                  <th>Titre</th>
+                  <th>Date</th>
+                  <th>Contenu</th>
+                  <th></th>
+                  <th></th>
+              </tr>
             </thead>
             <tbody>
             {% for historicCfa in historicCfas %}
@@ -28,11 +28,9 @@
                     <td>{{ historicCfa.date | date('d/m/Y')}}</td>
                     <td>{{ historicCfa.content }}</td>
                     <td>
-                        <ul>
-                            <li>
-                                <a class="btn btn-outline-primary" href="{{ path('historiccfa_show', { 'id': historicCfa.id }) }}">Voir</a>
-                            </li>
-                        </ul>
+                        <li>
+                            <a class="btn btn-outline-primary" href="{{ path('historiccfa_show', { 'id': historicCfa.id }) }}">Voir</a>
+                        </li>
                     </td>
                     <td>
                         <li>
@@ -41,7 +39,6 @@
                     </td>
                 </tr>
             {% endfor %}
-               
             </tbody>
         </table>
     </div>

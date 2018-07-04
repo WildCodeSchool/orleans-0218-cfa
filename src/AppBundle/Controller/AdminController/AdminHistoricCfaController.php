@@ -42,7 +42,7 @@ class AdminHistoricCfaController extends Controller
     /**
      * Creates a new historicCfa entity.
      *
-     * @Route("/new", name="historiccfa_new")
+     * @Route("histoire/new", name="historiccfa_new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
@@ -81,6 +81,26 @@ class AdminHistoricCfaController extends Controller
         ]);
     }
 
+    /**
+     * Deletes a formation entity.
+     *
+     * @Route("/{id}", name="formation_delete")
+     * @Method("DELETE")
+     */
+    public function deleteAction(Request $request, HistoricCfa $historicCfa)
+    {
+        $form = $this->createDeleteForm($historicCfa);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($historicCfa);
+            $em->flush();
+        }
+
+        return $this->redirectToRoute('historiccfa_index');
+    }
+  
     /**
      * Displays a form to edit an existing historicCfa entity.
      *
