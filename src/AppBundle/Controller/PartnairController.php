@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Partnair controller.
  *
- * @Route("admin/partnair")
+ * @Route("/cfabloisadmin/partnair")
  */
 class PartnairController extends Controller
 {
@@ -91,7 +91,7 @@ class PartnairController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('partnair_show', array(
+            return $this->redirectToRoute('partnair_index', array(
                 'id' => $partnair->getId()
             ));
         }

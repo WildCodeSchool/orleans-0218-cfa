@@ -14,7 +14,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class AdminController extends Controller
 {
     /**
-     * @Route("/admin", name="admin_homepage")
+     * @Route("/cfabloisadmin", name="admin_homepage")
      */
     public function indexAction()
     {

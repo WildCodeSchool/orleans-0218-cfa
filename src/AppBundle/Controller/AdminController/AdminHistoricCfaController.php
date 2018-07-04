@@ -17,14 +17,14 @@ use AppBundle\Entity\HistoricCfa;
 /**
  * HistoricCfa controller.
  *
- * @Route("admin")
+ * @Route("/cfabloisadmin/histoire")
  */
 class AdminHistoricCfaController extends Controller
 {
     /**
      * Lists all historicCfa entities.
      *
-     * @Route("/histoire", name="historiccfa_index")
+     * @Route("/", name="historicCfa_index")
      * @Method("GET")
      */
 
@@ -42,7 +42,7 @@ class AdminHistoricCfaController extends Controller
     /**
      * Creates a new historicCfa entity.
      *
-     * @Route("histoire/new", name="historiccfa_new")
+     * @Route("/new", name="historiccfa_new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
