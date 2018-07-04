@@ -22,7 +22,7 @@
             {% for partnair in partnairs %}
                 <tr>
                     <td><a href="{{ path('partnair_show', { 'id': partnair.id }) }}">{{ partnair.name }}</a></td>
-                    <td>{{ partnair.image }}</td>
+                    <td>{{ partnair.imageName }}</td>
                     <td>{{ partnair.link }}</td>
                     <td><a class="btn btn-outline-primary" href="{{ path('partnair_show', { 'id': partnair.id }) }}">Voir</a></td>
                     <td><a class="btn btn-outline-secondary" href="{{ path('partnair_edit', { 'id': partnair.id }) }}">Modifier</a></td>

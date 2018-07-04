@@ -32,7 +32,7 @@ class AdminHistoricCfaController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $historicCfas = $em->getRepository('AppBundle:HistoricCfa')->findAll();
+        $historicCfas = $em->getRepository('AppBundle:HistoricCfa')->findBy([], ['date' => 'DESC']);
 
         return $this->render('historiccfa/index.html.twig', [
             'historicCfas' => $historicCfas,
@@ -116,7 +116,7 @@ class AdminHistoricCfaController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('historiccfa_edit', ['id' => $historicCfa->getId()]);
+            return $this->redirectToRoute('historiccfa_index');
         }
 
         return $this->render('historiccfa/edit.html.twig', [
