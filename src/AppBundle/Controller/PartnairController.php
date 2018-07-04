@@ -50,7 +50,7 @@ class PartnairController extends Controller
             $em->flush();
 
             return $this->redirectToRoute('partnair_show', array(
-                'partnairs' => $partnair,
+                'partnair' => $partnair,
                 'id' => $partnair->getId(),
             ));
         }
@@ -91,7 +91,7 @@ class PartnairController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('partnair_edit', array(
+            return $this->redirectToRoute('partnair_show', array(
                 'id' => $partnair->getId()
             ));
         }
