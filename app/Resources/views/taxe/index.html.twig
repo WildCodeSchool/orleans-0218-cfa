@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Taxes list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Taxeapprentissage</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for taxe in taxes %}
+            <tr>
+                <td><a href="{{ path('taxe_show', { 'id': taxe.id }) }}">{{ taxe.id }}</a></td>
+                <td>{{ taxe.taxeApprentissage }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('taxe_show', { 'id': taxe.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('taxe_edit', { 'id': taxe.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('taxe_new') }}">Create a new taxe</a>
+        </li>
+    </ul>
+{% endblock %}

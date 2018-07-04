@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'layoutAdmin.html.twig' %}
 
 {% block body %}
     <div class="container">
@@ -12,31 +12,32 @@
     <table class="table table-striped text-center">
             <thead>
             <tr>
+                <th>Id</th>
                 <th>Titre</th>
                 <th>Date</th>
-                <th>Contenu</th>
                 <th></th>
                 <th></th>
             </tr>
             </thead>
             <tbody>
-                {% for historicCfa in historicCfas %}
-                    <tr>
-                        <td>{{ historicCfa.title }}</td>
-                        <td>{{ historicCfa.date }}</td>
-                        <td>{{ historicCfa.content }}</td>
-                        <td>
-                            <ul>
-                                <li>
-                                    <a class="btn btn-info form-control" href="#">Voir</a>
-                                </li>
-                                <li>
-                                    <a class="btn btn-danger form-control" href="#">Modifier</a>
-                                </li>
-                            </ul>
-                        </td>
-                    </tr>
-                {% endfor %}
+            {% for historicCfa in historicCfas %}
+                <tr>
+                    <td>{{ historicCfa.id }}</td>
+                    <td>{{ historicCfa.title }}</td>
+                    <td>{{ historicCfa.date | date('d/m/Y') }}</td>
+                    <td>
+                        <ul>
+                            <li>
+                                <a class="btn btn-info form-control" href="#">Voir</a>
+                            </li>
+                            <li>
+                                <a class="btn btn-danger form-control" href="{{ path('historiccfa_edit', { 'id': historicCfa.id }) }}">Modifier</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+               
             </tbody>
         </table>
     </div>

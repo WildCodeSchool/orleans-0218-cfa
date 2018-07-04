@@ -100,4 +100,6 @@ vich_uploader:
             partner_image:
                 uri_prefix: /uploads
                 upload_destination: '%kernel.project_dir%/web/uploads'
-
+            cfa_ref:
+                uri_prefix: /uploads
+                upload_destination: '%kernel.project_dir%/web/uploads'
