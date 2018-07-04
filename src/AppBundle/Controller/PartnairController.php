@@ -7,12 +7,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**
  * Partnair controller.
  *
- * @Route("partnair")
+ * @Route("/cfabloisadmin/partnair")
  */
 class PartnairController extends Controller
 {
@@ -42,19 +41,16 @@ class PartnairController extends Controller
     public function newAction(Request $request)
     {
 
-
-        $em = $this->getDoctrine()->getManager();
-
-        $newPartnair = new Partnair();
-        $form = $this->createForm('AppBundle\Form\PartnairType', $newPartnair);
+        $partnair = new Partnair();
+        $form = $this->createForm('AppBundle\Form\PartnairType', $partnair);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($newPartnair);
+            $em->persist($partnair);
             $em->flush();
 
             return $this->redirectToRoute('partnair_show', array(
-                'partnairs' => $partnairs,
+                'partnair' => $partnair,
                 'id' => $partnair->getId(),
             ));
         }
@@ -95,7 +91,7 @@ class PartnairController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('partnair_edit', array(
+            return $this->redirectToRoute('partnair_index', array(
                 'id' => $partnair->getId()
             ));
         }

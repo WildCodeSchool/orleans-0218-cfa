@@ -17,7 +17,7 @@ use AppBundle\Entity\Formation;
 /**
  * Formation controller.
  *
- * @Route("admin/formation")
+ * @Route("/cfabloisadmin/formation")
  */
 class AdminFormationController extends Controller
 {
@@ -96,7 +96,7 @@ class AdminFormationController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('formation_edit', array('id' => $formation->getId()));
+            return $this->redirectToRoute('formation_admin_index', array('id' => $formation->getId()));
         }
 
         return $this->render('formation/edit.html.twig', array(

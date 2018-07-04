@@ -17,7 +17,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Cfa controller.
  *
- * @Route("admin/cfa")
+ * @Route("/cfabloisadmin/cfa")
  */
 class AdminCfaController extends Controller
 {
@@ -95,7 +95,7 @@ class AdminCfaController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('cfa_edit', array('id' => $cfa->getId()));
+            return $this->redirectToRoute('cfa_admin_index', array('id' => $cfa->getId()));
         }
 
         return $this->render('cfa/edit.html.twig', array(
