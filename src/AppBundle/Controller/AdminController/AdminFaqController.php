@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Controller;
+namespace AppBundle\Controller\AdminController;
 
 use AppBundle\Entity\Faq;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
