@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-3 offset-9">
                 {% if taxes is empty %}
-                    <a class="btn btn-outline-primary mb-3" href="{{ path('cfa_admin_new') }}">+ Créer</a>
+                    <a class="btn btn-outline-primary mb-3" href="{{ path('taxe_new') }}">+ Créer</a>
                 {% endif %}
             </div>
         </div>
@@ -21,7 +21,7 @@
         <tbody>
         {% for taxe in taxes %}
             <tr>
-                <td><a href="{{ path('taxe_show', { 'id': taxe.id }) }}">{{ taxe.taxeApprentissage | raw }}</a></td>
+                <td>{{ taxe.taxeApprentissage | raw }}</td>
                 <td><a class="btn btn-outline-primary" href="{{ path('taxe_show', { 'id': taxe.id }) }}">Voir</a></td>
                 <td><a class="btn btn-outline-secondary" href="{{ path('taxe_edit', { 'id': taxe.id }) }}">Modifier</a></td>
             </tr>
