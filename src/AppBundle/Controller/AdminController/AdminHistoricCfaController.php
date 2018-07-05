@@ -82,7 +82,7 @@ class AdminHistoricCfaController extends Controller
     }
 
     /**
-     * Deletes a historiccfa entity.
+     * Deletes a HistoricCfa entity.
      *
      * @Route("/{id}", name="historiccfa_delete")
      * @Method("DELETE")
@@ -102,7 +102,7 @@ class AdminHistoricCfaController extends Controller
     }
   
     /**
-     * Displays a form to edit an existing historicCfa entity.
+     * Displays a form to edit an existing HistoricCfa entity.
      *
      * @Route("/{id}/edit", name="historiccfa_edit")
      * @Method({"GET", "POST"})
@@ -127,7 +127,7 @@ class AdminHistoricCfaController extends Controller
     }
 
     /**
-     * Creates a form to delete a historicCfa entity.
+     * Creates a form to delete a HistoricCfa entity.
      *
      * @param HistoricCfa $historicCfa
      * @return \Symfony\Component\Form\FormInterface
