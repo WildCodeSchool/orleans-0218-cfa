@@ -269,6 +269,14 @@ footer {
   :not(:hover) p {
     display: none;
   }
+
+  &:hover p {
+    display: inherit;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
   .caption {
     background-color: white;
     padding: 15px;
