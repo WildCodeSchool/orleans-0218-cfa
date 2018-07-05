@@ -9,8 +9,8 @@
                 <h1 class="style-page mb-5 mt-3"> Les formations</h1>
             </div>
         </div>
-        {% if formations is not empty %}
         <div class="row">
+            {% if formations is not empty %}
             <div class="col-md-3 col-sm-12 border-right formation-list">
                 {% for formation in formations %}
                     <ul class="list-group list-group-flush">
@@ -51,12 +51,10 @@
                 {% endif %}
                 <a class="btn btn-outline-success" href="{{ path('homepage') }}">Retour à l'accueil</a>
             </div>
-        </div>
-        {% else %}
-        <div class="row">
+            {% else %}
             <h2>Liste des formations à venir ...</h2>
+            {% endif %}
         </div>
-        {% endif %}
 </section>
 {% endblock %}
 
