@@ -23,12 +23,12 @@
                     </ul>
                 {% endfor %}
             </div>
-            <div class="col-md-7 offset-md-1 col-sm-12">
+            <div class="col-md-7 offset-md-1 col-sm-12 formation-presentation">
                 <h2 class="text-center mb-5 title-formation"><i class="fas fa-graduation-cap"></i> {{ formation.name }}
                 </h2>
-                <span class="formation-presentation">{{ formation.shortPresentation|raw }}</span>
-                <p class="mt-5 bg-light text-success">{{ formation.jobDescription|raw }}</p>
-                    <img src="{{ asset('images/meeting_formation.jpeg') }}" alt="meeting-formation">
+                <p>{{ formation.shortPresentation|raw }}</p>
+                <img src="{{ asset('images/meeting_formation.jpeg') }}" alt="meeting-formation">
+                <p>{{ formation.jobDescription|raw }}</p>
             </div>
             <div class="col offset-md-4">
                 <h2 class="title-formation mt-4">Où trouver cette formation :</h2>
