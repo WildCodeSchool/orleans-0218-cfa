@@ -17,15 +17,10 @@
                 <div class="col-3 border-left">
                 <ul>
                     <li>
-                        <a class="btn-outline-primary btn" href="{{ path('taxe_index')  }}">Retour à la liste</a>
+                        <a class="btn-outline-primary btn" href="{{ path('taxe_admin_index')  }}">Retour à la liste</a>
                     </li>
                     <li>
                         <a class="btn btn-outline-secondary" href="{{ path('taxe_edit', { 'id': taxe.id }) }}">Modifier</a>
-                    </li>
-                    <li>
-                        {{ form_start(delete_form) }}
-                            <input class="btn btn-outline-danger" type="submit" value="Supprimer">
-                        {{ form_end(delete_form) }}
                     </li>
                 </ul>
             </div>
