@@ -79,11 +79,11 @@
             map.addLayer(osmLayer);
 
             {% for ufa in ufas %}
-            L.marker([{{ ufa.longitude }}, {{ ufa.latitude }}], {icon: blueIcon}).addTo(map)
+            L.marker([{{ ufa.latitude }}, {{ ufa.longitude }}], {icon: blueIcon}).addTo(map)
                 .bindPopup('{{ ufa.name }}<br> {{ ufa.address }} <br> {{ ufa.zipcode }} {{ ufa.town }}');
             {% endfor %}
 
-            L.marker([{{ ufa.longitude }}, {{ ufa.latitude }}], {icon: redIcon}).addTo(map)
+            L.marker([{{ ufa.latitude }}, {{ ufa.longitude }}], {icon: redIcon}).addTo(map)
                 .bindPopup('{{ ufa.name }}<br> {{ ufa.address }} <br> {{ ufa.zipcode }} {{ ufa.town }}');
         });
     </script>
