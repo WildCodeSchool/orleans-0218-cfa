@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Faqs list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Question</th>
+                <th>Response</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for faq in faqs %}
+            <tr>
+                <td><a href="{{ path('faq_show', { 'id': faq.id }) }}">{{ faq.id }}</a></td>
+                <td>{{ faq.question }}</td>
+                <td>{{ faq.response }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('faq_show', { 'id': faq.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('faq_edit', { 'id': faq.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('faq_new') }}">Create a new faq</a>
+        </li>
+    </ul>
+{% endblock %}
