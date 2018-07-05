@@ -4,6 +4,7 @@
         <div class="row">
             <div class="section-title background-formation"></div>
         </div>
+        {% if formations is not empty %}
         <div class="row">
             <div class="col-md-3 col-sm-12">
                 <h1 class="style-page mb-5 mt-3"> Les formations</h1>
@@ -51,6 +52,7 @@
                 <a class="btn btn-outline-success" href="{{ path('homepage') }}">Retour à l'accueil</a>
             </div>
         </div>
+        {% endif %}
 </section>
 {% endblock %}
 
