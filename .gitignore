@@ -15,6 +15,9 @@
 !var/SymfonyRequirements.php
 /vendor/
 /web/bundles/
+!/web/uploads
+/web/uploads/*
+!/web/uploads/.gitkeep
 /web/build/
 /node_modules/
 *.php~
