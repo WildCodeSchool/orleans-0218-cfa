@@ -32,9 +32,9 @@ class CoordinatesService
                 ]
             ]);
         $json = json_decode($response->getBody()->getContents(), true);
-        $latitude = $json['features'][0]['geometry']['coordinates'][0] ?? 0;
-        $longitude = $json['features'][0]['geometry']['coordinates'][1] ?? 0;
+        $longitude = $json['features'][0]['geometry']['coordinates'][0] ?? 0;
+        $latitude = $json['features'][0]['geometry']['coordinates'][1] ?? 0;
 
-        return [$latitude, $longitude];
+        return [$longitude, $latitude];
     }
 }
