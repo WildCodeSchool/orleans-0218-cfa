@@ -337,6 +337,27 @@ footer {
   }
 }
 
+/** UFA **/
+.list-group {
+  .active {
+    background-color: $color-primary;
+  }
+}
+
+.bg-primary-cfa {
+  background-color: $color-primary;
+}
+
+.card-ufa {
+  .btn {
+    box-shadow: 2px 2px 4px  $shadow;
+    font-size: 1em;
+  }
+  .card-text {
+    font-size: 1em;
+  }
+}
+
 /** faq **/
 
 .question {
@@ -441,7 +462,8 @@ footer {
 
 .leaflet {
   width: 48vw;
-  height: 48vw;
+  height: 60vh;
+
 }
 
 /** carousel logos partner **/
