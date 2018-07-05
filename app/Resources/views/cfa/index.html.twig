@@ -15,8 +15,6 @@
             <tr>
                 <th class="text-center">Le mot de la présidence</th>
                 <th class="text-center">Nombre d'apprentis</th>
-                <th class="text-center">Nombre de formations</th>
-                <th class="text-center">Nombre d'ufa</th>
                 <th class="text-center">Taux de réussite</th>
                 <th></th>
                 <th></th>
@@ -27,9 +25,7 @@
                 <tr>
                     <td>{{ cfa.textPresident | raw }}</td>
                     <td>{{ cfa.apprenticeNumber}}</td>
-                    <td>{{ cfa.formationNumber}}</td>
-                    <td>{{ cfa.ufaNumber}}</td>
-                    <td>{{ cfa.succesRate}}</td>
+                    <td>{{ cfa.successRate}}</td>
                     <td><a class="btn btn-outline-primary" href="{{ path('cfa_admin_show', { 'id': cfa.id }) }}">Voir</a></td>
                     <td><a class="btn btn-outline-secondary" href="{{ path('cfa_edit', { 'id': cfa.id }) }}">Modifier</a></td>
                 </tr>

@@ -65,13 +65,20 @@ class Cfa
 
     /**
      * @var int
-     * @ORM\Column(name="succes_rate", type="integer", nullable=true)
+     * @ORM\Column(name="success_rate", type="integer", nullable=true)
      * @Assert\Type(
      *     type="integer",
+     *
      *     message="La valeur doit être un chiffre"
      * )
+     * @Assert\Range(
+     *      min = 0,
+     *      max = 100,
+     *      minMessage = "La valeure doit être au dessus de {{ limit }}",
+     *      maxMessage = "La valeure ne doit pas être au dessus de {{ limit }}"
+     * )
      */
-    private $succesRate;
+    private $successRate;
 
     /**
      * @var string
@@ -260,16 +267,16 @@ class Cfa
     /**
      * @return int
      */
-    public function getSuccesRate()
+    public function getSuccessRate()
     {
-        return $this->succesRate;
+        return $this->successRate;
     }
 
     /**
-     * @param int $succesRate
+     * @param int $successRate
      */
-    public function setSuccesRate(int $succesRate): void
+    public function setSuccessRate(int $successRate): void
     {
-        $this->succesRate = $succesRate;
+        $this->successRate = $successRate;
     }
 }
