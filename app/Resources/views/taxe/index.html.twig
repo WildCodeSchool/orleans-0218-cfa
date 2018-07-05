@@ -1,39 +1,32 @@
-{% extends 'base.html.twig' %}
+{% extends 'layoutAdmin.html.twig' %}
 
 {% block body %}
-    <h1>Taxes list</h1>
-
-    <table>
+    <div class="container">
+    <h1>Liste des taxes</h1>
+        <div class="row">
+            <div class="col-md-3 offset-9">
+                {% if taxes is empty %}
+                    <a class="btn btn-outline-primary mb-3" href="{{ path('taxe_new') }}">+ Créer</a>
+                {% endif %}
+            </div>
+        </div>
+    <table class="table table-striped table-bordered">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Taxeapprentissage</th>
-                <th>Actions</th>
+                <th>Taxe d'apprentissage</th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
         {% for taxe in taxes %}
             <tr>
-                <td><a href="{{ path('taxe_show', { 'id': taxe.id }) }}">{{ taxe.id }}</a></td>
-                <td>{{ taxe.taxeApprentissage }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('taxe_show', { 'id': taxe.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('taxe_edit', { 'id': taxe.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
+                <td>{{ taxe.taxeApprentissage | raw }}</td>
+                <td><a class="btn btn-outline-primary" href="{{ path('taxe_show', { 'id': taxe.id }) }}">Voir</a></td>
+                <td><a class="btn btn-outline-secondary" href="{{ path('taxe_edit', { 'id': taxe.id }) }}">Modifier</a></td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('taxe_new') }}">Create a new taxe</a>
-        </li>
-    </ul>
+    </div>
 {% endblock %}

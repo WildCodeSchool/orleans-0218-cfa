@@ -9,7 +9,7 @@
                     <tbody>
                         <tr>
                             <th>Image</th>
-                            <td>{{ partnair.image }}</td>
+                            <td><img class="img-fluid" src="{{ vich_uploader_asset(partnair, 'image') }}">{{ partnair.imageName }}</td>
                         </tr>
                         <tr>
                             <th>Url</th>

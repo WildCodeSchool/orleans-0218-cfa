@@ -20,28 +20,43 @@ body {
   background-image: url('../images/background.png');
   background-repeat: repeat;
   color: black;
+  p, a , li, h4, .btn  {
+    font-size: 1.2rem;
+  }
+  h2 {
+    font-size: 1.6rem;
+
+  }
   p {
-    font-size: 1.2em;
     margin-bottom: 2em;
   }
-  li {
-    font-size: 1.2em;
-  }
+
   li ul li {
     font-size: 1em;
   }
   h1 {
     font-size: 2em;
   }
+  h3 {
+    font-size: 1.5em;
+  }
   h4 {
-  font-size: 1.2em;
+    font-size: 1.2em;
+  }
+  @media (max-width: 768px) {
+    table, tr, td, th, thead {
+      font-size: 0.9em;
+    }
+    h2 {
+      font-size: 1.5em;
+    }
   }
 }
 
 .list-page {
   li {
-  margin-bottom: 10px;
-  color: $color-primary2;
+    margin-bottom: 10px;
+    color: $color-primary2;
   }
   span {
     color: black;
@@ -51,24 +66,32 @@ body {
 /**Navbar**/
 
 .logo {
-  width: 100px;
+  width: 110px;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   background-color: $color-primary;
 }
 
-.navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
+.navbar-light .navbar-nav .nav-link.active {
   color:$color-basic;
 }
-.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
+.navbar-light .navbar-nav .nav-link:hover {
   color:$color-basic;
 }
+
+.navbar-nav .show a.nav-link {
+    color: $color-basic-inverse;
+    &:hover {
+      color:$color-basic;
+    }
+}
+
 .navbar {
   color: $color-basic-inverse;
 
   .nav-link {
-    font-size: 1.2em;
+    font-size: 1.2rem;
     color: $color-basic-inverse;
   }
 
@@ -82,7 +105,6 @@ body {
 .dropdown-item:hover {
   background-color: $color-primary2;
 }
-
 
 .style-page {
   padding: 2px 10px 2px 5px;
@@ -112,10 +134,6 @@ body {
     font-size: 3em;
     text-shadow: 2px 2px 4px $color-primary2;
   }
-
-  p {
-    font-size: 1.2em;
-  }
 }
 
 .cfa-part {
@@ -134,7 +152,6 @@ footer {
   background-image: url('../images/footer.png');
   box-shadow: 0px -6px 6px $shadow;
   color: $color-basic;
-  font-size: 1.2em;
   a {
     &:hover {
       color: $color-primary2;
@@ -157,7 +174,6 @@ footer {
   box-shadow: 0 3px 5px $shadow;
   padding-top: 0.3em;
   font-variant: small-caps;
-  font-size: 1.6em;
   background-color: $color-primary;
   padding-bottom: 0.4em;
   margin-bottom: 1.3em;
@@ -191,11 +207,9 @@ footer {
   background-image: url('../images/background.png');
   background-repeat: repeat;
 
-
 }
 
 .containt {
-  margin: 10px;
   text-align: left;
   padding: 20px 15px 20px 10px;
   border: 1px solid $color-primary3;
@@ -255,6 +269,14 @@ footer {
   :not(:hover) p {
     display: none;
   }
+
+  &:hover p {
+    display: inherit;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
   .caption {
     background-color: white;
     padding: 15px;
@@ -276,100 +298,128 @@ footer {
   }
 }
 
-  /** Formation **/
+.paragraph {
+  margin-bottom: 2em;
+}
 
-  .title-formation {
-    color: $color-primary2;
+.number {
+  list-style-type: decimal;
+}
+
+/** Formation **/
+
+.title-formation {
+  color: $color-primary2;
+}
+
+.background-formation {
+  background-image: url("../images/formation_back.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+.meeting-formation {
+  background-repeat: no-repeat;
+  margin-left: 100px;
+  margin-top: 50px;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+.list-formation {
+  li {
+    list-style: none;
   }
+}
 
-  .background-formation {
-    background-image: url("../images/formation_back.jpg");
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    width: 100%;
-    height: 300px;
-    margin-bottom: 20px;
+/** UFA **/
+.list-group {
+  .active {
+    background-color: $color-primary;
   }
+}
 
-  .meeting-formation {
-    background-repeat: no-repeat;
-    margin-left: 100px;
-    margin-top: 50px;
-    width: 100%;
-    height: 300px;
-    margin-bottom: 20px;
+.bg-primary-cfa {
+  background-color: $color-primary;
+}
+
+.card-ufa {
+  .btn {
+    box-shadow: 2px 2px 4px  $shadow;
+    font-size: 1em;
   }
-
-  .list-formation {
-    li {
-      list-style: none;
-    }
+  .card-text {
+    font-size: 1em;
   }
+}
 
-  /** faq **/
+/** faq **/
 
-  .question {
-    color: $color-primary2;
+.question {
+  color: $color-primary2;
 
+}
+
+.background-faq {
+  background-image: url("../images/faq.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 75%;
+  width: 100%;
+  height: 350px;
+}
+
+.events-bg {
+  background-image: url("/images/unsplash3.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  .card {
+    margin-bottom: 15px;
+    box-shadow: 8px 8px 8px black;
   }
+}
 
-  .background-faq {
-    background-image: url("../images/faq.jpg");
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: 100% 75%;
-    width: 100%;
-    height: 350px;
-  }
+.style-page {
+  padding: 2px 10px 2px 5px;
+  border-left: 5px solid $color-primary2;
 
-  .events-bg {
-    background-image: url("/images/unsplash3.jpg");
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    .card {
-      margin-bottom: 15px;
-      box-shadow: 8px 8px 8px black;
-    }
-  }
-
-    .style-page {
-      padding: 2px 10px 2px 5px;
-      border-left: 5px solid $color-primary2;
-
-    }
-
+}
     .link-formation {
       color: black;
-      font-size: 16px;
       &:hover {
         color: $color-primary2;
       }
     }
 
 .formation-presentation {
-  color: $color-primary3;
+  background-color: $color-basic;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
-      .background-apprenti {
-        background-image: url("../images/apprenti.jpg");
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-        background-size: 100% 80%;
-        width: 100%;
-        height: 400px;
-      }
+.background-apprenti {
+  background-image: url("../images/apprenti.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 80%;
+  width: 100%;
+  height: 400px;
+}
 
-
-    .events-bg {
-      background-image: url("../images/event_background_img.jpg");
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-      .card {
-        margin-bottom: 15px;
-        box-shadow: 8px 8px 8px black;
-      }
-    }
+.events-bg {
+  background-image: url("../images/event_background_img.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  .card {
+    margin-bottom: 15px;
+    box-shadow: 8px 8px 8px black;
+  }
+}
 
 .background-event {
   background-image: url("../images/event_background_img.jpg");
@@ -381,16 +431,16 @@ footer {
   margin-bottom: 20px;
 }
 
-    .homepage-formation {
-      ul {
-        columns: 2;
-        margin: 10px;
-      }
-      li {
-        margin-bottom: 10px;
-        font-size: 2em;
-      }
-    }
+.homepage-formation {
+  ul {
+    columns: 2;
+    margin: 10px;
+  }
+  li {
+    margin-bottom: 10px;
+    font-size: 2em;
+  }
+}
 
 @media (max-width: 1690px) {
   .homepage-formation {
@@ -409,27 +459,29 @@ footer {
   height: 100%;
   margin-left: -15px;
 }
-    .leaflet {
-      width: 48vw;
-      height: 48vw;
+
+.leaflet {
+  width: 48vw;
+  height: 60vh;
+
+}
+
+/** carousel logos partner **/
+
+.logoPartner {
+  img {
+    min-height: 100%;
+    max-height: 190px;
+  }
+  .logos {
+    filter: grayscale(100%);
+    &:hover {
+      filter: none;
     }
+  }
+}
 
-    /** carousel logos partner **/
-
-    .logoPartner {
-      img {
-        min-height: 100%;
-        max-height: 190px;
-      }
-      .logos {
-        filter: grayscale(100%);
-        &:hover {
-          filter: none;
-        }
-      }
-    }
-
-  /** employeurs **/
+/** employeurs **/
 
 @media (max-width: 768px) {
   h2 {
@@ -465,9 +517,8 @@ footer {
   }
 }
 
-
 .learningCondition {
-  .containt{
+  .containt {
     padding: 20px 20px 20px 20px;
     text-align: center;
   }
@@ -489,11 +540,7 @@ footer {
   .rememberTitle {
     font-size: 1.2em;
   }
-  @media (max-width: 768px) {
-    table, tr, td, th, thead {
-      font-size: 0.9em;
-    }
-  }
+
 }
 
 .etudiants-img {
@@ -512,13 +559,8 @@ footer {
   background-image: url("../images/calculette.jpg");
 }
 
-@media (max-width: 768px) {
-  h2 {
-    font-size: 1.5em;
-  }
-}
 
-  /** end employeurs **/
+/** end employeurs **/
 .list_none {
   list-style-type: none;
 }
@@ -551,10 +593,10 @@ footer {
 }
 
 .list-page {
-  ul li{
+  ul li {
     color: $color-primary2;
     padding-top: 0.5em;
-    span{
+    span {
       color: black;
       margin-top: 1.2em;
     }
@@ -563,7 +605,7 @@ footer {
 
 @media (max-width: 750px) {
   .list-page {
-    padding:0px;
+    padding: 0px;
     ul {
       padding: 10px;
     }
@@ -582,5 +624,22 @@ footer {
   .caption {
     min-height: 30vw;
   }
+}
+
+
+.timeline {
+  word-break: break-all;
+}
+
+/** Taxes **/
+
+.background-taxe {
+  background-image: url("../images/background_taxe.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 50%;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 20px;
 }
 

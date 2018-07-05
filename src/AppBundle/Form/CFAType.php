@@ -27,7 +27,8 @@ class CFAType extends AbstractType
             ->add('imagePresidentFile', VichFileType::class, array(
                 'label' => 'image de la Présidence',
                 'required' =>false,
-                'allow_delete' => false,
+                'download_link' => false,
+                'allow_delete' => false
             ))
             ->add('apprenticeNumber', IntegerType::class, array(
                 'label' => 'Nombre d\'apprentis'
