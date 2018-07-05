@@ -46,7 +46,7 @@
             <p>
                 L'association est gérée par un conseil d'administration de 34 membres maximum :
             </p>
-            <ul class="list-page ">
+            <ul class="list-page">
                 <li>
                     <span>
                         16 représentants des membres fondateurs (ARDEQAF, ATEC, Croix-Rouge,
@@ -153,6 +153,10 @@
             <h2 class="mb-5 style-subtitle">Mot de la présidente</h2>
                 <p class="president-letter">
                     <i class="fas fa-quote-left fa-3x style-subtitle "></i>
+                    {% for cfa in cfas %}
+                    <img class="img-fluid" src="{{ vich_uploader_asset(cfa, 'imagePresidentFile') }}" alt="photo de la présidence"/>
+                    <p>{{ cfa.textPresident | raw }}</p>
+                    {% endfor %}
                     <i class="fas fa-quote-right fa-3x style-subtitle "></i>
                 </p>
         </div>

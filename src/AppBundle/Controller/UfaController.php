@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Ufa controller.
  *
- * @Route("admin/ufa")
+ * @Route("/cfabloisadmin/ufa")
  */
 class UfaController extends Controller
 {
@@ -100,7 +100,7 @@ class UfaController extends Controller
 
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('ufa_edit', array(
+            return $this->redirectToRoute('ufa_index', array(
                 'id' => $ufa->getId()
             ));
         }
@@ -130,7 +130,7 @@ class UfaController extends Controller
         if ($editCoordForm->isSubmitted() && $editCoordForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('ufa_show', array(
+            return $this->redirectToRoute('ufa_index', array(
                 'id' => $ufa->getId()
             ));
         }
