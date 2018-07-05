@@ -101,7 +101,7 @@ class AdminFaqController extends Controller
     /**
      * Deletes a faq entity.
      *
-     * @Route("/{id}", name="faq_admin_delete")
+     * @Route("/{id}", name="faq_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Faq $faq)
@@ -115,7 +115,7 @@ class AdminFaqController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('faq_index');
+        return $this->redirectToRoute('faq_admin_index');
     }
 
     /**
