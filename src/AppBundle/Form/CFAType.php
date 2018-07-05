@@ -26,6 +26,7 @@ class CFAType extends AbstractType
             ->add('imagePresidentFile', VichFileType::class, array(
                 'label' => 'image de la Présidence',
                 'required' =>false,
+                'download_link' => false,
             ));
     }/**
      * {@inheritdoc}

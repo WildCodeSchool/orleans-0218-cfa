@@ -13,7 +13,6 @@
         <table class="table table-striped table-bordered">
             <thead>
             <tr>
-                <th class="text-center">Id</th>
                 <th class="text-center">Le mot de la présidence</th>
                 <th></th>
                 <th></th>
@@ -22,7 +21,6 @@
             <tbody>
             {% for cfa in cfas %}
                 <tr>
-                    <td><a href="{{ path('cfa_admin_show', { 'id': cfa.id }) }}">{{ cfa.id }}</a></td>
                     <td>{{ cfa.textPresident | raw }}</td>
                     <td><a class="btn btn-outline-primary" href="{{ path('cfa_admin_show', { 'id': cfa.id }) }}">Voir</a></td>
                     <td><a class="btn btn-outline-secondary" href="{{ path('cfa_edit', { 'id': cfa.id }) }}">Modifier</a></td>
