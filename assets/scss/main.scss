@@ -269,6 +269,14 @@ footer {
   :not(:hover) p {
     display: none;
   }
+
+  &:hover p {
+    display: inherit;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
   .caption {
     background-color: white;
     padding: 15px;
@@ -292,6 +300,10 @@ footer {
 
 .paragraph {
   margin-bottom: 2em;
+}
+
+.number {
+  list-style-type: decimal;
 }
 
 /** Formation **/
@@ -322,6 +334,27 @@ footer {
 .list-formation {
   li {
     list-style: none;
+  }
+}
+
+/** UFA **/
+.list-group {
+  .active {
+    background-color: $color-primary;
+  }
+}
+
+.bg-primary-cfa {
+  background-color: $color-primary;
+}
+
+.card-ufa {
+  .btn {
+    box-shadow: 2px 2px 4px  $shadow;
+    font-size: 1em;
+  }
+  .card-text {
+    font-size: 1em;
   }
 }
 
@@ -366,6 +399,7 @@ footer {
 .formation-presentation {
   background-color: $color-basic;
   padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .background-apprenti {
@@ -428,7 +462,8 @@ footer {
 
 .leaflet {
   width: 48vw;
-  height: 48vw;
+  height: 60vh;
+
 }
 
 /** carousel logos partner **/
@@ -467,13 +502,9 @@ footer {
 }
 
 .hireApprentice {
-  span {
-    font-weight: bold;
-  }
   .containt {
     min-height: 200px;
   }
-
 }
 
 .masterInstructor {
