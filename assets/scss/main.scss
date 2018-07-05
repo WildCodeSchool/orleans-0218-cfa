@@ -270,7 +270,7 @@ footer {
     display: none;
   }
   .caption {
-    background-color: white;
+    background-color: transparent;r: white;
     padding: 15px;
     opacity: 0.8;
     width: 100%;
@@ -608,3 +608,7 @@ footer {
   margin-bottom: 20px;
 }
 
+.ufa-card-text {
+  margin-left: 2vw;
+  margin-top: -1vw;
+}
