@@ -50,7 +50,7 @@ class AdminEventController extends AdminController
             $em->persist($event);
             $em->flush();
 
-            return $this->redirectToRoute('event_show', array('id' => $event->getId()));
+            return $this->redirectToRoute('admin_event_show', array('id' => $event->getId()));
         }
 
         return $this->render('event/new.html.twig', array(
