@@ -33,7 +33,7 @@ class HistoricCfaController extends Controller
         );
 
         return $this->render('historiccfa/historiccfa.html.twig', [
-            'historiCfas' => $historicCfas,
+            'historicCfas' => $historicCfas,
         ]);
     }
 }
