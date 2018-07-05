@@ -3,21 +3,27 @@
 {% block body %}
     <div class="container-fluid">
         <div class="row">
-            <div class="section-title background-event"></div>
+            <div class="section-title  background-event d-none d-sm-block"></div>
         </div>
-        <div class="container">
-        <h1 class="style-page">{{ event.title }}</h1>
-            <div class="col-sm-6 col-12">
-                <div class="card">
-                    <div class="card-header">
-                        {% if event.date %}{{ event.date|date('d/m/Y') }}{% endif %}
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">{{ event.title }}</h5>
-                        <p class="card-text">{{ event.description }}</p>
-                    </div>
+        <div class="row">
+            <div class="col offset-1 mb-5 ">
+                <h1 class="title-style style-page">{{ event.title }}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-md-1 col-md-10">
+                <p>
+                    {% if event.date %}{{ event.date|date('d/m/Y') }}{% endif %}
+                </p>
+            </div>
+            <div class="row">
+                <div class="offset-md-1 col-md-10">
+                    <p>
+                        {{ event.description }}
+                    </p>
                 </div>
             </div>
         </div>
+
     </div>
 {% endblock %}
