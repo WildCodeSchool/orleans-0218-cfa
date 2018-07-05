@@ -10,14 +10,14 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 /**
  * Faq controller.
  *
- * @Route("faq")
+ * @Route("/cfabloisadmin/faq")
  */
-class FaqController extends Controller
+class AdminFaqController extends Controller
 {
     /**
      * Lists all faq entities.
      *
-     * @Route("/", name="faq_index")
+     * @Route("/", name="faq_admin_index")
      * @Method("GET")
      */
     public function indexAction()
@@ -34,7 +34,7 @@ class FaqController extends Controller
     /**
      * Creates a new faq entity.
      *
-     * @Route("/new", name="faq_new")
+     * @Route("/new", name="faq_admin_new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
@@ -48,7 +48,7 @@ class FaqController extends Controller
             $em->persist($faq);
             $em->flush();
 
-            return $this->redirectToRoute('faq_show', array('id' => $faq->getId()));
+            return $this->redirectToRoute('faq_admin_show', array('id' => $faq->getId()));
         }
 
         return $this->render('faq/new.html.twig', array(
@@ -60,7 +60,7 @@ class FaqController extends Controller
     /**
      * Finds and displays a faq entity.
      *
-     * @Route("/{id}", name="faq_show")
+     * @Route("/{id}", name="faq_admin_show")
      * @Method("GET")
      */
     public function showAction(Faq $faq)
@@ -76,7 +76,7 @@ class FaqController extends Controller
     /**
      * Displays a form to edit an existing faq entity.
      *
-     * @Route("/{id}/edit", name="faq_edit")
+     * @Route("/{id}/edit", name="faq_admin_edit")
      * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, Faq $faq)
@@ -88,7 +88,7 @@ class FaqController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('faq_edit', array('id' => $faq->getId()));
+            return $this->redirectToRoute('faq_admin_index', array('id' => $faq->getId()));
         }
 
         return $this->render('faq/edit.html.twig', array(
@@ -101,7 +101,7 @@ class FaqController extends Controller
     /**
      * Deletes a faq entity.
      *
-     * @Route("/{id}", name="faq_delete")
+     * @Route("/{id}", name="faq_admin_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Faq $faq)
