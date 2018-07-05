@@ -16,22 +16,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
  */
 class CfaController extends Controller
 {
-    /**
-     * Lists all cfa entities.
-     *
-     * @Route("/", name="cfa_index")
-     * @Method("GET")
-     */
-    public function indexAction()
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $cfas = $em->getRepository(Cfa::class)->findAll();
-
-        return $this->render('historiccfa/historiccfa.html.twig', array(
-            'cfas' => $cfas,
-        ));
-    }
 
     public function showCfaHomepageAction()
     {

@@ -45,26 +45,6 @@ class Cfa
 
     /**
      * @var int
-     * @ORM\Column(name="formation_number", type="integer", nullable=true)
-     * @Assert\Type(
-     *     type="integer",
-     *     message="La valeur doit être un chiffre"
-     * )
-     */
-    private $formationNumber;
-
-    /**
-     * @var int
-     * @ORM\Column(name="ufa_number", type="integer", nullable=true)
-     * @Assert\Type(
-     *     type="integer",
-     *     message="La valeur doit être un chiffre"
-     * )
-     */
-    private $ufaNumber;
-
-    /**
-     * @var int
      * @ORM\Column(name="success_rate", type="integer", nullable=true)
      * @Assert\Type(
      *     type="integer",
@@ -231,39 +211,7 @@ class Cfa
     {
         $this->apprenticeNumber = $apprenticeNumber;
     }
-
-    /**
-     * @return int
-     */
-    public function getFormationNumber()
-    {
-        return $this->formationNumber;
-    }
-
-    /**
-     * @param int $formationNumber
-     */
-    public function setFormationNumber(int $formationNumber): void
-    {
-        $this->formationNumber = $formationNumber;
-    }
-
-    /**
-     * @return int
-     */
-    public function getUfaNumber()
-    {
-        return $this->ufaNumber;
-    }
-
-    /**
-     * @param int $ufaNumber
-     */
-    public function setUfaNumber(int $ufaNumber): void
-    {
-        $this->ufaNumber = $ufaNumber;
-    }
-
+    
     /**
      * @return int
      */

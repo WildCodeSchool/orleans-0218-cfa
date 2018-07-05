@@ -21,7 +21,7 @@
 
             <div class="row count-up">
                 <div class="col-md-3 col-sm-12 text-center">
-                    <div class="counter " data-count="{{ cfa.apprenticeNumber }}">0</div>
+                    <div class="counter " data-count="{{ cfa.apprenticeNumber ?? 0 }}">0</div>
                     <p><i class="fas fa-user"></i> Apprentis</p>
                 </div>
                 <div class="col-md-3 col-sm-12 text-center">
@@ -33,7 +33,7 @@
                     <p><i class="fas fa-school"></i> UFA </p>
                 </div>
                 <div class="col-md-2 col-sm-12 text-center">
-                    <div class="counter" data-count="{{ cfa.successRate }}">0</div>
+                    <div class="counter" data-count="{{ cfa.successRate ?? 0 }}">0</div>
                     <p><i class="fas fa-graduation-cap"></i>% Validations</p>
                 </div>
             </div>
