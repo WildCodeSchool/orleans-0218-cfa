@@ -122,7 +122,7 @@ class AdminTaxeController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('taxe_index');
+        return $this->redirectToRoute('taxe_admin_index');
     }
 
     /**
