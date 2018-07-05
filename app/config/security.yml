@@ -26,7 +26,7 @@ security :
 
     access_control :
         - { path : ^/login$ , role : IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path : ^/register , role : ROLE_ADMIN }
+        - { path : ^/register , role : ROLE_USER }
         - { path : ^/resetting , role : IS_AUTHENTICATED_ANONYMOUSLY }
         - { path : ^/cfabloisadmin , role : ROLE_ADMIN }
 
