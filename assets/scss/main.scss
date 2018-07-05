@@ -58,12 +58,22 @@ body {
   background-color: $color-primary;
 }
 
-.navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
+.navbar-light .navbar-nav .nav-link.active {
   color:$color-basic;
 }
-.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
+.navbar-light .navbar-nav .nav-link:hover {
   color:$color-basic;
 }
+
+.navbar-nav .show a.nav-link {
+    color: $color-basic-inverse;
+    &:hover {
+      color:$color-basic;
+    }
+}
+
+
+
 .navbar {
   color: $color-basic-inverse;
 
