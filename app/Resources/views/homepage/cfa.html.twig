@@ -6,7 +6,7 @@
     </div>
     <div class="row">
         <div class="col-sm-12 col-md-5">
-            <img class="img-fluid cfa-image" src="{{ asset('images/IFSI_Façade.jpg') }}" alt="façade-ifsi-Blois"/>
+            <img class="img-fluid center-block cfa-image" src="{{ asset('images/IFSI_Façade.jpg') }}" alt="façade-ifsi-Blois"/>
         </div>
         <div class="col-sm-12 col-md-7 mt-4">
             <p class="">
@@ -19,21 +19,21 @@
                 <a class="btn btn-outline-success" href="{{ path('historiccfa_view') }}">En savoir plus</a>
             </p>
 
-            <div class="row count-up">
-                <div class="col-md-3 col-sm-12 text-center">
-                    <div class="counter " data-count="{{ cfa.apprenticeNumber ?? 0 }}">0</div>
+            <div class="row count-up ">
+                <div class="col-md-3 col-xs-6 text-center">
+                    <div class="counter " data-count="150">0</div>
                     <p><i class="fas fa-user"></i> Apprentis</p>
                 </div>
-                <div class="col-md-3 col-sm-12 text-center">
-                    <div class="counter" data-count="{{ formations | length }}">0</div>
+                <div class="col-md-3 col-xs-6 text-center">
+                    <div class="counter" data-count="9">0</div>
                     <p><i class="fas fa-book-open"></i> Formations</p>
                 </div>
-                <div class="col-md-2 col-sm-12 text-center">
-                    <div class="counter" data-count="{{ ufas | length }}">0</div>
+                <div class="col-md-2 col-xs-6 text-center">
+                    <div class="counter" data-count="5">0</div>
                     <p><i class="fas fa-school"></i> UFA </p>
                 </div>
-                <div class="col-md-2 col-sm-12 text-center">
-                    <div class="counter" data-count="{{ cfa.successRate ?? 0 }}">0</div>
+                <div class="col-md-2 col-xs-6 text-center">
+                    <div class="counter" data-count="80">0</div>
                     <p><i class="fas fa-graduation-cap"></i>% Validations</p>
                 </div>
             </div>

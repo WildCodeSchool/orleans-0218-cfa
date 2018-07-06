@@ -63,6 +63,20 @@ body {
   }
 }
 
+
+  @media (max-width: 768px) {
+    .headtitle{
+      font-size: 1.2rem;
+    }
+    h2 {
+      font-size: 1.5em;
+    }
+    h3 {
+      font-size: 1.2em;
+    }
+  }
+
+
 /**Navbar**/
 
 .logo {
