@@ -78,7 +78,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/foire-aux-questions", name="legales_notices")
+     * @Route("/mentions-legales", name="legales_notices")
      */
     public function showLegalesNocticesAction()
     {
