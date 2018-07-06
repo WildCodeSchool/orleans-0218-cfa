@@ -12,7 +12,7 @@
         <div class="row justify-content-center">
             <div class="col offset-md-1">
                 {% for taxe in taxes %}
-                    <p>{{ taxe.taxeApprentissage|raw }}</p>
+                {{ taxe.taxeApprentissage|raw }}
                 {% endfor %}
             </div>
         </div>
