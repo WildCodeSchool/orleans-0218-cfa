@@ -3,7 +3,8 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\PercentType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
@@ -26,8 +27,20 @@ class CFAType extends AbstractType
             ->add('imagePresidentFile', VichFileType::class, array(
                 'label' => 'image de la Présidence',
                 'required' =>false,
+                'download_link' => false,
+                'allow_delete' => false
+            ))
+            ->add('apprenticeNumber', IntegerType::class, array(
+                'label' => 'Nombre d\'apprentis'
+            ))
+
+            ->add('successRate', PercentType::class, array(
+                'label' => 'Pourcentage de reussite',
+                'type' => 'integer'
             ));
-    }/**
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)

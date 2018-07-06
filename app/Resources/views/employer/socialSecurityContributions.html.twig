@@ -1,5 +1,5 @@
 {% extends 'layout.html.twig' %}
-
+{% block title %}La rémunration d'un apprenti{% endblock %}
 {% block body %}
     <div id="activeTab" data-active="employer" class="container-fluid socialSecurityContributions">
         <div class="row">
@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col offset-md-1 mb-5 col-sm-mb-2">
+            <div class="col-10 offset-md-1 mb-5 col-sm-mb-2">
                 <p>
                     L'employeur qui embauche un apprenti est tenu de lui verser un salaire sur la durée du contrat. Ce
                     salaire est calculé en pourcentage du SMIC, en fonction de l'âge de l'apprenti et de sa progression
@@ -38,7 +38,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col mb-5 offset-md-1 col-sm-mb-2">
+            <div class="col-10 mb-5 offset-md-1 col-sm-mb-2">
                 <p>
                     - Les employeurs inscrits au répertoire de métiers et ceux qui ont moins de 11 salariés (au 31
                     décembre de l'année précédant la signature du contrat d'apprentissage, non compris les apprentis),
@@ -84,7 +84,7 @@
         </div>
         <div class="row mb-5 col-sm-mb-2">
             <div class="col offset-md-1 my-5 remember">
-                <div class="rememberTitle">Ce qu'il faut retenir</div>
+                <p class="rememberTitle">Ce qu'il faut retenir</p>
                 <div class="containt">
                     <div class="table-title">
                         <strong>Employeurs Publics</strong>
@@ -93,6 +93,9 @@
                         </p>
                     </div>
                     <table class="table table-bordered  table-responsive-sm w-100 d-block d-md-table">
+                        <caption class="text-center">
+                            Le barème du salaire de l'apprenti tient compte du niveau du diplôme visé
+                        </caption>
                         <thead class="thead-cycle text-center">
                         <tr>
                             <th></th>
@@ -139,10 +142,6 @@
                             <td>98% du SMIC</td>
                         </tr>
                         </tbody>
-
-                        <caption class="text-center">
-                            Le barème du salaire de l'apprenti tient compte du niveau du diplôme visé
-                        </caption>
                     </table>
                     <div class="table-title">
                         <strong>Employeurs Privés</strong>
@@ -153,6 +152,10 @@
                         </p>
                     </div>
                     <table class="table table-bordered table-responsive w-100 d-block d-md-table">
+                        <caption class="text-center">
+                            Les employeurs adhérents de la BASS sont assujettis aux accords de branche
+                            2006-01 et 2008-01 qui déterminent le salaire de l'apprenti selon le barème.
+                        </caption>
                         <thead class="thead-cycle text-center">
                         <tr>
                             <th>Cycle de formation</th>
@@ -178,11 +181,6 @@
                             <td>95% du SMIC (ou du minimum conventionnel)</td>
                         </tr>
                         </tbody>
-
-                        <caption class="text-center">
-                            Les employeurs adhérents de la BASS sont assujettis aux accords de branche
-                            2006-01 et 2008-01 qui déterminent le salaire de l'apprenti selon le barème.
-                        </caption>
                     </table>
                 </div>
             </div>
@@ -198,7 +196,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col offset-md-1">
+            <div class="col-10 offset-md-1">
                 <p>
                     Outre le salaire de l'apprenti, certaines catégories d'employeurs peuvent avoir à prendre en charge
                     une partie des coûts pédagogiques de la formation, s'ils ne sont pas assujettis à <a href="#">la
@@ -225,7 +223,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col offset-md-1">
+            <div class="col-10 offset-md-1">
                 <p>
                     Pour les employeurs de la BASS, la formation du maître d'apprentissage est rendue obligatoire par
                     accord de branche : les coûts en sont intégralement pris en charge financièrement par UNIFAF.
@@ -248,7 +246,4 @@
             </div>
         </div>
     </div>
-
-
-
 {% endblock %}

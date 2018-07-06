@@ -1,51 +1,59 @@
 {% extends 'layoutAdmin.html.twig' %}
+{% block title %}Administration des ufa du cfa de Blois{% endblock %}
 
 {% block body %}
     <div class="container">
         <h1>Ufa</h1>
-            <div class="row">
-                <div class="col-md-9">
-                    <table class="table table-bordered">
-                        <tbody>
-                            <tr>
-                                <th>Nom de l'UFA</th>
-                                <td>{{ ufa.name }}</td>
-                            </tr>
-                            <tr>
-                                <th>Lien vers le site de l'UFA</th>
-                                <td>{{ ufa.urlsite }}</td>
-                            </tr>
-                            <tr>
-                                <th>Description</th>
-                                <td>{{ ufa.description }}</td>
-                            </tr>
-                            <tr>
-                                <th>Adresse</th>
-                                <td>{{ ufa.address }}</td>
-                            </tr>
-                            <tr>
-                                <th>Code Postal</th>
-                                <td>{{ ufa.zipcode }}</td>
-                            </tr>
-                            <tr>
-                                <th>Cedex</th>
-                                <td>{{ ufa.cedex }}</td>
-                            </tr>
-                            <tr>
-                                <th>Ville</th>
-                                <td>{{ ufa.town }}</td>
-                            </tr>
-                            <tr>
-                                <th>Latitude</th>
-                                <td>{{ ufa.latitude }}</td>
-                            </tr>
-                            <tr>
-                                <th>Longitude</th>
-                                <td>{{ ufa.longitude }}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+        <div class="row">
+            <div class="col-md-9">
+                <table class="table table-bordered">
+                    <tbody>
+                    <tr>
+                        <th>Nom de l'UFA</th>
+                        <td>{{ ufa.name }}</td>
+                    </tr>
+                    <tr>
+                        <th>Lien vers le site de l'UFA</th>
+                        <td>{{ ufa.urlsite }}</td>
+                    </tr>
+                    <tr>
+                        <th>Description</th>
+                        <td>{{ ufa.description }}</td>
+                    </tr>
+                    <tr>
+                        <th>Adresse</th>
+                        <td>{{ ufa.address }}</td>
+                    </tr>
+                    <tr>
+                        <th>Code Postal</th>
+                        <td>{{ ufa.zipcode }}</td>
+                    </tr>
+                    <tr>
+                        <th>Cedex</th>
+                        <td>{{ ufa.cedex }}</td>
+                    </tr>
+                    <tr>
+                        <th>Ville</th>
+                        <td>{{ ufa.town }}</td>
+                    </tr>
+                    <tr>
+                        <th rowspan="3">Coordonnées</th>
+                        <td>Latitude : {{ ufa.latitude }}</td>
+                    <tr>
+                        <td>Longitude : {{ ufa.longitude }}</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a target="_blank"
+                               href="https://www.openstreetmap.org/?mlat={{ ufa.latitude }}&mlon={{ ufa.longitude }}#map=16/{{ ufa.latitude }}/{{ ufa.longitude }}">
+                                Voir les coordonnées sur une carte
+                            </a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
             <div class="col-md-3 col-sm-12 border-left">
                 <ul>
                     <li>
@@ -55,7 +63,7 @@
                         <a class="btn btn-outline-primary" href="{{ path('ufa_edit', { 'id': ufa.id }) }}">Modifier</a>
                     </li>
                     <li>{{ form_start(delete_form) }}
-                            <input class="btn btn-outline-danger" type="submit" value="Supprimer">
+                        <input class="btn btn-outline-danger" type="submit" value="Supprimer">
                         {{ form_end(delete_form) }}
                     </li>
                 </ul>

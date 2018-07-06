@@ -1,4 +1,5 @@
 {% extends 'layoutAdmin.html.twig' %}
+{% block title %}Administration de l'histoire du cfa de Blois{% endblock %}
 
 {% block body %}
     <div class="container">
@@ -12,7 +13,6 @@
         <table class="table table-striped table-bordered text-center">
             <thead>
               <tr>
-                  <th>Id</th>
                   <th>Titre</th>
                   <th>Date</th>
                   <th>Contenu</th>
@@ -23,8 +23,7 @@
             <tbody>
             {% for historicCfa in historicCfas %}
                 <tr>
-                    <td>{{ historicCfa.id }}</td>
-                    <td>{{ historicCfa.title }}</td>
+                    <td><a href="{{ path('historiccfa_show', { 'id': historicCfa.id }) }}">{{ historicCfa.title }}</a></td>
                     <td>{{ historicCfa.date | date('d/m/Y')}}</td>
                     <td>{{ historicCfa.content }}</td>
                     <td>

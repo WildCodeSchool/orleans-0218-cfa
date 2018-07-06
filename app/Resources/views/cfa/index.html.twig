@@ -1,5 +1,5 @@
 {% extends 'layoutAdmin.html.twig' %}
-
+{% block title %}Administration du cfa{% endblock %}
 {% block body %}
     <div class="container">
         <h1>La présidence</h1>
@@ -13,8 +13,9 @@
         <table class="table table-striped table-bordered">
             <thead>
             <tr>
-                <th class="text-center">Id</th>
                 <th class="text-center">Le mot de la présidence</th>
+                <th class="text-center">Nombre d'apprentis</th>
+                <th class="text-center">Taux de réussite</th>
                 <th></th>
                 <th></th>
             </tr>
@@ -22,8 +23,9 @@
             <tbody>
             {% for cfa in cfas %}
                 <tr>
-                    <td><a href="{{ path('cfa_admin_show', { 'id': cfa.id }) }}">{{ cfa.id }}</a></td>
                     <td>{{ cfa.textPresident | raw }}</td>
+                    <td>{{ cfa.apprenticeNumber}}</td>
+                    <td>{{ cfa.successRate}}</td>
                     <td><a class="btn btn-outline-primary" href="{{ path('cfa_admin_show', { 'id': cfa.id }) }}">Voir</a></td>
                     <td><a class="btn btn-outline-secondary" href="{{ path('cfa_edit', { 'id': cfa.id }) }}">Modifier</a></td>
                 </tr>

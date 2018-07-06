@@ -1,4 +1,5 @@
 {% extends 'layoutAdmin.html.twig' %}
+{% block title %}Administration des partenaires du cfa de Blois{% endblock %}
 
 {% block body %}
     <div class="container">
@@ -9,7 +10,7 @@
                     <tbody>
                         <tr>
                             <th>Image</th>
-                            <td>{{ partnair.image }}</td>
+                            <td><img class="img-fluid" src="{{ vich_uploader_asset(partnair, 'image') }}">{{ partnair.imageName }}</td>
                         </tr>
                         <tr>
                             <th>Url</th>

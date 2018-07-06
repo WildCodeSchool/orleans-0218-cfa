@@ -1,23 +1,30 @@
 {% extends 'layout.html.twig' %}
-
+{% block title %}Liste des évenements du cfa sms de Blois{% endblock %}
 {% block body %}
-    <div class="container">
-    <h2>Nos évènements</h2>
-        <body class="events-bg">
-        {% for event in events %}
-            <div class="col-sm-6">
-                <div class="card">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="section-title  background-event d-none d-sm-block"></div>
+        </div>
+        <div class="row">
+            <div class="col offset-1 mb-5 ">
+                <h1 class="title-style style-page">Nos Évènements</h1>
+            </div>
+        </div>
+        <div class="row ">
+            {% for event in events %}
+
+                <div class="card col-md-2 mb-3 shadow mr-1 offset-md-1">
                     <div class="card-header">
                         {% if event.date %}{{ event.date|date('d/m/Y') }}{% endif %}
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">{{ event.title }}</h5>
                         <p class="card-text">{{ event.description }}</p>
-                        <a class="btn btn-outline-primary float-right" href="{{ path('event_show', { 'id': event.id }) }}" class="btn btn-primary">En savoir plus</a>
+                        <a class="btn btn-outline-success"
+                           href="{{ path('event_show', { 'id': event.id }) }}">En savoir plus</a>
                     </div>
                 </div>
-            </div>
-        {% endfor %}
-        </body>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}

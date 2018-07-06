@@ -10,6 +10,7 @@
             </div>
         </div>
         <div class="row">
+            {% if formations is not empty %}
             <div class="col-md-3 col-sm-12 border-right formation-list">
                 {% for formation in formations %}
                     <ul class="list-group list-group-flush">
@@ -22,13 +23,17 @@
                     </ul>
                 {% endfor %}
             </div>
-            <div class="col-md-7 offset-md-1 col-sm-12">
+            <div class="col-md-7 offset-md-1 col-sm-12 formation-presentation">
                 <h2 class="text-center mb-5 title-formation"><i class="fas fa-graduation-cap"></i> {{ formation.name }}
                 </h2>
-                <span class="formation-presentation">{{ formation.shortPresentation|raw }}</span>
-                <p class="mt-5 bg-light text-success">{{ formation.jobDescription|raw }}</p>
-                    <img src="{{ asset('images/meeting_formation.jpeg') }}" alt="meeting-formation">
+                {{ formation.shortPresentation|raw }}
+                <img src="{{ asset('images/meeting_formation.jpeg') }}" alt="meeting-formation">
+                {{ formation.jobDescription|raw }}
+                {% if formation.referentielName is not empty %}
+                    <a class="btn btn-outline-success" target="_blank" href="{{ vich_uploader_asset(formation, 'referentielFile') }}">Télécharger le référentiel de la formation</a>
+                {% endif %}
             </div>
+            {% if formation.ufas is not empty %}
             <div class="col offset-md-4">
                 <h2 class="title-formation mt-4">Où trouver cette formation :</h2>
             </div>
@@ -44,12 +49,13 @@
                     </ul>
                 </div>
             </div>
+            {% endif %}
             <div class="col-md-3 ml-md-auto mt-5">
-                {% if formation.referentielName is not empty %}
-                    <a class="btn btn-outline-success" target="_blank" href="{{ vich_uploader_asset(formation, 'referentielFile') }}">Télécharger le référentiel de la formation</a>
-                {% endif %}
                 <a class="btn btn-outline-success" href="{{ path('homepage') }}">Retour à l'accueil</a>
             </div>
+            {% else %}
+            <h2>Liste des formations à venir ...</h2>
+            {% endif %}
         </div>
 </section>
 {% endblock %}
