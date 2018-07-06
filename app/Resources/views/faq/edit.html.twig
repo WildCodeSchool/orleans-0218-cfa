@@ -1,0 +1,27 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h1>Modifier la faq {{ faq.id }}</h1>
+        <div class="row">
+            <div class="col-8">
+                {{ form_start(edit_form) }}
+                {{ form_widget(edit_form) }}
+                <input class="btn btn-outline-primary" type="submit" value="Modifier" />
+                {{ form_end(edit_form) }}
+            </div>
+            <div class="col-4 border-left">
+                <ul>
+                    <li>
+                        <a class="btn btn-outline-secondary" href="{{ path('faq_admin_index') }}">Liste des faq</a>
+                    </li>
+                    <li>
+                        {{ form_start(delete_form) }}
+                        <input class="btn btn-outline-danger" type="submit" value="Supprimer">
+                        {{ form_end(delete_form) }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
