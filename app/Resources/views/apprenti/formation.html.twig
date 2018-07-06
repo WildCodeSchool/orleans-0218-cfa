@@ -1,5 +1,5 @@
 {% extends 'layout.html.twig' %}
-
+{% block title %}Comment se former par l'apprentissage{% endblock %}
 {% block body %}
 <div id="activeTab" data-active="apprenti" class="container-fluid">
     <div class=" row d-none d-sm-block">
@@ -76,14 +76,12 @@
             <div class="containt shadow">
                 <ul class="list-formation">
                     {% for formation in formations %}
-                        <ul class="list-group list-group-flush">
-                            <li>
-                                <a class="link-formation" href="{{ path('formation', { 'id': formation.id }) }}">
-                                    <i class="fas fa-graduation-cap"></i>
-                                    {{ formation.name }}
-                                </a>
-                            </li>
-                        </ul>
+                        <li>
+                            <a class="link-formation" href="{{ path('formation', { 'id': formation.id }) }}">
+                                <i class="fas fa-graduation-cap"></i>
+                                {{ formation.name }}
+                            </a>
+                        </li>
                     {% endfor %}
                 </ul>
             </div>

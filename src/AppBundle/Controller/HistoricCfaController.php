@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Cfa;
 use AppBundle\Entity\HistoricCfa;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -27,15 +28,15 @@ class HistoricCfaController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $cfas = $em->getRepository('AppBundle:Cfa')->findBy([]);
-        $historicCfas = $em->getRepository('AppBundle:HistoricCfa')->findBy(
+        $cfa = $em->getRepository(Cfa::class)->findOneBy([]);
+        $historicCfas = $em->getRepository(HistoricCfa::class)->findBy(
             [],
             ['date' => 'DESC']
         );
 
         return $this->render('historiccfa/historiccfa.html.twig', [
             'historicCfas' => $historicCfas,
-            'cfas' => $cfas,
+            'cfa' => $cfa,
         ]);
     }
 }
