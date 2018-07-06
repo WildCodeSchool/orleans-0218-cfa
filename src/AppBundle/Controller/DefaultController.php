@@ -84,4 +84,12 @@ class DefaultController extends Controller
     {
         return $this->render('employer/socialSecurityContributions.html.twig');
     }
+
+    /**
+     * @Route("/foire-aux-questions", name="legales_notices")
+     */
+    public function showLegalesNocticesAction()
+    {
+        return $this->render('homepage/legalesNotices.html.twig');
+    }
 }
