@@ -1,0 +1,22 @@
+{%  extends 'layout.html.twig' %}
+
+{% block body %}
+<div class="section-title background-faq"></div>
+    <div class="row">
+        <div class="col-md-12 col-sm-3">
+            <h1 class="title-style style-page">FAQ</h1>
+        </div>
+    </div>
+<div class="row">
+    <div class="col-md-10 offset-1">
+        {% for faq in faqs %}
+        <ul>
+            <li class="mb-5">
+                <h2 class="question">{{ faq.question }}</h2>
+                <p>{{ faq.response }}</p>
+            </li>
+        </ul>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
