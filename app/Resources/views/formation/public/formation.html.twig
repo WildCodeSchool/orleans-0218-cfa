@@ -12,44 +12,41 @@
         <div class="row">
             {% if formations is not empty %}
             <div class="col-md-3 col-sm-12 border-right formation-list">
-                {% for formation in formations %}
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <a class="link-formation" href="{{ path('formation', { 'id': formation.id }) }}">
+                {% for formationList in formations %}
+                    <nav class="list-group list-group-flush shadow">
+                        <a class="list-group-item list-group-item-action link-formation {{ formation == formationList ? 'active' }}"
+                           href="{{ path('formation', { 'id': formationList.id }) }}">
                                 <i class="fas fa-graduation-cap"></i>
-                                {{ formation.name }}
-                            </a>
-                        </li>
-                    </ul>
+                                {{ formationList.name }}
+                        </a>
+                    </nav>
                 {% endfor %}
             </div>
             <div class="col-md-7 offset-md-1 col-sm-12 formation-presentation">
                 <h2 class="text-center mb-5 title-formation"><i class="fas fa-graduation-cap"></i> {{ formation.name }}
                 </h2>
                 {{ formation.shortPresentation|raw }}
-                <img src="{{ asset('images/meeting_formation.jpeg') }}" alt="meeting-formation">
+                <img class="img-fluid mb-5" src="{{ asset('images/meeting_formation.jpeg') }}" alt="meeting-formation">
                 {{ formation.jobDescription|raw }}
                 {% if formation.referentielName is not empty %}
-                    <a class="btn btn-outline-success" target="_blank" href="{{ vich_uploader_asset(formation, 'referentielFile') }}">Télécharger le référentiel de la formation</a>
+                    <div class="text-center">
+                        <a class="btn btn-outline-success" target="_blank" href="{{ vich_uploader_asset(formation, 'referentielFile') }}">Télécharger le référentiel de la formation</a>
+                    </div>
+                {% endif %}
+                {% if formation.ufas is not empty %}
+                    <h2 class="title-formation mt-4">Où trouver cette formation :</h2>
+                    <div class="w-100"></div>
+                    <div class="containt shadow">
+                        <ul class="list_none">
+                            {% for ufa in formation.ufas %}
+                                <li><i class="fas fa-angle-right"></i>
+                                    <a class="link-formation p-3"
+                                       href="{{ path('map_show', {'id': ufa.id}) }}">{{ ufa.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 {% endif %}
             </div>
-            {% if formation.ufas is not empty %}
-            <div class="col offset-md-4">
-                <h2 class="title-formation mt-4">Où trouver cette formation :</h2>
-            </div>
-            <div class="w-100"></div>
-            <div class="col offset-md-4">
-                <div class="containt shadow">
-                    <ul class="list_none">
-                        {% for ufa in formation.ufas %}
-                            <li><i class="fas fa-angle-right"></i>
-                                <a class="link-formation p-3"
-                                   href="{{ path('map_show', {'id': ufa.id}) }}">{{ ufa.name }}</a></li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
-            {% endif %}
             <div class="col-md-3 ml-md-auto mt-5">
                 <a class="btn btn-outline-success" href="{{ path('homepage') }}">Retour à l'accueil</a>
             </div>
