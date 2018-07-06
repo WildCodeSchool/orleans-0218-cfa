@@ -1,11 +1,11 @@
 {% extends 'layout.html.twig' %}
-
+{% block title %}cfa du champ social médico-social et sanitaire en région Centre-Val de Loire{% endblock %}
 {% block body %}
     <div class="container-fluid">
 
         {% include 'homepage/slider.html.twig' %}
 
-        {% include 'homepage/cfa.html.twig' %}
+        {{ render(controller('AppBundle:Cfa:showCfaHomepage')) }}
 
         {{ render(controller('AppBundle:Event:showHomepageSection')) }}
 

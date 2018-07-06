@@ -1,5 +1,5 @@
 {% extends 'layout.html.twig' %}
-
+{% block title %}La rémunration d'un apprenti{% endblock %}
 {% block body %}
     <div id="activeTab" data-active="employer" class="container-fluid socialSecurityContributions">
         <div class="row">
@@ -93,6 +93,9 @@
                         </p>
                     </div>
                     <table class="table table-bordered  table-responsive-sm w-100 d-block d-md-table">
+                        <caption class="text-center">
+                            Le barème du salaire de l'apprenti tient compte du niveau du diplôme visé
+                        </caption>
                         <thead class="thead-cycle text-center">
                         <tr>
                             <th></th>
@@ -139,10 +142,6 @@
                             <td>98% du SMIC</td>
                         </tr>
                         </tbody>
-
-                        <caption class="text-center">
-                            Le barème du salaire de l'apprenti tient compte du niveau du diplôme visé
-                        </caption>
                     </table>
                     <div class="table-title">
                         <strong>Employeurs Privés</strong>
@@ -153,6 +152,10 @@
                         </p>
                     </div>
                     <table class="table table-bordered table-responsive w-100 d-block d-md-table">
+                        <caption class="text-center">
+                            Les employeurs adhérents de la BASS sont assujettis aux accords de branche
+                            2006-01 et 2008-01 qui déterminent le salaire de l'apprenti selon le barème.
+                        </caption>
                         <thead class="thead-cycle text-center">
                         <tr>
                             <th>Cycle de formation</th>
@@ -178,11 +181,6 @@
                             <td>95% du SMIC (ou du minimum conventionnel)</td>
                         </tr>
                         </tbody>
-
-                        <caption class="text-center">
-                            Les employeurs adhérents de la BASS sont assujettis aux accords de branche
-                            2006-01 et 2008-01 qui déterminent le salaire de l'apprenti selon le barème.
-                        </caption>
                     </table>
                 </div>
             </div>

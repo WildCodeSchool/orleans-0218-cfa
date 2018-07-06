@@ -74,7 +74,7 @@ class Ufa
     /**
      * @var string
      *
-     * @ORM\Column(name="cedex", type="integer")
+     * @ORM\Column(name="cedex", type="integer", nullable=true)
      */
     private $cedex;
 
