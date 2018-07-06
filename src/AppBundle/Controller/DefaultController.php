@@ -17,14 +17,6 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/faq", name="faqpage")
-     */
-    public function faqView()
-    {
-        return $this->render('faq/faq.html.twig');
-    }
-
-    /**
      * @Route("/apprenti/statut", name="statutapprentipage")
      */
     public function statutView()
@@ -83,5 +75,13 @@ class DefaultController extends Controller
     public function socialSecurityContributionsAction()
     {
         return $this->render('employer/socialSecurityContributions.html.twig');
+    }
+
+    /**
+     * @Route("/mentions-legales", name="legales_notices")
+     */
+    public function showLegalesNocticesAction()
+    {
+        return $this->render('homepage/legalesNotices.html.twig');
     }
 }

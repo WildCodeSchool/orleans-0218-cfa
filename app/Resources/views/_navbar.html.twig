@@ -1,6 +1,6 @@
 <nav class="navbar-expand-sm navbar sticky-top navbar-light bg-white">
     <a class="navbar-brand" href="{{ path('homepage') }}">
-        <img class="logo" src="{{ asset('images/logo_cfa.png') }}" alt="Logo du CFA">
+        <img class="logo col-sm-12" src="{{ asset('images/logo_cfa.png') }}" alt="Logo du CFA">
     </a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -14,6 +14,7 @@
                 <a class="nav-link dropdown" id="cfa" data-toggle="dropdown" href="#" role="button">Le CFA</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item " href="{{ path('historiccfa_view') }}">Qui sommes nous ?</a>
+                    <a class="dropdown-item " href="{{ path('event_index') }}">Les évènements</a>
                     <a class="dropdown-item" href="{{ path('map_index') }}">UFA</a>
                 </div>
             </li>

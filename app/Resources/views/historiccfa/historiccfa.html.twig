@@ -147,11 +147,18 @@
     <div class="row">
         <div class="col-md-10 offset-1 my-5">
             <h2 class="mb-5 style-subtitle">Mot de la présidente</h2>
-                <p class="president-letter">
-                    <i class="fas fa-quote-left fa-3x style-subtitle "></i>
-                    <img class="img-fluid" src="{{ vich_uploader_asset(cfa, 'imagePresidentFile') }}" alt="photo de la présidence"/>
-                    {{ cfa.textPresident | raw }}
-                    <i class="fas fa-quote-right fa-3x style-subtitle "></i>
+            <div class="row">
+                <div class="col-md-2">
+                    <img class="img-responsive img-fluid photo_presidence float-left" src="{{ vich_uploader_asset(cfa, 'imagePresidentFile') }}" alt="photo de la présidence"/>
+                </div>
+                <div class=" col-md-9 president-letter">
+                    <div class="row"><i class="fas fa-quote-left fa-3x style-subtitle"></i></div>
+                    <div class="row mx-5">{{ cfa.textPresident | raw }}</div>
+                    <div class="row">
+                        <div class="col-md-1 offset-11"><i class="fas fa-quote-right fa-3x style-subtitle"></i></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
