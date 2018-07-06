@@ -149,7 +149,7 @@
                 <p class="president-letter">
                     <i class="fas fa-quote-left fa-3x style-subtitle "></i>
                     {% for cfa in cfas %}
-                    <img class="img-responsive" width="285" height="286" src="{{ vich_uploader_asset(cfa, 'imagePresidentFile') }}" alt="photo de la présidence"/>
+                    <img class="img-responsive photo_presidence" src="{{ vich_uploader_asset(cfa, 'imagePresidentFile') }}" alt="photo de la présidence"/>
                     <p>{{ cfa.textPresident | raw }}</p>
                     {% endfor %}
                     <i class="fas fa-quote-right fa-3x style-subtitle "></i>
