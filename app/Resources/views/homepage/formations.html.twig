@@ -6,12 +6,15 @@
     </div>
     <div class="row homepage-formation">
         <div class="col-md-6 col-sm-12 img fluid block-center">
-            <img class ="picture-formation img-fluid center-block d-none d-md-block" src="{{ asset('images/home_formation.jpg') }}">
+            <img class="picture-formation img-fluid center-block d-none d-md-block" src="{{ asset('images/home_formation.jpg') }}">
         </div>
         <div class="col-md-6 col-sm-12">
             <ul class="list-formation">
                 {% for formation in formations %}
-                        <li><i class="fas fa-angle-right"></i><a href="{{ path('formation', { 'id': formation.id }) }}" class="link-formation p-3">{{ formation.name }}</a></li>
+                        <li>
+                            <i class="fas fa-angle-right"></i>
+                            <a href="{{ path('formation', { 'id': formation.id }) }}" class="link-formation p-3">{{ formation.name }}</a>
+                        </li>
                 {% endfor %}
             </ul>
         </div>
