@@ -34,6 +34,33 @@ class Cfa
     private $textPresident;
 
     /**
+     * @var int
+     * @ORM\Column(name="apprentice_number", type="integer", nullable=true)
+     * @Assert\Type(
+     *     type="integer",
+     *     message="La valeur doit etre un chiffre"
+     * )
+     */
+    private $apprenticeNumber;
+
+    /**
+     * @var int
+     * @ORM\Column(name="success_rate", type="integer", nullable=true)
+     * @Assert\Type(
+     *     type="integer",
+     *
+     *     message="La valeur doit être un chiffre"
+     * )
+     * @Assert\Range(
+     *      min = 0,
+     *      max = 100,
+     *      minMessage = "La valeure doit être au dessus de {{ limit }}",
+     *      maxMessage = "La valeure ne doit pas être au dessus de {{ limit }}"
+     * )
+     */
+    private $successRate;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="image_president_name", type="string", length=80, nullable=true)
@@ -167,5 +194,37 @@ class Cfa
             'η');
         $name = str_replace($accent, $noAccent, $this->getImagePresidentName());
         return mb_strtolower(preg_replace('/\W/', '-', $name));
+    }
+
+    /**
+     * @return int
+     */
+    public function getApprenticeNumber()
+    {
+        return $this->apprenticeNumber;
+    }
+
+    /**
+     * @param int $apprenticeNumber
+     */
+    public function setApprenticeNumber(int $apprenticeNumber): void
+    {
+        $this->apprenticeNumber = $apprenticeNumber;
+    }
+    
+    /**
+     * @return int
+     */
+    public function getSuccessRate()
+    {
+        return $this->successRate;
+    }
+
+    /**
+     * @param int $successRate
+     */
+    public function setSuccessRate(int $successRate): void
+    {
+        $this->successRate = $successRate;
     }
 }

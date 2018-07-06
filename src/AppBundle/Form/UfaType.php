@@ -25,7 +25,7 @@ class UfaType extends AbstractType
             ->add('description', TextareaType::class, ['label'=>'Description'])
             ->add('address', TextType::class, ['label'=>'Adresse'])
             ->add('zipcode', IntegerType::class, ['label'=>'Code Postal'])
-            ->add('cedex')
+            ->add('cedex', IntegerType::class, ['label'=>'cedex', 'required' => false])
             ->add('town', TextType::class, ['label'=>'Ville'])
             ->add('formations', EntityType::class, [
                 'class' => 'AppBundle\Entity\Formation',

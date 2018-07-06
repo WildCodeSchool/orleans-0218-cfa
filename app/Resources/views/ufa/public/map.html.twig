@@ -1,11 +1,12 @@
 {% extends 'layout.html.twig' %}
+{% block title %}Liste des ufa du cfa sms de Blois{% endblock %}
 
 {% block body %}
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css"/>
 
 
-    <div class="container-fluid"  id="activeTab" data-active="cfa">
+    <div class="container-fluid" id="activeTab" data-active="cfa">
         <div class="row">
             <div class="col offset-md-1">
                 <h1 class="my-5 style-page">Les UFA</h1>
@@ -13,41 +14,48 @@
         </div>
         <div class="row">
             <div class="col-md-3 col-12">
-                <ul>
-                    {% for ufa in ufas %}
-                        <li class="list-group-item shadow">
-                            <i class="fas fa-angle-right"></i>
-                            <a class="link-formation" href="{{ path('map_show', { 'id': ufa.id }) }}">{{ ufa.name }}</a></li>
+                <nav class="list-group list-group-flush shadow">
+                    {% for ufaList in ufas %}
+                        <a class="list-group-item list-group-item-action {{ ufa == ufaList ? 'active' }}"
+                           href="{{ path('map_show', { 'id': ufaList.id }) }}">
+                            <i class="fas fa-angle-right"></i> {{ ufaList.name }}
+                        </a>
                     {% endfor %}
-                </ul>
+                </nav>
             </div>
             <div class="col-md-6 col-12">
-                    <div id="map" class="leaflet">
+                <div id="map" class="leaflet shadow">
                 </div>
             </div>
-            <div class="col-md-3 col-12">
+            <aside class="col-md-3 col-12">
                 <div class="card shadow">
-                    <div class="card-header">
+                    <div class="card-header bg-primary-cfa text-white">
                         <h2>{{ ufa.name }}</h2>
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title"></h5>
-                            <ul class="list_none">
-                                <li>{{ ufa.address }}</li>
-                                <li>{{ ufa.zipcode }} {{ ufa.town }}</li>
-                            </ul>
-                        <p class="card-text">
-                        <p>Formation(s) dispensée(s):</p>
-                        <ul class="list_none">
+                    <div class="card-body card-ufa">
+                        <h3 class="card-title"><i class="fas fa-address-card"></i> Coordonnées</h3>
+
+                        <address class="card-text">
+                            {{ ufa.address }}</br>
+                            {{ ufa.zipcode }} {{ ufa.town }}<br/>
+                            <a class="btn btn-outline-primary btn-sm my-1" href="{{ ufa.urlsite }}" target="_blank">
+                                Le site de l'UFA
+                            </a>
+                        </address>
+                        <h3 class="card-title"><i class="fas fa-info"></i> Présentation</h3>
+                            <p class="card-text">{{ ufa.description|raw }}</p>
+                        <h3 class="card-title"><i class="fas fa-graduation-cap"></i> Formations dispensées</h3>
+                        <ul class="list_none list-group list-group-flush">
                             {% for formation in ufa.formations %}
-                                <li><i class="fas fa-graduation-cap"></i>
-                                    <a class="link-formation" href="{{ path('formation', {'id': formation.id}) }}">{{ formation.name }}</a></li>
+                                <li class="list-group-item">
+                                    <i class="fas fa-angle-right"></i> <a class="link-formation"
+                                                                          href="{{ path('formation', {'id': formation.id}) }}">{{ formation.name }}</a>
+                                </li>
                             {% endfor %}
                         </ul>
-                        <a class="btn btn-outline-primary float-right" href="#" class="btn btn-primary">Le site de l'UFA</a>
                     </div>
                 </div>
-            </div>
+            </aside>
         </div>
     </div>
 {% endblock %}
@@ -56,7 +64,7 @@
     <script type="text/javascript" src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
 
     <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded',function(){
+        document.addEventListener('DOMContentLoaded', function () {
 
             var map = L.map('map').setView([47.588, 1.348], 8); // LIGNE 14
 
@@ -66,24 +74,24 @@
             });
             var blueIcon = L.icon({
                 iconUrl: "{{ asset('images/pushed-pin-blue.png') }}",
-                iconSize:     [45, 45], // size of the icon
-                popupAnchor:  [0, -20] // point from which the popup should open relative to the iconAnchor
+                iconSize: [45, 45], // size of the icon
+                popupAnchor: [0, -20] // point from which the popup should open relative to the iconAnchor
             });
 
             var redIcon = L.icon({
                 iconUrl: "{{ asset('images/push-pin-red.png') }}",
-                iconSize:     [45, 45], // size of the icon
-                popupAnchor:  [0, -20] // point from which the popup should open relative to the iconAnchor
+                iconSize: [45, 45], // size of the icon
+                popupAnchor: [0, -20] // point from which the popup should open relative to the iconAnchor
             });
 
             map.addLayer(osmLayer);
 
             {% for ufa in ufas %}
-            L.marker([{{ ufa.longitude }}, {{ ufa.latitude }}], {icon: blueIcon}).addTo(map)
+            L.marker([{{ ufa.latitude }}, {{ ufa.longitude }}], {icon: blueIcon}).addTo(map)
                 .bindPopup('{{ ufa.name }}<br> {{ ufa.address }} <br> {{ ufa.zipcode }} {{ ufa.town }}');
             {% endfor %}
 
-            L.marker([{{ ufa.longitude }}, {{ ufa.latitude }}], {icon: redIcon}).addTo(map)
+            L.marker([{{ ufa.latitude }}, {{ ufa.longitude }}], {icon: redIcon}).addTo(map)
                 .bindPopup('{{ ufa.name }}<br> {{ ufa.address }} <br> {{ ufa.zipcode }} {{ ufa.town }}');
         });
     </script>
