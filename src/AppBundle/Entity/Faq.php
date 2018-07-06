@@ -25,15 +25,15 @@ class Faq
     /**
      * @var string
      * @Assert\NotBlank(message="Le champ question ne peut pas être vide")
-     * @Assert\Length(max = 255, maxMessage = "Le champ question ne doit pas dépasser 255 caractères")
-     * @ORM\Column(name="question", type="text")
+     * @Assert\Length(max = 255, maxMessage = "Le champ question ne doit pas dépasser {{ limit }} caractères")
+     * @ORM\Column(name="question", type="string")
      */
     private $question;
 
     /**
      * @var string
-     * @Assert\NotBlank(message="Le champ reponse ne peut pas être vide")
-     * @Assert\Length(max = 500, maxMessage = "Le champ reponse ne doit pas dépasser  500 caractères")
+     * @Assert\NotBlank(message="Le champ réponse ne peut pas être vide")
+     * @Assert\Length(max = 1000, maxMessage = "Le champ réponse ne doit pas dépasser  {{ limit }} caractères")
      * @ORM\Column(name="response", type="text")
      */
     private $response;
