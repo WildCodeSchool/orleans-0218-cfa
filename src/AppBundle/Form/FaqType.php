@@ -7,7 +7,6 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
-
 class FaqType extends AbstractType
 {
     /**
@@ -23,8 +22,9 @@ class FaqType extends AbstractType
             ->add('response', TextareaType::class, array(
                 'label' => 'Réponse'
             ));
+    }
 
-    }/**
+    /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
@@ -41,6 +41,4 @@ class FaqType extends AbstractType
     {
         return 'appbundle_faq';
     }
-
-
 }
