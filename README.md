@@ -29,6 +29,8 @@ PHP Symfony 3.4 project
      - php bin/console doctrine:database:create
      - php bin/console doctrine:schema:update --force
    
-   Build the assets with ./node_modules/.bin/encore dev       
+   Build the assets with:
+     - ./node_modules/.bin/encore dev (in development environment)      
+     - ./node_modules/.bin/encore production (in prod environment)      
  
-   run a server with php bin/console server:run
+   run a server with php bin/console server:run (for dev environment)
