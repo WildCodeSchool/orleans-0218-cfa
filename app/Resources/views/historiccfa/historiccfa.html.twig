@@ -1,4 +1,5 @@
 {% extends 'layout.html.twig' %}
+{% block title %}L'histoire du cfa de Blois et son association gestionnaire{% endblock %}
 
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('build/style_timeline.css') }}"/>
@@ -146,14 +147,21 @@
     <div class="row">
         <div class="col-md-10 offset-1 my-5">
             <h2 class="mb-5 style-subtitle">Mot de la présidente</h2>
+<<<<<<< HEAD
                 <p class="president-letter">
                     <i class="fas fa-quote-left fa-3x style-subtitle "></i>
                     {% for cfa in cfas %}
                     <img class="img-responsive photo_presidence" src="{{ vich_uploader_asset(cfa, 'imagePresidentFile') }}" alt="photo de la présidence"/>
+=======
+              <p class="president-letter">
+                  <i class="fas fa-quote-left fa-3x style-subtitle "></i>
+                  {% for cfa in cfas %}
+                    <img class="img-responsive" width="285" height="286" src="{{ vich_uploader_asset(cfa, 'imagePresidentFile') }}" alt="photo de la présidence"/>
+>>>>>>> 71ee7db91d35230d7e9d3ac98bfbf4081808006d
                     <p>{{ cfa.textPresident | raw }}</p>
-                    {% endfor %}
-                    <i class="fas fa-quote-right fa-3x style-subtitle "></i>
-                </p>
+                  {% endfor %}
+                  <i class="fas fa-quote-right fa-3x style-subtitle "></i>
+              </p>
         </div>
     </div>
 
@@ -178,12 +186,13 @@
         </div>
     </div>
     <div class="row justify-content-center">
-        <div class="col-md-5 col-sm-12 my-5 remember">
-            <div class="rememberTitle d-none d-sm-block">Télécharger le projet du CFA</div>
-            <div class="containt shadow text-center">
-                <a href="{{ asset('pdf/contrat_d_apprentissage.pdf') }}" download="Convention_de_formation">Projet du CFA.pdf</a>
-            </div>
-        </div>
+        <a href="{{ asset('pdf/projet_cfa.pdf') }}" class="btn btn-lg btn-outline-primary" role="button" download>
+            <i class="far fa-file-pdf"></i>
+            Projet du CFA
+        </a>
+    </div>
+    <div class="row justify-content-center">
+        <p><small>cliquez pour télécharger le PDF</small></p>
     </div>
 
     <div class="row">
