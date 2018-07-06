@@ -5,7 +5,7 @@
 
         {% include 'homepage/slider.html.twig' %}
 
-        {% include 'homepage/cfa.html.twig' %}
+        {{ render(controller('AppBundle:Cfa:showCfaHomepage')) }}
 
         {{ render(controller('AppBundle:Event:showHomepageSection')) }}
 

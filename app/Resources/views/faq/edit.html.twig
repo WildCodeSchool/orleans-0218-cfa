@@ -1,8 +1,8 @@
 {% extends 'layoutAdmin.html.twig' %}
-{% block title %}Administration d'une formation du cfa de Blois{% endblock %}
+
 {% block body %}
-<div class="container">
-    <h1>Formation edit</h1>
+    <div class="container">
+        <h1>Modifier la faq {{ faq.id }}</h1>
         <div class="row">
             <div class="col-8">
                 {{ form_start(edit_form) }}
@@ -13,7 +13,7 @@
             <div class="col-4 border-left">
                 <ul>
                     <li>
-                        <a class="btn btn-outline-secondary" href="{{ path('formation_admin_index') }}">Retour à la liste</a>
+                        <a class="btn btn-outline-secondary" href="{{ path('faq_admin_index') }}">Liste des faq</a>
                     </li>
                     <li>
                         {{ form_start(delete_form) }}

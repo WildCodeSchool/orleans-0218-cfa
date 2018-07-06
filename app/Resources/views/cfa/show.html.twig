@@ -5,20 +5,29 @@
         <h1>La présidence</h1>
         <div class="row">
             <div class="col-8">
-                <table class="table table-bordered" >
+                <table class="table table-bordered">
                     <tbody>
-                        <tr>
-                            <th>Id</th>
-                            <td>{{ cfa.id }}</td>
-                        </tr>
-                        <tr>
-                            <th>Le mot de la présidence</th>
-                            <td>{{ cfa.textPresident | raw }}</td>
-                        </tr>
-                        <tr>
-                            <th>Image</th>
-                            <td><img class="img-fluid" src="{{ vich_uploader_asset(cfa, 'imagePresidentFile') }}" alt="photo de la présidence" /></td>
-                        </tr>
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ cfa.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Le mot de la présidence</th>
+                        <td>{{ cfa.textPresident | raw }}</td>
+                    </tr>
+                    <tr>
+                        <th>Image</th>
+                        <td><img class="img-fluid" src="{{ vich_uploader_asset(cfa, 'imagePresidentFile') }}"
+                                 alt="photo de la présidence"/></td>
+                    </tr>
+                    <tr>
+                        <th>Nombre d'apprentis</th>
+                        <td>{{ cfa.apprenticeNumber }}</td>
+                    </tr>
+                    <tr>
+                        <th>Taux de réussite</th>
+                        <td>{{ cfa.successRate }}</td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
@@ -32,7 +41,7 @@
                     </li>
                     <li>
                         {{ form_start(delete_form) }}
-                            <input class="btn btn-outline-danger" type="submit" value="Supprimer">
+                        <input class="btn btn-outline-danger" type="submit" value="Supprimer">
                         {{ form_end(delete_form) }}
                     </li>
                 </ul>
