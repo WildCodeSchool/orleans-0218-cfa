@@ -1,5 +1,4 @@
 {% extends 'layout.html.twig' %}
-{% block title %}Les formations dispensés par les ufa du cfa sms de Blois {% endblock %}
 {% block body %}
     <section id="activeTab" data-active="formation" class=" container-fluid formation">
         <div class="row">
@@ -27,9 +26,9 @@
             <div class="col-md-7 offset-md-1 col-sm-12 formation-presentation">
                 <h2 class="text-center mb-5 title-formation"><i class="fas fa-graduation-cap"></i> {{ formation.name }}
                 </h2>
-                <p>{{ formation.shortPresentation|raw }}</p>
+                {{ formation.shortPresentation|raw }}
                 <img src="{{ asset('images/meeting_formation.jpeg') }}" alt="meeting-formation">
-                <p>{{ formation.jobDescription|raw }}</p>
+                {{ formation.jobDescription|raw }}
                 {% if formation.referentielName is not empty %}
                     <a class="btn btn-outline-success" target="_blank" href="{{ vich_uploader_asset(formation, 'referentielFile') }}">Télécharger le référentiel de la formation</a>
                 {% endif %}
