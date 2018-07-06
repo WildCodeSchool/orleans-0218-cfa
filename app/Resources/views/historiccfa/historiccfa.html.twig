@@ -149,10 +149,12 @@
             <h2 class="mb-5 style-subtitle">Mot de la présidente</h2>
                 <p class="president-letter">
                     <i class="fas fa-quote-left fa-3x style-subtitle "></i>
-                    <img class="img-fluid" src="{{ vich_uploader_asset(cfa, 'imagePresidentFile') }}" alt="photo de la présidence"/>
+                    {% for cfa in cfas %}
+                    <img class="img-responsive photo_presidence" src="{{ vich_uploader_asset(cfa, 'imagePresidentFile') }}" alt="photo de la présidence"/>
                     <p>{{ cfa.textPresident | raw }}</p>
-                    <i class="fas fa-quote-right fa-3x style-subtitle "></i>
-                </p>
+                  {% endfor %}
+                  <i class="fas fa-quote-right fa-3x style-subtitle "></i>
+              </p>
         </div>
     </div>
 
