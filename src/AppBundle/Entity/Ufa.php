@@ -48,7 +48,7 @@ class Ufa
     /**
      * @var string
      *
-     * @ORM\Column(name="urlsite", type="string", length=255, nullable=true)
+     * @ORM\Column(name="urlsite", type="string", length=255)
      */
     private $urlsite;
 
