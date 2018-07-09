@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use GuzzleHttp\Exception\GuzzleException;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Ufa
@@ -26,6 +27,8 @@ class Ufa
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
+     * @Assert\NotBlank(message="Le nom ne peut pas être vide")
+     * @Assert\Length(max = 255, maxMessage = "Le nom ne doit pas dépasser les 255 caractères")
      */
     private $name;
 
@@ -33,6 +36,8 @@ class Ufa
      * @var string
      *
      * @ORM\Column(name="latitude", type="decimal", precision=8, scale=6)
+     * @Assert\Type(type="numeric")
+     *
      */
     private $latitude;
 
@@ -40,6 +45,7 @@ class Ufa
      * @var string
      *
      * @ORM\Column(name="longitude", type="decimal", precision=8, scale=6)
+     * @Assert\Type(type="numeric")
      */
     private $longitude;
 
@@ -47,13 +53,17 @@ class Ufa
      * @var string
      *
      * @ORM\Column(name="urlsite", type="string", length=255)
+     * @Assert\Length(max = 255, maxMessage = "Le lien ne doit pas dépasser les 255 caractères")
+     * @Assert\Url(message = "l'url est incorrect")
+     *
      */
     private $urlsite;
 
     /**
-     * @var string
+     * @var
      *
-     * @ORM\Column(name="description", type="string", length=255)
+     * @ORM\Column(name="description", type="text")
+     * @Assert\NotBlank(message="La description ne peut pas être vide")
      */
     private $description;
 
@@ -61,20 +71,27 @@ class Ufa
      * @var string
      *
      * @ORM\Column(name="address", type="string", length=255)
+     * @Assert\NotBlank(message="L'adresse ne peut pas être vide")
+     * @Assert\Length(max = 255, maxMessage = "L'adresse ne doit pas dépasser les 255 caractères")
      */
     private $address;
 
     /**
-     * @var string
+     * @var int
      *
-     * @ORM\Column(name="zipcode", type="string", length=255)
+     * @ORM\Column(name="zipcode", type="integer")
+     * @Assert\NotBlank(message="Le code postal ne peut pas être vide")
      */
     private $zipcode;
 
     /**
-     * @var string
+     * @var int
      *
      * @ORM\Column(name="cedex", type="integer", nullable=true)
+     * @Assert\Type(
+     *     type="integer",
+     *     message="Le code postal est incorrect"
+     * )
      */
     private $cedex;
 
@@ -82,6 +99,8 @@ class Ufa
      * @var string
      *
      * @ORM\Column(name="town", type="string", length=255)
+     * @Assert\NotBlank(message="La ville ne peut pas être vide")
+     * @Assert\Length(max = 255, maxMessage = "La ville ne doit pas dépasser les 255 caractères")
      */
     private $town;
 
