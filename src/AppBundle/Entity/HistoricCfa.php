@@ -44,8 +44,8 @@ class HistoricCfa
     /**
      * @var string
      *
-     * @ORM\Column(name="content", type="text", length=500)
-     * @Assert\NotBlank(message="Le contenu de l'historique ne peut pas être vide")
+     * @ORM\Column(name="content", type="text", length=500, nullable= true)
+     *
      * @Assert\Length(max = 500, maxMessage = "Le contenu de l'historique ne doit pas dépasser les 500 caractères")
      */
     private $content;
