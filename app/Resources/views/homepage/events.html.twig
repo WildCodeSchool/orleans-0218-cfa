@@ -9,7 +9,7 @@
             {% for event in events %}
                 <div class="col-sm-4 col-12">
                     <div class="img-thumbnail apprenti-select shadow event-thumbnail">
-                        <a href="{{ path('event_show', {'id':event.id }) }}">
+                        <a class="link-formation" href="{{ path('event_show', {'id':event.id }) }}">
                         <div class="event-img apprenti-background"></div>
                         <div class="caption event-caption">
                             <h4>{{ event.title }}</h4>
