@@ -8,11 +8,14 @@
         <div class="carousel-inner w-100 mb-3" role="listbox">
             {% for partnair in partnairs|batch(5) %}
                 <div class="carousel-item {{ loop.first ? 'active' : '' }}">
-                    <div class="row my-2 d-flex justify-content-between">
+                    <div class="row my-2  mx-3 d-flex justify-content-between">
                         {% for logo in partnair %}
+                            <div class="col-2 logos">
                                 <a href="{{ logo.link }}" target="_blank">
-                                   <img src="{{ vich_uploader_asset(logo, 'image')}}"  alt="{{ logo.name }}" class="mx-auto d-block shadow img-fluid">
+                                    <img src="{{ vich_uploader_asset(logo, 'image') }}" alt="{{ logo.name }}"
+                                         class="mx-auto d-block shadow img-fluid">
                                 </a>
+                            </div>
                         {% endfor %}
                     </div>
                 </div>
