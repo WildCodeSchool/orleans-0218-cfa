@@ -6,14 +6,17 @@
     </div>
     <div class="row">
         <div class="col-sm-12 col-md-5 d-none d-sm-block">
-            <img class="img-fluid center-block cfa-image" src="{{ asset('images/IFSI_Façade.jpg') }}" alt="façade-ifsi-Blois"/>
+            <img class="img-fluid center-block cfa-image" src="{{ asset('images/IFSI_Façade.jpg') }}"
+                 alt="façade-ifsi-Blois"/>
         </div>
         <div class="col-sm-12 col-md-7 mt-4">
             <p class="">
-                Exitialis certamina cogebatur abnuens et reclamans, adulatorum oblatrantibus turmis, bellicosus sane
-                milesque semper et militum ductor sed forensibus iurgiis longe discretus, qui metu sui discriminis
-                anxius cum accusatores quaesitoresque subditivos sibi consociatos ex isdem foveis cerneret
-                emergentes, quae clam palamve agitabantur.
+                Bienvenue sur le site du CFA pour les métiers du champ social, médico-social et sanitaire de la Région
+                Centre-Val de Loire ! Futurs apprentis, futurs maîtres d'apprentissage, employeurs, vous trouverez dans
+                ces quelques pages les premières informations qui, nous l'espérons, vous donnerons l'envie de vous
+                engager et de finaliser votre projet professionnel. Le CFA est à votre disposition pour vous renseigner
+                sur tout ce que vous avez voulu savoir sur les métiers du sanitaire et du social accessibles par
+                l'apprentissage. A bientôt !
             </p>
             <p class="text-center">
                 <a class="btn btn-outline-success" href="{{ path('historiccfa_view') }}">En savoir plus</a>
@@ -21,20 +24,20 @@
 
             <div class="row count-up ">
                 <div class="col-md-3 col-xs-6 text-center">
-                    <div class="counter " data-count="150">0</div>
-                    <p><i class="fas fa-user"></i> Apprentis</p>
+                    <div class="counter " data-count="{{ cfa.apprenticeNumber ?? 0 }}">0</div>
+                    <p><i class="fas fa-user"></i> apprentis en formation</p>
                 </div>
                 <div class="col-md-3 col-xs-6 text-center">
-                    <div class="counter" data-count="9">0</div>
-                    <p><i class="fas fa-book-open"></i> Formations</p>
+                    <div class="counter" data-count="{{ formations | length }}">0</div>
+                    <p><i class="fas fa-book-open"></i> formations</p>
                 </div>
                 <div class="col-md-2 col-xs-6 text-center">
-                    <div class="counter" data-count="5">0</div>
+                    <div class="counter" data-count="{{ ufas | length }}">0</div>
                     <p><i class="fas fa-school"></i> UFA </p>
                 </div>
                 <div class="col-md-2 col-xs-6 text-center">
-                    <div class="counter" data-count="80">0</div>
-                    <p><i class="fas fa-graduation-cap"></i>% Validations</p>
+                    <div class="counter" data-count="{{ cfa.successRate ?? 0 }}">0</div>
+                    <p><i class="fas fa-graduation-cap"></i> % de validations totales</p>
                 </div>
             </div>
         </div>
