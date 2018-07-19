@@ -78,6 +78,14 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/employeurs/temoignages-des-employeurs", name="debriefingEmployers")
+     */
+    public function debriefingEmployers()
+    {
+        return $this->render('employer/debriefingEmployers.html.twig');
+    }
+
+    /**
      * @Route("/mentions-legales", name="legales_notices")
      */
     public function showLegalesNocticesAction()
