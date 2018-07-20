@@ -447,6 +447,11 @@ footer {
 
 /** carousel logos partner **/
 
+.section-logo {
+  .carousel-control-next, .carousel-control-prev {
+    max-width: 50px;
+  }
+}
 .logoPartner {
   img {
     min-height: 100%;
@@ -504,6 +509,9 @@ footer {
 }
 
 .employer_homepage {
+  .apprenti-background {
+    filter: none;
+  }
   .img-fluid {
     margin-right: -15px;
     max-height: 300px;
@@ -538,7 +546,6 @@ footer {
   background-image: url("../images/calculette.jpg");
 }
 
-
 /** end employeurs **/
 .list_none {
   list-style-type: none;
@@ -552,7 +559,6 @@ footer {
 }
 
 .president-letter {
-  font-family: 'Satisfy', cursive;
   font-size: 1.3em;
   margin-left: 2em;
 }
@@ -633,4 +639,6 @@ footer {
   margin-left: 2vw;
   margin-top: -1vw;
 }
+
+
 
