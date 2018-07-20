@@ -24,7 +24,7 @@ class FormationController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $formations = $em->getRepository('AppBundle:Formation')->findAll();
+        $formations = $em->getRepository('AppBundle:Formation')->findBy([], ['name'=>'ASC']);
 
         return $this->render('homepage/formations.html.twig', array(
             'formations' => $formations,
@@ -56,7 +56,7 @@ class FormationController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $formations = $em->getRepository('AppBundle:Formation')->findAll();
+        $formations = $em->getRepository('AppBundle:Formation')->findBy([], ['name'=>'ASC']);
 
         return $this->render('formation/public/formation.html.twig', array(
             'formations' => $formations,
