@@ -447,6 +447,11 @@ footer {
 
 /** carousel logos partner **/
 
+.section-logo {
+  .carousel-control-next, .carousel-control-prev {
+    max-width: 50px;
+  }
+}
 .logoPartner {
   img {
     min-height: 100%;
@@ -632,4 +637,6 @@ footer {
   margin-left: 2vw;
   margin-top: -1vw;
 }
+
+
 
