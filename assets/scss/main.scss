@@ -80,7 +80,7 @@ body {
 /**Navbar**/
 
 .logo {
-  width: 110px;
+  width: 150px;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
@@ -625,7 +625,8 @@ footer {
 /** qui sommes nous **/
 
 .photo_presidence {
-  height: 290px;
+  height: 15em;
+  object-fit: cover;
 }
 
 .ufa-card-text {
