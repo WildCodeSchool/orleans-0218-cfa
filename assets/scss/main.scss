@@ -509,6 +509,9 @@ footer {
 }
 
 .employer_homepage {
+  .apprenti-background {
+    filter: none;
+  }
   .img-fluid {
     margin-right: -15px;
     max-height: 300px;
@@ -542,7 +545,6 @@ footer {
 .contributions-img {
   background-image: url("../images/calculette.jpg");
 }
-
 
 /** end employeurs **/
 .list_none {
