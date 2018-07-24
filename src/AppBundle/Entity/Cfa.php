@@ -70,6 +70,11 @@ class Cfa
     /**
      * @var File
      * @Vich\UploadableField(mapping="cfa_ref", fileNameProperty="imagePresidentName")
+     * @Assert\Image(
+     *     detectCorrupted = true,
+     *     corruptedMessage = "Le fichier est corrompu, veuillez le télécharger à nouveau.",
+     *     mimeTypesMessage = "Veuillez uploader un fichier au format image."
+     * )
      */
     private $imagePresidentFile;
 
