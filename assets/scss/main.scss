@@ -458,6 +458,7 @@ footer {
     max-height: 190px;
   }
   .logos {
+    object-fit: cover;
     filter: grayscale(100%);
     &:hover {
       filter: none;
